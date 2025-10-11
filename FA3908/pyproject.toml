@@ -1,0 +1,16 @@
+[project]
+name = "fa3908"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.10.1",
+    "datasets>=4.2.0",
+    "gitpython>=3.1.45",
+    "numpy>=2.3.3",
+    "peft>=0.17.1",
+    "scipy>=1.16.2",
+    "torch>=2.8.0",
+    "transformers>=4.57.0",
+]
