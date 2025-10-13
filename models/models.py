@@ -1,11 +1,13 @@
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import (
     AutoModelForCausalLM,
+    AutoTokenizer,
     Trainer,
     TrainingArguments,
     logging,
     set_seed,
     BitsAndBytesConfig,
+    pipeline
 )
 import torch
 import bitsandbytes
@@ -33,6 +35,10 @@ def get_auto_model(model):
             # use_flash_attention_2=True,
     )
     return prepare_model_for_kbit_training(model)
+
+def get_auto_tokenizer(model):
+    tokenizer = AutoTokenizer.from_pretrained(model)
+    return tokenizer
 
 def find_all_linear_names(model):
     lora_module_names = set()
@@ -82,3 +88,13 @@ def create_training_args(output_dir, max_steps, eval_steps, save_steps, logging_
         include_tokens_per_second=True,
     )
     return training_args
+
+def get_pipeline(task, model, tokenizer):
+    pipe = pipeline(
+            task,
+            model=model,
+            tokenizer = tokenizer,
+            dtype=torch.bfloat16,
+            device_map="auto"
+        )
+    return pipe
