@@ -11,39 +11,69 @@ from transformers import (
 )
 import torch
 import bitsandbytes
+import sys
 
-# 4-bit quantization
-compute_dtype = getattr(torch, "bfloat16")
+def get_model(model_name, load_in_4bit=False, use_LoRA=True,
+              lora_alpha=32, lora_dropout=0.0, lora_r=8):
 
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=compute_dtype,
-    bnb_4bit_use_double_quant=True,
-)
+    bnb_config = get_bnb_config(load_in_4bit=load_in_4bit)
 
-def get_auto_model(model):
-    model = AutoModelForCausalLM.from_pretrained(
-            model,
-            # load_in_4bit=True,
-            quantization_config=bnb_config,
-            device_map="auto",
-            #device_map={'':torch.cuda.current_device()},
-            use_cache=False,
-            trust_remote_code=True,
-            attn_implementation='eager'
-            # use_flash_attention_2=True,
-    )
+    model = get_auto_model(model_name=model_name, bnb_config=bnb_config)
+
+    if use_LoRA:
+        target_modules_names = find_all_linear_names(model)
+        print("Modules that will be used for LoRA: ")
+        print(target_modules_names)
+
+        # Set up lora
+        peft_config = create_lora_config(alpha=lora_alpha, dropout=lora_dropout, 
+                                        r=lora_r, target_modules_names=target_modules_names)
+        model = get_peft_model(model, peft_config)
+
+    return model
+
+def get_bnb_config(load_in_4bit=False):
+    if load_in_4bit:
+        # 4-bit quantization
+        compute_dtype = getattr(torch, "bfloat16")
+
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=compute_dtype,
+            bnb_4bit_use_double_quant=True,
+        )
+    else:
+        # bnb_config = BitsAndBytesConfig(load_in_8bit=True)
+        bnb_config = None
+    return bnb_config
+
+def get_auto_model(model_name, bnb_config):
+    if bnb_config is not None:
+        model = AutoModelForCausalLM.from_pretrained(
+                model_name,
+                quantization_config=bnb_config,
+                device_map="auto",
+                use_cache=False,
+                trust_remote_code=True,
+                attn_implementation='eager'
+        )
+    else:
+        model = AutoModelForCausalLM.from_pretrained(
+                model_name,
+                device_map="auto",
+                use_cache=False,
+                trust_remote_code=True,
+                attn_implementation='eager'
+        )
     return prepare_model_for_kbit_training(model)
-
-def get_auto_tokenizer(model):
-    tokenizer = AutoTokenizer.from_pretrained(model)
-    return tokenizer
 
 def find_all_linear_names(model):
     lora_module_names = set()
     for name, module in model.named_modules():
-        if isinstance(module, bitsandbytes.nn.Linear4bit):
+        if (isinstance(module, bitsandbytes.nn.Linear4bit) or 
+                isinstance(module, bitsandbytes.nn.Linear8bitLt) or
+                isinstance(module, torch.nn.modules.linear.Linear)):
             names = name.split(".")
             # model-specific
             lora_module_names.add(names[0] if len(names) == 1 else names[-1])
@@ -68,11 +98,12 @@ def create_training_args(output_dir, max_steps, eval_steps, save_steps, logging_
     training_args = TrainingArguments(
         output_dir=output_dir,
         dataloader_drop_last=True,
+        num_train_epochs=1,
         eval_strategy="steps",
-        save_strategy="steps",
-        max_steps=max_steps,
+        #. save_strategy="steps",
+        # max_steps=max_steps,
         eval_steps=eval_steps,
-        save_steps=save_steps,
+        # save_steps=save_steps,
         logging_steps=logging_steps,
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
@@ -80,7 +111,7 @@ def create_training_args(output_dir, max_steps, eval_steps, save_steps, logging_
         lr_scheduler_type=lr_sheduler,
         warmup_steps=warmup,
         gradient_accumulation_steps=gr_acc_steps,
-        gradient_checkpointing=True,
+        #gradient_checkpointing=True,
         fp16=False,
         bf16=True,
         weight_decay=decay,

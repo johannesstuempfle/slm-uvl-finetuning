@@ -7,9 +7,25 @@ from transformers import AutoTokenizer
 import torch
 from torch.utils.data import Dataset
 
-def clone_repo(git_url, repository_dir):
-   if not os.path.exists(repository_dir):
-        Repo.clone_from(git_url, repository_dir)
+def get_datasets(git_urls, repo_dir, model_name, seq_length=512, train_eval_split=0.9):
+    clone_repositories(git_urls=git_urls, repositories_dir=repo_dir)
+
+    uvl_file_pathes = get_uvl_files(repo_dir)
+
+    # claculate file split for train/eval
+    split_index = int(len(uvl_file_pathes)*train_eval_split)
+
+    train_dataset = UvlCodeDataset(model_name, uvl_file_pathes[:split_index], seq_length)
+    eval_dataset = UvlCodeDataset(model_name, uvl_file_pathes[split_index:], seq_length)
+
+    return train_dataset, eval_dataset
+
+def clone_repositories(git_urls, repositories_dir):
+   for git_url in git_urls:
+    repo_name = git_url.split('.git')[0].split('/')[-1]
+    repo_dir = os.path.join(repositories_dir, repo_name)
+    if not os.path.exists(repo_dir):
+        Repo.clone_from(git_url, repo_dir)
 
 def get_uvl_files(folder):
     uvl_files = []
