@@ -5,15 +5,26 @@ from datasets import Dataset
 from tqdm import tqdm
 from transformers import AutoTokenizer
 import torch
-from torch.utils.data import IterableDataset
-from torch.utils.data.dataloader import DataLoader
-import random
-import numpy as np
-
+from torch.utils.data import Dataset
 
 def clone_repo(git_url, repository_dir):
    if not os.path.exists(repository_dir):
         Repo.clone_from(git_url, repository_dir)
+
+def get_uvl_files(folder):
+    uvl_files = []
+    for root, folderfolders, files in os.walk(folder):
+        for file in files:
+            if file.endswith(".uvl"):
+                uvl_files.append(os.path.join(root, file))
+    return uvl_files
+
+def read_uvl_content(file):
+    try:
+        with open(file, 'r') as f:
+            return f.read()
+    except Exception as e:
+        print(f"Could not read {file}: {e}")
 
 def get_uvl_list(folder_path):
     def get_uvl_files(folder):
@@ -41,19 +52,15 @@ def get_uvl_list(folder_path):
     
     return uvl_content
 
-def create_datasets(data_list):
-    # generate value pairs from different sources
-    data = [{"text": a} for a in data_list]
-    #example_data.append({"text": website_text})
-    #example_data.append([{"text": a} for a in uvl_content])
-
-    # create dataset
-    dataset = Dataset.from_list(data)
-
-    validation_data = dataset.take(30)
-    train_data = dataset.skip(30)
-
-    return train_data, validation_data
+def get_max_file_length(model, files):
+    tokenizer = AutoTokenizer.from_pretrained(model, trust_remote_code=True)
+    max_length = 0
+    for file in files:
+        content = read_uvl_content(file)
+        tokenized_inputs = tokenizer(content)["input_ids"]
+        if len(tokenized_inputs) > max_length:
+            max_length = len(tokenized_inputs)
+    return max_length
 
 def chars_token_ratio(data, model_name, data_column, nb_examples=400):
     """
@@ -68,61 +75,27 @@ def chars_token_ratio(data, model_name, data_column, nb_examples=400):
 
     return total_characters / total_tokens
 
-class ConstantLengthDataset(IterableDataset):
-    def __init__(
-        self,
-        model_name,
-        dataset,
-        infinite=False,
-        seq_length=1024,
-        num_of_sequences=1024,
-        chars_per_token=4.0,
-        content_field="text",
-        seed=0,
-    ):
+class UvlCodeDataset(Dataset):
+    def __init__(self, model_name, uvl_file_pathes, max_length):
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-        self.concat_token_id = self.tokenizer.eos_token_id
-        self.dataset = dataset
-        self.seq_length = seq_length
-        self.infinite = infinite
-        self.current_size = 0
-        self.max_buffer_size = seq_length * chars_per_token * num_of_sequences
-        self.content_field = content_field
-        self.seed = seed
+        self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.uvl_file_pathes = uvl_file_pathes
+        self.max_length = max_length
 
-    def __iter__(self):
-        iterator = iter(self.dataset)
-        more_examples = True
-        np_rng = np.random.RandomState(seed=self.seed)
-        while more_examples:
-            buffer, buffer_len = [], 0
-            while True:
-                if buffer_len >= self.max_buffer_size:
-                    break
-                try:
-                    buffer.append(next(iterator)[self.content_field])
-                    buffer_len += len(buffer[-1])
-                except StopIteration:
-                    if self.infinite:
-                        iterator = iter(self.dataset)
-                    else:
-                        more_examples = False
-                        break
-            tokenized_inputs = self.tokenizer(buffer, truncation=False)["input_ids"]
-            all_token_ids = []
+    def __len__(self):
+        return len(self.uvl_file_pathes)
 
-            for tokenized_input in tokenized_inputs:
-                all_token_ids.extend(tokenized_input + [self.concat_token_id])
+    def __getitem__(self, idx):
+        file_path = self.uvl_file_pathes[idx]
 
-            examples = []
-            for i in range(0, len(all_token_ids), self.seq_length):
-                input_ids = all_token_ids[i : i + self.seq_length]
-                if len(input_ids) == self.seq_length:
-                    examples.append(input_ids)
-            random.shuffle(examples)
-            for example in examples:
-                self.current_size += 1
-                yield {
-                    "input_ids": torch.LongTensor(example),
-                    "labels": torch.LongTensor(example),
+        content = read_uvl_content(file=file_path)
+
+        tokenized_inputs = self.tokenizer(content, padding='max_length', truncation=True, 
+                                          max_length=self.max_length)["input_ids"]
+        
+        sample = {
+                "input_ids": torch.LongTensor(tokenized_inputs),
+                "labels": torch.LongTensor(tokenized_inputs),
                 }
+
+        return sample
