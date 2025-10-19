@@ -1,6 +1,6 @@
 # Custom for Forschungsarbeit
 *.pyc
-model/
+model_savings/
 wandb/
 
 # Byte-compiled / optimized / DLL files
