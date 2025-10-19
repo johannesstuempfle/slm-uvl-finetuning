@@ -12,9 +12,11 @@ from transformers import (
 import torch
 import bitsandbytes
 import sys
+import os
 
 def get_model(model_name, load_in_4bit=False, use_LoRA=True,
-              lora_alpha=32, lora_dropout=0.0, lora_r=8):
+              lora_alpha=32, lora_dropout=0.0, lora_r=8, 
+              change_embedding=False):
 
     bnb_config = get_bnb_config(load_in_4bit=load_in_4bit)
 
@@ -29,6 +31,11 @@ def get_model(model_name, load_in_4bit=False, use_LoRA=True,
         peft_config = create_lora_config(alpha=lora_alpha, dropout=lora_dropout, 
                                         r=lora_r, target_modules_names=target_modules_names)
         model = get_peft_model(model, peft_config)
+
+        model.print_trainable_parameters()
+
+    if change_embedding:
+        model.enable_input_require_grads()
 
     return model
 
@@ -93,17 +100,18 @@ def create_lora_config(alpha, dropout, r, target_modules_names, bias="none", tas
     )
     return peft_config
 
-def create_training_args(output_dir, max_steps, eval_steps, save_steps, logging_steps, 
+def create_training_args(output_dir, model_name, epochs, eval_steps, logging_steps, 
                          batch_size, lr, lr_sheduler, warmup, gr_acc_steps, decay):
+    def create_output_dir(dir, model_name):
+        output_dir = os.path.join(dir, model_name.split('/')[-1])
+        return output_dir
     training_args = TrainingArguments(
-        output_dir=output_dir,
+        output_dir=create_output_dir(output_dir, model_name),
         dataloader_drop_last=True,
-        num_train_epochs=1,
+        num_train_epochs=epochs,
         eval_strategy="steps",
-        #. save_strategy="steps",
-        # max_steps=max_steps,
+        save_strategy="epoch",
         eval_steps=eval_steps,
-        # save_steps=save_steps,
         logging_steps=logging_steps,
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
@@ -111,7 +119,6 @@ def create_training_args(output_dir, max_steps, eval_steps, save_steps, logging_
         lr_scheduler_type=lr_sheduler,
         warmup_steps=warmup,
         gradient_accumulation_steps=gr_acc_steps,
-        #gradient_checkpointing=True,
         fp16=False,
         bf16=True,
         weight_decay=decay,
