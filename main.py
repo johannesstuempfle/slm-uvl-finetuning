@@ -1,66 +1,119 @@
-from input_pipeline.datasets import get_datasets
-from models.models import get_model, create_training_args, get_pipeline
+from models.models import get_pipeline
 from huggingface_hub import login
-from transformers import Trainer
+from transformers import AutoTokenizer
 import sys
-import torch
 import os
 from utils import create_output_dir
+
+from train import train
 
 HUG_TOKEN = "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"
 login(HUG_TOKEN)
 
-GIT_URLS = ["https://github.com/Universal-Variability-Language/uvl-models.git",
-            "https://github.tik.uni-stuttgart.de/st191622/uvl_data.git"]
-REPO_DIR = "./FA-3908Schatz/input_pipeline/uvl-repos"
+MODEL = "google/gemma-3-270m-it"#"meta-llama/CodeLlama-7b-hf"# "google/gemma-3-270m-it" / "codellama/CodeLlama-7b-Instruct-hf" 
 
-MODEL = "google/gemma-3-270m" # "meta-llama/CodeLlama-7b-hf" / "codellama/CodeLlama-7b-Instruct-hf" 
-SEQ_LENGTH = 512
-
-TRAIN = True
-# Training arguments
-TRAIN_EVAL_SPLIT = 0.9
-BATCH_SIZE=2                    # batch_size
-EPOCHS=1
-GR_ACC_STEPS=1                   # gradient_accumulation_steps
-LR=5e-4                          # learning_rate
-LR_SCHEDULER_TYPE="cosine"       # lr_scheduler_type
-WEIGHT_DECAY=0.01                # weight_decay
-NUM_WARMUP_STEPS=30              # num_warmup_steps
-EVAL_FREQ=100                    # eval_freq
-LOG_FREQ=100                      # log_freq
-CHANGE_EMBEDDINGS=False          # also change embedding learning
 OUTPUT_DIR=f"/home/florian/FA-3908Schatz/models/model_savings"
 
-# LORA
-LORA_R=8                         # lora_r
-LORA_ALPHA=16                    # lora_alpha
-LORA_DROPOUT=0.1                 # lora_dropout
 
+TRAIN = True
+SUPERVISED = True
+MERGE_MODEL = True
 if __name__ == "__main__":
     if TRAIN:
+        train(supervised=SUPERVISED, merge_model=MERGE_MODEL)
 
-        train_dataset, eval_dataset = get_datasets(git_urls=GIT_URLS, repo_dir=REPO_DIR, model_name=MODEL, 
-                                                   seq_length=SEQ_LENGTH, train_eval_split=TRAIN_EVAL_SPLIT)
-       
-        if "gemma" in MODEL:
-            model = get_model(model_name=MODEL, load_in_4bit=False, use_LoRA=True, change_embedding=CHANGE_EMBEDDINGS)
-        elif "Llama" in MODEL:
-            model = get_model(model_name=MODEL, load_in_4bit=False, use_LoRA=True, change_embedding=CHANGE_EMBEDDINGS)
-        else:
-            model = get_model(model_name=MODEL, load_in_4bit=False, use_LoRA=False, change_embedding=CHANGE_EMBEDDINGS)
-
-        # train_dataset.start_iteration = 0
-
-
-        training_args = create_training_args(output_dir=OUTPUT_DIR, model_name=MODEL, epochs=EPOCHS,
-                                             eval_steps=EVAL_FREQ, logging_steps=LOG_FREQ, batch_size=BATCH_SIZE,
-                                            lr=LR, lr_sheduler=LR_SCHEDULER_TYPE, warmup=NUM_WARMUP_STEPS,
-                                            gr_acc_steps=GR_ACC_STEPS, decay=WEIGHT_DECAY)
         
-        trainer = Trainer(
-            model=model, args=training_args, train_dataset=train_dataset, eval_dataset=eval_dataset
+    else:
+
+        from transformers import (
+            AutoModelForCausalLM,
+            AutoTokenizer,
+            Trainer,
+            TrainingArguments,
+            logging,
+            set_seed,
+            BitsAndBytesConfig,
+            pipeline
         )
 
-    print("Training...")
-    trainer.train()
+        model = AutoModelForCausalLM.from_pretrained(os.path.join(create_output_dir(OUTPUT_DIR, MODEL), 'merged'), device_map="auto")
+        tokenizer = AutoTokenizer.from_pretrained(os.path.join(create_output_dir(OUTPUT_DIR, MODEL), 'merged'))
+
+        tokenizer.chat_template = """{{ bos_token }}
+{%- if messages[0]['role'] == 'system' -%}
+    {%- if messages[0]['content'] is string -%}
+        {%- set first_user_prefix = messages[0]['content'] + '
+' -%}
+    {%- else -%}
+        {%- set first_user_prefix = messages[0]['content'][0]['text'] + '
+' -%}
+    {%- endif -%}
+    {%- set loop_messages = messages[1:] -%}
+{%- else -%}
+    {%- set first_user_prefix = "" -%}
+    {%- set loop_messages = messages -%}
+{%- endif -%}
+{%- for message in loop_messages -%}
+    {%- if (message['role'] == 'user') != (loop.index0 % 2 == 0) -%}
+        {{ raise_exception("Conversation roles must alternate user/assistant/user/assistant/...") }}
+    {%- endif -%}
+    {%- if (message['role'] == 'assistant') -%}
+        {%- set role = "model" -%}
+    {%- else -%}
+        {%- set role = message['role'] -%}
+    {%- endif -%}
+    {{ '<start_of_turn>' + role + '
+' + (first_user_prefix if loop.first else "") }}
+    {%- if message['content'] is string -%}
+        {{ message['content'] | trim }}
+    {%- elif message['content'] is iterable -%}
+        {%- for item in message['content'] -%}
+            {%- if item['type'] == 'image' -%}
+                {{ '<start_of_image>' }}
+            {%- elif item['type'] == 'text' -%}
+                {{ item['text'] | trim }}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- else -%}
+        {{ raise_exception("Invalid content type") }}
+    {%- endif -%}
+    {{ '<end_of_turn>
+' }}
+{%- endfor -%}
+{%- if add_generation_prompt -%}
+    {{'<start_of_turn>model
+'}}
+{%- endif -%}"""
+
+        pipeline = get_pipeline(task="text-generation", model=model, tokenizer=tokenizer)
+
+
+        prompt = "A hamburger is build from some bread and cheese."
+
+        prompt_messages = [
+            {"role": "system", "content": "Translate this text to uvl code: "},
+            {"role": "user", "content": prompt}
+        ]
+
+        # Apply the chat template. This will format the messages correctly for the model.
+        prompt = tokenizer.apply_chat_template(prompt_messages, tokenize=False, add_generation_prompt=True)
+
+        # Generate the output
+        output = pipeline(prompt, max_new_tokens=64)
+        model_output_only = output[0]['generated_text'][len(prompt):].strip()
+
+        #print(f"\nDataset text: {user_message_content}")
+        #print(f"\nDataset emoji: {dataset_emoji}")
+        print(f"\nModel generated output: {model_output_only}")
+        print(f"\nModel generated output: {output}")
+        """
+        sequences = pipeline(
+            prompt,
+            do_sample=True,
+            max_new_tokens=100,
+            temperature=0.7,
+            top_k=50,
+            top_p=0.95,
+            num_return_sequences=1,
+        )
+        print(sequences)"""

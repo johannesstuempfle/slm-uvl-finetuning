@@ -8,7 +8,7 @@ from torch.utils.data import Dataset
 import random
 from utils import create_output_dir
 
-def get_datasets(git_urls, repo_dir, model_name, seq_length=512, train_eval_split=0.9):
+def get_unsupervised_datasets(git_urls, repo_dir, model_name, seq_length=512, train_eval_split=0.9):
     clone_repositories(git_urls=git_urls, repositories_dir=repo_dir)
 
     uvl_file_pathes = get_uvl_files(repo_dir)

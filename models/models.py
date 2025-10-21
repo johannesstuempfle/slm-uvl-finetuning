@@ -13,10 +13,87 @@ import torch
 import bitsandbytes
 import sys
 import os
+from utils import create_output_dir
+from trl import SFTConfig, SFTTrainer
+from peft import PeftModel
 
-def get_model(model_name, load_in_4bit=False, use_LoRA=True,
-              lora_alpha=32, lora_dropout=0.0, lora_r=8, 
-              change_embedding=False):
+def merge_models(model_name, output_dir):
+    model_dir = create_output_dir(dir=output_dir, model_name=model_name)
+
+    # Load base model and tokenizer
+    base_model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
+    tokenizer = AutoTokenizer.from_pretrained(model_dir)
+
+    # Load and merge the PEFT adapters onto the base model
+    model = PeftModel.from_pretrained(base_model, model_dir)
+    model = model.merge_and_unload()
+
+    # Save the merged model and its tokenizer
+    model.save_pretrained(os.path.join(model_dir, 'merged'))
+    tokenizer.save_pretrained(os.path.join(model_dir, 'merged'))
+
+def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, load_in_4bit=False, use_LoRA=True,
+              lora_alpha=32, lora_dropout=0.0, lora_r=8, epochs=1, batch_size=2, lr_rate=5e-5, 
+              lr_scheduler_type="constant", change_embedding=False):
+    def create_SFT_config(output_dir, epochs, batch_size, lr_rate, lr_scheduler_type):
+        args = SFTConfig(
+            output_dir=output_dir,                          # Directory to save adapters
+            num_train_epochs=epochs,                               # Number of training epochs
+            per_device_train_batch_size=batch_size,                    # Batch size per device during training
+            logging_strategy="epoch",                         # Log every epoch
+            eval_strategy="epoch",                            # Evaluate loss metrics every epoch
+            save_strategy="epoch",                            # Save checkpoint every epoch
+            learning_rate=lr_rate,                               # Learning rate,
+            lr_scheduler_type=lr_scheduler_type,                     # Use constant learning rate scheduler
+            max_length=256,                                   # Max sequence length for model and packing of the dataset
+            gradient_checkpointing=False,                     # Use gradient checkpointing to save memory
+            packing=False,                                    # Groups multiple samples in the dataset into a single sequence
+            optim="adamw_torch_fused",                        # Use fused adamw optimizer
+            weight_decay=0.01,                                # Added weight decay for regularization
+        )
+        return args
+
+    output_dir = create_output_dir(output_dir, model_name)
+
+    # create bitandbytes config
+    bnb_config = get_bnb_config(load_in_4bit=load_in_4bit)
+
+    # gather base model and tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, 
+                                                      device_map="auto", attn_implementation='eager')
+    
+    model.config.pad_token_id = tokenizer.pad_token_id
+
+    # gather modules that are adaptable by lora
+    target_modules_names = find_all_linear_names(model)
+    print("Modules that will be used for LoRA: ")
+    print(target_modules_names)
+
+    # Set up lora config
+    lora_config = create_lora_config(alpha=lora_alpha, dropout=lora_dropout, 
+                                    r=lora_r, target_modules_names=target_modules_names)
+    
+    # set up sft config
+    sft_config = create_SFT_config(output_dir=output_dir, epochs=epochs, batch_size=batch_size,
+                                   lr_rate=lr_rate, lr_scheduler_type=lr_scheduler_type)
+
+    # Train and save the LoRA adapters
+    trainer = SFTTrainer(
+        model=model,
+        args=sft_config,
+        train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
+        peft_config=lora_config,
+    )
+
+    return trainer
+
+def get_trainer_unsupervised(model_name, output_dir, train_dataset, eval_dataset, load_in_4bit=False, use_LoRA=True,
+                            lora_alpha=32, lora_dropout=0.0, lora_r=8, epochs=1, batch_size=2, lr=5e-5, 
+                            lr_scheduler_type="constant", change_embedding=False):
+    
+    output_dir = create_output_dir(output_dir, model_name)
 
     bnb_config = get_bnb_config(load_in_4bit=load_in_4bit)
 
@@ -37,7 +114,17 @@ def get_model(model_name, load_in_4bit=False, use_LoRA=True,
     if change_embedding:
         model.enable_input_require_grads()
 
-    return model
+    training_args = create_training_args(output_dir=output_dir, model_name=model_name, epochs=epochs,
+                                        eval_steps=500, logging_steps=250, batch_size=batch_size,
+                                        lr=lr, lr_sheduler=lr_scheduler_type, warmup=30,
+                                        gr_acc_steps=1, decay=0.01)
+    
+    trainer = Trainer(
+        model=model, args=training_args, train_dataset=train_dataset, eval_dataset=eval_dataset, 
+        tokenizer=AutoTokenizer.from_pretrained(model_name)
+    )
+
+    return trainer
 
 def get_bnb_config(load_in_4bit=False):
     if load_in_4bit:
@@ -55,13 +142,12 @@ def get_bnb_config(load_in_4bit=False):
         bnb_config = None
     return bnb_config
 
-def get_auto_model(model_name, bnb_config):
+def get_auto_model(model_name, bnb_config=None):
     if bnb_config is not None:
         model = AutoModelForCausalLM.from_pretrained(
                 model_name,
                 quantization_config=bnb_config,
                 device_map="auto",
-                use_cache=False,
                 trust_remote_code=True,
                 attn_implementation='eager'
         )
@@ -69,10 +155,13 @@ def get_auto_model(model_name, bnb_config):
         model = AutoModelForCausalLM.from_pretrained(
                 model_name,
                 device_map="auto",
-                use_cache=False,
                 trust_remote_code=True,
                 attn_implementation='eager'
         )
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model.config.pad_token = tokenizer.eos_token
+
     return prepare_model_for_kbit_training(model)
 
 def find_all_linear_names(model):
