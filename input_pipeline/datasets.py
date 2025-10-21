@@ -1,16 +1,19 @@
 from git import Repo
 import os
 import sys
-from datasets import Dataset
 from tqdm import tqdm
 from transformers import AutoTokenizer
 import torch
 from torch.utils.data import Dataset
+import random
 
 def get_datasets(git_urls, repo_dir, model_name, seq_length=512, train_eval_split=0.9):
     clone_repositories(git_urls=git_urls, repositories_dir=repo_dir)
 
     uvl_file_pathes = get_uvl_files(repo_dir)
+
+    random.seed(10)
+    random.shuffle(uvl_file_pathes)
 
     # claculate file split for train/eval
     split_index = int(len(uvl_file_pathes)*train_eval_split)
@@ -107,7 +110,7 @@ class UvlCodeDataset(Dataset):
         content = read_uvl_content(file=file_path)
 
         tokenized_inputs = self.tokenizer(content, padding='max_length', truncation=True, 
-                                          max_length=self.max_length)["input_ids"]
+                                          max_length=self.max_length, add_special_tokens=True)["input_ids"]
         
         sample = {
                 "input_ids": torch.LongTensor(tokenized_inputs),
@@ -115,3 +118,39 @@ class UvlCodeDataset(Dataset):
                 }
 
         return sample
+
+
+def get_supervised_datasets(file):
+    from datasets import load_dataset
+    def translate(sample):
+        return {
+            "messages": [
+                {"role": "system", "content": "Translate the following text to uvl-Code: "},
+                {"role": "user", "content": f"{sample['text']}"},
+                {"role": "assistant", "content": f"{sample['code']}"}
+            ]
+        }
+    dataset = load_dataset("json", data_files=file, field="data", encoding="utf-8", split="train")
+
+    training_dataset = dataset.map(translate, remove_columns=dataset.features.keys())
+
+    training_dataset_splits = training_dataset.train_test_split(test_size=0.2, shuffle=True)
+    
+    # Set training and evaluation datasets
+    train_dataset = training_dataset_splits['train']
+    eval_dataset = training_dataset_splits['test']
+
+    return train_dataset, eval_dataset
+
+
+if __name__ == "__main__":
+    
+    GIT_URLS = ["https://github.com/Universal-Variability-Language/uvl-models.git",
+            "https://github.tik.uni-stuttgart.de/st191622/uvl_data.git"]
+    REPO_DIR = "./FA-3908Schatz/input_pipeline/uvl-repos"
+
+    clone_repositories(git_urls=GIT_URLS, repositories_dir=REPO_DIR)
+
+    uvl_file_pathes = get_uvl_files(REPO_DIR)
+
+    print(uvl_file_pathes)
