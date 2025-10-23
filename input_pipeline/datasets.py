@@ -121,12 +121,12 @@ class UvlCodeDataset(Dataset):
         return sample
 
 
-def get_supervised_datasets(file):
+def get_supervised_datasets(file, system_prompt, train_eval_split=0.8):
     from datasets import load_dataset
     def translate(sample):
         return {
             "messages": [
-                {"role": "system", "content": "Translate the following text to uvl-Code: "},
+                {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"{sample['text']}"},
                 {"role": "assistant", "content": f"{sample['code']}"}
             ]
@@ -135,7 +135,7 @@ def get_supervised_datasets(file):
 
     training_dataset = dataset.map(translate, remove_columns=dataset.features.keys())
 
-    training_dataset_splits = training_dataset.train_test_split(test_size=0.2, shuffle=True)
+    training_dataset_splits = training_dataset.train_test_split(test_size=1-train_eval_split, shuffle=True)
     
     # Set training and evaluation datasets
     train_dataset = training_dataset_splits['train']
