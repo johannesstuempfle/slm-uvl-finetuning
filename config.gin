@@ -1,0 +1,24 @@
+# ---------- PARAMETERS FOR MODE TUNE ----------
+
+# WANDB KEY (add your personal key here)
+tune.key = '8478ddb0f2c0978283abcb1e18db08bebd904d3f'
+
+# WANDB SWEEP CONFIGURATION
+tune.n_runs = 15
+tune.sweep_config = {
+        'method': 'random',
+        'metric': {
+            'name': 'eval/loss',
+            'goal': 'minimize'
+        }
+    }
+
+# HYPERPARAMETERS
+tune.parameters_dict = {
+        'epochs': {
+            'values': [10, 20]
+        },
+        'lr_rate': {
+            'values': [0.00001, 0.00005, 0.0001, 0.0005, 0.001]
+        }
+    }

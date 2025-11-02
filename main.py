@@ -1,43 +1,43 @@
 from models.models import get_pipeline
 from huggingface_hub import login
+from peft import PeftModel
 from transformers import AutoTokenizer
 import sys
 import os
 from utils import create_output_dir
+from tune import tune
+import gin
 
 from train import train
 
 HUG_TOKEN = "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"
 login(HUG_TOKEN)
 
-MODEL = "google/gemma-3-270m-it"#"meta-llama/CodeLlama-7b-hf"# "google/gemma-3-270m-it" / "codellama/CodeLlama-7b-Instruct-hf" 
-
-OUTPUT_DIR=f"/home/florian/FA-3908Schatz/models/model_savings"
-
-
 TRAIN = True
+TUNE = False
 SUPERVISED = True
-MERGE_MODEL = True
+MERGE_MODEL = False
+
 if __name__ == "__main__":
+    gin.parse_config_files_and_bindings(['config.gin'],[])
     if TRAIN:
         train(supervised=SUPERVISED, merge_model=MERGE_MODEL)
-
-        
+    elif TUNE:
+        tune()
     else:
 
         from transformers import (
             AutoModelForCausalLM,
             AutoTokenizer,
-            Trainer,
-            TrainingArguments,
-            logging,
-            set_seed,
-            BitsAndBytesConfig,
             pipeline
         )
+        MODEL = "codellama/CodeLlama-7b-Instruct-hf" # "codellama/CodeLlama-7b-Instruct-hf", "google/gemma-3-270m-it"
+        OUTPUT_DIR=f"/home/florian/FA-3908Schatz/models/model_savings"
 
-        model = AutoModelForCausalLM.from_pretrained(os.path.join(create_output_dir(OUTPUT_DIR, MODEL), 'merged'), device_map="auto")
-        tokenizer = AutoTokenizer.from_pretrained(os.path.join(create_output_dir(OUTPUT_DIR, MODEL), 'merged'))
+        model = AutoModelForCausalLM.from_pretrained(MODEL, device_map="auto")
+        model = PeftModel.from_pretrained(model=model, model_id=os.path.join(create_output_dir(OUTPUT_DIR, MODEL)), device_map="auto")
+        model = model.merge_and_unload()
+        tokenizer = AutoTokenizer.from_pretrained(os.path.join(create_output_dir(OUTPUT_DIR, MODEL)))
 
         tokenizer.chat_template = """{{ bos_token }}
 {%- if messages[0]['role'] == 'system' -%}
@@ -88,10 +88,9 @@ if __name__ == "__main__":
         pipeline = get_pipeline(task="text-generation", model=model, tokenizer=tokenizer)
 
 
-        prompt = "A hamburger is build from some bread and cheese."
-
+        prompt = "This is an online shop where you can buy clothes. You'll find a wide range of clothing items available. For instance, we offer various types of shirts, pants, and dresses, each in multiple sizes and colors. When it comes to paying for your order, you have several options. You can use a credit card, a debit card, or even pay with cash upon delivery."
         prompt_messages = [
-            {"role": "system", "content": "Translate this text to uvl code: "},
+            {"role": "system", "content": "Translate this text to uvl-Code with correct syntax: "},
             {"role": "user", "content": prompt}
         ]
 
@@ -99,7 +98,7 @@ if __name__ == "__main__":
         prompt = tokenizer.apply_chat_template(prompt_messages, tokenize=False, add_generation_prompt=True)
 
         # Generate the output
-        output = pipeline(prompt, max_new_tokens=64)
+        output = pipeline(prompt, max_new_tokens=1024)
         model_output_only = output[0]['generated_text'][len(prompt):].strip()
 
         #print(f"\nDataset text: {user_message_content}")
