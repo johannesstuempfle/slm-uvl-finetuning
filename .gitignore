@@ -2,6 +2,7 @@
 *.pyc
 model_savings/
 wandb/
+*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
