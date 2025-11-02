@@ -1,4 +1,4 @@
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig, PromptTuningConfig, get_peft_model, prepare_model_for_kbit_training, PromptTuningInit, LNTuningConfig
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -32,9 +32,10 @@ def merge_models(model_name, output_dir):
     model.save_pretrained(os.path.join(model_dir, 'merged'))
     tokenizer.save_pretrained(os.path.join(model_dir, 'merged'))
 
-def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, load_in_4bit=False, use_LoRA=True,
-              lora_alpha=32, lora_dropout=0.0, lora_r=8, epochs=1, batch_size=2, lr_rate=5e-5, 
-              lr_scheduler_type="constant", change_embedding=False):
+def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, load_in_4bit=False,
+                            use_LoRA=True, use_prompt=False, use_layer_norm=False,
+                            lora_alpha=32, lora_dropout=0.0, lora_r=8, epochs=1, batch_size=2, lr_rate=5e-5, 
+                            lr_scheduler_type="constant", change_embedding=False):
     def create_SFT_config(output_dir, epochs, batch_size, lr_rate, lr_scheduler_type):
         args = SFTConfig(
             output_dir=output_dir,                          # Directory to save adapters
@@ -65,31 +66,47 @@ def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, 
     
     model.config.pad_token_id = tokenizer.pad_token_id
 
+    if use_LoRA:
     # gather modules that are adaptable by lora
-    target_modules_names = find_all_linear_names(model)
-    print("Modules that will be used for LoRA: ")
-    print(target_modules_names)
+        target_modules_names = find_all_linear_names(model)
+        print("Modules that will be used for LoRA: ")
+        print(target_modules_names)
 
-    # Set up lora config
-    lora_config = create_lora_config(alpha=lora_alpha, dropout=lora_dropout, 
-                                    r=lora_r, target_modules_names=target_modules_names)
+        # Set up lora config
+        peft_config = create_lora_config(alpha=lora_alpha, dropout=lora_dropout, 
+                                        r=lora_r, target_modules_names=target_modules_names)
+    
+    elif use_prompt:
+        peft_config = create_prompt_config(model_name=model_name)
+
+    elif use_layer_norm:
+        peft_config = create_layer_norm_config()
     
     # set up sft config
     sft_config = create_SFT_config(output_dir=output_dir, epochs=epochs, batch_size=batch_size,
                                    lr_rate=lr_rate, lr_scheduler_type=lr_scheduler_type)
 
     # Train and save the LoRA adapters
-    trainer = SFTTrainer(
-        model=model,
-        args=sft_config,
-        train_dataset=train_dataset,
-        eval_dataset=eval_dataset,
-        peft_config=lora_config,
-    )
+    if use_LoRA or use_layer_norm or use_prompt:
+        trainer = SFTTrainer(
+            model=model,
+            args=sft_config,
+            train_dataset=train_dataset,
+            eval_dataset=eval_dataset,
+            peft_config=peft_config,
+        )
+    else:
+        trainer = SFTTrainer(
+            model=model,
+            args=sft_config,
+            train_dataset=train_dataset,
+            eval_dataset=eval_dataset,
+        )
 
     return trainer
 
-def get_trainer_unsupervised(model_name, output_dir, train_dataset, eval_dataset, load_in_4bit=False, use_LoRA=True,
+def get_trainer_unsupervised(model_name, output_dir, train_dataset, eval_dataset, load_in_4bit=False, 
+                            use_LoRA=True, use_layer_norm=False,
                             lora_alpha=32, lora_dropout=0.0, lora_r=8, epochs=1, batch_size=2, lr=5e-5, 
                             lr_scheduler_type="constant", change_embedding=False):
     
@@ -107,9 +124,14 @@ def get_trainer_unsupervised(model_name, output_dir, train_dataset, eval_dataset
         # Set up lora
         peft_config = create_lora_config(alpha=lora_alpha, dropout=lora_dropout, 
                                         r=lora_r, target_modules_names=target_modules_names)
-        model = get_peft_model(model, peft_config)
 
-        model.print_trainable_parameters()
+    elif use_layer_norm:
+        peft_config = create_layer_norm_config()
+
+
+    model = get_peft_model(model, peft_config)
+
+    model.print_trainable_parameters()
 
     if change_embedding:
         model.enable_input_require_grads()
@@ -186,6 +208,22 @@ def create_lora_config(alpha, dropout, r, target_modules_names, bias="none", tas
         bias=bias,
         task_type=task_type,
         target_modules=target_modules_names,
+    )
+    return peft_config
+
+def create_prompt_config(model_name, task_type="CAUSAL_LM"):
+    peft_config = PromptTuningConfig(
+        prompt_tuning_init=PromptTuningInit.TEXT,
+        num_virtual_tokens=8,
+        prompt_tuning_init_text="Translate following text to uvl:",
+        task_type=task_type,
+        tokenizer_name_or_path=model_name
+    )
+    return peft_config
+
+def create_layer_norm_config(task_type="CAUSAL_LM"):
+    peft_config = LNTuningConfig(
+        task_type=task_type
     )
     return peft_config
 
