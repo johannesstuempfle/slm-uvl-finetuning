@@ -6,7 +6,8 @@ from transformers import AutoTokenizer
 import torch
 from torch.utils.data import Dataset
 import random
-from utils import create_output_dir
+import matplotlib.pyplot as plt
+import statistics
 
 def get_unsupervised_datasets(git_urls, repo_dir, model_name, seq_length=512, train_eval_split=0.9):
     clone_repositories(git_urls=git_urls, repositories_dir=repo_dir)
@@ -46,15 +47,30 @@ def read_uvl_content(file):
     except Exception as e:
         print(f"Could not read {file}: {e}")
 
-def get_uvl_list(folder_path):
-    def get_uvl_files(folder):
-        uvl_files = []
-        for root, folderfolders, files in os.walk(folder):
-            for file in files:
-                if file.endswith(".uvl"):
-                    uvl_files.append(os.path.join(root, file))
-        return uvl_files
+def get_uvl_lines_of_code(files):
+    lines = 0
+    for file in files:
+        lines += sum(1 for _ in open(file))
+    return lines
 
+def get_uvl_lines_of_code_per_file(files):
+    lines = []
+    for file in files:
+        lines.append(sum(1 for _ in open(file)))
+    return lines
+
+def get_uvl_list_with_limit(folder_path, token_limit, model):
+    tokenizer = AutoTokenizer.from_pretrained(model, trust_remote_code=True)
+    files = get_uvl_files(folder=folder_path)
+    content_limit = []
+    for file in files:
+        file_content = read_uvl_content(file)
+        tokenized_inputs = tokenizer(file_content)["input_ids"]
+        if len(tokenized_inputs) < token_limit:
+            content_limit.append(file)
+    return content_limit
+
+def get_uvl_list(folder_path):
     uvl_list = get_uvl_files(folder_path)
 
     uvl_content = []
@@ -65,10 +81,6 @@ def get_uvl_list(folder_path):
                 uvl_content.append(f.read())
         except Exception as e:
             print(f"Could not read {file}: {e}")
-
-    print("Imported a total of " + str(len(uvl_content)) +
-        " files with size of all uvl example data: " +
-        str(sys.getsizeof(uvl_content)) + " Bytes")
     
     return uvl_content
 
@@ -120,7 +132,6 @@ class UvlCodeDataset(Dataset):
 
         return sample
 
-
 def get_supervised_datasets(file, system_prompt, train_eval_split=0.8):
     from datasets import load_dataset
     def translate(sample):
@@ -144,14 +155,98 @@ def get_supervised_datasets(file, system_prompt, train_eval_split=0.8):
     return train_dataset, eval_dataset
 
 
+def plot_lines_of_code_dist(uvl_path_list, scope):
+    uvl_lines_per_file = get_uvl_lines_of_code_per_file(uvl_path_list)
+
+    boundary = 2048
+
+    temp = []
+    for file_size in uvl_lines_per_file:
+        if file_size > boundary:
+            file_size = boundary
+        temp.append(file_size)
+    
+    uvl_lines_per_file = temp
+
+    # define window size, output and axes
+    fig, ax = plt.subplots(figsize=[8,6])
+
+    # set plot title
+    ax.set_title("Lines of Code Distribution (Clipped to " + 
+                 str(boundary) + ")")
+
+    # set x-axis name
+    ax.set_xlabel("Lines of Code per File")
+
+    # set y-axis name
+    ax.set_ylabel("Number of Files")
+
+    # create histogram within output
+    N, bins, patches = ax.hist(uvl_lines_per_file, bins=50, color="#2C8BFF") #initial color of all bins
+
+    # Iterate through all histogram elements
+    # each element in this interation is one patch on the histogram, where:
+    # - bin_size - number of records in current bin
+    # - bin - value of current bin (x-axis)
+    # - patch - a rectangle, object of class matplotlib.patches.Patch
+    # more details on patch properties: [visit this link][1]
+    """
+    for bin_size, bin, patch in zip(N, bins, patches):
+        if bin_size == <some number>:
+            patch.set_facecolor("<some color like #FF000>")
+            patch.set_label("something")"""
+    plt.show()
+    plt.savefig('/home/florian/FA-3908Schatz/input_pipeline/figures/line_of_code_'+scope+'.png', bbox_inches='tight')
+
 if __name__ == "__main__":
     
+    DATASET_SUPERVISED = "/home/florian/FA-3908Schatz/input_pipeline/uvl-repos/uvl_dataset-2.json"
     GIT_URLS = ["https://github.com/Universal-Variability-Language/uvl-models.git",
-            "https://github.tik.uni-stuttgart.de/st191622/uvl_data.git"]
+                "https://github.tik.uni-stuttgart.de/st191622/uvl_data.git"]
     REPO_DIR = "./FA-3908Schatz/input_pipeline/uvl-repos"
+    MODEL = "google/gemma-3-270m-it" #"meta-llama/CodeLlama-7b-hf"# "google/gemma-3-270m-it" / "codellama/CodeLlama-7b-Instruct-hf" 
 
+    # Doing some analysis of dataset
     clone_repositories(git_urls=GIT_URLS, repositories_dir=REPO_DIR)
 
     uvl_file_pathes = get_uvl_files(REPO_DIR)
+    
+    print("Statistics for full dataset:")
 
-    print(uvl_file_pathes)
+    print(" Total number of uvl-Files: " + 
+          str(len(uvl_file_pathes)))
+    
+    print(" Total number of uvl lines of code in files: " + 
+          str(get_uvl_lines_of_code(uvl_file_pathes)))
+
+    uvl_list = get_uvl_list(REPO_DIR)
+
+    print(" Total size of all uvl example data: " +
+        str(sys.getsizeof(uvl_list)) + " Bytes")
+
+    plot_lines_of_code_dist(uvl_file_pathes, "full")
+
+    lines_of_code = get_uvl_lines_of_code_per_file(uvl_file_pathes)
+    print(" Mean lines of code: " + str(statistics.mean(lines_of_code)))
+    print(" Median lines of code: " + str(statistics.median(lines_of_code)))
+
+    print("Statistics for limited dataset:")
+
+    uvl_file_pathes = get_uvl_list_with_limit(folder_path=REPO_DIR, token_limit=512, model=MODEL)
+
+    print(" Total number of uvl-Files: " + 
+        str(len(uvl_file_pathes)))
+    
+    print(" Total number of uvl lines of code in files: " + 
+          str(get_uvl_lines_of_code(uvl_file_pathes)))
+
+    uvl_list = get_uvl_list(REPO_DIR)
+
+    print(" Total size of all uvl example data: " +
+        str(sys.getsizeof(uvl_list)) + " Bytes")
+
+    plot_lines_of_code_dist(uvl_file_pathes, "limited")
+
+    lines_of_code = get_uvl_lines_of_code_per_file(uvl_file_pathes)
+    print(" Mean lines of code: " + str(statistics.mean(lines_of_code)))
+    print(" Median lines of code: " + str(statistics.median(lines_of_code)))
