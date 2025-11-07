@@ -63,6 +63,10 @@ def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, 
                                                       device_map="auto", attn_implementation='eager')
+    # model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, 
+    #                                                   device_map={"": PartialState().process_index}, attn_implementation='eager')
+    # model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, 
+    #                                                   device_map={"": Accelerator().local_process_index}, attn_implementation='eager')
     
     model.config.pad_token_id = tokenizer.pad_token_id
 
