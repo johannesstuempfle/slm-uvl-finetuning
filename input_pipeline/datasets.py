@@ -8,11 +8,13 @@ from torch.utils.data import Dataset
 import random
 import matplotlib.pyplot as plt
 import statistics
+import gin
 
 def get_unsupervised_datasets(git_urls, repo_dir, model_name, seq_length=512, train_eval_split=0.9):
     clone_repositories(git_urls=git_urls, repositories_dir=repo_dir)
 
-    uvl_file_pathes = get_uvl_files(repo_dir)
+    # uvl_file_pathes = get_uvl_files(repo_dir)
+    uvl_file_pathes = get_uvl_list_with_limit(folder_path=repo_dir, token_limit=seq_length, model=model_name)
 
     random.seed(10)
     random.shuffle(uvl_file_pathes)
@@ -132,6 +134,7 @@ class UvlCodeDataset(Dataset):
 
         return sample
 
+@gin.configurable
 def get_supervised_datasets(file, system_prompt, train_eval_split=0.8):
     from datasets import load_dataset
     def translate(sample):

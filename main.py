@@ -15,13 +15,13 @@ login(HUG_TOKEN)
 
 TRAIN = True
 TUNE = False
-SUPERVISED = True
-MERGE_MODEL = False
+
+MODEL = "google/gemma-3-270m-it"  #"meta-llama/CodeLlama-7b-hf"# "google/gemma-3-270m-it" / "codellama/CodeLlama-7b-Instruct-hf" 
 
 if __name__ == "__main__":
     gin.parse_config_files_and_bindings(['config.gin'],[])
     if TRAIN:
-        train(supervised=SUPERVISED, merge_model=MERGE_MODEL)
+        train(model_name=MODEL)
     elif TUNE:
         tune()
     else:
