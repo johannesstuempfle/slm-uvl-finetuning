@@ -45,7 +45,8 @@ def tune(key, sweep_config, parameters_dict, n_runs):
             # Create Model here
 
             # train model here
-            train(model_name=config.model_name, supervised=True, merge_model=False, lr=config.lr_rate, epochs=config.epochs)
+            train(model_name=config.model_name, supervised=True, merge_model=False, lr=config.lr_rate, 
+                  epochs=config.epochs, lora_params=config.lora_params)
 
             torch.cuda.empty_cache()
 
@@ -53,6 +54,8 @@ def tune(key, sweep_config, parameters_dict, n_runs):
             eval_result = evaluate(config.model_name)
 
             wandb.log({"test_results": eval_result})
+
+            torch.cuda.empty_cache()
 
 
     # use agent for optimization

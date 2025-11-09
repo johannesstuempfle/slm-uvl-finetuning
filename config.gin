@@ -4,7 +4,7 @@
 tune.key = '8478ddb0f2c0978283abcb1e18db08bebd904d3f'
 
 # WANDB SWEEP CONFIGURATION
-tune.n_runs = 15
+tune.n_runs = 5
 tune.sweep_config = {
         'method': 'random',
         'metric': {
@@ -16,13 +16,18 @@ tune.sweep_config = {
 # HYPERPARAMETERS
 tune.parameters_dict = {
         'epochs': {
-            'values': [10, 20]
+            'values': [10, 20, 30]
         },
         'lr_rate': {
             'values': [0.00001, 0.00005, 0.0001, 0.0005, 0.001]
         },
         'model_name': {
-            'values': ["google/gemma-3-270m-it", "google/gemma-3-1b-it", "google/gemma-3-4b-it"]
+            # 'values': ["google/gemma-3-270m-it", "google/gemma-3-1b-it", "google/gemma-3-4b-it"]
+            'values': ["google/gemma-3-270m-it"]
+        },
+        'lora_params': {
+            'values': [{"rank": 8, "dropout": 0.1, "alpha": 16}, {"rank": 16, "dropout": 0.1, "alpha": 32},
+                        {"rank": 32, "dropout": 0.1, "alpha": 64}]
         }
     }
 
@@ -36,6 +41,7 @@ train.lr_sheduler = "constant"
 train.epochs = 20
 train.change_embeddings = True
 train.output_dir = "/home/florian/FA-3908Schatz/models/model_savings"
+train.lora_params = {"rank": 8, "dropout": 0.1, "alpha": 16}
 
 # ---------- PARAMETERS FOR DATASETS ----------
 get_supervised_datasets.system_prompt = "Translate the following text with variabilities to syntactic correct uvl-Code: "

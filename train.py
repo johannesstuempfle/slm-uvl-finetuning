@@ -14,7 +14,7 @@ USE_LAYER_NORM = False
 
 @gin.configurable
 def train(model_name, supervised, merge_model, train_eval_split, batch_size, lr, lr_sheduler, 
-          epochs, change_embeddings, output_dir):
+          epochs, change_embeddings, output_dir, lora_params):
     if supervised:
 
         train_dataset, eval_dataset = get_supervised_datasets(file=DATASET_SUPERVISED, train_eval_split=train_eval_split)
@@ -28,7 +28,8 @@ def train(model_name, supervised, merge_model, train_eval_split, batch_size, lr,
                                          eval_dataset=eval_dataset, load_in_4bit=load_in_4bit, 
                                          use_LoRA=USE_LORA, use_prompt=USE_PROMPT, use_layer_norm=USE_LAYER_NORM, epochs=epochs,
                                          batch_size=batch_size, lr_rate=lr, lr_scheduler_type=lr_sheduler,
-                                         change_embedding=change_embeddings)
+                                         change_embedding=change_embeddings, lora_alpha=lora_params["alpha"], 
+                                         lora_dropout=lora_params["dropout"], lora_r=lora_params["rank"])
 
     else: # unsupervised
         train_dataset, eval_dataset = get_unsupervised_datasets(git_urls=GIT_URLS, repo_dir=REPO_DIR, model_name=model_name, 
@@ -39,7 +40,8 @@ def train(model_name, supervised, merge_model, train_eval_split, batch_size, lr,
                                            eval_dataset=eval_dataset, load_in_4bit=False, 
                                            use_LoRA=USE_LORA, use_layer_norm=USE_LAYER_NORM, epochs=epochs,
                                            batch_size=batch_size, lr=lr, lr_scheduler_type=lr_sheduler,
-                                           change_embedding=change_embeddings)
+                                           change_embedding=change_embeddings, lora_alpha=lora_params["alpha"], 
+                                         lora_dropout=lora_params["dropout"], lora_r=lora_params["rank"])
 
     
     print("Training...")

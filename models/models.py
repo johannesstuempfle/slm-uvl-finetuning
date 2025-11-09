@@ -44,7 +44,7 @@ def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, 
             save_strategy="epoch",                            # Save checkpoint every epoch
             learning_rate=lr_rate,                               # Learning rate,
             lr_scheduler_type=lr_scheduler_type,                     # Use constant learning rate scheduler
-            max_length=256,                                   # Max sequence length for model and packing of the dataset
+            max_length=512,                                   # Max sequence length for model and packing of the dataset
             gradient_checkpointing=False,                     # Use gradient checkpointing to save memory
             packing=False,                                    # Groups multiple samples in the dataset into a single sequence
             optim="adamw_torch_fused",                        # Use fused adamw optimizer
