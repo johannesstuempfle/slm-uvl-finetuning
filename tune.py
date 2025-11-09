@@ -4,6 +4,7 @@ import wandb
 import gin
 from train import train
 import torch
+from evaluation import evaluate
 
 @gin.configurable
 def tune(key, sweep_config, parameters_dict, n_runs):
@@ -44,9 +45,15 @@ def tune(key, sweep_config, parameters_dict, n_runs):
             # Create Model here
 
             # train model here
-            train(supervised=True, merge_model=False, lr=config.lr_rate, epochs=config.epochs)
+            train(model_name=config.model_name, supervised=True, merge_model=False, lr=config.lr_rate, epochs=config.epochs)
 
             torch.cuda.empty_cache()
+
+            # do evaluation with test dataset here
+            eval_result = evaluate(config.model_name)
+
+            wandb.log({"test_results": eval_result})
+
 
     # use agent for optimization
     wandb.agent(sweep_id, function=tuning, count=n_runs)

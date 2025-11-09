@@ -4,14 +4,11 @@ from transformers import (
     AutoTokenizer,
     Trainer,
     TrainingArguments,
-    logging,
-    set_seed,
     BitsAndBytesConfig,
     pipeline
 )
 import torch
 import bitsandbytes
-import sys
 import os
 from utils import create_output_dir
 from trl import SFTConfig, SFTTrainer
@@ -41,6 +38,7 @@ def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, 
             output_dir=output_dir,                          # Directory to save adapters
             num_train_epochs=epochs,                               # Number of training epochs
             per_device_train_batch_size=batch_size,                    # Batch size per device during training
+            per_device_eval_batch_size=batch_size,
             logging_strategy="epoch",                         # Log every epoch
             eval_strategy="epoch",                            # Evaluate loss metrics every epoch
             save_strategy="epoch",                            # Save checkpoint every epoch
@@ -63,11 +61,7 @@ def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, 
                                                       device_map="auto", attn_implementation='eager')
-    # model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, 
-    #                                                   device_map={"": PartialState().process_index}, attn_implementation='eager')
-    # model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, 
-    #                                                   device_map={"": Accelerator().local_process_index}, attn_implementation='eager')
-    
+  
     model.config.pad_token_id = tokenizer.pad_token_id
 
     if use_LoRA:
