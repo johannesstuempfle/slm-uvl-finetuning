@@ -2,11 +2,14 @@ from models.models import get_trainer_supervised, get_trainer_unsupervised, merg
 from input_pipeline.datasets import get_supervised_datasets, get_unsupervised_datasets
 from utils import create_output_dir
 import gin
+import os
 
-DATASET_SUPERVISED = "/home/florian/FA-3908Schatz/input_pipeline/uvl-repos/uvl_dataset-2.json"
+DATASET_SUPERVISED = "input_pipeline/uvl-repos/uvl_dataset.json"
+DATASET_SUPERVISED = os.path.join(os.path.abspath(os.getcwd()), DATASET_SUPERVISED)
 GIT_URLS = ["https://github.com/Universal-Variability-Language/uvl-models.git",
             "https://github.tik.uni-stuttgart.de/st191622/uvl_data.git"]
-REPO_DIR = "./FA-3908Schatz/input_pipeline/uvl-repos"
+REPO_DIR = "input_pipeline/uvl-repos"
+REPO_DIR = os.path.join(os.path.abspath(os.getcwd()), REPO_DIR)
 
 USE_LORA = True
 USE_PROMPT = False
@@ -15,6 +18,7 @@ USE_LAYER_NORM = False
 @gin.configurable
 def train(model_name, supervised, merge_model, train_eval_split, batch_size, lr, lr_sheduler, 
           epochs, change_embeddings, output_dir, lora_params):
+    output_dir = os.path.join(os.path.abspath(os.getcwd()), output_dir)
     if supervised:
 
         train_dataset, eval_dataset = get_supervised_datasets(file=DATASET_SUPERVISED, train_eval_split=train_eval_split)

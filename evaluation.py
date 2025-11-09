@@ -58,6 +58,9 @@ CHAT_TEMPLATE = """{{ bos_token }}
 @gin.configurable
 def evaluate(model_name, output_dir, dataset_file):
 
+    output_dir = os.path.join(os.path.abspath(os.getcwd()), output_dir)
+    dataset_file = os.path.join(os.path.abspath(os.getcwd()), dataset_file)
+
     def get_test_dataset(file):
         import json
         with open(file) as json_file:
