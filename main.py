@@ -1,10 +1,6 @@
-from models.models import get_pipeline
 from huggingface_hub import login
-from peft import PeftModel
-from transformers import AutoTokenizer
 import sys
 import os
-from utils import create_output_dir
 from tune import tune
 import gin
 from evaluation import evaluate
@@ -15,7 +11,7 @@ HUG_TOKEN = "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"
 login(HUG_TOKEN)
 
 TRAIN = False
-TUNE = False
+TUNE = True
 
 MODEL = "google/gemma-3-270m-it"  #"meta-llama/CodeLlama-7b-hf"# "google/gemma-3-270m-it" / "codellama/CodeLlama-7b-Instruct-hf" 
 
