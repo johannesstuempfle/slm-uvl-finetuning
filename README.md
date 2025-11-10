@@ -15,8 +15,8 @@ For usage:
    $ uv sync
    ```
 5. Run script by
-   a. Selecting .venv interpreter as Interpreter in IDE and run file
-   b. Run via terminal:
+   - Selecting .venv interpreter as Interpreter in IDE and run file
+   - Run via terminal:
      ```
-     $ ./FA3908/.venv/bin/python3.12
+     $ ./FA3908/.venv/bin/python3.12 main.py
      ```
