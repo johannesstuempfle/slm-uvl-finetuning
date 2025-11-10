@@ -15,7 +15,7 @@ HUG_TOKEN = "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"
 login(HUG_TOKEN)
 
 TRAIN = False
-TUNE = True
+TUNE = False
 
 MODEL = "google/gemma-3-270m-it"  #"meta-llama/CodeLlama-7b-hf"# "google/gemma-3-270m-it" / "codellama/CodeLlama-7b-Instruct-hf" 
 
