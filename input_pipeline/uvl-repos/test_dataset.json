@@ -1,6 +1,23 @@
 {"data" : [
+        {
+            "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+            "class": "Easy"
+        },
         {"text": 
-            "A car always has an engine that can be a diesel, gasoline or electric. It will also habe some optional assistance systems like lane assist or ESP. There are also different colours for the car."
+            "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+            "class": "Easy"
+        },
+        {"text": 
+            "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+            "class": "Easy"
+        },
+        {"text": 
+            "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+            "class": "Easy"
+        },
+        {"text": 
+            "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+            "class": "Medium"
         }
     ]
 }
