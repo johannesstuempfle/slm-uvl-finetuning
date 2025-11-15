@@ -8,6 +8,8 @@ import os
 from utils import create_output_dir
 from models.models import get_pipeline
 import gin
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+from flamapy.core.exceptions import FlamaException
 
 CHAT_TEMPLATE = """{{ bos_token }}
 {%- if messages[0]['role'] == 'system' -%}
@@ -55,6 +57,38 @@ CHAT_TEMPLATE = """{{ bos_token }}
 '}}
 {%- endif -%}"""
 
+def parsable(text):
+    import io
+    from contextlib import redirect_stdout, redirect_stderr
+
+    def save_uvl(filename, text):
+        if not filename.endswith(".uvl"):
+            dateiname += ".uvl"
+
+        text = text.encode('ascii', 'ignore')
+
+        with open(filename, "wb") as f:
+            f.write(text)
+
+    save_uvl("temp.uvl", text)
+    
+    r = io.StringIO()
+
+    valid = False
+    with redirect_stderr(r):
+        try:
+            fm = FLAMAFeatureModel("temp.uvl")
+            valid = fm.satisfiable()
+        except FlamaException as e:
+            i = 0
+
+    output_err = r.getvalue().split('\n')
+
+    if valid:
+        return True, output_err
+    else:
+        return False, output_err
+
 @gin.configurable
 def evaluate(model_name, output_dir, dataset_file):
 
@@ -92,6 +126,8 @@ def evaluate(model_name, output_dir, dataset_file):
         output = pipeline(prompt, max_new_tokens=1024)
         model_output_only = output[0]['generated_text'][len(prompt):].strip()
 
-        result_data.append({"text": text, "result": model_output_only})
+        model_valid, errors = parsable(model_output_only)
+
+        result_data.append({"text": text, "output": model_output_only, "parsable": model_valid, "errors": errors})
 
     return result_data

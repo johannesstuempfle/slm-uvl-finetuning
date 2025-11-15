@@ -25,4 +25,4 @@ if __name__ == "__main__":
         # do evaluation with test dataset here
         result = evaluate(MODEL)
 
-        print(result[0]["result"])
+        print(result)
