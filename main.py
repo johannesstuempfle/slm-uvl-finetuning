@@ -23,6 +23,9 @@ if __name__ == "__main__":
         tune()
     else:
         # do evaluation with test dataset here
-        result = evaluate(MODEL)
+        result = evaluate(model_name=MODEL, from_finetuned=False)
 
-        print(result)
+        for t in result:
+            print(t["parsable"])
+            print(t["output"])
+            break

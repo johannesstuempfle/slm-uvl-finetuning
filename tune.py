@@ -51,7 +51,7 @@ def tune(key, sweep_config, parameters_dict, n_runs):
             torch.cuda.empty_cache()
 
             # do evaluation with test dataset here
-            eval_result = evaluate(config.model_name)
+            eval_result = evaluate(config.model_name, from_finetuned=True)
 
             wandb.log({"test_results": eval_result})
 

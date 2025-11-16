@@ -90,23 +90,27 @@ def parsable(text):
         return False, output_err
 
 @gin.configurable
-def evaluate(model_name, output_dir, dataset_file):
-
-    output_dir = os.path.join(os.path.abspath(os.getcwd()), output_dir)
-    dataset_file = os.path.join(os.path.abspath(os.getcwd()), dataset_file)
-
+def evaluate(model_name, output_dir, dataset_file, from_finetuned=False):
     def get_test_dataset(file):
         import json
         with open(file) as json_file:
             data = json.load(json_file)
         return data
 
-    model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
-    model = PeftModel.from_pretrained(model=model, model_id=os.path.join(create_output_dir(output_dir, model_name)), device_map="auto")
-    model = model.merge_and_unload()
-    tokenizer = AutoTokenizer.from_pretrained(os.path.join(create_output_dir(output_dir, model_name)))
+    output_dir = os.path.join(os.path.abspath(os.getcwd()), output_dir)
+    dataset_file = os.path.join(os.path.abspath(os.getcwd()), dataset_file)
 
-    tokenizer.chat_template = CHAT_TEMPLATE
+    if from_finetuned:
+        model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
+        model = PeftModel.from_pretrained(model=model, model_id=os.path.join(create_output_dir(output_dir, model_name)), device_map="auto")
+        model = model.merge_and_unload()
+        tokenizer = AutoTokenizer.from_pretrained(os.path.join(create_output_dir(output_dir, model_name)))
+    else: #online model without finetuning
+        model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+
+    # tokenizer.chat_template = CHAT_TEMPLATE
 
     pipeline = get_pipeline(task="text-generation", model=model, tokenizer=tokenizer)
 
