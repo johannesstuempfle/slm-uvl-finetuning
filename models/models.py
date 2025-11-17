@@ -235,10 +235,9 @@ def create_training_args(output_dir, model_name, epochs, eval_steps, logging_ste
         output_dir=create_output_dir(output_dir, model_name),
         dataloader_drop_last=True,
         num_train_epochs=epochs,
-        eval_strategy="steps",
-        save_strategy="epoch",
-        eval_steps=eval_steps,
-        logging_steps=logging_steps,
+        logging_strategy="epoch",                         # Log every epoch
+        eval_strategy="epoch",                            # Evaluate loss metrics every epoch
+        save_strategy="epoch",  
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
         learning_rate=lr,

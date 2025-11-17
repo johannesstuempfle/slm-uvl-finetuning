@@ -15,6 +15,9 @@ tune.sweep_config = {
 
 # HYPERPARAMETERS
 tune.parameters_dict = {
+        'supervised': {
+            'values': [False]
+        },
         'epochs': {
             'values': [10, 20, 30]
         },
@@ -41,7 +44,7 @@ train.epochs = 20
 train.change_embeddings = True
 train.output_dir = "models/model_savings"
 train.lora_params = {"rank": 8, "dropout": 0.1, "alpha": 16}
-train.seq_len = 512
+train.seq_len = 1024
 
 # ---------- PARAMETERS FOR DATASETS ----------
 get_supervised_datasets.system_prompt = "Translate the following text with variabilities to syntactic correct uvl-Code: "
