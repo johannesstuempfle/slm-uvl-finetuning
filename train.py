@@ -17,7 +17,7 @@ USE_LAYER_NORM = False
 
 @gin.configurable
 def train(model_name, supervised, merge_model, train_eval_split, batch_size, lr, lr_sheduler, 
-          epochs, change_embeddings, output_dir, lora_params):
+          epochs, change_embeddings, output_dir, lora_params, seq_len):
     output_dir = os.path.join(os.path.abspath(os.getcwd()), output_dir)
     if supervised:
 
@@ -37,7 +37,7 @@ def train(model_name, supervised, merge_model, train_eval_split, batch_size, lr,
 
     else: # unsupervised
         train_dataset, eval_dataset = get_unsupervised_datasets(git_urls=GIT_URLS, repo_dir=REPO_DIR, model_name=model_name, 
-                                                                seq_length=512, train_eval_split=train_eval_split)
+                                                                seq_length=seq_len, train_eval_split=train_eval_split)
 
 
         trainer = get_trainer_unsupervised(model_name=model_name, output_dir=output_dir, train_dataset=train_dataset,
