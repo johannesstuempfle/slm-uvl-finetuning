@@ -16,20 +16,19 @@ tune.sweep_config = {
 # HYPERPARAMETERS
 tune.parameters_dict = {
         'supervised': {
-            'values': [False]
+            'values': [True]
         },
         'epochs': {
             'values': [10, 20, 30]
         },
         'lr_rate': {
-            'values': [0.00001, 0.00005, 0.0001]
+            'values': [0.00001, 0.00005]
         },
         'model_name': {
-            'values': ["google/gemma-3-270m-it", "google/gemma-3-1b-it", "google/gemma-3-4b-it"]
+            'values': ["google/gemma-3-270m-it", "google/gemma-3-1b-it", "google/gemma-3-4b-it", "deepseek-ai/deepseek-coder-1.3b-instruct", "codellama/CodeLlama-7b-Instruct-hf"]
         },
         'lora_params': {
-            'values': [{"rank": 8, "dropout": 0.1, "alpha": 16}, {"rank": 16, "dropout": 0.1, "alpha": 32},
-                        {"rank": 32, "dropout": 0.1, "alpha": 64}]
+            'values': [{"rank": 8, "dropout": 0.1, "alpha": 16}] #, {"rank": 16, "dropout": 0.1, "alpha": 32}, {"rank": 32, "dropout": 0.1, "alpha": 64}]
         }
     }
 
