@@ -49,6 +49,7 @@ def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, 
             packing=False,                                    # Groups multiple samples in the dataset into a single sequence
             optim="adamw_torch_fused",                        # Use fused adamw optimizer
             weight_decay=0.01,                                # Added weight decay for regularization
+            load_best_model_at_end=True
         )
         return args
 
@@ -249,6 +250,7 @@ def create_training_args(output_dir, model_name, epochs, eval_steps, logging_ste
         weight_decay=decay,
         push_to_hub=False,
         include_tokens_per_second=True,
+        load_best_model_at_end=True
     )
     return training_args
 
