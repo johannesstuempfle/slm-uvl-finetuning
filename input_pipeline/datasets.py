@@ -86,6 +86,20 @@ def get_uvl_list(folder_path):
     
     return uvl_content
 
+def get_uvl_content_with_limit(folder_path, token_limit, model_name):
+    uvl_list = get_uvl_list_with_limit(folder_path, token_limit, model_name)
+
+    uvl_content = []
+
+    for file in uvl_list:
+        try:
+            with open(file, 'r') as f:
+                uvl_content.append(f.read())
+        except Exception as e:
+            print(f"Could not read {file}: {e}")
+    
+    return uvl_content
+
 def get_max_file_length(model, files):
     tokenizer = AutoTokenizer.from_pretrained(model, trust_remote_code=True)
     max_length = 0
@@ -201,6 +215,19 @@ def plot_lines_of_code_dist(uvl_path_list, scope):
     plt.show()
     plt.savefig('/home/florian/FA-3908Schatz/input_pipeline/figures/line_of_code_'+scope+'.png', bbox_inches='tight')
 
+def filter_duplicate_filenames(path_list):
+    seen_filenames = set()
+    unique_paths = []
+    
+    for pfad in path_list:
+        dateiname = os.path.basename(pfad)
+        
+        if dateiname not in seen_filenames:
+            seen_filenames.add(dateiname)
+            unique_paths.append(pfad)
+            
+    return unique_paths
+
 if __name__ == "__main__":
     
     DATASET_SUPERVISED = "/home/florian/FA-3908Schatz/input_pipeline/uvl-repos/uvl_dataset-2.json"
@@ -208,6 +235,7 @@ if __name__ == "__main__":
                 "https://github.tik.uni-stuttgart.de/st191622/uvl_data.git"]
     REPO_DIR = "./FA-3908Schatz/input_pipeline/uvl-repos"
     MODEL = "google/gemma-3-270m-it" #"meta-llama/CodeLlama-7b-hf"# "google/gemma-3-270m-it" / "codellama/CodeLlama-7b-Instruct-hf" 
+    TOKEN_LIMIT = 1024
 
     # Doing some analysis of dataset
     clone_repositories(git_urls=GIT_URLS, repositories_dir=REPO_DIR)
@@ -233,9 +261,10 @@ if __name__ == "__main__":
     print(" Mean lines of code: " + str(statistics.mean(lines_of_code)))
     print(" Median lines of code: " + str(statistics.median(lines_of_code)))
 
+    # Dataset limitation over sequence
     print("Statistics for limited dataset:")
 
-    uvl_file_pathes = get_uvl_list_with_limit(folder_path=REPO_DIR, token_limit=512, model=MODEL)
+    uvl_file_pathes = get_uvl_list_with_limit(folder_path=REPO_DIR, token_limit=TOKEN_LIMIT, model=MODEL)
 
     print(" Total number of uvl-Files: " + 
         str(len(uvl_file_pathes)))
@@ -243,7 +272,7 @@ if __name__ == "__main__":
     print(" Total number of uvl lines of code in files: " + 
           str(get_uvl_lines_of_code(uvl_file_pathes)))
 
-    uvl_list = get_uvl_list(REPO_DIR)
+    uvl_list = get_uvl_content_with_limit(REPO_DIR, token_limit=TOKEN_LIMIT, model_name=MODEL)
 
     print(" Total size of all uvl example data: " +
         str(sys.getsizeof(uvl_list)) + " Bytes")
@@ -253,3 +282,13 @@ if __name__ == "__main__":
     lines_of_code = get_uvl_lines_of_code_per_file(uvl_file_pathes)
     print(" Mean lines of code: " + str(statistics.mean(lines_of_code)))
     print(" Median lines of code: " + str(statistics.median(lines_of_code)))
+
+    """
+    Remove duplicates?
+    """
+    uvl_file_pathes = get_uvl_list_with_limit(folder_path=REPO_DIR, token_limit=TOKEN_LIMIT, model=MODEL)
+
+    unduplicated_files = filter_duplicate_filenames(uvl_file_pathes)
+
+    print(" Total number of uvl-Files: " + 
+        str(len(unduplicated_files)))
