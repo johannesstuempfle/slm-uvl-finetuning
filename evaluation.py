@@ -89,6 +89,18 @@ def parsable(text):
     else:
         return False, output_err
 
+def evaluate_score(results):
+    total = 0
+    parsable = 0
+    for result in results:
+        total += 1
+        if result["parsable"] == True:
+            parsable +=1
+    try:
+        return parsable/total
+    except:
+        return 0
+
 @gin.configurable
 def evaluate(model_name, output_dir, dataset_file, from_finetuned=False):
     def get_test_dataset(file):
