@@ -46,7 +46,7 @@ def tune(key, sweep_config, parameters_dict, n_runs):
 
             # train model here
             train(model_name=config.model_name, supervised=config.supervised, merge_model=False, lr=config.lr_rate, 
-                  epochs=config.epochs, lora_params=config.lora_params)
+                  epochs=config.epochs, lora_params=config.lora_params, seq_len=config.seq_len)
 
             torch.cuda.empty_cache()
 

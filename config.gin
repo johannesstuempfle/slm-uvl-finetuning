@@ -16,10 +16,13 @@ tune.sweep_config = {
 # HYPERPARAMETERS
 tune.parameters_dict = {
         'supervised': {
-            'values': [True]
+            'values': [False]
+        },
+        'seq_len': {
+            'values': [1024]
         },
         'epochs': {
-            'values': [10, 20, 30]
+            'values': [5, 10]
         },
         'lr_rate': {
             'values': [0.00001, 0.00005]
