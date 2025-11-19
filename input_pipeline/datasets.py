@@ -137,8 +137,9 @@ class UvlCodeDataset(Dataset):
         file_path = self.uvl_file_pathes[idx]
 
         content = read_uvl_content(file=file_path)
+        pre_text = "The following UVL-Code is syntactically correct: \n\n"
 
-        tokenized_inputs = self.tokenizer(content, padding='max_length', truncation=True, 
+        tokenized_inputs = self.tokenizer(pre_text + content, padding='max_length', truncation=True, 
                                           max_length=self.max_length, add_special_tokens=True)["input_ids"]
         
         sample = {
