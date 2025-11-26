@@ -4,7 +4,7 @@
 tune.key = '8478ddb0f2c0978283abcb1e18db08bebd904d3f'
 
 # WANDB SWEEP CONFIGURATION
-tune.n_runs = 28
+tune.n_runs = 60
 tune.sweep_config = {
         'method': 'grid',
         'metric': {
@@ -28,7 +28,7 @@ tune.parameters_dict = {
             'values': [0.00001, 0.00005]
         },
         'model_name': {
-            'values': ["google/gemma-3-270m-it", "google/gemma-3-1b-it", "google/gemma-3-4b-it", "Qwen/Qwen2.5-Coder-0.5B-Instruct", "Qwen/Qwen2.5-Coder-1.5B-Instruct", "Qwen/Qwen2.5-Coder-3B-Instruct", "Qwen/Qwen2.5-Coder-7B-Instruct"]
+            'values': ["google/gemma-3-270m-it", "google/gemma-3-1b-it", "google/gemma-3-4b-it", "Qwen/Qwen2.5-Coder-0.5B-Instruct", "Qwen/Qwen2.5-Coder-1.5B-Instruct", "Qwen/Qwen2.5-Coder-3B-Instruct", "Qwen/Qwen2.5-Coder-7B-Instruct", "Qwen/Qwen2.5-0.5B-Instruct", "Qwen/Qwen2.5-1.5B-Instruct", "Qwen/Qwen2.5-3B-Instruct", "Qwen/Qwen2.5-7B-Instruct", "codellama/CodeLlama-7b-Instruct-hf", "codellama/CodeLlama-13b-Instruct-hf", "microsoft/Phi-4-mini-instruct", "microsoft/phi-4"]
         },
         'lora_params': {
             'values': [{"rank": 8, "dropout": 0.1, "alpha": 16}]
