@@ -10,6 +10,8 @@ import matplotlib.pyplot as plt
 import statistics
 import gin
 
+PRE_TEXT = "The following given UVL-Code is written with correct syntax: \n\n"
+
 def get_unsupervised_datasets(git_urls, repo_dir, model_name, seq_length=512, train_eval_split=0.9):
     clone_repositories(git_urls=git_urls, repositories_dir=repo_dir)
 
@@ -137,9 +139,10 @@ class UvlCodeDataset(Dataset):
         file_path = self.uvl_file_pathes[idx]
 
         content = read_uvl_content(file=file_path)
-        pre_text = "The following UVL-Code is syntactically correct: \n\n"
 
-        tokenized_inputs = self.tokenizer(pre_text + content, padding='max_length', truncation=True, 
+        content = PRE_TEXT + "'''uvl\n" + content + "\n'''"
+
+        tokenized_inputs = self.tokenizer(PRE_TEXT + content, padding='max_length', truncation=True, 
                                           max_length=self.max_length, add_special_tokens=True)["input_ids"]
         
         sample = {
@@ -157,7 +160,7 @@ def get_supervised_datasets(file, system_prompt, train_eval_split=0.8):
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"{sample['text']}"},
-                {"role": "assistant", "content": f"{sample['code']}"}
+                {"role": "assistant", "content": f"{"'''uvl\n" + sample['code'] + "\n'''"}"}
             ]
         }
     dataset = load_dataset("json", data_files=file, field="data", encoding="utf-8", split="train")

@@ -4,9 +4,9 @@
 tune.key = '8478ddb0f2c0978283abcb1e18db08bebd904d3f'
 
 # WANDB SWEEP CONFIGURATION
-tune.n_runs = 20
+tune.n_runs = 28
 tune.sweep_config = {
-        'method': 'random',
+        'method': 'grid',
         'metric': {
             'name': 'eval/loss',
             'goal': 'minimize'
@@ -16,22 +16,22 @@ tune.sweep_config = {
 # HYPERPARAMETERS
 tune.parameters_dict = {
         'supervised': {
-            'values': [False]
+            'values': [True]
         },
         'seq_len': {
             'values': [1024]
         },
         'epochs': {
-            'values': [5, 10]
+            'values': [10,20]
         },
         'lr_rate': {
             'values': [0.00001, 0.00005]
         },
         'model_name': {
-            'values': ["google/gemma-3-270m-it", "google/gemma-3-1b-it", "google/gemma-3-4b-it", "deepseek-ai/deepseek-coder-1.3b-instruct", "codellama/CodeLlama-7b-Instruct-hf"]
+            'values': ["google/gemma-3-270m-it", "google/gemma-3-1b-it", "google/gemma-3-4b-it", "Qwen/Qwen2.5-Coder-0.5B-Instruct", "Qwen/Qwen2.5-Coder-1.5B-Instruct", "Qwen/Qwen2.5-Coder-3B-Instruct", "Qwen/Qwen2.5-Coder-7B-Instruct"]
         },
         'lora_params': {
-            'values': [{"rank": 8, "dropout": 0.1, "alpha": 16}] #, {"rank": 16, "dropout": 0.1, "alpha": 32}, {"rank": 32, "dropout": 0.1, "alpha": 64}]
+            'values': [{"rank": 8, "dropout": 0.1, "alpha": 16}]
         }
     }
 
