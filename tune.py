@@ -39,10 +39,7 @@ def tune(key, sweep_config, parameters_dict, n_runs):
 
             config = wandb.config
 
-            # Get dataset here
-            
-
-            # Create Model here
+            torch.cuda.empty_cache()
 
             # train model here
             train(model_name=config.model_name, supervised=config.supervised, merge_model=False, lr=config.lr_rate, 
