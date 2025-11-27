@@ -5,6 +5,7 @@ import gin
 from train import train
 import torch
 from evaluation import evaluate, evaluate_score
+import gc
 
 @gin.configurable
 def tune(key, sweep_config, parameters_dict, n_runs):
@@ -55,7 +56,10 @@ def tune(key, sweep_config, parameters_dict, n_runs):
             wandb.log({"test_score": eval_score})
 
 
+            del eval_result
+            del eval_score
 
+            gc.collect()
             torch.cuda.empty_cache()
 
 
