@@ -89,6 +89,7 @@ def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, 
     if use_LoRA or use_layer_norm or use_prompt:
         trainer = SFTTrainer(
             model=model,
+            processing_class=tokenizer,
             args=sft_config,
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
