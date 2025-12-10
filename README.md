@@ -1,4 +1,4 @@
-# Custom LLM Fine-Tuning Project
+# Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation
 
 ![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -10,7 +10,7 @@ Project dependencies and virtual environments are managed using **[uv](https://g
 ## 🚀 Features
 
 * **Efficient Training:** Supports QLoRA (8-bit quantization) to minimize VRAM usage.
-* **Modular Architecture:** easily adaptable for models different models.
+* **Modular Architecture:** easily adaptable for different models.
 * **Fast Setup:** Uses `uv` for rapid dependency resolution and environment management.
 * **Customizable:** Easy configuration of relevant hyperparameters (Rank, Alpha, Dropout, etc.).
 
@@ -94,10 +94,6 @@ Gemma1b | Supervised | 25% | 50%
  | | Unsupervised | 0% | 0%
 Gemma4b | Supervised | 42% | 50%
 |  | Unsupervised | 0% | 0%
-CodeLlama7b | Supervised | 42% | 58%
-|  | Unsupervised |  | 
-Phi4-Mini4b | Supervised | 50% | 67%
-|  | Unsupervised |  | 
 **Qwen2.5-Coder0.5b** | Supervised | **67%** | **83%**
 |  | Unsupervised | 0% | 0%
 Qwen2.5-Coder1.5b | Supervised | 42% | 67%
