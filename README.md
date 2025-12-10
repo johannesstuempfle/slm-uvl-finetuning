@@ -65,7 +65,7 @@ We use **Gin Config** for parameter management and **uv** for seamless execution
 
 ### 1. Configuration
 Before running the training, open the `config.gin` file and adjust the parameters to your needs (e.g., model name, hyperparameters, data paths).
-- for uvl-data -> uvl basic data fetched via given link. For UVL-Hub ([link](https://www.uvlhub.io/)) -> Copy daat from there into uvl-repos folder
+- for complete uvl-data you need to manually fetch data from UVL-Hub ([link](https://www.uvlhub.io/)) and copy it to `uvl-repos/` folder
 
 ### 2. Run with uv
 You don't need to manually activate the virtual environment. Simply use `uv run` to execute the main script. This ensures the script runs with the correct dependencies and python version defined in your project.
@@ -84,7 +84,7 @@ Results are automatically generated and saved after every fine-tuning run.
 
 
 ## 🏆 Comparative Results
-The best model results are available with their model name in the `savings/` directory.
+The best model results are available with their model name in the `results/` directory.
 
 The following table highlights the best-performing models based on our evaluation metrics:
 | Model Name | Tuning-Method | Parser Score (Auto) | Qualified Score (Manual)* |
@@ -120,12 +120,12 @@ Qwen2.5-7b | Supervised | 25% | 58%
 ├── savings/                # Training runs
 ├── uvl-repos/              # folder for/with uvl data
 ├── src/                    # Source code
+    ├── train.py                # training functions
+    ├── util.py                 # Utility functions
+    ├── models.py               # Model/Training functions
+    ├── dataset.py              # Dataset functions
+    └── evaluate.py             # Evaluation functions
 ├── main.py                 # Main script
-├── train.py                # training functions
-├── util.py                 # Utility functions
-├── models.py               # Model/Training functions
-├── dataset.py              # Dataset functions
-├── evaluate.py             # Evaluation functions
 ├── pyproject.toml          # Project dependencies
 ├── .gitignore
 └── README.md
