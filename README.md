@@ -120,11 +120,11 @@ Qwen2.5-7b | Supervised | 25% | 58%
 ├── savings/                # Training runs
 ├── uvl-repos/              # folder for/with uvl data
 ├── src/                    # Source code
-    ├── train.py                # training functions
-    ├── util.py                 # Utility functions
-    ├── models.py               # Model/Training functions
-    ├── dataset.py              # Dataset functions
-    └── evaluate.py             # Evaluation functions
+    ├── train.py            # training functions
+    ├── util.py             # Utility functions
+    ├── models.py           # Model/Training functions
+    ├── dataset.py          # Dataset functions
+    └── evaluate.py         # Evaluation functions
 ├── main.py                 # Main script
 ├── pyproject.toml          # Project dependencies
 ├── .gitignore
