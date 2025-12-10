@@ -1,0 +1,164 @@
+{
+  "test_results": [
+    {
+      "errors": [
+        "line 1:61 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '\"c (Car(c)  e (Engine(e) & e  {Diesel, Gasoline, Electric}))\\n'",
+        "line 5:35 token recognition error at: '\"'",
+        ""
+      ],
+      "output": "Here's the translation in UVL-Code based on the provided text:\n\n\"∀c (Car(c) → ∃e (Engine(e) & e ∈ {Diesel, Gasoline, Electric}))\n∀c (Car(c) → ∃s (Assistance(s) & s ∈ {Lane_Assist, ESP}))\n∀c (Car(c) → ∃colors (Colors(colors)))\"",
+      "parsable": false,
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car."
+    },
+    {
+      "errors": [
+        "line 1:127 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '`'",
+        "line 3:1 token recognition error at: '`'",
+        "line 3:2 token recognition error at: '`'",
+        "line 14:0 token recognition error at: '`'",
+        "line 14:1 token recognition error at: '`'",
+        "line 14:2 token recognition error at: '`'",
+        ""
+      ],
+      "output": "Here is the translation of the given English text into Uglified Code (UVL-Code), considering the constraints and correct syntax:\n\n```ufl\nteam {\n    requires [\n        [\"security_architect\", \"security_engineer\"]\n    ]\n    \"security_architect\"!= \"security_engineer\"\n    has [\n        manager\n        scrum_master\n    ]\n}\n```",
+      "parsable": false,
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master."
+    },
+    {
+      "errors": [
+        "line 1:135 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '`'",
+        "line 3:1 token recognition error at: '`'",
+        "line 3:2 token recognition error at: '`'",
+        "line 8:0 token recognition error at: '`'",
+        "line 8:1 token recognition error at: '`'",
+        "line 8:2 token recognition error at: '`'",
+        ""
+      ],
+      "output": "Here's the translation of the given text into Uglified Code (assuming it's a playful term for a simplified or code-like representation):\n\n```ucl\n\"cpr\" \"ms-word\"\n\"cpr\" \"pages\"\n\"cct\" \"ms-excel\"\n\"cct\" \"numberts\"\n```",
+      "parsable": false,
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.)."
+    },
+    {
+      "errors": [
+        "line 1:62 token recognition error at: ':'",
+        ""
+      ],
+      "output": "Here is the translation in UVL-Code based on the provided text:\n\n\"ds Drinks {s Coffee, s Tea} pf Foods {s Croissant, s Bagel} cm Payment {c Card, c Cash}\"",
+      "parsable": false,
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash."
+    },
+    {
+      "errors": [
+        "line 1:87 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '`'",
+        "line 3:1 token recognition error at: '`'",
+        "line 3:2 token recognition error at: '`'",
+        "line 15:0 token recognition error at: '`'",
+        "line 15:1 token recognition error at: '`'",
+        "line 15:2 token recognition error at: '`'",
+        ""
+      ],
+      "output": "Here is the translation of the given text into Uvl-Code, considering the correct syntax:\n\n```uvl\nPackage Bicycle {\n    Features { \n        Groupset { Alternative { SRAM, Shimano } }\n        Tyres { Width { WidthOfGravel, SlimOfRoad, ExtraWideOfMountain } Profile { ProfileOfGravel, NoProfileOfRoad, DeepProfileOfMountain } }\n        Handlebars { DropBar { Bicycles { Gravel, Road } FlatOfMountain } }\n    }\n    Constraints { \n        SlimOfRoad =>!ExtraWideOfMountain\n        ExtraWideOfMountain => SlimOfRoad\n    }\n}\n```",
+      "parsable": false,
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike."
+    },
+    {
+      "errors": [
+        "line 1:59 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '`'",
+        "line 3:1 token recognition error at: '`'",
+        "line 3:2 token recognition error at: '`'",
+        ""
+      ],
+      "output": "Here is the translation in Uvl-Code based on the given text:\n\n```uvl\nPackage ChocolateProduction {\n    Features\n        ProductionLine {abstract}\n            Mandatory\n                MeltingStation\n                MixingStation\n                CoolingStation\n                LogisticsSystem\n                PackagingStation\n            Optional\n                NutChocolate\n                    Alternative\n                        MeltingStation\n                        MixingStation\n                        CoolingStation\n                        BakingStation\n\n        TypesOfChocolate\n            Normal\n                Feature MeltingStation\n                Feature MixingStation\n                Feature CoolingStation\n            NutChocolate\n                Feature MeltingStation\n                Feature MixingStation\n                Feature CoolingStation\n                Feature BakingStation\n}",
+      "parsable": false,
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station."
+    },
+    {
+      "errors": [
+        "line 1:78 token recognition error at: ':'",
+        "line 3:75 token recognition error at: ':'",
+        "line 3:147 token recognition error at: ':'",
+        "line 3:210 token recognition error at: ':'",
+        ""
+      ],
+      "output": "Here is the translation in UGLY-Code format based on the provided English text:\n\nWE HVE A TS-CALCULATOR WNIN A BLG-FTW. A CLC-CALCULATOR NLWD SFGGLNG FGFLGS: NETO PRCE, SM OF PRODS ND LGCT OF BGRD SRLLR. TNL THEN CGNLGLS FG FLGS: TSK PRD, BRGTO PRCE ND TSK-RTE. TNL LGLGLS DLGD DTA FR ADRSTS: CALCULATED BSG PRCE ND RG OF CGLCLTN.",
+      "parsable": false,
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation."
+    },
+    {
+      "errors": [
+        "line 1:69 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '`'",
+        "line 3:1 token recognition error at: '`'",
+        "line 3:2 token recognition error at: '`'",
+        "line 58:0 token recognition error at: '`'",
+        "line 58:1 token recognition error at: '`'",
+        "line 58:2 token recognition error at: '`'",
+        ""
+      ],
+      "output": "Here is the translation in Uvl-Code format based on your instructions:\n\n```uvl\nNamespace RoomBookingService {\n    Features\n        \"Room Booking Service\" {abstract}\n            Cardinality [1..1]\n                Includes\n                    Room {abstract}\n                        Cardinality [1..*]\n                            Includes\n                                BasicFeatures {abstract}\n                                    Mandatory\n                                        NumberofBeds {abstract}\n                                            Cardinality [1..1]\n                                                Integer\n                                        View {abstract}\n                                            Cardinality [1..1]\n                                                String\n                                        Size {abstract}\n                                            Cardinality [1..1]\n                                                String\n                                OptionalFeatures {abstract}\n                                    Mandatory\n                                        PersonalSpaArea {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                        BestViewOption {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                    Optional\n                                        BestViewOption {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                            Constraint BestViewOption => NumberofBeds == 2\n\n                    Booking {abstract}\n                        Cardinality [1..*]\n                            Includes\n                                Dates {abstract}\n                                    Mandatory\n                                        StartDate {abstract}\n                                            Cardinality [1..1]\n                                                DateTime\n                                        EndDate {abstract}\n                                            Cardinality [1..1]\n                                                DateTime\n                                FeesBookings {abstract}\n                                    Optional\n                                        Fee {abstract}\n                                            Cardinality [1..1]\n                                                Decimal\n                                        Booking {abstract}\n                                            Cardinality [1..1]\n                                                String\n}    \n}    \n```",
+      "parsable": false,
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. "
+    },
+    {
+      "errors": [
+        "line 1:66 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '`'",
+        "line 3:1 token recognition error at: '`'",
+        "line 3:2 token recognition error at: '`'",
+        "line 24:0 token recognition error at: '`'",
+        "line 24:1 token recognition error at: '`'",
+        "line 24:2 token recognition error at: '`'",
+        ""
+      ],
+      "output": "Here's the translation in Uvl-Code based on the given instructions:\n\n```uvl\nNamespace UniversityCourseRegistration {\n\n    Features {\n        MinimumCredits {12}\n        UndergraduateCore {100}\n        GraduateSeminar {500}\n        Prerequisites {AdvancedAI => [IntroToAI, LinearAlgebra]}\n        MutuallyExclusive {StatisticsForBiology, StatisticsForBusiness}\n        RoboticsLab {OptionalElective, HardCap{20}}\n        ThesisDefense {Completion{60Credits, DissertationProposalReviewPassed} => True}\n    }\n\n    Constraints {\n        MinimumCredits | UndergraduateCore | GraduateSeminar\n       !Prerequisites | MutuallyExclusive\n        RoboticsLab | ThesisDefense\n    }\n    \n}\n\n```",
+      "parsable": false,
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review."
+    },
+    {
+      "errors": [
+        "line 1:65 token recognition error at: ':'",
+        ""
+      ],
+      "output": "Here is the translation in UGLY CODE format based on your request:\n\nPCCT{CPU{Intel|AMD}MST{LGA1700|AM5}MC{Z790}RMT{DDR4|DDR5}GPUC{RTX4090}PSUMIN{850W}GPUPL{350mm}CASFM{ATX|MicroATX}CLCF{CPU Cooler Clearance}ACC{Air Cooler Height}",
+      "parsable": false,
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance."
+    },
+    {
+      "errors": [
+        "line 1:89 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '`'",
+        "line 3:1 token recognition error at: '`'",
+        "line 3:2 token recognition error at: '`'",
+        "line 48:0 token recognition error at: '`'",
+        "line 48:1 token recognition error at: '`'",
+        "line 48:2 token recognition error at: '`'",
+        ""
+      ],
+      "output": "Here is the translation of the given text into Uglified Vietnamese Code (UVL-Code) format:\n\n```uvl\nfeatures\n\t\"CI/CD system\"\n\t\tmandatory\n\t\t\t\"Deployment pipelines\"\n\t\t\t\tall\n\t\t\t\t\t\"Build\"\n\t\t\t\t\t\"Unit Test\"\n\t\t\t\tmandatory\n\t\t\t\t\t\"Staging\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Unit Test\"\n\t\t\t\tmandatory\n\t\t\t\t\t\"Production\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Staging\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Integration Test\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Security Scan\"\n\t\t\t\t\t\t\t\talternative\n\t\t\t\t\t\t\t\t\t\"Blue/Green\"\n\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\"Monitoring\"\n\t\t\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"Rollback\"\n\t\t\t\t\t\t\t\t\tCanary\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Manual QA Approval\"\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Security Scan\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Hotfix\"\n\t\t\t\t\t\t\t\tor\n\t\t\t\t\t\t\t\t\t\"Blue/Green\"\n\t\t\t\t\t\t\t\t\tCanary\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Monitoring\"\n\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\"Rollback\"\nconstraints\n\t\"Canary\" => \"Monitoring\" & \"Rollback\"\n\t\"Blue/Green\" =>!\"Staging\" &!\"Integration Test\"\n\t\"Blue/Green\" => \"Manual QA Approval\"\n\t\"Blue/Green\" =>!\"Security Scan\"\n```\n\nThis UVL-Code accurately captures the structure and logic of the given English text, adhering to the specified syntax.",
+      "parsable": false,
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'."
+    },
+    {
+      "errors": [
+        "line 1:96 token recognition error at: ':'",
+        "line 3:0 token recognition error at: '`'",
+        "line 3:1 token recognition error at: '`'",
+        "line 3:2 token recognition error at: '`'",
+        "line 41:92 token recognition error at: ':'",
+        "line 48:0 token recognition error at: '`'",
+        "line 48:1 token recognition error at: '`'",
+        "line 48:2 token recognition error at: '`'",
+        ""
+      ],
+      "output": "Here's the translation in UML State Machine Representation (UML-Code) considering the given text:\n\n```uml\nfeatures\n    \"Smart Home Automation\" {\n        mandatory\n            \"Movie Mode\" {abstract}\n                mandatory\n                    \"Set Lights\" {abstract}\n                        alternative\n                            \"10%\" {abstract}\n                            \"100%\" {abstract}\n            \"Morning\" {abstract}\n                mandatory\n                    \"Set Lights\" {abstract}\n                        alternative\n                            \"10%\" {abstract}\n                            \"100%\" {abstract}\n            \"Smart Oven\"\n                mandatory\n                    \"Enable Action\" {abstract}\n                        mandatory\n                            \"Safety Constraint\" {abstract}\n                                alternative\n                                    \"Home Status\" {abstract}\n                                        alternative\n                                            \"Away\" {abstract}\n                                                mandatory\n                                                    \"Smart Oven Disable\" {abstract}\n            \"Air Conditioner\"\n                mandatory\n                    \"Enable Action\" {abstract}\n                        mandatory\n                            \"Dynamic Constraint\" {abstract}\n                                mandatory\n                                    \"Any Window Sensor Open\" {abstract}\n                                        mandatory\n                                            \"All Windows Closed\" {abstract}\n                                                mandatory\n                                                    \"Air Conditioner Enable\" {abstract}\n                                                        note before \"Air Conditioner Enable\": \"5 minutes later\"\n\nconstraints\n    \"Movie Mode\" =>!\"Morning\"\n    \"Smart Oven\" =>!(\"Home Status\" \"Away\")\n    \"Air Conditioner\" =>!\"Any Window Sensor Open\"\n    \"All Windows Closed\" => \"Air Conditioner Enable\"\n```\n\nThis UML-Code captures the relationships, alternatives, and constraints described in the given text.",
+      "parsable": false,
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed."
+    }
+  ],
+  "test_score": 0
+}

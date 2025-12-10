@@ -1,0 +1,147 @@
+{
+  "test_results": [
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 13:0 token recognition error at: ''''",
+        "line 13:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"Engine type\"\n        alternative\n            Diesel\n            Gasoline\n            Electric\n        optional\n            Lane Assist\n            ESP\n            Colour\n\n'''",
+      "parsable": false,
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 18:0 token recognition error at: ''''",
+        "line 18:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    SecurityTeam\n        mandatory\n            SecurityArchitect {type 'Person'}\n            SecurityEngineer {type 'Person'}\n            Manager {type 'Person'}\n            ScrumMaster {type 'Person'}\n\nconstraints\n    SecurityTeam\n        mandatory\n            SecurityArchitect\n            SecurityEngineer\n            Manager\n            ScrumMaster\n\n'''",
+      "parsable": false,
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 11:0 token recognition error at: ''''",
+        "line 11:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"Text Editing\"\n        mandatory\n            MS_Word {package 'Word'}\n            Pages {package 'Word'}\n        optional\n            Excel {package 'Excel'}\n            Numbers {package 'Numbert'}\n\n'''",
+      "parsable": true,
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.)."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 21:0 token recognition error at: ''''",
+        "line 21:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    CoffeeShop {abstract}\n        mandatory\n            Drinks\n                alternative\n                    \"Coffee\"\n                    \"Tea\"\n        optional\n            Foods\n                alternative\n                    Croissants\n                    Bagels\n\nconstraints\n    PaymentMethod\n        alternative\n            Card\n            Cash\n\n'''",
+      "parsable": false,
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 24:0 token recognition error at: ''''",
+        "line 24:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"Bicycle\"\n        mandatory\n            \"Groupset\"\n                alternative\n                    \"SRAM\" {brand 'SRAM'}\n                    \"Shimano\"\n            \"Tyres\"\n                alternative\n                    \"Wide tyres\"\n                        optional\n                            \"Profile\"\n            \"Handlebars\"\n                alternative\n                    \"Drop bar handlebar\"\n                    \"Flat handlebar\"\n            \"Additional Features\"\n                optional\n                    \"Extra wide tyres\"\n                        alternative\n                            \"Deep profile\"\n\n'''",
+      "parsable": true,
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 30:0 token recognition error at: ''''",
+        "line 30:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    ChocolateProductionLine {abstract}\n        mandatory\n            \"Melt\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            \"Mixing\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            \"Colling\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            LogisticSystem\n        mandatory\n            PackagingStation\n\nconstraints\n    NutChocolate => NutChocolate\n\n'''",
+      "parsable": false,
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 17:0 token recognition error at: ''''",
+        "line 17:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    TaxCalculator\n        mandatory\n            NetToPrice {type double}\n            SumOfProducts {type double}\n            BuyerLocation {type string}\n        optional\n            TaxPerProduct {type double}\n            BruttoPrice {type double}\n            TaxRate {type double}\n        optional\n            LoggingData\n                optional BasePrice {type double}\n                    optional RuleCalculation {optional bool}\n\n'''",
+      "parsable": false,
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 16:0 token recognition error at: ''''",
+        "line 16:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    RoomBookingService {abstract}\n        mandatory\n            BasicFeatures\n                alternative\n                    Beds {number 2}\n                        optional\n                            SpaArea\n                            ViewSize\n            OptionalFeatures\n                alternative\n                    PersonalSpa\n                    BestViewOption\n\n'''",
+      "parsable": true,
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. "
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"University Course Registration System\" {abstract}\n        mandatory\n            \"Enrollment Criteria\"\n                alternative\n                    \"12 Credits Required\"\n                        mandatory\n                            \"Minimum 12 Credits\"\n                        optional\n                            \"Core Courses\"\n                                alternative\n                                    \"100-Level Core\"\n                                        mandatory\n                                            \"Covers Intro to AI and Linear Algebra\"\n                                            \"Advanced AI\"\n                            \"Seminar Prerequisites\"\n                            \"Mutually Exclusive Courses\"\n                                alternative\n                                    \"Statistics for Biology\"\n                                        mandatory\n                                            \"Statistics for Business\"\n                                        optional\n                                            \"Robotics Lab\"\n                        optional\n                            \"Optional Elective\"\n                        optional\n                            \"Dissertation Review\"\n\nconstraints\n    \"Robots Lab Course Enrollment Cap\" => 20\n\nfeatures\n    \"Course Selection Rules\"\n        alternative\n            \"100-Level Core Course\"\n            \"500-Level Seminar\"\n            \"Mutual Prequisites\"\n                alternative\n                    \"Advanced AI\"\n                    \"Linear Algebra\"\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n                optional\n                    \"Robotics Lab\"\n                    \"Robotics Lab (Hard Enroll Cap)\"\n                    \"Robotics Lab (Soft Enroll Cap)\"\n                    \"Robotics Lab (Hard Enroll Cap)\"\n\nconstraints\n    \"Elective Course Hard Enrollment Cap\" => 20\n    \"Elective Course Soft Enrollment Cap\" => 20\n\nfeatures\n    \"Module Availability\"\n        alternative\n            \"Thesis Defense Module Available Only To Students Who Have Completed 60 Credits and Passed Their Dissertation Proposal Review\"",
+      "parsable": false,
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"PC Configurator Tool\"\n        mandatory\n            \"CPU\"\n                alternative\n                    \"Intel\" | \"AMD\"\n                        alternative\n                            \"LGA 1700\" | \"AM5\"\n                        alternative\n                            \"Z790\"\n        mandatory\n            \"Motherboard Chipset\"\n                alternative\n                    \"Z790\"\n        mandatory\n            \"RAM Type\"\n                alternative\n                    \"DDR4\" | \"DDR5\"\n        mandatory\n            \"GPU\"\n                alternative\n                    \"RTX 4090\" | \"High-end GPU\"\n                        optional\n                            \"Power Supply\" {power {max 850W}}\n                                optional\n                                    \"PSU\" {min 600W}\n                                optional\n                                    \"Air Cooler Height\" {height < 350mm}\n        mandatory\n            \"Case\"\n                alternative\n                    \"ATX\", \"Micro-ATX\"\n\nconstraints\n    \"ATX Case\" => \"LGA 1700\" || \"AM5\" || \"Z790\"\n    \"Micro-ATX Case\" => \"ATX\" || \"Micro-ATX\"\n    \"Large Air Cooler\" => \"Power Supply\" && \"Air Cooler Height\"",
+      "parsable": false,
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 67:0 token recognition error at: ''''",
+        "line 67:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"CI/CD System\"\n        mandatory\n            \"Deployment Pipelines\"\n                optional\n                    \"Build\" {stage 'Build'}\n                    optional\n                        \"Unit Test\" {stage 'Unit Test'}\n                        mandatory\n                            \"Staging Deployment\"\n                                optional\n                                    \"Staging Pipeline\"\n                                        optional\n                                            \"Optional Strategy\"\n                                                mandatory\n                                                    \"Staging\"\n                                                        optional\n                                                            \"Pipeline Steps\"\n                                                                optional\n                                                                    Build\n                                                                    Unit Test\n                    mandatory\n                        \"Production Deployment\"\n                            optional\n                                \"Staging Deployment\"\n                                    mandatory\n                                        optional\n                                            \"Staging Pipeline\"\n                                                optional\n                                                    \"Pipeline Steps\"\n                                                        optional\n                                                            Build\n                                                        optional\n                                                            Unit Test\n                                mandatory\n                                    optional\n                                        optional\n                                            \"Production Deployment\"\n                                                optional\n                                                    \"Reduction Stage\"\n                                                        mandatory\n                                                            Monitoring\n                                                                optional\n                                                                    Rollback Trigger\n                                                                optional\n                                                                    \"Rollback Trigger\"\n                                                        optional\n                                                            Hotfix Pipeline\n                                                optional\n                                                    optional\n                                                        optional\n                                                            Manual QA Approval\n                                                        optional\n                                                            Security Scan\n\nconstraints\n    \"Production Deployment\" => \"Staging Deployment\"\n    \"Staging Deployment\" => \"Staging Pipeline\"\n    \"Staging Deployment\" => \"Integration Test\"\n    \"Staging Deployment\" => \"Security Scan\"\n    \"Production Deployment\" => \"Production Pipeline\"\n    \"Production Deployment\" => \"Staging Pipeline\"\n    \"Production Deployment\" => \"Rollback Trigger\"\n    \"Production Deployment\" => \"Hotfix Pipeline\"\n\n'''",
+      "parsable": false,
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 25:154 token recognition error at: '%'",
+        "line 43:193 token recognition error at: ''\\n'",
+        "line 74:0 token recognition error at: ''''",
+        "line 74:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    SmartHomeAutomationSystem {abstract}\n        mandatory\n            Rule {abstract}\n                mandatory\n                    Trigger {abstract}\n                        mandatory\n                            OptionalConditions {abstract}\n                                mandatory\n                                    Action {abstract}\n                                        alternative\n                                            MovieMode {abstract}\n                                                mandatory\n                                                    Priority {abstract}\n                                                        alternative\n                                                            BlockMorning {abstract}\n                                                                mandatory\n                                                                    Scenes {abstract} {abstract}\n                                                                        optional\n                                                                            Morning {abstract}\n                                                                                optional\n                                                                                    SetsLightsTo {abstract} {lights_to_10%}\n                                                                                     optional\n                                                                                                                                                       100%\n                                                                                optional\n                                                                                    BlocksRunning {abstract}\n                                                                                            mandatory\n                                                                                                'Morning'\n                                                                                         optional\n                                                                                                                                                           Running\n                                                                                                                                                          mandatory\n                                                                                                                                                              True\n                                                                                                                                                             optional\n                                                                                                                                                                 False\n                                                                                                                                                                     mandatory\n                                                                                                                                                                         'SmartOven'\n                                                                                                                                                                             mandatory\n                                                                                                                                                                                 disableIf {abstract} 'HomeStatus' {abstract}\n                                                                                                                                                                                     optional\n                                                                                                                                                                                         'Away'\n                                                                                                                                                                                             mandatory\n                                                                                                                                                                                                 '\n                                                                                         mandatory\n                                                                                                                                                             WindowSensorReports {abstract} {open {abstract}}\n                                                                                                                                                                   mandatory\n                                                                                                                                                                       WindowSensorReported {abstract} {open {abstract}}\n                                                                                                                                                                                   mandatory\n                                                                                                                                                                                       Open {abstract}\n                                                                                                                                                                                           optional\n                                                                                                                                                                                               Closed {abstract}\n                                                                                                                                                                                                   mandatory\n                                                                                                                                                                                                     WindowsClosed {abstract}\n                                                                                                                                                                                                         mandatory\n                                                                                                                                                                                                             5MinutesAfterAllWindowsClosed\n                                                                                                                                                                                                          optional\n                                                                                                                                                                                                              ReEnables5MinutesAfterAllWindowsClosed {abstract}\n                                                                                                                                                                                                        \n        mandatory\n            SafetyConstraints {abstract}\n                mandatory\n                    Constraint {abstract}\n                        mandatory\n                            DisableIf {abstract} 'SmartOven'\n                                                                                   optional\n                                                                                       Mandatory {abstract} AirConditioner\n                                                                                           optional\n                                                                                               DynamicDisable {abstract} IfAnyWindowSensorReports {abstract} And {abstract} OnlyReenables5MinutesAfterAllWindowsClosed\n                                                                                                                     optional\n                                                                                                                         5MinutesAfterAllWindowsClosed\n                                                                                                                             optional\n                                                                                                                                                                                              ReEnables5MinutesAfterAllWindowsClosed {abstract}\n\n'''",
+      "parsable": false,
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed."
+    }
+  ],
+  "test_score": 0.25
+}

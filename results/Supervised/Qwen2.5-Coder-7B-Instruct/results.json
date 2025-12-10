@@ -1,0 +1,156 @@
+{
+  "test_results": [
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 20:0 token recognition error at: ''''",
+        "line 20:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    Car {abstract}\n        mandatory\n            Engine\n                alternative\n                    DieselEngine\n                    GasolineEngine\n                    ElectricEngine\n        optional\n            LaneAssistSystem\n            ESP\n        mandatory\n            Color\n                alternative\n                    RedColor\n                    BlueColor\n                    WhiteColor\n\n'''",
+      "parsable": true,
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 18:0 token recognition error at: ''''",
+        "line 18:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    SecurityTeam {abstract}\n        mandatory\n            \"Security Architect\" {abstract}\n                optional\n                    \"Security Engineer\"\n\n        mandatory\n            Manager\n\n        mandatory\n            ScrumMaster\n\nconstraints\n    'Security Architect'!= 'Security Engineer'\n\n'''",
+      "parsable": false,
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 14:0 token recognition error at: ''''",
+        "line 14:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    Computer\n        mandatory\n            TextEditingProgramm\n                alternative\n                    MSWord\n                    Pages\n            CellCalculationTool\n                alternative\n                    Msexcel\n                    Numbers\n\n'''",
+      "parsable": true,
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.)."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 19:0 token recognition error at: ''''",
+        "line 19:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    CoffeeShop\n        mandatory\n            PaymentMethod\n                alternative\n                    Card\n                    Cash\n        optional\n            Drinks\n                alternative\n                    Coffee\n                    Tea\n            Foods\n                alternative\n                    Croisant\n                    Bagel\n\n'''",
+      "parsable": true,
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 28:0 token recognition error at: ''''",
+        "line 28:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    Bicycle {abstract}\n        mandatory\n            Groupset {abstract}\n                alternative\n                    SRAM\n                    Shimano\n        optional\n            GravelBike\n                mandatory\n                    Tyres (\"Wide Tyres with Some Profile\")\n                    DropBarHandlebar\n            RoadBike\n                mandatory\n                    SlimTyres (\"Slim Tyres with No Profile\")\n                    DropBarHandlebar\n            MountainBike\n                mandatory\n                    ExtraWideTyres (\"Extra Wide Tyres with Deep Profile\")\n                    FlatHandlebar\n\nconstraints\n    GravelBike =>!SlimTyres\n    MountainBike =>!SlimTyres\n   !GravelBike => SlimTyres optional\n\n'''",
+      "parsable": false,
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 18:0 token recognition error at: ''''",
+        "line 18:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    FactoryProductionLine {abstract}\n        mandatory\n            LogisticSystem\n            PackagingStation\n        alternative\n            NormalChocolate {abstract}\n                mandatory\n                    MeltingStation\n                    MixingStation\n                    CoolingStation\n            NutChocolate {abstract}\n                mandatory\n                    NormalChocolate\n                    BakingStation\n\n'''",
+      "parsable": false,
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\r'",
+        "line 44:20 token recognition error at: '= '",
+        "line 44:24 token recognition error at: '%'",
+        "line 46:20 token recognition error at: '= '",
+        "line 46:23 token recognition error at: '%'",
+        "line 52:32 token recognition error at: '= '",
+        "line 58:24 token recognition error at: '= '",
+        "line 64:24 token recognition error at: '= '",
+        "line 66:0 token recognition error at: ''''",
+        "line 66:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\r\nfeatures\r\n    TaxCalculator {abstract}\r\n        mandatory\r\n            NettoPrice {abstract}\r\n                alternative\r\n                    FixedNettoPrice\r\n                    CalculatedNettoPrice\r\n            SumOfProducts {abstract}\r\n                alternative\r\n                    FixedSumOfProducts\r\n                    CalculatedSumOfProducts\r\n            BuyerLocation {abstract}\r\n                alternative\r\n                    DomesticBuyer\r\n                    ForeignBuyer\r\n            SellerLocation {abstract}\r\n                alternative\r\n                    DomesticSeller\r\n                    ForeignSeller\r\n        optional\r\n            Discount\r\n\r\nconcepts\r\n    CalculatedNettoPrice\r\n        implies\r\n            CalculatedSumOfProducts\r\n\r\n    DomesticBuyer {abstract}\r\n        implies\r\n            DomesticSeller\r\n\r\n    ForeignBuyer {abstract}\r\n        implies\r\n            ForeignSeller\r\n\r\n    CalculatedBasePrice {abstract}\r\n\r\nrules\r\n    'TaxRateRule'\r\n        if\r\n            DomesticBuyer & ForeignSeller\r\n        then\r\n            TaxRate = 19%\r\n        else\r\n            TaxRate = 7%\r\n\r\n    'CalculatedBasePriceRule'\r\n        when\r\n            CalculatedBasePrice\r\n        then\r\n            CalculatedBasePrice = NettoPrice + SumOfProducts - Discount\r\n\r\n    'BruttoPriceRule'\r\n        when\r\n            CalculatedBasePrice\r\n        then\r\n            BruttoPrice = CalculatedBasePrice * (1 + TaxRate)\r\n\r\n    'LoggingDataRule'\r\n        when\r\n            CalculatedBasePrice\r\n        then\r\n            LoggingData = \"Calculated Base Price: \" + CalculatedBasePrice + \", Rule of Calculation: \" + TaxRateRule\r\n\r\n'''",
+      "parsable": false,
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\r'",
+        "line 17:0 token recognition error at: ''''",
+        "line 17:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\r\nfeatures\r\n    Room_Booking_Service {abstract}\r\n        mandatory\r\n            Rooms {abstract}\r\n                alternative\r\n                    Two_Bed_Room\r\n                    Single_Bed_Room\r\n                    Suite_Room\r\n        mandatory\r\n            Bookings {abstract}\r\n\r\nconstraints\r\n    Two_Bed_Room -> Best_View_Option\r\n    Two_Bed_Room -> Personal_Spa_Area\r\n\r\n'''",
+      "parsable": false,
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. "
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 28:0 token recognition error at: ''''",
+        "line 28:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"University Course Registration System\"\n        mandatory\n            Students {credits >= 12}\n                alternative\n                    Undergraduates\n                        required\n                            \"Core 100-Level Course\"\n                    GraduateStudents\n                        required\n                            \"Seminar 500-Level\"\n\n        optional\n            Electives\n                alternative\n                    \"Robotics Lab\" {enrollmentCap == 20}\n\n        mandatory\n            \"Thesis Defense\" {creditsCompleted >= 60 && \"Dissertation Proposal Review Passed\"}\n\n        constraints\n            Prerequisites\n                \"Advanced AI\" implies [\"Intro to AI\", \"Linear Algebra\"]\n            Exclusions\n                \"Statistics for Biology\" excludes \"Statistics for Business\"\n\n'''",
+      "parsable": false,
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 51:0 token recognition error at: ''''",
+        "line 51:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"PC Configurator\"\n        mandatory\n            \"CPU Choice\" {abstract}\n                alternative\n                    \"Intel CPU\"\n                    \"AMD CPU\"\n        mandatory\n            \"Motherboard Socket\" {abstract}\n                mandatory\n                    \"Socket Dependency\" {abstract}\n                        alternative\n                            \"LGA 1700 Socket\" {implies \"Z790 Chipset\"}\n                            \"AM5 Socket\" {implies \"B650 Chipset\"}\n        mandatory\n            \"Chipset\" {abstract}\n                alternative\n                    \"Z790 Chipset\" {implies \"DDR4 RAM\"}\n                    \"B650 Chipset\" {implies \"DDR5 RAM\"}\n        mandatory\n            \"GPU Selection\" {abstract}\n                mandatory\n                    \"Power Requirement\" {abstract}\n                        alternative\n                            \"High End GPU\" {implies \"Minimum PSU 850W\"}\n        mandatory\n            \"GPU Compatibility\" {abstract}\n                mandatory\n                    \"Physical Length\" {abstract}\n                        alternative\n                            \"350mm GPU\" {implies \"Case Maximum Clearance 350mm\"}\n        mandatory\n            \"Case Type\" {abstract}\n                alternative\n                    \"ATX Case\"\n                    \"Micro-ATX Case\"\n        optional\n            \"Large Air Cooler\" {abstract}\n                mandatory\n                    \"Cooler Height\" {abstract}\n                        alternative\n                            \"Cooler Height <= 20mm\" {implies \"Case CPU Cooler Clearance >= 20mm\"}\n\nconstraints\n    \"Socket Dependency\" => \"Z790 Chipset\" || \"B650 Chipset\"\n    \"Power Requirement\" => \"Minimum PSU 850W\"\n    \"Physical Length\" => \"Case Maximum Clearance 350mm\"\n    \"Cooler Height\" => \"Case CPU Cooler Clearance >= 20mm\"\n\n'''",
+      "parsable": false,
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 38:0 token recognition error at: ''''",
+        "line 38:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    \"Continuous Integration/Continuous Deployment System\"\n        mandatory\n            \"Deployment Pipelines\" {abstract}\n                mandatory\n                    \"Build Stage\"\n                    \"Unit Test Stage\"\n                optional\n                    \"Staging Deployment\" {\n                        mandatory\n                            \"Passes Unit Tests\"\n                    }\n                mandatory\n                    \"Production Deployment\" {\n                        mandatory\n                            \"Successful Staging Deployment\",\n                            \"Passes Integration Test\",\n                            \"Passes Security Scan\"\n                        alternative\n                            \"Blue/Green Strategy\" {\n                                mandatory\n                                    \"Double Infrastructure Resources During Swap\"\n                            }\n                            \"Canary Strategy\" {\n                                mandatory\n                                    \"Monitoring Stage\" {abstract},\n                                        mandatory\n                                            \"Rollback Trigger\"\n                            }\n                        optional\n                            \"Bypasses Staging and Integration Test\" {\n                                mandatory\n                                    \"Manual QA Approval\"\n                            }\n                    }\n\n'''",
+      "parsable": false,
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'."
+    },
+    {
+      "errors": [
+        "line 1:0 token recognition error at: ''''",
+        "line 1:2 token recognition error at: ''uvl\\n'",
+        "line 36:0 token recognition error at: ''''",
+        "line 36:2 token recognition error at: '''",
+        ""
+      ],
+      "output": "'''uvl\nfeatures\n    SmartHomeController {abstract}\n        mandatory\n            MovieMode\n                implies\n                    LightLevel_10percent\n            Morning\n                implies\n                    LightLevel_100percent\n                conflict\n                    MovieMode\n        mandatory\n            SmartOven\n                implies\n                    HomeStatus_Away =>!SmartOvenActive\n        mandatory\n            AirConditioner\n                implies\n                    WindowSensor_Open =>!AirConditionerActive\n                implies\n                    all(WindowSensor_Closed) => AirConditionerActive\n                implies\n                    all(WindowSensor_Closed) => disableAfter(300, AirConditionerActive)\n        optional\n            WindowSensor\n                or\n                    WindowSensor_Open\n                    WindowSensor_Closed\n\nconstraints\n    HomeStatus_Away =>!SmartOvenActive\n    all(WindowSensor_Closed) => AirConditionerActive\n    all(WindowSensor_Closed) => disableAfter(300, AirConditionerActive)\n\n'''",
+      "parsable": false,
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed."
+    }
+  ],
+  "test_score": 0.25
+}

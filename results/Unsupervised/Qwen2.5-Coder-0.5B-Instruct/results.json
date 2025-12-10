@@ -1,0 +1,109 @@
+{
+  "test_results": [
+    {
+      "errors": [
+        ""
+      ],
+      "output": "Kuljška tržba je vsebna, ki ima eno motor, ki može být diesel, petrolno ali elektrikno. Tudi so bodo dodatne pomembni slike za čar, kot bodo lahko biste lahko razlikali boječko. Tudi so tudi različne boječke karata.",
+      "parsable": false,
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car."
+    },
+    {
+      "errors": [
+        ""
+      ],
+      "output": "O projekturne skupanje trebaju skupanja za sifra i upravljanje skupnog. To je moguće isto samo za različite korisnika. Skupanja se određuje i članovi, ali i priljučnik i specijalizirani scrum-master.",
+      "parsable": false,
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master."
+    },
+    {
+      "errors": [
+        ""
+      ],
+      "output": "Eskriptin bir tabanlı uygulama, MS Word, MS Excel vb. uygulamaları ve sayfa hesaplamak için MS Excel, Numberts vb. uygulamaları içeriyor.",
+      "parsable": false,
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.)."
+    },
+    {
+      "errors": [
+        ""
+      ],
+      "output": "Bakery serves different drinks (Coffee, Tea, etc.) and different foods (Croissants, Bagels etc.). You can either pay by card or cash.",
+      "parsable": false,
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash."
+    },
+    {
+      "errors": [
+        ""
+      ],
+      "output": "Ovo je povečena tržba, ki se srednjih biljev zarešča z grupem (Produkt je SRAM ali Shimano). Zbog pravilnosti tržbe je pravilno naško zgodovino z širajkami. \n\nŽeljajoški biljevi so zgodovini z širajkami, ki so ležajo za različne potrebe. \n\nBike z širajkami je ali z karpom širajkami z vkladom z rastek. \n\nBike z širajkami je ali z karpom širajkami z vkladom z rastek. \n\nBike z širajkami je ali z karpom širajkami z vkladom z rastek. \n\nBike z širajkami je ali z karpom širajkami z vkladom z rastek.",
+      "parsable": false,
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike."
+    },
+    {
+      "errors": [
+        ""
+      ],
+      "output": "A fábrica tem uma linha de produção que produz diferentes tipos de chocolate. Para o chocolate normal, a colheita, a mistura e a colina está necessária. Para a produção de nut-chocolate, todas as especificadas para o chocolate normal e um station de preparação extra é necessário. Todas as linhas exigem um sistema de logística e um station de distribuição.",
+      "parsable": false,
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station."
+    },
+    {
+      "errors": [
+        "line 1:69 token recognition error at: ':'",
+        "line 1:132 token recognition error at: ':'",
+        ""
+      ],
+      "output": "Štěžný kalkulaček v zásobních softwarách. Kalkulaček vytvoří podle předaných potřeb: nákladní ceny, součet produktů a město výsledku a vysvětlení závislostí: zapsané base cena a regulární částka.",
+      "parsable": false,
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation."
+    },
+    {
+      "errors": [
+        ""
+      ],
+      "output": "Svetelka pridobnik je opetno upravlja različne mesta u hotelu. Mesto ima diferencije običnih podatkov, kao broj stolova, prikorišavanje i veličina. Koristno je opcionalno podatkovom mogućnosti, kao privatni spa ili najbolje prikorišavanje. Najbolje prikorišavanje je samo za dva stolovi. Operativna sistemka može upravlja preko biljezaka. U svetu preko preko prezentacije se nalazi detalji za prekočenje i opcionalni izbori.",
+      "parsable": false,
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. "
+    },
+    {
+      "errors": [
+        "line 1:142 token recognition error at: ':'",
+        ""
+      ],
+      "output": "Üdvöklágod, hogy egy universitiesen személyen jelentkező kurs regisztráció system segítségével. Azonban azok az érdekéseknek csak 12 különös fajtak szükségesek: a 100-vel rendelkezett könyvtár Core csapatos, és a 500-vel rendelkezett seminarek Seminars. Miben azonban vannak kapcsolatok, mint 'Advanced AI', amelyek közvetlenül egy 100-vel rendelkezett könyvtár és egy 500-vel rendelkezett seminarek közvetlenül egy 100-vel rendelkezett könyvtár. Az 'Robotics Lab' kurs nem összevonható, mert csak 20 felhasználók szükségesek, amelyek már doktorok vagy folyamatosan használták. Az 'Thesis Defense' modul csak akkor érdekésekre van megjelenhető, ha azonban már 60 fajták és a doktorok vagy folyamatosan 60-vel rendelkezett fajták könyvtáról és a doktorok vagy folyamatosan 60-vel rendelkezett seminarek közvetlenül egy 100-vel rendelkezett könyvtáról.",
+      "parsable": false,
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review."
+    },
+    {
+      "errors": [
+        ""
+      ],
+      "output": "Opcijer za konfiguraciju PC je guidečna toola koje koristi korisnike. Odabrani CPU (napravo Intel ili AMD) određuje potrebnu socket motherboarda (napravo LGA 1700 ili AM5). Brojne chipset (napravo Z790) je koristljiva za pruženje dve strane RAM (DDR4 ili DDR5). Zdržajna GPU (napravo RTX 4090) ima minimalnu potrebu za značajnost značajnosti PSU (PSU), a potrebno je 850W ili veće različite od case's najbolje potrebno GPU clearance. Nakon toga, case (napravo ATX ili Micro-ATX) mora da se podijelje s motherboardom i može biti veliki viški aerozakutnik (case's maximum GPU cooler clearance).",
+      "parsable": false,
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance."
+    },
+    {
+      "errors": [
+        ""
+      ],
+      "output": "CI/CD sistem definiše pipelines deplomovanih. Uživateljih pipelines moraju izvršiti 'Build' i 'Unit Test' stadije. A 'Staging' deplomovanih je obavezno i može samo da se izvrši posle 'Unit Test' uspešno. A 'Produkcija' deplomovanih trebaju da se izvrši 'Staging' i 'Integration Test', ali takođe potrebno da bude 'Integration Test' i 'Security Scan' uspešno. Za 'Produkciju', korisnik može odabrati odgovarajući strategijama 'Blue/Green' ili 'Canary'. Zadnje za 'Produkciju', korisnik može izvršiti 'Monitoring' stadij, ali takođe trebaju da bude 'Rollback' pridružen za swap. Zadnje za 'Produkciju', korisnik može izvršiti 'Hotfix' pipeline bez 'Staging' i 'Integration Test', ali trebaju da bude 'Manual QA Approval' step i treba da se uspešno izvrši 'Security Scan'.",
+      "parsable": false,
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'."
+    },
+    {
+      "errors": [
+        "line 1:212 token recognition error at: ':'",
+        "line 1:264 token recognition error at: '%'",
+        "line 1:339 token recognition error at: '%'",
+        "line 1:398 token recognition error at: '%'",
+        "line 1:421 token recognition error at: ':'",
+        ""
+      ],
+      "output": "Skupna inteligencija za automatske domaćine linkuje prilagodne device prema regijama. Regija ima potrebe priključavanja, opcionalnih predvidenja i operacija. Regije moraju imati prioriteta da respektiraju konflikte: 'Naravno' sceniranje (seta zeljenih lightova na 10%) bi trebalo zakrijeti 'Ukoliko' sceniranje (seta zeljenih lightova na 100%) izvan 'Dnevno' sceniranje (seta zeljenih lightova na 100%). Zasebnost je crvena: 'Smaršteno' akcija se ne može zatvoriti ako 'Status samednog' je 'Zapremena'. Dodatno, 'Lampovica' akcija se ne može da bi trebalo da bi se aktivirao ako 'Kutni zvuk' ili 'Ponuda' preko svih prilagodnih smera je otvoreno i samo može da se aktivirao 5 minuta posle svih svih prilagodnih smera.",
+      "parsable": false,
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed."
+    }
+  ],
+  "test_score": 0
+}
