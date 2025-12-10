@@ -1,24 +1,23 @@
-main.hug_token = "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"
-main.model_dir = "savings"
-main.model_name = "microsoft/Phi-4-mini-instruct"
-main.supervised = True
-main.finetuning = True
+main.hug_token = "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"    # Enter your Huggingface-Token here
+main.model_dir = "savings"                                  # Relative filepath for savings of tuning and evaluation
+main.model_name = "Qwen/Qwen2.5-0.5B-Instruct"              # Copy model name from huggingface
+main.supervised = True                                      # Change between 
+main.finetuning = True                                      # Change to false for evaluating model without fine-tuning
 
-get_dataset.train_eval_split = 0.9
+get_dataset.train_eval_split = 0.9                          # Split for train/eval data
 
-get_unsupervised_datasets.seq_length = 1024
-get_unsupervised_datasets.git_urls = ["https://github.com/Universal-Variability-Language/uvl-models.git",
-                                        "https://github.tik.uni-stuttgart.de/st191622/uvl_data.git"]
-get_unsupervised_datasets.repo_dir = "uvl-repos"
+get_unsupervised_datasets.seq_length = 1024                 # Sequence length for unsupervised tuning (also limits file size -> one file one seqiuence)
+get_unsupervised_datasets.git_urls = ["https://github.com/Universal-Variability-Language/uvl-models.git"]
+get_unsupervised_datasets.repo_dir = "uvl-repos"            # Relative folderpath with uvl files
 
-get_supervised_datasets.file = "uvl-repos/uvl_dataset.json"
+get_supervised_datasets.file = "uvl-repos/uvl_dataset.json" #
 get_supervised_datasets.system_prompt = "Translate the following text with variabilities to syntactic correct uvl-Code: "
 
 
-train.epochs = 15
-train.batch_size = 1
-train.lr = 5e-5
-train.lr_sheduler = "constant" 
-train.lora_params = {"rank": 8, "dropout": 0.1, "alpha": 16}
+train.epochs = 10                                           # Trainign Epochs
+train.batch_size = 1                                        # Batch size
+train.lr = 5e-5                                             # Learning rate
+train.lr_sheduler = "constant"                              # Learning rate sheduler
+train.lora_params = {"rank": 8, "dropout": 0.1, "alpha": 16}# Lora params
 
-evaluate.dataset_file = "uvl-repos/test_dataset.json"
+evaluate.dataset_file = "uvl-repos/test_dataset.json"       # Test dataset for score evaluation
