@@ -1,9 +1,9 @@
 import huggingface_hub
 import gin
-import util
-import dataset
-import train
-import evaluate
+import src.util as util
+import src.dataset as dataset
+import src.train as train
+import src.evaluate as evaluate
 
 @gin.configurable
 def main(hug_token, model_dir, model_name, supervised, finetuning):

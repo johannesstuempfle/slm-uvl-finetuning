@@ -4,7 +4,7 @@ import torch
 from torch.utils.data import Dataset
 import random
 import gin
-import util
+import src.util as util
 from datasets import load_dataset
 
 PRE_TEXT = "The following given UVL-Code is written with correct syntax: \n\n"
@@ -177,7 +177,7 @@ def get_supervised_datasets(file, system_prompt, train_eval_split):
     Returns:
         train_dataset, eval_dataset (dataset, dataset): datasets with samples
     """
-    file = os.path.join(os.path.dirname(__file__), file)
+    file = os.path.join(os.path.dirname(__file__), os.pardir, file)
 
     def translate(sample):
         return {

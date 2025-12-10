@@ -60,7 +60,7 @@ def evaluate(model_name, output_dir, dataset_file, from_finetuned):
             data = json.load(json_file)
         return data
 
-    dataset_file = os.path.join(os.path.dirname(__file__), dataset_file)
+    dataset_file = os.path.join(os.path.dirname(__file__), os.pardir, dataset_file)
 
     if from_finetuned:
         model = transformers.AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")

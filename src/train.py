@@ -1,6 +1,5 @@
 import gin
-import os
-import models
+import src.models as models
 
 @gin.configurable
 def train(model_name, train_dataset, eval_dataset, supervised, batch_size, lr, lr_sheduler, 
