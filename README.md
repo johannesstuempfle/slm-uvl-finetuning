@@ -65,6 +65,7 @@ We use **Gin Config** for parameter management and **uv** for seamless execution
 
 ### 1. Configuration
 Before running the training, open the `config.gin` file and adjust the parameters to your needs (e.g., model name, hyperparameters, data paths).
+- for uvl-data -> uvl basic data fetched via given link. For UVL-Hub ([link](https://www.uvlhub.io/)) -> Copy daat from there into uvl-repos folder
 
 ### 2. Run with uv
 You don't need to manually activate the virtual environment. Simply use `uv run` to execute the main script. This ensures the script runs with the correct dependencies and python version defined in your project.
