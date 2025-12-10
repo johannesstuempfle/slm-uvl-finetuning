@@ -6,6 +6,23 @@ import trl
 
 def get_trainer_supervised(model_name, output_dir, train_dataset, eval_dataset, lora_parameter,
                             epochs=1, batch_size=2, lr_rate=5e-5, lr_scheduler_type="constant"):
+    """Creation of supervised trainer object.
+
+    Parameters:
+        model_name (string): name of model (same as on huggingface)
+        train_dataset (dataset): training dataset 
+        eval_dataset (dataset): eval dataset 
+        supervised (bool): switch for supervised and unsupervised training/tuning
+        batch_size (int): batch size
+        lr (float) : learning rate
+        lr_sheduler (string): learning rate sheduler
+        epochs (int): num. epochs
+        output_dir (string): path for savings
+        lora_params (dict): lora paremeters
+
+    Returns:
+        trainer (Trainer): actual trainer object
+    """
     # quantization config
     quantization_config = transformers.BitsAndBytesConfig(load_in_8bit=True)
 
@@ -82,7 +99,23 @@ def find_all_linear_names(model):
 
 def get_trainer_unsupervised(model_name, output_dir, train_dataset, eval_dataset, lora_parameter,
                             epochs=1, batch_size=2, lr=5e-5, lr_scheduler_type="constant"):
-    
+    """Creation of supervised trainer object.
+
+    Parameters:
+        model_name (string): name of model (same as on huggingface)
+        train_dataset (dataset): training dataset 
+        eval_dataset (dataset): eval dataset 
+        supervised (bool): switch for supervised and unsupervised training/tuning
+        batch_size (int): batch size
+        lr (float) : learning rate
+        lr_sheduler (string): learning rate sheduler
+        epochs (int): num. epochs
+        output_dir (string): path for savings
+        lora_params (dict): lora paremeters
+
+    Returns:
+        -
+    """
     # quantization config
     quantization_config = transformers.BitsAndBytesConfig(load_in_8bit=True)
 
