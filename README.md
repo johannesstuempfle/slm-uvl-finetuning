@@ -3,7 +3,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-A streamlined pipeline for fine-tuning Small Language Models (SLMs) on custom datasets. This project leverages **PEFT (Parameter-Efficient Fine-Tuning)** and **LoRA/QLoRA** techniques to ensure training is efficient and accessible on consumer hardware.
+A streamlined pipeline for fine-tuning Small Language Models (SLMs) on custom uvl datasets. This project leverages **PEFT (Parameter-Efficient Fine-Tuning)** and **LoRA/QLoRA** techniques to ensure training is efficient and accessible on consumer hardware.
 
 Project dependencies and virtual environments are managed using **[uv](https://github.com/astral-sh/uv)** for fast setup.
 
@@ -65,7 +65,7 @@ We use **Gin Config** for parameter management and **uv** for seamless execution
 
 ### 1. Configuration
 Before running the training, open the `config.gin` file and adjust the parameters to your needs (e.g., model name, hyperparameters, data paths).
-- for complete uvl-data you need to manually fetch data from UVL-Hub ([link](https://www.uvlhub.io/)) and copy it to `uvl-repos/` folder
+- for complete uvl-data you need to manually fetch data from UVL-Hub ([link](https://www.uvlhub.io/)) and copy it to `uvl-repos/` folder or create a own git project and add it to the git-urls option in config
 
 ### 2. Run with uv
 You don't need to manually activate the virtual environment. Simply use `uv run` to execute the main script. This ensures the script runs with the correct dependencies and python version defined in your project.
