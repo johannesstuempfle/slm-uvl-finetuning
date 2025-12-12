@@ -4,6 +4,7 @@ import src.util as util
 import src.dataset as dataset
 import src.train as train
 import src.evaluate as evaluate
+from pathlib import Path
 
 @gin.configurable
 def main(hug_token, model_dir, model_name, supervised, finetuning):
@@ -26,5 +27,6 @@ def main(hug_token, model_dir, model_name, supervised, finetuning):
     print(result)
 
 if __name__ == "__main__":
-    gin.parse_config_files_and_bindings(['/home/florian/final/uvl-finetuning/config.gin'],[])
+    config_path = Path(__file__).parent / 'config.gin'
+    gin.parse_config_files_and_bindings([str(config_path)], [])
     main()
