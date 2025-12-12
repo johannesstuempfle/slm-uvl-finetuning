@@ -1,7 +1,6 @@
 # Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation
 
 ![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 A streamlined pipeline for fine-tuning Small Language Models (SLMs) on custom uvl datasets. This project leverages **PEFT (Parameter-Efficient Fine-Tuning)** and **LoRA/QLoRA** techniques to ensure training is efficient and accessible on consumer hardware.
 
@@ -26,8 +25,8 @@ This project uses **uv** instead of standard pip/venv for better performance.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/[REPO_NAME].git
-    cd [REPO_NAME]
+    git clone <repository-url>
+    cd <project-directory>
     ```
 
 2.  **Install uv (if not already installed):**
