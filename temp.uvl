@@ -1,0 +1,40 @@
+features
+    SmartHomeAutomationSystem {abstract}
+        mandatory
+            Rule {abstract}
+                mandatory
+                    Triggers
+                        alternative
+                            MovieModeScene
+                            MorningScene
+                optional
+                    Conditions
+                        alternative
+                            HomeStatusIsAway
+                            WindowSensorIsOpen
+                mandatory
+                    Actions
+                        alternative
+                            SetLightsToTenPercent
+                            DisableSmartOvenAction
+                            DisableAirConditionerAction
+
+constraints
+    PriorityRule
+        implies
+            MovieModeScene => not MorningScene
+    HomeStatusConstraint
+        implies
+            HomeStatusIsAway => not SmartOvenAction
+    AirConditionerConstraint
+        implies
+            WindowSensorIsOpen => not AirConditionerAction
+        implies
+            WindowSensorIsClosed for five_minutes => AirConditionerAction
+
+variables
+    HomeStatus : String
+    SmartOvenAction : Boolean
+    AirConditionerAction : Boolean
+    WindowSensorIsOpen : Boolean
+    WindowSensorIsClosed : Boolean

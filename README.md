@@ -1,5 +1,7 @@
 # Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation
 
+![UVL Example — fine-tuned model output vs. baseline](results/uvl_example1_easy_cropped-1.png)
+
 ![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)
 
 A streamlined pipeline for fine-tuning Small Language Models (SLMs) on custom uvl datasets. This project leverages **PEFT (Parameter-Efficient Fine-Tuning)** and **LoRA/QLoRA** techniques to ensure training is efficient and accessible on consumer hardware.

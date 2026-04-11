@@ -1,6 +1,6 @@
-main.hug_token = ""    # Enter your Huggingface-Token here
+main.hug_token = "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"    # Enter your Huggingface-Token here
 main.model_dir = "savings"                                  # Relative filepath for savings of tuning and evaluation
-main.model_name = "Qwen/Qwen2.5-0.5B-Instruct"              # Copy model name from huggingface
+main.model_name = "Qwen/Qwen2.5-Coder-14B-Instruct"              # Copy model name from huggingface
 main.supervised = True                                      # Change between 
 main.finetuning = True                                      # Change to false for evaluating model without fine-tuning
 
