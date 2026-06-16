@@ -1,0 +1,878 @@
+{
+  "score": 0.6666666666666666,
+  "semantic_score": 0.6247239088018736,
+  "flamapy_summary": {
+    "analyzed": 8,
+    "void_rate": 0.0,
+    "mean_dead_features": 0.0,
+    "mean_false_optional_features": 0.0,
+    "mean_configurations": 74.125
+  },
+  "semantic_eval_summary": {
+    "ok": 7,
+    "features_only": 4,
+    "failed": 1,
+    "mean_feature_f1": 0.6864950087658706,
+    "mean_semantic_f1": 0.4620617477760335,
+    "mean_structural_f1": 0.5255968778696052
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "features\n    Car\n        mandatory\n            Engine\n                alternative\n                    Diesel\n                    Gasoline\n                    Electric\n            OptionalAssistances\n                alternative\n                    LaneAssist\n                    ESP\n            CarColor\n                alternative\n                    Red\n                    Green\n                    Blue",
+      "output_raw": "'''uvl\nfeatures\n    Car\n        mandatory\n            Engine\n                alternative\n                    Diesel\n                    Gasoline\n                    Electric\n            OptionalAssistances\n                alternative\n                    LaneAssist\n                    ESP\n            CarColor\n                alternative\n                    Red\n                    Green\n                    Blue\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "Car",
+          "Engine",
+          "OptionalAssistances",
+          "CarColor"
+        ],
+        "configurations_number": 18
+      },
+      "feature_names": [
+        "Car",
+        "Engine",
+        "Diesel",
+        "Gasoline",
+        "Electric",
+        "OptionalAssistances",
+        "LaneAssist",
+        "ESP",
+        "CarColor",
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "semantic_similarity": 0.601469099521637,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": null,
+        "features": {
+          "tp": 10,
+          "fp": 2,
+          "fn": 3,
+          "precision": 0.8333333333333334,
+          "recall": 0.7692307692307693,
+          "f1": 0.8,
+          "missed": [
+            "AssistanceSystems",
+            "Black",
+            "White"
+          ],
+          "hallucinated": [
+            "Green",
+            "OptionalAssistances"
+          ]
+        },
+        "structure": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 7,
+          "n_edges_gt": 7,
+          "group_type_agreement": 0.7777777777777778,
+          "n_group_compared": 9
+        },
+        "semantics": {
+          "n_products_gen": 18,
+          "n_products_gt": 36,
+          "tp": 18,
+          "fp": 0,
+          "fn": 18,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "features\n    SecurityTeam\n        mandatory\n            SecurityArchitect\n                alternative\n                    SamePerson\n            SecurityEngineer\n                alternative\n                    SamePerson\n        optional\n            Manager\n        optional\n            ScrumMaster\n\nconstraints\n    NoSamePerson",
+      "output_raw": "'''uvl\nfeatures\n    SecurityTeam\n        mandatory\n            SecurityArchitect\n                alternative\n                    SamePerson\n            SecurityEngineer\n                alternative\n                    SamePerson\n        optional\n            Manager\n        optional\n            ScrumMaster\n\nconstraints\n    NoSamePerson\n'''",
+      "parsable": null,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "SecurityTeam",
+        "SecurityArchitect",
+        "SamePerson",
+        "SecurityEngineer",
+        "SamePerson",
+        "Manager",
+        "ScrumMaster"
+      ],
+      "semantic_similarity": 0.7189193367958069,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "dangling reference: undeclared feature(s) ['NoSamePerson']",
+        "features": {
+          "tp": 5,
+          "fp": 2,
+          "fn": 0,
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1": 0.8333333333333333,
+          "missed": [],
+          "hallucinated": [
+            "SamePerson"
+          ]
+        },
+        "structure": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 4,
+          "n_edges_gt": 4,
+          "group_type_agreement": 0.5,
+          "n_group_compared": 4
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "features\n    \"Computer Installation\"\n        mandatory\n            \"Text Editing Program\"\n                alternative\n                    \"Microsoft Word\"\n                    \"Microsoft Excel\"\n            \"Cell Calculation Tool\"\n                alternative\n                    \"Microsoft Excel\"\n                    \"Numberts\"",
+      "output_raw": "'''uvl\nfeatures\n    \"Computer Installation\"\n        mandatory\n            \"Text Editing Program\"\n                alternative\n                    \"Microsoft Word\"\n                    \"Microsoft Excel\"\n            \"Cell Calculation Tool\"\n                alternative\n                    \"Microsoft Excel\"\n                    \"Numberts\"\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "Computer Installation",
+          "Text Editing Program",
+          "Cell Calculation Tool"
+        ],
+        "configurations_number": 2
+      },
+      "feature_names": [
+        "Computer Installation",
+        "Text Editing Program",
+        "Microsoft Word",
+        "Microsoft Excel",
+        "Cell Calculation Tool",
+        "Microsoft Excel",
+        "Numberts"
+      ],
+      "semantic_similarity": 0.7647908926010132,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": null,
+        "features": {
+          "tp": 4,
+          "fp": 3,
+          "fn": 3,
+          "precision": 0.5714285714285714,
+          "recall": 0.5714285714285714,
+          "f1": 0.5714285714285714,
+          "missed": [
+            "Computer",
+            "Pages",
+            "Spreadsheet Tool"
+          ],
+          "hallucinated": [
+            "Cell Calculation Tool",
+            "Computer Installation"
+          ]
+        },
+        "structure": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "n_edges_gen": 2,
+          "n_edges_gt": 1,
+          "group_type_agreement": 1.0,
+          "n_group_compared": 4
+        },
+        "semantics": {
+          "n_products_gen": 2,
+          "n_products_gt": 4,
+          "tp": 2,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "features\n    CoffeeShop\n        optional\n            Drinks\n                alternative\n                    Coffee\n                    Tea\n        optional\n            Foods\n                alternative\n                    Croisant\n                    Bagel",
+      "output_raw": "'''uvl\nfeatures\n    CoffeeShop\n        optional\n            Drinks\n                alternative\n                    Coffee\n                    Tea\n        optional\n            Foods\n                alternative\n                    Croisant\n                    Bagel\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "CoffeeShop"
+        ],
+        "configurations_number": 9
+      },
+      "feature_names": [
+        "CoffeeShop",
+        "Drinks",
+        "Coffee",
+        "Tea",
+        "Foods",
+        "Croisant",
+        "Bagel"
+      ],
+      "semantic_similarity": 0.6238662600517273,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": null,
+        "features": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 3,
+          "precision": 1.0,
+          "recall": 0.7,
+          "f1": 0.8235294117647058,
+          "missed": [
+            "Card",
+            "Cash",
+            "Payment"
+          ],
+          "hallucinated": []
+        },
+        "structure": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 6,
+          "n_edges_gt": 6,
+          "group_type_agreement": 0.6666666666666666,
+          "n_group_compared": 6
+        },
+        "semantics": {
+          "n_products_gen": 9,
+          "n_products_gt": 4,
+          "tp": 4,
+          "fp": 5,
+          "fn": 0,
+          "precision": 0.4444444444444444,
+          "recall": 1.0,
+          "f1": 0.6153846153846153,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "features\n    Bicycle\n        mandatory\n            Manufacturer\n                alternative\n                    SRAM\n                    Shimano\n        optional\n            DropBarHandlebar\n        optional\n            FlatHandlebar\n        optional\n            WideTyres\n                alternative\n                    WideProfile\n                    NoProfile\n        optional\n            SlimTyres\n                alternative\n                    DeepProfile\n                    NoProfile\n        optional\n            GravelTyres\n                alternative\n                    WideProfile\n                    NoProfile\n        optional\n            RoadTyres\n                alternative\n                    SlimProfile\n                    NoProfile\n        optional\n            MountainTyres\n                alternative\n                    DeepProfile\n                    NoProfile",
+      "output_raw": "'''uvl\nfeatures\n    Bicycle\n        mandatory\n            Manufacturer\n                alternative\n                    SRAM\n                    Shimano\n        optional\n            DropBarHandlebar\n        optional\n            FlatHandlebar\n        optional\n            WideTyres\n                alternative\n                    WideProfile\n                    NoProfile\n        optional\n            SlimTyres\n                alternative\n                    DeepProfile\n                    NoProfile\n        optional\n            GravelTyres\n                alternative\n                    WideProfile\n                    NoProfile\n        optional\n            RoadTyres\n                alternative\n                    SlimProfile\n                    NoProfile\n        optional\n            MountainTyres\n                alternative\n                    DeepProfile\n                    NoProfile\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "Bicycle",
+          "Manufacturer"
+        ],
+        "configurations_number": 408
+      },
+      "feature_names": [
+        "Bicycle",
+        "Manufacturer",
+        "SRAM",
+        "Shimano",
+        "DropBarHandlebar",
+        "FlatHandlebar",
+        "WideTyres",
+        "WideProfile",
+        "NoProfile",
+        "SlimTyres",
+        "DeepProfile",
+        "NoProfile",
+        "GravelTyres",
+        "WideProfile",
+        "NoProfile",
+        "RoadTyres",
+        "SlimProfile",
+        "NoProfile",
+        "MountainTyres",
+        "DeepProfile",
+        "NoProfile"
+      ],
+      "semantic_similarity": 0.42714443802833557,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "analysis error: KeyError: 'WideProfile'",
+        "features": {
+          "tp": 10,
+          "fp": 11,
+          "fn": 5,
+          "precision": 0.47619047619047616,
+          "recall": 0.6666666666666666,
+          "f1": 0.5555555555555556,
+          "missed": [
+            "BikeType",
+            "FlatBar",
+            "Groupset",
+            "RoadBike",
+            "Tyres"
+          ],
+          "hallucinated": [
+            "DeepProfile",
+            "Manufacturer",
+            "NoProfile",
+            "SlimProfile",
+            "WideProfile"
+          ]
+        },
+        "structure": {
+          "tp": 1,
+          "fp": 6,
+          "fn": 1,
+          "precision": 0.14285714285714285,
+          "recall": 0.5,
+          "f1": 0.22222222222222224,
+          "n_edges_gen": 7,
+          "n_edges_gt": 2,
+          "group_type_agreement": 0.2222222222222222,
+          "n_group_compared": 9
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "features\n    ChocolateLine\n        mandatory\n            \"Melt-Station\"\n                alternative\n                    \"Nomal-Chocolate\"\n                    \"Nut-Chocolate\"\n            \"Mixing-Station\"\n                alternative\n                    \"Normal-Chocolate\"\n                    \"Baking-Station\"\n            \"Colling-Station\"\n                alternative\n                    \"Normal-Chocolate\"\n                    \"Nut-Chocolate\"\n            \"Logistic-System\"\n                alternative\n                    \"Standard-Logistic\"\n                    \"Custom-Logistic\"\n            \"Packaging-Station\"\n                alternative\n                    \"Standard-Packaging\"",
+      "output_raw": "'''uvl\nfeatures\n    ChocolateLine\n        mandatory\n            \"Melt-Station\"\n                alternative\n                    \"Nomal-Chocolate\"\n                    \"Nut-Chocolate\"\n            \"Mixing-Station\"\n                alternative\n                    \"Normal-Chocolate\"\n                    \"Baking-Station\"\n            \"Colling-Station\"\n                alternative\n                    \"Normal-Chocolate\"\n                    \"Nut-Chocolate\"\n            \"Logistic-System\"\n                alternative\n                    \"Standard-Logistic\"\n                    \"Custom-Logistic\"\n            \"Packaging-Station\"\n                alternative\n                    \"Standard-Packaging\"\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "ChocolateLine",
+          "Melt-Station",
+          "Mixing-Station",
+          "Colling-Station",
+          "Logistic-System",
+          "Packaging-Station",
+          "Standard-Packaging"
+        ],
+        "configurations_number": 4
+      },
+      "feature_names": [
+        "ChocolateLine",
+        "Melt-Station",
+        "Nomal-Chocolate",
+        "Nut-Chocolate",
+        "Mixing-Station",
+        "Normal-Chocolate",
+        "Baking-Station",
+        "Colling-Station",
+        "Normal-Chocolate",
+        "Nut-Chocolate",
+        "Logistic-System",
+        "Standard-Logistic",
+        "Custom-Logistic",
+        "Packaging-Station",
+        "Standard-Packaging"
+      ],
+      "semantic_similarity": 0.6720375418663025,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": null,
+        "features": {
+          "tp": 9,
+          "fp": 6,
+          "fn": 1,
+          "precision": 0.6,
+          "recall": 0.9,
+          "f1": 0.7200000000000001,
+          "missed": [
+            "Factory"
+          ],
+          "hallucinated": [
+            "Custom-Logistic",
+            "Nomal-Chocolate",
+            "Standard-Logistic",
+            "Standard-Packaging"
+          ]
+        },
+        "structure": {
+          "tp": 0,
+          "fp": 10,
+          "fn": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n_edges_gen": 10,
+          "n_edges_gt": 2,
+          "group_type_agreement": 0.875,
+          "n_group_compared": 8
+        },
+        "semantics": {
+          "n_products_gen": 2,
+          "n_products_gt": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_equivalence": true
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "features\n    TaxCalculator\n        mandatory\n            NettoPrice\n                optional\n                    SumOfProducts\n                        optional\n                            LocationOfBuyerAndSeller\n                                alternative\n                                    None\n        mandatory\n            TaxPerProduct\n                optional\n                    BruttoPrice\n        mandatory\n            TaxRate\n                optional\n                    RuleOfCalculation\n        optional\n            LoggingData\n                mandatory\n                    CalculatedBasePrice\n                optional\n                    RuleOfCalculation",
+      "output_raw": "'''uvl\nfeatures\n    TaxCalculator\n        mandatory\n            NettoPrice\n                optional\n                    SumOfProducts\n                        optional\n                            LocationOfBuyerAndSeller\n                                alternative\n                                    None\n        mandatory\n            TaxPerProduct\n                optional\n                    BruttoPrice\n        mandatory\n            TaxRate\n                optional\n                    RuleOfCalculation\n        optional\n            LoggingData\n                mandatory\n                    CalculatedBasePrice\n                optional\n                    RuleOfCalculation\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "TaxCalculator",
+          "NettoPrice",
+          "TaxPerProduct",
+          "TaxRate"
+        ],
+        "configurations_number": 36
+      },
+      "feature_names": [
+        "TaxCalculator",
+        "NettoPrice",
+        "SumOfProducts",
+        "LocationOfBuyerAndSeller",
+        "None",
+        "TaxPerProduct",
+        "BruttoPrice",
+        "TaxRate",
+        "RuleOfCalculation",
+        "LoggingData",
+        "CalculatedBasePrice",
+        "RuleOfCalculation"
+      ],
+      "semantic_similarity": 0.7345784306526184,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "analysis error: KeyError: 'RuleOfCalculation'",
+        "features": {
+          "tp": 8,
+          "fp": 4,
+          "fn": 6,
+          "precision": 0.6666666666666666,
+          "recall": 0.5714285714285714,
+          "f1": 0.6153846153846153,
+          "missed": [
+            "AuditLogging",
+            "BillingSoftware",
+            "BuyerLocation",
+            "Inputs",
+            "Outputs",
+            "SellerLocation"
+          ],
+          "hallucinated": [
+            "LocationOfBuyerAndSeller",
+            "LoggingData",
+            "None"
+          ]
+        },
+        "structure": {
+          "tp": 0,
+          "fp": 6,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n_edges_gen": 6,
+          "n_edges_gt": 0,
+          "group_type_agreement": 0.5714285714285714,
+          "n_group_compared": 7
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "features\n    Room\n        mandatory\n            BasicFeatures\n                alternative\n                    NumberOfBeds\n                        alternative\n                            SingleBed\n                            DoubleBed\n                    View\n                    Size\n        optional\n            PersonalSpaArea\n        optional\n            BestViewOption\n        optional\n            Bookings\n\nbooking\n    mandatory\n        StartDate\n        EndDate\n    optional\n        Bookings\n            optional\n                Fee\n            optional\n                BookingFee",
+      "output_raw": "'''uvl\nfeatures\n    Room\n        mandatory\n            BasicFeatures\n                alternative\n                    NumberOfBeds\n                        alternative\n                            SingleBed\n                            DoubleBed\n                    View\n                    Size\n        optional\n            PersonalSpaArea\n        optional\n            BestViewOption\n        optional\n            Bookings\n\nbooking\n    mandatory\n        StartDate\n        EndDate\n    optional\n        Bookings\n            optional\n                Fee\n            optional\n                BookingFee\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "Room",
+        "BasicFeatures",
+        "NumberOfBeds",
+        "SingleBed",
+        "DoubleBed",
+        "View",
+        "Size",
+        "PersonalSpaArea",
+        "BestViewOption",
+        "Bookings",
+        "booking",
+        "StartDate",
+        "EndDate",
+        "Bookings",
+        "Fee",
+        "BookingFee"
+      ],
+      "semantic_similarity": 0.637756884098053,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 10,
+          "fp": 5,
+          "fn": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.7692307692307693,
+          "f1": 0.7142857142857142,
+          "missed": [
+            "OptionalFees",
+            "RoomBookingService",
+            "TwoBeds"
+          ],
+          "hallucinated": [
+            "BasicFeatures",
+            "Bookings",
+            "DoubleBed",
+            "Fee",
+            "booking"
+          ]
+        },
+        "structure": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.375,
+          "f1": 0.5454545454545454,
+          "n_edges_gen": 3,
+          "n_edges_gt": 8,
+          "group_type_agreement": 0.5555555555555556,
+          "n_group_compared": 9
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "features\n    \"University Course Registration System\" {abstract}\n        mandatory\n            \"Student Enrollment Requirements\"\n                alternative\n                    \"Undergraduate Students\"\n                        alternative\n                            \"Core Course\"\n                                alternative\n                                    \"100-Level Core\"\n                                    \"500-Level Seminar\"\n                    \"Graduate Students\"\n                        alternative\n                            \"100-Level Core\"\n                            \"500-Level Seminar\"\n                            \"Advanced AI\"\n                            \"Linear Algebra\"\n                            \"Statistics for Biology\"\n                            \"Statistics for Business\"\n                            \"Robotics Lab\"\n                            \"Thesis Defense\"\n            \"Prerequisites\"\n                alternative\n                    \"Intro to AI\"\n                    \"Linear Algebra\"\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n            \"Mutually Exclusive Courses\"\n                alternative\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n            \"Elective Course\"\n                alternative\n                    \"Robotics Lab\"\n            \"Dissertation Proposal Review\"\n                alternative\n                    \"60 Credits\"\n                    \"Passing Review\"\n        optional\n            \"Thesis Defense\"",
+      "output_raw": "'''uvl\nfeatures\n    \"University Course Registration System\" {abstract}\n        mandatory\n            \"Student Enrollment Requirements\"\n                alternative\n                    \"Undergraduate Students\"\n                        alternative\n                            \"Core Course\"\n                                alternative\n                                    \"100-Level Core\"\n                                    \"500-Level Seminar\"\n                    \"Graduate Students\"\n                        alternative\n                            \"100-Level Core\"\n                            \"500-Level Seminar\"\n                            \"Advanced AI\"\n                            \"Linear Algebra\"\n                            \"Statistics for Biology\"\n                            \"Statistics for Business\"\n                            \"Robotics Lab\"\n                            \"Thesis Defense\"\n            \"Prerequisites\"\n                alternative\n                    \"Intro to AI\"\n                    \"Linear Algebra\"\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n            \"Mutually Exclusive Courses\"\n                alternative\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n            \"Elective Course\"\n                alternative\n                    \"Robotics Lab\"\n            \"Dissertation Proposal Review\"\n                alternative\n                    \"60 Credits\"\n                    \"Passing Review\"\n        optional\n            \"Thesis Defense\"\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "University Course Registration System",
+        "Student Enrollment Requirements",
+        "Undergraduate Students",
+        "Core Course",
+        "100-Level Core",
+        "500-Level Seminar",
+        "Graduate Students",
+        "100-Level Core",
+        "500-Level Seminar",
+        "Advanced AI",
+        "Linear Algebra",
+        "Statistics for Biology",
+        "Statistics for Business",
+        "Robotics Lab",
+        "Thesis Defense",
+        "Prerequisites",
+        "Intro to AI",
+        "Linear Algebra",
+        "Statistics for Biology",
+        "Statistics for Business",
+        "Mutually Exclusive Courses",
+        "Statistics for Biology",
+        "Statistics for Business",
+        "Elective Course",
+        "Robotics Lab",
+        "Dissertation Proposal Review",
+        "60 Credits",
+        "Passing Review",
+        "Thesis Defense"
+      ],
+      "semantic_similarity": 0.7479918599128723,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": null,
+        "features": {
+          "tp": 12,
+          "fp": 17,
+          "fn": 2,
+          "precision": 0.41379310344827586,
+          "recall": 0.8571428571428571,
+          "f1": 0.5581395348837208,
+          "missed": [
+            "Seminar",
+            "Student"
+          ],
+          "hallucinated": [
+            "100-Level Core",
+            "500-Level Seminar",
+            "60 Credits",
+            "Elective Course",
+            "Mutually Exclusive Courses",
+            "Passing Review",
+            "Prerequisites",
+            "Student Enrollment Requirements"
+          ]
+        },
+        "structure": {
+          "tp": 2,
+          "fp": 7,
+          "fn": 7,
+          "precision": 0.2222222222222222,
+          "recall": 0.2222222222222222,
+          "f1": 0.2222222222222222,
+          "n_edges_gen": 9,
+          "n_edges_gt": 9,
+          "group_type_agreement": 0.2727272727272727,
+          "n_group_compared": 11
+        },
+        "semantics": {
+          "n_products_gen": 0,
+          "n_products_gt": 270,
+          "tp": 0,
+          "fp": 0,
+          "fn": 270,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "features\n    \"PC Configurator Tool\" {abstract}\n        mandatory\n            \"CPU\" {abstract}\n                alternative\n                    \"Intel\"\n                    \"AMD\"\n            \"Motherboard Socket\" {abstract}\n                alternative\n                    \"LGA 1700\"\n                    \"AM5\"\n            \"Motherboard Chipset\" {abstract}\n                alternative\n                    \"Z790\"\n            \"High-End GPU\" {abstract}\n                alternative\n                    \"RTX 4090\"\n            \"GPU Power Supply\" {abstract}\n                alternative\n                    \"850W\"\n                    \"1000W\"\n            \"GPU Physical Length\" {abstract}\n                alternative\n                    \"350mm\"\n            \"Case Form Factor\" {abstract}\n                alternative\n                    \"ATX\"\n                    \"Micro-ATX\"\n            \"Optional Large Air Cooler Height\" {abstract}\n                alternative\n                    \"Less Than CPU Cooler Clearance\"",
+      "output_raw": "'''uvl\nfeatures\n    \"PC Configurator Tool\" {abstract}\n        mandatory\n            \"CPU\" {abstract}\n                alternative\n                    \"Intel\"\n                    \"AMD\"\n            \"Motherboard Socket\" {abstract}\n                alternative\n                    \"LGA 1700\"\n                    \"AM5\"\n            \"Motherboard Chipset\" {abstract}\n                alternative\n                    \"Z790\"\n            \"High-End GPU\" {abstract}\n                alternative\n                    \"RTX 4090\"\n            \"GPU Power Supply\" {abstract}\n                alternative\n                    \"850W\"\n                    \"1000W\"\n            \"GPU Physical Length\" {abstract}\n                alternative\n                    \"350mm\"\n            \"Case Form Factor\" {abstract}\n                alternative\n                    \"ATX\"\n                    \"Micro-ATX\"\n            \"Optional Large Air Cooler Height\" {abstract}\n                alternative\n                    \"Less Than CPU Cooler Clearance\"\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "PC Configurator Tool",
+          "CPU",
+          "Motherboard Socket",
+          "Motherboard Chipset",
+          "Z790",
+          "High-End GPU",
+          "RTX 4090",
+          "GPU Power Supply",
+          "GPU Physical Length",
+          "350mm",
+          "Case Form Factor",
+          "Optional Large Air Cooler Height",
+          "Less Than CPU Cooler Clearance"
+        ],
+        "configurations_number": 16
+      },
+      "feature_names": [
+        "PC Configurator Tool",
+        "CPU",
+        "Intel",
+        "AMD",
+        "Motherboard Socket",
+        "LGA 1700",
+        "AM5",
+        "Motherboard Chipset",
+        "Z790",
+        "High-End GPU",
+        "RTX 4090",
+        "GPU Power Supply",
+        "850W",
+        "1000W",
+        "GPU Physical Length",
+        "350mm",
+        "Case Form Factor",
+        "ATX",
+        "Micro-ATX",
+        "Optional Large Air Cooler Height",
+        "Less Than CPU Cooler Clearance"
+      ],
+      "semantic_similarity": 0.7439785599708557,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": null,
+        "features": {
+          "tp": 13,
+          "fp": 8,
+          "fn": 8,
+          "precision": 0.6190476190476191,
+          "recall": 0.6190476190476191,
+          "f1": 0.6190476190476191,
+          "missed": [
+            "650W",
+            "Case",
+            "DDR4",
+            "DDR5",
+            "GPU",
+            "OtherGPU",
+            "PSU",
+            "RAM"
+          ],
+          "hallucinated": [
+            "350mm",
+            "Case Form Factor",
+            "GPU Physical Length",
+            "GPU Power Supply",
+            "High-End GPU",
+            "Less Than CPU Cooler Clearance",
+            "Motherboard Chipset",
+            "Z790"
+          ]
+        },
+        "structure": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 6,
+          "n_edges_gt": 6,
+          "group_type_agreement": 1.0,
+          "n_group_compared": 11
+        },
+        "semantics": {
+          "n_products_gen": 16,
+          "n_products_gt": 40,
+          "tp": 8,
+          "fp": 8,
+          "fn": 32,
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1": 0.28571428571428575,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "features\n    \"CI/CD System\"\n        mandatory\n            \"Deployment Pipelines\"\n                optional\n                    \"Build\"\n                    \"Unit Test\"\n                mandatory\n                    \"Staging\"\n                optional\n                    \"Production\"\n                        mandatory\n                            \"Blue/Green\"\n                                optional\n                                    \"Monitoring\"\n                                        optional\n                                            \"Rollback\"\n                        mandatory\n                            \"Canary\"\n                                optional\n                                    \"Double Infrastructure Resources\"\n                                optional\n                                    \"Manual QA Approval\"\n                        optional\n                            \"Hotfix\"",
+      "output_raw": "'''uvl\nfeatures\n    \"CI/CD System\"\n        mandatory\n            \"Deployment Pipelines\"\n                optional\n                    \"Build\"\n                    \"Unit Test\"\n                mandatory\n                    \"Staging\"\n                optional\n                    \"Production\"\n                        mandatory\n                            \"Blue/Green\"\n                                optional\n                                    \"Monitoring\"\n                                        optional\n                                            \"Rollback\"\n                        mandatory\n                            \"Canary\"\n                                optional\n                                    \"Double Infrastructure Resources\"\n                                optional\n                                    \"Manual QA Approval\"\n                        optional\n                            \"Hotfix\"\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "CI/CD System",
+          "Deployment Pipelines",
+          "Staging"
+        ],
+        "configurations_number": 100
+      },
+      "feature_names": [
+        "CI/CD System",
+        "Deployment Pipelines",
+        "Build",
+        "Unit Test",
+        "Staging",
+        "Production",
+        "Blue/Green",
+        "Monitoring",
+        "Rollback",
+        "Canary",
+        "Double Infrastructure Resources",
+        "Manual QA Approval",
+        "Hotfix"
+      ],
+      "semantic_similarity": 0.8241536021232605,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": null,
+        "features": {
+          "tp": 10,
+          "fp": 3,
+          "fn": 4,
+          "precision": 0.7692307692307693,
+          "recall": 0.7142857142857143,
+          "f1": 0.7407407407407408,
+          "missed": [
+            "DeploymentStrategy",
+            "IntegrationTest",
+            "SecurityScan",
+            "StagingDeployment"
+          ],
+          "hallucinated": [
+            "Double Infrastructure Resources",
+            "Hotfix",
+            "Staging"
+          ]
+        },
+        "structure": {
+          "tp": 1,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.1111111111111111,
+          "recall": 0.14285714285714285,
+          "f1": 0.125,
+          "n_edges_gen": 9,
+          "n_edges_gt": 7,
+          "group_type_agreement": 0.3333333333333333,
+          "n_group_compared": 9
+        },
+        "semantics": {
+          "n_products_gen": 28,
+          "n_products_gt": 12,
+          "tp": 0,
+          "fp": 28,
+          "fn": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "rules\n    MovieMode\n        {priority 'Block Morning'}\n    Morning\n        {priority 'Block Movie Mode', priority 'Disable Smart Oven'}\n    SmartOven\n        {priority 'Disable Air Conditioner'}\n    AirConditioner\n        {priority 'Disable Smart Oven'}",
+      "output_raw": "'''uvl\nrules\n    MovieMode\n        {priority 'Block Morning'}\n    Morning\n        {priority 'Block Movie Mode', priority 'Disable Smart Oven'}\n    SmartOven\n        {priority 'Disable Air Conditioner'}\n    AirConditioner\n        {priority 'Disable Smart Oven'}\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+features
+    RoomBookingService {abstract}
+        mandatory
+            BasicFeatures
+                alternative
+                    Beds {number 2}
+                        optional
+                            SpaArea
+                            ViewSize
+            OptionalFeatures
+                alternative
+                    PersonalSpa
+                    BestViewOption

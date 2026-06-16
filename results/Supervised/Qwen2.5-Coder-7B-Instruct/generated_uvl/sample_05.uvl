@@ -1,0 +1,15 @@
+features
+    FactoryProductionLine {abstract}
+        mandatory
+            LogisticSystem
+            PackagingStation
+        alternative
+            NormalChocolate {abstract}
+                mandatory
+                    MeltingStation
+                    MixingStation
+                    CoolingStation
+            NutChocolate {abstract}
+                mandatory
+                    NormalChocolate
+                    BakingStation

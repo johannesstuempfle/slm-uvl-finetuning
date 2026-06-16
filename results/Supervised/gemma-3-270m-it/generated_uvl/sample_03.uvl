@@ -1,0 +1,15 @@
+features
+    CoffeeShop
+        mandatory
+            Drinks
+                optional
+                    Coffee
+                    Tea
+            Food
+                optional
+                    Croisant
+                    Bagel
+            Payment
+                optional
+                    Card
+                    Cash

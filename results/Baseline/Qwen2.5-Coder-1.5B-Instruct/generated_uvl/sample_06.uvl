@@ -1,0 +1,29 @@
+Sure, here's the translation of your text into UVL-Code:
+
+```uvl
+PROGRAM TaxCalculator
+VAR
+    NettoPrice : REAL;
+    SumOfProducts : REAL;
+    LocationBuyer : STRING;
+    LocationSeller : STRING;
+    TaxPerProduct : REAL;
+    BruttoPrice : REAL;
+    TaxRate : REAL;
+    CalculatedBasePrice : REAL;
+    RuleOfCalculation : STRING;
+END_VAR
+
+FUNCTION CalculateTax :
+BEGIN
+    TaxPerProduct := NettoPrice / SumOfProducts;
+    BruttoPrice := NettoPrice + (NettoPrice * TaxRate);
+    TaxRate := TaxPerProduct / NettoPrice;
+    CalculatedBasePrice := NettoPrice - (NettoPrice * TaxRate);
+    RuleOfCalculation := 'NettoPrice / SumOfProducts = TaxPerProduct';
+END_FUNCTION
+
+END_PROGRAM
+```
+
+This code defines a program called `TaxCalculator` with various variables and functions. The `CalculateTax` function computes the tax rate, brutto price, and tax per product based on the given inputs. It also logs the calculated base price and the rule of calculation.

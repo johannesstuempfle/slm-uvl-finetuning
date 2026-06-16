@@ -1,0 +1,22 @@
+features
+    RoomBookingService
+        mandatory
+            Room
+                optional
+                    PersonalSpaArea
+                optional
+                    BestView
+                        if
+                            NumberOfBeds == 2
+                mandatory
+                    NumberOfBeds
+                    View
+                    Size
+        mandatory
+            Booking
+                mandatory
+                    StartDate
+                    EndDate
+                optional
+                    Fees
+                    Bookings

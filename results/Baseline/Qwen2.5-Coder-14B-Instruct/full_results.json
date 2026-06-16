@@ -1,0 +1,219 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.0,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 0,
+    "failed": 12,
+    "mean_feature_f1": 0.0,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.0
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "Certainly! Here's the translation of the given text into UML class diagram code:\n\n```plaintext\n@startuml\nclass Car {\n    -engine: Engine\n    -color: Color\n    -laneAssist: boolean\n    -ESP: boolean\n}\n\nclass Engine {\n    +type: String\n}\n\nclass Color {\n    +name: String\n}\n\nCar \"1\" -- \"1\" Engine : has\nCar \"1\" -- \"1\" Color : has\n@enduml\n```\n\nExplanation:\n- The `Car` class has attributes for `engine`, `color`, `laneAssist`, and `ESP`.\n- The `Engine` class has a `type` attribute which can be \"diesel\", \"gasoline\", or \"electric\".\n- The `Color` class has a `name` attribute representing the color of the car.\n- The `Car` class has associations with the `Engine` and `Color` classes, indicating that a car has one engine and one color.\n\nThis UML class diagram captures the structure and relationships described in the text.",
+      "output_raw": "Certainly! Here's the translation of the given text into UML class diagram code:\n\n```plaintext\n@startuml\nclass Car {\n    -engine: Engine\n    -color: Color\n    -laneAssist: boolean\n    -ESP: boolean\n}\n\nclass Engine {\n    +type: String\n}\n\nclass Color {\n    +name: String\n}\n\nCar \"1\" -- \"1\" Engine : has\nCar \"1\" -- \"1\" Color : has\n@enduml\n```\n\nExplanation:\n- The `Car` class has attributes for `engine`, `color`, `laneAssist`, and `ESP`.\n- The `Engine` class has a `type` attribute which can be \"diesel\", \"gasoline\", or \"electric\".\n- The `Color` class has a `name` attribute representing the color of the car.\n- The `Car` class has associations with the `Engine` and `Color` classes, indicating that a car has one engine and one color.\n\nThis UML class diagram captures the structure and relationships described in the text.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "Sure, here's the translation of the text into UML code:\n\n```plantuml\n@startuml\nactor \"Security Team\" as SecurityTeam\n\nparticipant \"Security Architect\" as Architect\nparticipant \"Security Engineer\" as Engineer\nparticipant \"Manager\" as Manager\nparticipant \"Scrum Master\" as ScrumMaster\n\nSecurityTeam --> Architect : Requires\nSecurityTeam --> Engineer : Requires\nSecurityTeam --> Manager : Requires\nSecurityTeam --> ScrumMaster : Requires\n\nnote right of Architect\n  Cannot be the same person as\\nSecurity Engineer\nend note\n\n@enduml\n```\n\nThis UML diagram represents the requirements for the security team, including the distinct roles of the security architect, security engineer, manager, and scrum master. The note indicates that the security architect and security engineer cannot be the same person.",
+      "output_raw": "Sure, here's the translation of the text into UML code:\n\n```plantuml\n@startuml\nactor \"Security Team\" as SecurityTeam\n\nparticipant \"Security Architect\" as Architect\nparticipant \"Security Engineer\" as Engineer\nparticipant \"Manager\" as Manager\nparticipant \"Scrum Master\" as ScrumMaster\n\nSecurityTeam --> Architect : Requires\nSecurityTeam --> Engineer : Requires\nSecurityTeam --> Manager : Requires\nSecurityTeam --> ScrumMaster : Requires\n\nnote right of Architect\n  Cannot be the same person as\\nSecurity Engineer\nend note\n\n@enduml\n```\n\nThis UML diagram represents the requirements for the security team, including the distinct roles of the security architect, security engineer, manager, and scrum master. The note indicates that the security architect and security engineer cannot be the same person.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "I'm sorry for any confusion, but as of my last update in October 2023, there isn't a widely recognized programming language or coding system called \"uvl-Code.\" It's possible you might be referring to a specific proprietary system or a fictional one.\n\nIf you're looking for a translation into a common programming language like Python, Java, or another, please let me know which language you'd prefer, and I can help with that. If \"uvl-Code\" is a specific system you're working with, could you provide more details or context about its syntax and structure? That way, I can assist you better.",
+      "output_raw": "I'm sorry for any confusion, but as of my last update in October 2023, there isn't a widely recognized programming language or coding system called \"uvl-Code.\" It's possible you might be referring to a specific proprietary system or a fictional one.\n\nIf you're looking for a translation into a common programming language like Python, Java, or another, please let me know which language you'd prefer, and I can help with that. If \"uvl-Code\" is a specific system you're working with, could you provide more details or context about its syntax and structure? That way, I can assist you better.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "Certainly! Here's a translation of the provided text into uvl-Code:\n\n```uvl\nclass CoffeeShop {\n    attribute String name;\n}\n\nclass Drink {\n    attribute String type; // e.g., Coffee, Tea\n}\n\nclass Food {\n    attribute String type; // e.g., Croissant, Bagel\n}\n\nclass PaymentMethod {\n    attribute String method; // e.g., Card, Cash\n}\n\nclass Transaction {\n    attribute PaymentMethod paymentMethod;\n    attribute List<Drink> drinks;\n    attribute List<Food> foods;\n}\n\nassociation \"sells\" {\n    class CoffeeShop;\n    class Drink;\n    multiplicity 1..*;\n}\n\nassociation \"sells\" {\n    class CoffeeShop;\n    class Food;\n    multiplicity 1..*;\n}\n\nassociation \"uses\" {\n    class Transaction;\n    class PaymentMethod;\n    multiplicity 1;\n}\n\nassociation \"includes\" {\n    class Transaction;\n    class Drink;\n    multiplicity 0..*;\n}\n\nassociation \"includes\" {\n    class Transaction;\n    class Food;\n    multiplicity 0..*;\n}\n```\n\nThis uvl-Code defines the classes and associations based on the information provided in the text. Each class represents an entity, and the associations represent the relationships between these entities.",
+      "output_raw": "Certainly! Here's a translation of the provided text into uvl-Code:\n\n```uvl\nclass CoffeeShop {\n    attribute String name;\n}\n\nclass Drink {\n    attribute String type; // e.g., Coffee, Tea\n}\n\nclass Food {\n    attribute String type; // e.g., Croissant, Bagel\n}\n\nclass PaymentMethod {\n    attribute String method; // e.g., Card, Cash\n}\n\nclass Transaction {\n    attribute PaymentMethod paymentMethod;\n    attribute List<Drink> drinks;\n    attribute List<Food> foods;\n}\n\nassociation \"sells\" {\n    class CoffeeShop;\n    class Drink;\n    multiplicity 1..*;\n}\n\nassociation \"sells\" {\n    class CoffeeShop;\n    class Food;\n    multiplicity 1..*;\n}\n\nassociation \"uses\" {\n    class Transaction;\n    class PaymentMethod;\n    multiplicity 1;\n}\n\nassociation \"includes\" {\n    class Transaction;\n    class Drink;\n    multiplicity 0..*;\n}\n\nassociation \"includes\" {\n    class Transaction;\n    class Food;\n    multiplicity 0..*;\n}\n```\n\nThis uvl-Code defines the classes and associations based on the information provided in the text. Each class represents an entity, and the associations represent the relationships between these entities.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "I'm sorry, but I can't translate this text into UVL code as it appears to be a request for a translation into a specific programming language or markup language called UVL. However, UVL is not a widely recognized language or markup language, and there may not be enough information available about its syntax and structure to accurately translate this text. Can you please provide more information about UVL so that I can assist you better?",
+      "output_raw": "I'm sorry, but I can't translate this text into UVL code as it appears to be a request for a translation into a specific programming language or markup language called UVL. However, UVL is not a widely recognized language or markup language, and there may not be enough information available about its syntax and structure to accurately translate this text. Can you please provide more information about UVL so that I can assist you better?",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "Here's the translation of the provided text into UVL (Unified Visual Language) code:\n\n```uvl\nFactory {\n    ProductionLine {\n        ChocolateType {\n            NormalChocolate {\n                MeltingStation\n                MixingStation\n                CoolingStation\n            }\n            NutChocolate {\n                MeltingStation\n                MixingStation\n                CoolingStation\n                BakingStation\n            }\n        }\n        CommonStations {\n            LogisticSystem\n            PackagingStation\n        }\n    }\n}\n```\n\n### Explanation:\n- **Factory**: Represents the overall structure.\n- **ProductionLine**: Encapsulates the different processes involved in producing chocolate.\n- **ChocolateType**: Differentiates between the types of chocolate produced.\n  - **NormalChocolate**: Requires `MeltingStation`, `MixingStation`, and `CoolingStation`.\n  - **NutChocolate**: Inherits the stations required for `NormalChocolate` and adds an additional `BakingStation`.\n- **CommonStations**: Lists stations that are common to all production lines, such as `LogisticSystem` and `PackagingStation`.\n\nThis UVL code structure ensures that all necessary components for each type of chocolate production are clearly defined while also highlighting the shared elements among them.",
+      "output_raw": "Here's the translation of the provided text into UVL (Unified Visual Language) code:\n\n```uvl\nFactory {\n    ProductionLine {\n        ChocolateType {\n            NormalChocolate {\n                MeltingStation\n                MixingStation\n                CoolingStation\n            }\n            NutChocolate {\n                MeltingStation\n                MixingStation\n                CoolingStation\n                BakingStation\n            }\n        }\n        CommonStations {\n            LogisticSystem\n            PackagingStation\n        }\n    }\n}\n```\n\n### Explanation:\n- **Factory**: Represents the overall structure.\n- **ProductionLine**: Encapsulates the different processes involved in producing chocolate.\n- **ChocolateType**: Differentiates between the types of chocolate produced.\n  - **NormalChocolate**: Requires `MeltingStation`, `MixingStation`, and `CoolingStation`.\n  - **NutChocolate**: Inherits the stations required for `NormalChocolate` and adds an additional `BakingStation`.\n- **CommonStations**: Lists stations that are common to all production lines, such as `LogisticSystem` and `PackagingStation`.\n\nThis UVL code structure ensures that all necessary components for each type of chocolate production are clearly defined while also highlighting the shared elements among them.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "Certainly! Below is the translation of the given text into UVL (Unified Verification Language) code:\n\n```uvl\n# Define the tax-calculator component\ncomponent TaxCalculator {\n    # Inputs required by the tax-calculator\n    input NettoPrice : double\n    input SumOfProducts : double\n    input BuyerLocation : string\n    input SellerLocation : string\n\n    # Outputs generated by the tax-calculator\n    output TaxPerProduct : double\n    output BruttoPrice : double\n    output TaxRate : double\n\n    # Logging data for audits\n    output CalculatedBasePrice : double\n    output RuleOfCalculation : string\n\n    # Logic for calculating the outputs\n    process CalculateTax {\n        # Calculate base price\n        let BasePrice = NettoPrice + SumOfProducts\n\n        # Determine tax rate based on buyer and seller locations\n        if BuyerLocation == SellerLocation {\n            let TaxRate = 0.10  # Assuming 10% tax rate for same location\n        } else {\n            let TaxRate = 0.15  # Assuming 15% tax rate for different locations\n        }\n\n        # Calculate tax per product\n        let TaxPerProduct = BasePrice * TaxRate / SumOfProducts\n\n        # Calculate brutto price\n        let BruttoPrice = BasePrice + (BasePrice * TaxRate)\n\n        # Set logging data\n        CalculatedBasePrice = BasePrice\n        RuleOfCalculation = \"BasePrice * TaxRate\"\n    }\n}\n```\n\n### Explanation:\n- **Inputs**: The `TaxCalculator` component requires four inputs: `NettoPrice`, `SumOfProducts`, `BuyerLocation`, and `SellerLocation`.\n- **Outputs**: The component generates three main outputs: `TaxPerProduct`, `BruttoPrice`, and `TaxRate`. Additionally, it logs two pieces of data for auditing purposes: `CalculatedBasePrice` and `RuleOfCalculation`.\n- **Process**: The `CalculateTax` process defines the logic for calculating the tax rate based on the locations of the buyer and seller, then computes the tax per product and the brutto price.\n\nThis UVL code assumes a simple tax calculation model where the tax rate is 10% if the buyer and seller are in the same location and 15% if they are in different locations. You can adjust the tax rates and logic as needed to fit your specific requirements.",
+      "output_raw": "Certainly! Below is the translation of the given text into UVL (Unified Verification Language) code:\n\n```uvl\n# Define the tax-calculator component\ncomponent TaxCalculator {\n    # Inputs required by the tax-calculator\n    input NettoPrice : double\n    input SumOfProducts : double\n    input BuyerLocation : string\n    input SellerLocation : string\n\n    # Outputs generated by the tax-calculator\n    output TaxPerProduct : double\n    output BruttoPrice : double\n    output TaxRate : double\n\n    # Logging data for audits\n    output CalculatedBasePrice : double\n    output RuleOfCalculation : string\n\n    # Logic for calculating the outputs\n    process CalculateTax {\n        # Calculate base price\n        let BasePrice = NettoPrice + SumOfProducts\n\n        # Determine tax rate based on buyer and seller locations\n        if BuyerLocation == SellerLocation {\n            let TaxRate = 0.10  # Assuming 10% tax rate for same location\n        } else {\n            let TaxRate = 0.15  # Assuming 15% tax rate for different locations\n        }\n\n        # Calculate tax per product\n        let TaxPerProduct = BasePrice * TaxRate / SumOfProducts\n\n        # Calculate brutto price\n        let BruttoPrice = BasePrice + (BasePrice * TaxRate)\n\n        # Set logging data\n        CalculatedBasePrice = BasePrice\n        RuleOfCalculation = \"BasePrice * TaxRate\"\n    }\n}\n```\n\n### Explanation:\n- **Inputs**: The `TaxCalculator` component requires four inputs: `NettoPrice`, `SumOfProducts`, `BuyerLocation`, and `SellerLocation`.\n- **Outputs**: The component generates three main outputs: `TaxPerProduct`, `BruttoPrice`, and `TaxRate`. Additionally, it logs two pieces of data for auditing purposes: `CalculatedBasePrice` and `RuleOfCalculation`.\n- **Process**: The `CalculateTax` process defines the logic for calculating the tax rate based on the locations of the buyer and seller, then computes the tax per product and the brutto price.\n\nThis UVL code assumes a simple tax calculation model where the tax rate is 10% if the buyer and seller are in the same location and 15% if they are in different locations. You can adjust the tax rates and logic as needed to fit your specific requirements.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Sure, here's the translation of the given text into UML class diagram code:\n\n```uml\n@startuml\nclass Room {\n    -int numberOfBeds\n    -String view\n    -String size\n    -boolean hasSpaArea\n    -boolean hasBestViewOption\n}\n\nclass Booking {\n    -Date startDate\n    -Date endDate\n    -double optionalFee\n}\n\nRoom \"1\" -- \"0..*\" Booking : manages\n@enduml\n```\n\nThis UML class diagram defines two classes: `Room` and `Booking`. The `Room` class has attributes for the number of beds, view, size, and optional features like a personal spa area and best-view option. The `Booking` class has attributes for the start and end dates, as well as an optional fee.\n\nThe relationship between the `Room` and `Booking` classes is indicated by the line connecting them, which shows that a single room can manage multiple bookings.",
+      "output_raw": "Sure, here's the translation of the given text into UML class diagram code:\n\n```uml\n@startuml\nclass Room {\n    -int numberOfBeds\n    -String view\n    -String size\n    -boolean hasSpaArea\n    -boolean hasBestViewOption\n}\n\nclass Booking {\n    -Date startDate\n    -Date endDate\n    -double optionalFee\n}\n\nRoom \"1\" -- \"0..*\" Booking : manages\n@enduml\n```\n\nThis UML class diagram defines two classes: `Room` and `Booking`. The `Room` class has attributes for the number of beds, view, size, and optional features like a personal spa area and best-view option. The `Booking` class has attributes for the start and end dates, as well as an optional fee.\n\nThe relationship between the `Room` and `Booking` classes is indicated by the line connecting them, which shows that a single room can manage multiple bookings.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "```uvl\n# Define the entities\nentity Student {\n    id: String\n    type: Enum(\"Undergraduate\", \"Graduate\")\n    credits: Integer\n    completedCourses: Set<Course>\n}\n\nentity Course {\n    id: String\n    level: Integer\n    prerequisites: Set<Course>\n    mutuallyExclusiveWith: Set<Course>\n    maxEnrollment: Optional<Integer>\n}\n\nentity Module {\n    id: String\n    requiredCredits: Integer\n    prerequisiteModules: Set<Module>\n}\n\n# Define the rules\nrule minCreditRequirement {\n    forall student in Student {\n        student.credits >= 12\n    }\n}\n\nrule coreCourseSelection {\n    forall student in Student where student.type == \"Undergraduate\" {\n        exists course in Course where course.level == 100 and course.id in student.completedCourses\n    }\n}\n\nrule seminarCourseSelection {\n    forall student in Student where student.type == \"Graduate\" {\n        exists course in Course where course.level == 500 and course.id in student.completedCourses\n    }\n}\n\nrule prerequisiteRule {\n    forall student in Student, course in Course {\n        if course.prerequisites!= empty {\n            forall prereq in course.prerequisites {\n                prereq.id in student.completedCourses\n            }\n        }\n    }\n}\n\nrule mutualExclusionRule {\n    forall student in Student, course in Course {\n        if course.mutuallyExclusiveWith!= empty {\n            forall exclusiveCourse in course.mutuallyExclusiveWith {\n                exclusiveCourse.id not in student.completedCourses\n            }\n        }\n    }\n}\n\nrule roboticsLabEnrollmentCap {\n    let roboticsLab = Course(id: \"Robotics Lab\", maxEnrollment: 20)\n    forall student in Student {\n        if roboticsLab.id in student.completedCourses {\n            count(student.completedCourses where course.id == roboticsLab.id) <= roboticsLab.maxEnrollment\n        }\n    }\n}\n\nrule thesisDefenseAvailability {\n    let thesisDefense = Module(id: \"Thesis Defense\", requiredCredits: 60)\n    forall student in Student {\n        if thesisDefense.id in student.completedCourses {\n            student.credits >= thesisDefense.requiredCredits\n            exists dissertationProposal in Module where dissertationProposal.id == \"Dissertation Proposal\" and dissertationProposal in student.completedCourses\n        }\n    }\n}\n```\n\nThis UVL code defines the entities `Student`, `Course`, and `Module` and specifies the rules based on the given text. Each rule corresponds to a specific requirement or condition described in the text.",
+      "output_raw": "```uvl\n# Define the entities\nentity Student {\n    id: String\n    type: Enum(\"Undergraduate\", \"Graduate\")\n    credits: Integer\n    completedCourses: Set<Course>\n}\n\nentity Course {\n    id: String\n    level: Integer\n    prerequisites: Set<Course>\n    mutuallyExclusiveWith: Set<Course>\n    maxEnrollment: Optional<Integer>\n}\n\nentity Module {\n    id: String\n    requiredCredits: Integer\n    prerequisiteModules: Set<Module>\n}\n\n# Define the rules\nrule minCreditRequirement {\n    forall student in Student {\n        student.credits >= 12\n    }\n}\n\nrule coreCourseSelection {\n    forall student in Student where student.type == \"Undergraduate\" {\n        exists course in Course where course.level == 100 and course.id in student.completedCourses\n    }\n}\n\nrule seminarCourseSelection {\n    forall student in Student where student.type == \"Graduate\" {\n        exists course in Course where course.level == 500 and course.id in student.completedCourses\n    }\n}\n\nrule prerequisiteRule {\n    forall student in Student, course in Course {\n        if course.prerequisites!= empty {\n            forall prereq in course.prerequisites {\n                prereq.id in student.completedCourses\n            }\n        }\n    }\n}\n\nrule mutualExclusionRule {\n    forall student in Student, course in Course {\n        if course.mutuallyExclusiveWith!= empty {\n            forall exclusiveCourse in course.mutuallyExclusiveWith {\n                exclusiveCourse.id not in student.completedCourses\n            }\n        }\n    }\n}\n\nrule roboticsLabEnrollmentCap {\n    let roboticsLab = Course(id: \"Robotics Lab\", maxEnrollment: 20)\n    forall student in Student {\n        if roboticsLab.id in student.completedCourses {\n            count(student.completedCourses where course.id == roboticsLab.id) <= roboticsLab.maxEnrollment\n        }\n    }\n}\n\nrule thesisDefenseAvailability {\n    let thesisDefense = Module(id: \"Thesis Defense\", requiredCredits: 60)\n    forall student in Student {\n        if thesisDefense.id in student.completedCourses {\n            student.credits >= thesisDefense.requiredCredits\n            exists dissertationProposal in Module where dissertationProposal.id == \"Dissertation Proposal\" and dissertationProposal in student.completedCourses\n        }\n    }\n}\n```\n\nThis UVL code defines the entities `Student`, `Course`, and `Module` and specifies the rules based on the given text. Each rule corresponds to a specific requirement or condition described in the text.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "```uvl\ntool PCConfigurator {\n    component CPU {\n        option Intel {\n            requirement motherboardSocket = \"LGA 1700\"\n        }\n        option AMD {\n            requirement motherboardSocket = \"AM5\"\n        }\n    }\n\n    component Motherboard {\n        option Z790 {\n            requirement supportedRAMType = \"DDR4\"\n        }\n        // Add other motherboard options here\n    }\n\n    component RAM {\n        type DDR4\n        type DDR5\n    }\n\n    component GPU {\n        option RTX_4090 {\n            requirement powerRequirement = \"850W\"\n            requirement physicalLength = \"350mm\"\n        }\n        // Add other GPU options here\n    }\n\n    component PowerSupply {\n        type PSU_850W\n        // Add other PSU options here\n    }\n\n    component Case {\n        option ATX {\n            requirement motherboardFormFactor = \"ATX\"\n        }\n        option Micro_ATX {\n            requirement motherboardFormFactor = \"Micro-ATX\"\n        }\n        // Add other case options here\n    }\n\n    component AirCooler {\n        optional\n        requirement height < case.CPU_cooler_clearance\n    }\n\n    constraint {\n        CPU.Intel -> Motherboard.motherboardSocket = \"LGA 1700\"\n        CPU.AMD -> Motherboard.motherboardSocket = \"AM5\"\n        Motherboard.Z790 -> RAM.supportedRAMType = \"DDR4\"\n        GPU.RTX_4090 -> PowerSupply.powerRequirement >= \"850W\"\n        GPU.RTX_4090 -> Case.maxGPU_clearance >= \"350mm\"\n        Case.ATX -> Motherboard.formFactor = \"ATX\"\n        Case.Micro_ATX -> Motherboard.formFactor = \"Micro-ATX\"\n        AirCooler -> AirCooler.height < Case.CPU_cooler_clearance\n    }\n}\n```\n\nPlease note that the above code is a simplified example and may need to be adjusted based on the specific requirements and constraints of your PC configurator tool.",
+      "output_raw": "```uvl\ntool PCConfigurator {\n    component CPU {\n        option Intel {\n            requirement motherboardSocket = \"LGA 1700\"\n        }\n        option AMD {\n            requirement motherboardSocket = \"AM5\"\n        }\n    }\n\n    component Motherboard {\n        option Z790 {\n            requirement supportedRAMType = \"DDR4\"\n        }\n        // Add other motherboard options here\n    }\n\n    component RAM {\n        type DDR4\n        type DDR5\n    }\n\n    component GPU {\n        option RTX_4090 {\n            requirement powerRequirement = \"850W\"\n            requirement physicalLength = \"350mm\"\n        }\n        // Add other GPU options here\n    }\n\n    component PowerSupply {\n        type PSU_850W\n        // Add other PSU options here\n    }\n\n    component Case {\n        option ATX {\n            requirement motherboardFormFactor = \"ATX\"\n        }\n        option Micro_ATX {\n            requirement motherboardFormFactor = \"Micro-ATX\"\n        }\n        // Add other case options here\n    }\n\n    component AirCooler {\n        optional\n        requirement height < case.CPU_cooler_clearance\n    }\n\n    constraint {\n        CPU.Intel -> Motherboard.motherboardSocket = \"LGA 1700\"\n        CPU.AMD -> Motherboard.motherboardSocket = \"AM5\"\n        Motherboard.Z790 -> RAM.supportedRAMType = \"DDR4\"\n        GPU.RTX_4090 -> PowerSupply.powerRequirement >= \"850W\"\n        GPU.RTX_4090 -> Case.maxGPU_clearance >= \"350mm\"\n        Case.ATX -> Motherboard.formFactor = \"ATX\"\n        Case.Micro_ATX -> Motherboard.formFactor = \"Micro-ATX\"\n        AirCooler -> AirCooler.height < Case.CPU_cooler_clearance\n    }\n}\n```\n\nPlease note that the above code is a simplified example and may need to be adjusted based on the specific requirements and constraints of your PC configurator tool.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "```uvl\npipeline {\n  stages = ['Build', 'Unit Test', 'Staging', 'Integration Test', 'Security Scan', 'Production', 'Monitoring']\n  mandatory_stages = ['Build', 'Unit Test', 'Staging']\n  \n  stage('Build') {\n    // Implementation for Build stage\n  }\n  \n  stage('Unit Test') {\n    // Implementation for Unit Test stage\n  }\n  \n  stage('Staging') {\n    depends_on = ['Unit Test']\n    // Implementation for Staging stage\n  }\n  \n  stage('Integration Test') {\n    depends_on = ['Staging']\n    // Implementation for Integration Test stage\n  }\n  \n  stage('Security Scan') {\n    depends_on = ['Staging', 'Integration Test']\n    // Implementation for Security Scan stage\n  }\n  \n  stage('Production') {\n    depends_on = ['Staging', 'Integration Test', 'Security Scan']\n    strategies = ['Blue/Green', 'Canary']\n    \n    strategy('Blue/Green') {\n      requires_double_infrastructure = true\n      // Implementation for Blue/Green strategy\n    }\n    \n    strategy('Canary') {\n      add_stage('Monitoring')\n      monitoring_stage {\n        add_trigger('Rollback')\n        // Implementation for Monitoring stage with Rollback trigger\n      }\n      // Implementation for Canary strategy\n    }\n  }\n  \n  pipeline('Hotfix') {\n    bypass_stages = ['Staging', 'Integration Test']\n    required_stages = ['Manual QA Approval', 'Security Scan']\n    // Implementation for Hotfix pipeline\n  }\n}\n```",
+      "output_raw": "```uvl\npipeline {\n  stages = ['Build', 'Unit Test', 'Staging', 'Integration Test', 'Security Scan', 'Production', 'Monitoring']\n  mandatory_stages = ['Build', 'Unit Test', 'Staging']\n  \n  stage('Build') {\n    // Implementation for Build stage\n  }\n  \n  stage('Unit Test') {\n    // Implementation for Unit Test stage\n  }\n  \n  stage('Staging') {\n    depends_on = ['Unit Test']\n    // Implementation for Staging stage\n  }\n  \n  stage('Integration Test') {\n    depends_on = ['Staging']\n    // Implementation for Integration Test stage\n  }\n  \n  stage('Security Scan') {\n    depends_on = ['Staging', 'Integration Test']\n    // Implementation for Security Scan stage\n  }\n  \n  stage('Production') {\n    depends_on = ['Staging', 'Integration Test', 'Security Scan']\n    strategies = ['Blue/Green', 'Canary']\n    \n    strategy('Blue/Green') {\n      requires_double_infrastructure = true\n      // Implementation for Blue/Green strategy\n    }\n    \n    strategy('Canary') {\n      add_stage('Monitoring')\n      monitoring_stage {\n        add_trigger('Rollback')\n        // Implementation for Monitoring stage with Rollback trigger\n      }\n      // Implementation for Canary strategy\n    }\n  }\n  \n  pipeline('Hotfix') {\n    bypass_stages = ['Staging', 'Integration Test']\n    required_stages = ['Manual QA Approval', 'Security Scan']\n    // Implementation for Hotfix pipeline\n  }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "```\n// Define the scenes and their corresponding actions\nscene Movie_Mode {\n    set lights to 10%\n}\n\nscene Morning {\n    set lights to 100%\n}\n\nscene Smart_Oven {\n    // Action for the smart oven\n}\n\nscene Air_Conditioner {\n    // Action for the air conditioner\n}\n\n// Define the rules with triggers, conditions, and actions\nrule Block_Morning_Scene {\n    priority 1\n    trigger Movie_Mode.starts\n    condition Home_Status!= 'Away'\n    action disable Morning\n}\n\nrule Disable_Smart_Oven {\n    priority 2\n    trigger Home_Status.changes\n    condition Home_Status == 'Away'\n    action disable Smart_Oven\n}\n\nrule Disable_Air_Conditioner {\n    priority 3\n    trigger Window_Sensor.reports\n    condition Window_Sensor == 'Open'\n    action disable Air_Conditioner\n    delay 5 minutes\n    condition Window_Sensor == 'Closed'\n    action enable Air_Conditioner\n}\n```",
+      "output_raw": "```\n// Define the scenes and their corresponding actions\nscene Movie_Mode {\n    set lights to 10%\n}\n\nscene Morning {\n    set lights to 100%\n}\n\nscene Smart_Oven {\n    // Action for the smart oven\n}\n\nscene Air_Conditioner {\n    // Action for the air conditioner\n}\n\n// Define the rules with triggers, conditions, and actions\nrule Block_Morning_Scene {\n    priority 1\n    trigger Movie_Mode.starts\n    condition Home_Status!= 'Away'\n    action disable Morning\n}\n\nrule Disable_Smart_Oven {\n    priority 2\n    trigger Home_Status.changes\n    condition Home_Status == 'Away'\n    action disable Smart_Oven\n}\n\nrule Disable_Air_Conditioner {\n    priority 3\n    trigger Window_Sensor.reports\n    condition Window_Sensor == 'Open'\n    action disable Air_Conditioner\n    delay 5 minutes\n    condition Window_Sensor == 'Closed'\n    action enable Air_Conditioner\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

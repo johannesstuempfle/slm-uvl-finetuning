@@ -1,0 +1,15 @@
+features
+    SecurityTeam
+        mandatory
+            SecurityArchitect
+                alternative
+                    SecurityEngineer
+
+        mandatory
+            Manager
+
+        mandatory
+            ScrumMaster
+
+constraints
+    SecurityArchitect xor SecurityEngineer

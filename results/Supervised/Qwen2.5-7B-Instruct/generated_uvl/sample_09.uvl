@@ -1,0 +1,63 @@
+features
+    PCConfiguratorTool
+        mandatory
+            CPU
+                alternative
+                    IntelCPU
+                        mandatory
+                            MotherboardSocket
+                                alternative
+                                    LGA1700
+                                    AM5
+                    AMDCPU
+                        mandatory
+                            MotherboardSocket
+                                alternative
+                                    LGA1700
+                                    AM5
+        mandatory
+            Motherboard
+                mandatory
+                    Chipset
+                        alternative
+                            Z790
+        mandatory
+            RAM
+                alternative
+                    DDR4RAM
+                    DDR5RAM
+        mandatory
+            GPU
+                alternative
+                    RTX4090
+                        mandatory
+                            PSU
+                                minimum
+                                    850W
+        mandatory
+            GPU
+                mandatory
+                    MaxGPUClearance
+                        alternative
+                            350mm
+        mandatory
+            Case
+                alternative
+                    ATXCase
+                    MicroATXCase
+                        mandatory
+                            CPUCoolerClearance
+                                optional
+                                    LargeAirCooler
+                                        mandatory
+                                            MaxHeight
+                                                lessThan
+                                                    CPUCoolerClearance
+
+constraints
+    "CPU and MotherboardSocket are related" {IntelCPU => LGA1700; AMDCPU => AM5}
+    "MotherboardChipset and RAM are related" {Z790 => DDR4RAM; Z790 => DDR5RAM}
+    "RTX4090 and PSU are related" {RTX4090 => 850W}
+    "GPU and MaxGPUClearance are related" {RTX4090 => 350mm}
+    "Case and MotherboardFormFactor are related" {ATXCase => ATX; MicroATXCase => MicroATX}
+    "LargeAirCooler and CPUCoolerClearance are related" {LargeAirCooler => CPUCoolerClearance}

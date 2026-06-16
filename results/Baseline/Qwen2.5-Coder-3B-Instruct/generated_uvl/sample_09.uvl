@@ -1,0 +1,42 @@
+```uvl-code
+// Define the CPU choice
+var cpu_choice = "Intel vs. AMD";
+
+// Determine the motherboard socket based on the CPU choice
+var motherboard_socket = "LGA 1700 vs. AM5";
+
+// Based on the motherboard socket, determine the supported RAM type
+var ram_type = "DDR4 or DDR5";
+
+// Define the GPU choice
+var gpu_choice = "RTX 4090";
+
+// Determine the minimum power requirement for the GPU
+var min_power_requirement = "850W or higher";
+
+// Determine the physical length of the GPU
+var gpu_length = "350mm";
+
+// Define the case choice
+var case_choice = "ATX, Micro-ATX";
+
+// Ensure the case's maximum GPU clearance matches the GPU's physical length
+if (gpu_length <= case_choice.maximum_gpu_clearance) {
+    // Ensure the case's CPU cooler clearance allows for an optional large air cooler
+    if (case_choice.cpu_cooler_clearance >= large_air_cooler_height) {
+        // Display the configuration details
+        print("CPU Choice: " + cpu_choice);
+        print("Motherboard Socket: " + motherboard_socket);
+        print("Supported RAM Type: " + ram_type);
+        print("GPU Choice: " + gpu_choice);
+        print("Minimum Power Requirement: " + min_power_requirement);
+        print("GPU Length Compatibility: Yes");
+        print("Case Choice: " + case_choice);
+        print("Large Air Cooler Height Compatibility: Yes");
+    } else {
+        print("Configuration Incompatible: Large Air Cooler Height exceeds Case CPU Cooler Clearance");
+    }
+} else {
+    print("Configuration Incompatible: GPU Length exceeds Case Maximum GPU Clearance");
+}
+```

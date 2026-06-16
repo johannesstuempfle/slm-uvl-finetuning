@@ -1,0 +1,60 @@
+features
+    CourseRegistrationSystem
+        mandatory
+            MinimumCredits
+                min
+                    12
+        alternative
+            StudentType
+                graduate
+                    mandatory
+                    500
+                StudentType
+                    graduate
+                        optional
+                            mandatory
+                            20
+        alternative
+            CourseModules
+                abstract
+                    'Intro to AI'
+                    'Linear Algebra'
+                    'Advanced AI'
+                    'Statistics for Biology'
+                    'Statistics for Business'
+                    'Robotics Lab'
+                alternative
+                    'Intro to AI'
+                    'Linear Algebra'
+                    'Advanced AI'
+                    'Statistics for Biology'
+                    'Statistics for Business'
+                    'Robotics Lab'
+        alternative
+            ThesisDefense
+                optional
+                    mandatory
+                    60
+                    'Dissertation Proposal'
+                    alternative
+                        optional
+                            mandatory
+                            20
+                    mandatory
+                    optional
+                        20
+
+constraints
+    mandatory
+        CourseRegistrationSystem
+    optional
+        StudentType
+            graduate
+                mandatory
+                20
+        optional
+            ThesisDefense
+                optional
+                    mandatory
+                    60
+                    'Dissertation Proposal'

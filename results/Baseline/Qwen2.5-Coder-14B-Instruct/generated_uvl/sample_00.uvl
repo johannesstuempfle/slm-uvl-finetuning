@@ -1,0 +1,31 @@
+Certainly! Here's the translation of the given text into UML class diagram code:
+
+```plaintext
+@startuml
+class Car {
+    -engine: Engine
+    -color: Color
+    -laneAssist: boolean
+    -ESP: boolean
+}
+
+class Engine {
+    +type: String
+}
+
+class Color {
+    +name: String
+}
+
+Car "1" -- "1" Engine : has
+Car "1" -- "1" Color : has
+@enduml
+```
+
+Explanation:
+- The `Car` class has attributes for `engine`, `color`, `laneAssist`, and `ESP`.
+- The `Engine` class has a `type` attribute which can be "diesel", "gasoline", or "electric".
+- The `Color` class has a `name` attribute representing the color of the car.
+- The `Car` class has associations with the `Engine` and `Color` classes, indicating that a car has one engine and one color.
+
+This UML class diagram captures the structure and relationships described in the text.

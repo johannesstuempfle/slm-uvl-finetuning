@@ -1,0 +1,20 @@
+features
+    BillingSoftware
+        mandatory
+            TaxCalculator
+                mandatory
+                    Inputs
+                        mandatory
+                            NettoPrice
+                            SumOfProducts
+                            BuyerLocation
+                            SellerLocation
+                    Outputs
+                        mandatory
+                            TaxPerProduct
+                            BruttoPrice
+                            TaxRate
+                    AuditLogging
+                        mandatory
+                            CalculatedBasePrice
+                            RuleOfCalculation

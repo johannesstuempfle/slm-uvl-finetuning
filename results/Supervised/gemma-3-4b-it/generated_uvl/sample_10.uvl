@@ -1,0 +1,38 @@
+features
+    CI_CD_System {abstract}
+        mandatory
+            "Build"
+            "Unit Test"
+        optional
+            "Staging"
+        optional
+            "Production"
+        mandatory
+            "Integration Test"
+        mandatory
+            "Security Scan"
+        alternative
+            "Blue/Green"
+            "Canary"
+        alternative
+            "Hotfix"
+        alternative
+            "Monitoring"
+            "Rollback"
+
+        or
+            "Blue/Green"
+            "Canary"
+
+        or
+            "Hotfix"
+
+        or
+            "Monitoring"
+            "Rollback"
+
+        mandatory
+            "Manual QA Approval"
+            if "Hotfix"
+                then
+                    "Security Scan"

@@ -1,0 +1,16 @@
+features
+    RoomBookingService
+        mandatory
+            BasicFeatures
+                alternative
+                    "Two-BedRoom"
+                        optional
+                            PersonalSpaArea
+                    "Three-BedRoom"
+                        optional
+                            BestViewOption
+        mandatory
+            Bookings
+
+constraints
+    "BestViewOption" <| "Two-BedRoom"

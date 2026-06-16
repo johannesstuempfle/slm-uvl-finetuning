@@ -1,0 +1,16 @@
+features
+    TaxCalculator
+        mandatory
+            "Netto Price"
+            SumOfProducts
+            LocationOfBuyerAndSeller
+        optional
+            "Tax Per Product"
+            "Brutto Price"
+            "Tax-Rate"
+        optional
+            LoggingData
+                mandatory
+                    CalculatedBasePrice
+                optional
+                    RuleOfCalculation

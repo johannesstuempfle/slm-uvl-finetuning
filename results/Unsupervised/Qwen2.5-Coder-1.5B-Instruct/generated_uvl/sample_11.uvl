@@ -1,0 +1,20 @@
+Certainly! Below is the translation of the given text into UVL-Code:
+
+```uvl
+module SmartHomeAutomation
+
+    features
+
+        Scene "Movie Mode" {priority 1}
+            Trigger "Time"
+                Value "20:00"
+        Scene "Morning" {priority 2}
+            Trigger "Time"
+                Value "07:00"
+        Action "Smart Oven" {disabled If "Home Status" = "Away"}
+        Action "Air Conditioner" {disabled When [Any WindowSensor = "Open"], enabled After 300}
+
+endmodule
+```
+
+This UVL-Code defines a smart home automation system with the specified rules and constraints.

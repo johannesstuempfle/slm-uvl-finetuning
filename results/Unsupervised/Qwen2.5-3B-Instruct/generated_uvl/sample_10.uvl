@@ -1,0 +1,50 @@
+Here is the translation of the given text into Uglified Vietnamese Code (UVL-Code) format:
+
+```uvl
+features
+	"CI/CD system"
+		mandatory
+			"Deployment pipelines"
+				all
+					"Build"
+					"Unit Test"
+				mandatory
+					"Staging"
+						mandatory
+							"Unit Test"
+				mandatory
+					"Production"
+						mandatory
+							"Staging"
+						mandatory
+							"Integration Test"
+						mandatory
+							"Security Scan"
+								alternative
+									"Blue/Green"
+										optional
+											"Monitoring"
+												optional
+													"Rollback"
+									Canary
+										mandatory
+											"Manual QA Approval"
+										mandatory
+											"Security Scan"
+						mandatory
+							"Hotfix"
+								or
+									"Blue/Green"
+									Canary
+										mandatory
+											"Monitoring"
+										optional
+											"Rollback"
+constraints
+	"Canary" => "Monitoring" & "Rollback"
+	"Blue/Green" =>!"Staging" &!"Integration Test"
+	"Blue/Green" => "Manual QA Approval"
+	"Blue/Green" =>!"Security Scan"
+```
+
+This UVL-Code accurately captures the structure and logic of the given English text, adhering to the specified syntax.

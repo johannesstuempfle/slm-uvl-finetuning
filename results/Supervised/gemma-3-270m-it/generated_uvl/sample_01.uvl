@@ -1,0 +1,20 @@
+features
+    SecurityArchitect
+        mandatory
+            "Team member"
+                alternative
+                    "Manager"
+                    "Scrum Master"
+        mandatory
+            "Product Owner"
+                alternative
+                    "Product Owner"
+                    "Project Manager"
+        optional
+            "Team member"
+                alternative
+                    "Team member"
+                    "Independent Team Member"
+            "Team member"
+                alternative
+                    "Independent Team Member"

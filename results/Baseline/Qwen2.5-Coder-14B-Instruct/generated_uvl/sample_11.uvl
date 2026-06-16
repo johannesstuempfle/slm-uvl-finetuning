@@ -1,0 +1,43 @@
+```
+// Define the scenes and their corresponding actions
+scene Movie_Mode {
+    set lights to 10%
+}
+
+scene Morning {
+    set lights to 100%
+}
+
+scene Smart_Oven {
+    // Action for the smart oven
+}
+
+scene Air_Conditioner {
+    // Action for the air conditioner
+}
+
+// Define the rules with triggers, conditions, and actions
+rule Block_Morning_Scene {
+    priority 1
+    trigger Movie_Mode.starts
+    condition Home_Status!= 'Away'
+    action disable Morning
+}
+
+rule Disable_Smart_Oven {
+    priority 2
+    trigger Home_Status.changes
+    condition Home_Status == 'Away'
+    action disable Smart_Oven
+}
+
+rule Disable_Air_Conditioner {
+    priority 3
+    trigger Window_Sensor.reports
+    condition Window_Sensor == 'Open'
+    action disable Air_Conditioner
+    delay 5 minutes
+    condition Window_Sensor == 'Closed'
+    action enable Air_Conditioner
+}
+```

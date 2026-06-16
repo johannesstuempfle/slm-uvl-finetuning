@@ -1,0 +1,51 @@
+features
+    SmartHomeAutomationSystem
+        mandatory
+            Rules
+                mandatory
+                    MovieModeScene
+                        mandatory
+                            Triggers
+                                mandatory
+                                    "Motion Sensor Trigger"
+                        mandatory
+                            Conditions
+                                optional
+                                    "Sunset Time"
+                        mandatory
+                            Actions
+                                mandatory
+                                    SetLightsTo10Percent
+                    MorningScene
+                        mandatory
+                            Triggers
+                                mandatory
+                                    "Alarm Clock Trigger"
+                        mandatory
+                            Conditions
+                                optional
+                                    "Weekday Check"
+                        mandatory
+                            Actions
+                                mandatory
+                                    SetLightsTo100Percent
+        mandatory
+            SafetyConstraints
+                mandatory
+                    SmartOvenAction
+                        mandatory
+                            DisablingConditions
+                                mandatory
+                                    HomeStatus == "Away"
+        mandatory
+            DynamicActions
+                mandatory
+                    AirConditionerAction
+                        mandatory
+                            DisableConditions
+                                mandatory
+                                    Any(WindowSensorReportedOpen)
+                        mandatory
+                            ReenableAfter
+                                mandatory
+                                    All(WindowsClosed) => 5_minutes

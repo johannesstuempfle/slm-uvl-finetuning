@@ -1,0 +1,114 @@
+Certainly! Below is the translation of the given text into UVL-Code:
+
+```uvl
+// Define the Course class
+class Course {
+    string name;
+    int creditHours;
+    list<string> prerequisites;
+    bool mutualExclusion;
+    int enrollmentCap;
+
+    // Constructor for Course
+    constructor(string name, int creditHours, list<string> prerequisites, bool mutualExclusion, int enrollmentCap) {
+        this.name = name;
+        this.creditHours = creditHours;
+        this.prerequisites = prerequisites;
+        this.mutualExclusion = mutualExclusion;
+        this.enrollmentCap = enrollmentCap;
+    }
+}
+
+// Define the Student class
+class Student {
+    string name;
+    int creditHours;
+    list<Course> enrolledCourses;
+    bool hasPassedDissertationProposal;
+
+    // Constructor for Student
+    constructor(string name, int creditHours) {
+        this.name = name;
+        this.creditHours = creditHours;
+        this.enrolledCourses = [];
+        this.hasPassedDissertationProposal = false;
+    }
+
+    // Method to enroll in a course
+    enroll(Course course) {
+        if (this.creditHours + course.creditHours <= 12) {
+            if (!course.mutualExclusion ||!any(course.name in this.enrolledCourses)) {
+                if (course.enrollmentCap > 0 && this.enrolledCourses.size() >= course.enrollmentCap) {
+                    return false; // Enrollment cap reached
+                }
+                this.enrolledCourses.add(course);
+                this.creditHours += course.creditHours;
+                return true;
+            } else {
+                return false; // Mutual exclusion violation
+            }
+        } else {
+            return false; // Credit limit exceeded
+        }
+    }
+
+    // Method to pass the dissertation proposal
+    passDissertationProposal() {
+        this.hasPassedDissertationProposal = true;
+    }
+}
+
+// Define the CoreCourse class
+class CoreCourse : Course {
+    constructor(string name, int creditHours) : super(name, creditHours, [], false, 0) {
+    }
+}
+
+// Define the Seminar class
+class Seminar : Course {
+    constructor(string name, int creditHours) : super(name, creditHours, [], false, 0) {
+    }
+}
+
+// Define the OptionalElective class
+class OptionalElective : Course {
+    constructor(string name, int creditHours) : super(name, creditHours, [], false, 20) {
+    }
+}
+
+// Define the ThesisDefense class
+class ThesisDefense : Course {
+    constructor(string name, int creditHours) : super(name, creditHours, ['Dissertation Proposal'], true, 0) {
+    }
+}
+
+// Example usage
+CoreCourse coreCourse = new CoreCourse("Intro to AI", 3);
+Seminar seminar = new Seminar("Advanced AI", 4);
+OptionalElective optionalElective = new OptionalElective("Robotics Lab", 4);
+ThesisDefense thesisDefense = new ThesisDefense("Thesis Defense", 3);
+
+Student student = new Student("John Doe", 0);
+
+if (student.enroll(coreCourse)) {
+    println(student.name + " enrolled in " + coreCourse.name);
+}
+
+if (student.enroll(seminar)) {
+    println(student.name + " enrolled in " + seminar.name);
+}
+
+if (student.enroll(optionalElective)) {
+    println(student.name + " enrolled in " + optionalElective.name);
+}
+
+student.passDissertationProposal();
+
+if (student.enroll(thesisDefense)) {
+    println(student.name + " enrolled in " + thesisDefense.name);
+} else {
+    println(student.name + " cannot enroll in " + thesisDefense.name);
+}
+```
+
+This UVL-Code defines classes for different types of courses, students, and includes methods for enrolling students in courses, passing the dissertation proposal, and checking enrollment limits.

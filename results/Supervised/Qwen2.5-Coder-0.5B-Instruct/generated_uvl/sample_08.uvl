@@ -1,0 +1,40 @@
+features
+    "University Course Registration System" {abstract}
+        mandatory
+            "Student Enrollment Requirements"
+                alternative
+                    "Undergraduate Students"
+                        alternative
+                            "Core Course"
+                                alternative
+                                    "100-Level Core"
+                                    "500-Level Seminar"
+                    "Graduate Students"
+                        alternative
+                            "100-Level Core"
+                            "500-Level Seminar"
+                            "Advanced AI"
+                            "Linear Algebra"
+                            "Statistics for Biology"
+                            "Statistics for Business"
+                            "Robotics Lab"
+                            "Thesis Defense"
+            "Prerequisites"
+                alternative
+                    "Intro to AI"
+                    "Linear Algebra"
+                    "Statistics for Biology"
+                    "Statistics for Business"
+            "Mutually Exclusive Courses"
+                alternative
+                    "Statistics for Biology"
+                    "Statistics for Business"
+            "Elective Course"
+                alternative
+                    "Robotics Lab"
+            "Dissertation Proposal Review"
+                alternative
+                    "60 Credits"
+                    "Passing Review"
+        optional
+            "Thesis Defense"

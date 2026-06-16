@@ -1,0 +1,24 @@
+features
+    CourseRegistrationSystem
+        mandatory
+            Student
+                alternative
+                    Undergraduate
+                    Graduate
+        optional
+            CoreCourse
+            Seminar
+            AdvancedAI
+            IntroToAI
+            LinearAlgebra
+            StatisticsForBiology
+            StatisticsForBusiness
+            RoboticsLab
+            ThesisDefense
+            DissertationProposal
+constraints
+    Undergraduate => CoreCourse
+    Graduate => Seminar
+    AdvancedAI => IntroToAI & LinearAlgebra
+    StatisticsForBiology => !StatisticsForBusiness
+    ThesisDefense => DissertationProposal

@@ -1,0 +1,57 @@
+Here is the translation of your text into Uvl-Code format based on the provided instructions:
+
+```uvl-code
+System CI/CD {
+    Pipeline {
+        Build {
+            Mandatory
+        }
+        UnitTest {
+            Mandatory
+        }
+    }
+
+    DeploymentPipeline {
+        Staging {
+            MandatoryAfter {
+                UnitTest
+            }
+        }
+        Production {
+            MandatoryAfter {
+                Staging
+            }
+            MandatoryIfAllPass {
+                IntegrationTest
+                SecurityScan
+            }
+        }
+
+        Strategy {
+            Canary {
+                Monitoring {
+                    RollbackTrigger
+                }
+            }
+            BlueGreen {
+                RequiresDoubleInfrastructureResources
+            }
+        }
+
+        HotfixPipeline {
+            Bypasses {
+                Staging
+                IntegrationTest
+            }
+            Requires {
+                ManualQAApproval
+            }
+            MandatoryIfAllPass {
+                SecurityScan
+            }
+        }
+    }
+}
+```
+
+Please note that Uvl-Code is not a standard programming language but rather a conceptual framework for describing systems. The above translation aims to capture the logic and relationships described in your original text in a structured format.

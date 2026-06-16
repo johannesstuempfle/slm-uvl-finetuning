@@ -1,0 +1,25 @@
+features
+    CICDSystem
+        mandatory
+            Build
+            UnitTest
+            StagingDeployment
+        optional
+            IntegrationTest
+            SecurityScan
+            ProductionDeployment
+                mandatory
+                    DeploymentStrategy
+                        alternative
+                            BlueGreen
+                            Canary
+                optional
+                    Monitoring
+                    Rollback
+            HotfixPipeline
+                mandatory
+                    ManualQAApproval
+constraints
+    ProductionDeployment => IntegrationTest & SecurityScan
+    Canary => Monitoring & Rollback
+    HotfixPipeline => SecurityScan

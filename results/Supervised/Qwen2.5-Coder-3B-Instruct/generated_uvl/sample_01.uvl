@@ -1,0 +1,13 @@
+features
+    "Security Team" {abstract}
+        mandatory
+            "Security Architect"
+                alternative
+                    "Security Engineer"
+                    "Security Architect"
+        mandatory
+            "Security Manager"
+            "Scrum Master"
+
+constraints
+    "Security Architect"!= "Security Engineer"

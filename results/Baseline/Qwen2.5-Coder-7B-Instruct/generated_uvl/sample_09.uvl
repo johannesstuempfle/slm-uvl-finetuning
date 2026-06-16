@@ -1,0 +1,74 @@
+Here's a possible translation of the given text into uvl-Code:
+```
+PCConfiguratorTool {
+    User {
+        Choice {
+            Option "CPU" {
+                Value "Intel"
+                Value "AMD"
+                Consequence {
+                    MotherboardSocket {
+                        Value "LGA 1700"
+                        Value "AM5"
+                    }
+                }
+            }
+        }
+        Choice {
+            Option "MotherboardChipset" {
+                Value "Z790"
+                Consequence {
+                    SupportedRAMType {
+                        Value "DDR4"
+                        Value "DDR5"
+                    }
+                }
+            }
+        }
+        Choice {
+            Option "GPU" {
+                Value "RTX 4090"
+                Consequence {
+                    MinimumPowerRequirement {
+                        Value "850W"
+                    }
+                    PhysicalLength {
+                        Value "350mm"
+                        Constraint {
+                            CaseMaximumGPUClearance {
+                                Comparison "<="
+                                Value "350mm"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Choice {
+            Option "Case" {
+                Value "ATX"
+                Value "Micro-ATX"
+                Constraint {
+                    MotherboardFormFactor {
+                        Comparison "=="
+                        Value "ATX"
+                    }
+                }
+            }
+        }
+        Choice {
+            Option "AirCooler" {
+                Type "Large"
+                Height {
+                    Comparison "<"
+                    CaseCPUCoolerClearance {
+                        Comparison "<="
+                        Value "Height"
+                    }
+                }
+            }
+        }
+    }
+}
+```
+This code defines a `PCConfiguratorTool` object with several nested choices representing different aspects of configuring a PC. Each choice can have multiple options, each with its own consequences and constraints. For example, choosing an Intel CPU will dictate the available motherboard sockets, while choosing a Z790 chipset will determine the supported RAM types. Constraints are applied to ensure compatibility between different components, such as the GPU's physical length being less than the case's maximum GPU clearance.

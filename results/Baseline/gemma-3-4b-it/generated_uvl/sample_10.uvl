@@ -1,0 +1,98 @@
+```uvl
+pipeline: ci-cd {
+  stages:
+    build:
+      name: "Build"
+      steps:
+        - name: "Build Application"
+          type: "build"
+
+    unit_test:
+      name: "Unit Test"
+      steps:
+        - name: "Run Unit Tests"
+          type: "unit_test"
+
+    staging:
+      name: "Staging Deployment"
+      dependencies: [unit_test]
+      steps:
+        - name: "Deploy to Staging"
+          type: "deployment"
+          strategy: "automatic" # or "manual" if needed
+
+    integration_test:
+      name: "Integration Test"
+      steps:
+        - name: "Run Integration Tests"
+          type: "integration_test"
+
+    security_scan:
+      name: "Security Scan"
+      steps:
+        - name: "Perform Security Scan"
+          type: "security_scan"
+
+    production:
+      name: "Production Deployment"
+      dependencies: [staging, integration_test, security_scan]
+      steps:
+        - name: "Deploy to Production"
+          type: "deployment"
+          strategy: "canary" # or "blue_green"
+          description: "Production Deployment - Choose Blue/Green or Canary strategy"
+
+    hotfix:
+      name: "Hotfix Deployment"
+      dependencies: []
+      steps:
+        - name: "Build Hotfix"
+          type: "build"
+        - name: "Run Security Scan"
+          type: "security_scan"
+        - name: "Manual QA Approval"
+          type: "manual_approval"
+          description: "Requires Manual QA Approval"
+
+  strategies:
+    canary:
+      description: "Canary Deployment Strategy"
+      trigger:
+        stage: "production"
+        event: "completion"
+      steps:
+        - name: "Add Monitoring"
+          type: "monitoring"
+        - name: "Rollback Trigger"
+          type: "rollback"
+          trigger:
+            stage: "production"
+            event: "completion"
+
+    blue_green:
+      description: "Blue/Green Deployment Strategy"
+      steps:
+        - name: "Double Infrastructure Resources"
+          type: "resource_allocation"
+          description: "Requires double the infrastructure resources during the swap."
+```
+
+**Explanation and Considerations:**
+
+* **`pipeline: ci-cd`:** Defines the root pipeline named "ci-cd".
+* **`stages`:**  Lists all the stages in the pipeline.
+* **`name`:**  Provides a descriptive name for each stage.
+* **`dependencies`:**  Crucially defines the order of stages.  `staging` depends on `unit_test`, `production` depends on `staging`, `integration_test`, and `security_scan`. `hotfix` has no dependencies.
+* **`steps`:**  Lists the individual steps within each stage.  I've used generic step types like `build`, `deployment`, `unit_test`, `integration_test`, `security_scan`, `manual_approval`, `monitoring`, and `rollback`.  You'll likely need to customize these with specific tools or scripts.
+* **`strategy`:**  Used in the `production` stage to select either "canary" or "blue_green".
+* **`dependencies: []`:**  For the `hotfix` pipeline, this indicates it bypasses the standard stages.
+* **`strategies`:**  Defines the specific behavior for the Canary and Blue/Green deployment strategies.  This is important for how those strategies are triggered and what happens during the swap.
+* **`trigger`:** Defines what triggers the associated steps.
+* **`description`:** Added descriptions to clarify the purpose of each stage, step, and strategy.  This improves readability and maintainability.
+
+**Important Notes and Customization:**
+
+* **Step Types:**  Replace the generic `type` values (e.g., `build`, `deployment`, `unit_test`) with the actual types of steps used in your CI/CD system.  You'll need to know how your CI/CD tool represents these actions.
+* **Tooling:** This UVL code doesn't specify *which* tools to use. You'll need to integrate it with your chosen CI/CD platform (e.g., GitLab CI, Jenkins, Azure DevOps Pipelines).
+* **Error Handling:**  This code doesn't include error handling or retry logic.  You'll need to add these to make the pipeline robust.
+* **Manual Approval:** The `manual_approval` step needs a mechanism for a human

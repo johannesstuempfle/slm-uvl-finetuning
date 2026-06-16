@@ -1,0 +1,16 @@
+features
+    SecurityTeam
+        mandatory
+            SecurityArchitect
+                alternative
+                    SamePerson
+            SecurityEngineer
+                alternative
+                    SamePerson
+        optional
+            Manager
+        optional
+            ScrumMaster
+
+constraints
+    NoSamePerson

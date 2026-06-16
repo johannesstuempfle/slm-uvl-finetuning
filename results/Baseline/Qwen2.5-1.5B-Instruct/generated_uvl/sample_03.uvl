@@ -1,0 +1,16 @@
+Sure! Here's the translation in UVL code:
+
+```uvl
+; Coffee Shop Database
+
+; Drinks
+Drinks = Coffee, Tea, Juice, Milkshake
+
+; Foods
+Foods = Croissant, Bagel, Sandwich, Pizza
+
+; Payment Methods
+PaymentMethods = Card, Cash
+```
+
+This code defines the items sold at the coffee shop (drinks and foods), the payment methods available for customers, and organizes them into meaningful categories.

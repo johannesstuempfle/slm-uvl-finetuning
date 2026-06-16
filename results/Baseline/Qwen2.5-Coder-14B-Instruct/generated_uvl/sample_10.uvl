@@ -1,0 +1,54 @@
+```uvl
+pipeline {
+  stages = ['Build', 'Unit Test', 'Staging', 'Integration Test', 'Security Scan', 'Production', 'Monitoring']
+  mandatory_stages = ['Build', 'Unit Test', 'Staging']
+  
+  stage('Build') {
+    // Implementation for Build stage
+  }
+  
+  stage('Unit Test') {
+    // Implementation for Unit Test stage
+  }
+  
+  stage('Staging') {
+    depends_on = ['Unit Test']
+    // Implementation for Staging stage
+  }
+  
+  stage('Integration Test') {
+    depends_on = ['Staging']
+    // Implementation for Integration Test stage
+  }
+  
+  stage('Security Scan') {
+    depends_on = ['Staging', 'Integration Test']
+    // Implementation for Security Scan stage
+  }
+  
+  stage('Production') {
+    depends_on = ['Staging', 'Integration Test', 'Security Scan']
+    strategies = ['Blue/Green', 'Canary']
+    
+    strategy('Blue/Green') {
+      requires_double_infrastructure = true
+      // Implementation for Blue/Green strategy
+    }
+    
+    strategy('Canary') {
+      add_stage('Monitoring')
+      monitoring_stage {
+        add_trigger('Rollback')
+        // Implementation for Monitoring stage with Rollback trigger
+      }
+      // Implementation for Canary strategy
+    }
+  }
+  
+  pipeline('Hotfix') {
+    bypass_stages = ['Staging', 'Integration Test']
+    required_stages = ['Manual QA Approval', 'Security Scan']
+    // Implementation for Hotfix pipeline
+  }
+}
+```

@@ -1,0 +1,25 @@
+```uvlang
+scene Movie_Mode {
+    set light_level to 10%
+}
+
+scene Morning {
+    set light_level to 100%
+    conflict with Movie_Mode
+}
+
+action Smart_Oven {
+    condition Home_Status == "Away"
+    disable
+}
+
+action Air_Conditioner {
+    condition any Window_Sensor == "Open"
+    disable
+    delay 5 minutes
+    condition all Window_Sensor == "Closed"
+    enable
+}
+```
+
+Please note that `uvlang` is a fictional language for the purpose of this translation. In actual UML or State Machine modeling languages, such logic would be represented differently.

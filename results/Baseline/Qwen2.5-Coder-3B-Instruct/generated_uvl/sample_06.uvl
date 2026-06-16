@@ -1,0 +1,51 @@
+Certainly! Below is the UVL (Unified Virtual Language) code that translates the given information into a structured format:
+
+```uvl
+// Define the TaxCalculator component
+component TaxCalculator {
+    // Define the required inputs
+    input nettoPrice: number;
+    input sumOfProducts: number;
+    input buyerLocation: string;
+    input sellerLocation: string;
+
+    // Define the required outputs
+    output taxPerProduct: number[];
+    output bruttoPrice: number;
+    output taxRate: number;
+
+    // Define the logging data
+    output calculatedBasePrice: number;
+    output ruleOfCalculation: string;
+
+    // Define the calculation logic
+    calculate() {
+        // Calculate tax per product
+        taxPerProduct = [];
+        for (let i = 0; i < sumOfProducts.length; i++) {
+            taxPerProduct[i] = nettoPrice[i] * (taxRate / 100);
+        }
+
+        // Calculate brutto price
+        bruttoPrice = nettoPrice.reduce((acc, val) => acc + val, 0);
+
+        // Calculate tax rate
+        taxRate = calculateTaxRate(bruttoPrice, sumOfProducts);
+
+        // Calculate calculated base price
+        calculatedBasePrice = nettoPrice.reduce((acc, val) => acc + val, 0);
+
+        // Determine the rule of calculation
+        ruleOfCalculation = "Standard tax calculation";
+    }
+
+    // Helper function to calculate tax rate
+    calculateTaxRate(bruttoPrice: number, sumOfProducts: number[]): number {
+        // Example logic: calculate tax rate based on total sum of products
+        const totalSum = sumOfProducts.reduce((acc, val) => acc + val, 0);
+        return (bruttoPrice - totalSum) / totalSum * 100;
+    }
+}
+```
+
+This code defines a `TaxCalculator` component with the specified inputs, outputs, and calculation logic. The `calculate` method computes the tax per product, brutto price, tax rate, calculated base price, and rule of calculation based on the provided inputs.

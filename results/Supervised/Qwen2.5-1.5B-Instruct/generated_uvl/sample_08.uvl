@@ -1,0 +1,36 @@
+features
+    CourseRegistrationSystem {abstract}
+        mandatory
+            CreditsRequirement {min 12}
+                alternative
+                    StudentType {abstract}
+                        or
+                            UndergradStudent
+                                mandatory
+                                    CoreCourseSelection {oneof
+                                        'Intro to AI'
+                                        LinearAlgebra'}
+                            GraduateStudent
+                                mandatory
+                                    SeminarSelection {oneof
+                                        '500-Seminar-Series'}
+
+        mandatory
+            PrerequisiteConstraint
+                alternative
+                    AdvancedAI {and
+                        IntrotoAI
+                        LinearAlgebra}
+                    StatisticsForBiology
+                    StatisticsForBusiness
+
+        optional
+            ElectiveOption {abstract}
+                mandatory
+                    RoboticsLabCap {max 20}
+
+        optional
+            ThesisDefenseModule {abstract}
+                mandatory
+                    CreditsRequirement {min 60}
+                    DissertationProposalPass {mandatory}

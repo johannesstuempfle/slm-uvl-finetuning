@@ -1,0 +1,14 @@
+features
+    Calculator
+        mandatory
+            NettoPrice {abstract}
+            SumOfProducts {abstract}
+            LocationOfBuyer {abstract}
+            LocationOfSeller {abstract}
+        optional
+            TaxPerProduct {abstract}
+            BruttoPrice {abstract}
+            TaxRate {abstract}
+        optional
+            CalculatedBasePrice {abstract}
+            RuleOfCalculation {abstract}

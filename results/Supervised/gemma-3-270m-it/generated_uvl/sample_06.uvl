@@ -1,0 +1,11 @@
+features
+    BillingCalculator {abstract}
+        optional
+            Inputs: nettoPrice, sumOfProducts, locationOfBuyerAndSeller
+                optional
+                    TaxPerProduct = 0.0
+                    TaxRate = 0.0
+                    LoggingData = True
+                optional
+                    BasePrice = 0.0
+                    RuleOfCalculation = False

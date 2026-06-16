@@ -1,0 +1,18 @@
+Sure, here's a possible translation of the given text into UVL-Code:
+```
+coffeeShop {
+    drinks {
+        Coffee
+        Tea
+    }
+    foods {
+        Croissant
+        Bagel
+    }
+    paymentMethods {
+        card
+        cash
+    }
+}
+``` 
+This code defines a `coffeeShop` object with two child objects: `drinks` and `foods`. Each of these child objects contains a list of items available for purchase at the coffee shop. Additionally, there is a `paymentMethods` object that lists the accepted forms of payment (card and cash).

@@ -1,0 +1,83 @@
+Here's the UVL-Code for the given requirements:
+
+```uvl
+package SmartHomeAutomation
+
+abstract class Rule {
+    abstract attribute priority : integer
+    abstract feature triggers
+    abstract feature conditions {optional}
+    abstract feature actions
+}
+
+abstract class Scene {
+    abstract attribute name : string
+    feature setLights(percentage : real)
+}
+
+class MovieMode extends Scene {
+    name = 'Movie Mode'
+    setLights(percentage = 10.0)
+}
+
+class Morning extends Scene {
+    name = 'Morning'
+    setLights(percentage = 100.0)
+}
+
+abstract class DeviceAction {
+    abstract feature perform
+}
+
+abstract class SafetyConstraint {
+    abstract feature checkConstraints
+}
+
+class SmartOven extends DeviceAction {
+    perform = 'Disable Smart Oven'
+}
+
+class HomeStatus {abstract}
+class Away extends HomeStatus
+
+class AirConditioner extends DeviceAction {
+    perform = 'Disable Air Conditioner'
+}
+
+abstract class WindowSensor {abstract}
+class Open extends WindowSensor
+
+abstract class Device {
+    abstract feature disable
+    abstract feature enable
+}
+
+abstract class DeviceWithSensors {abstract}
+class WindowSensorDevice extends DeviceWithSensors
+
+abstract class RuleResolution {
+    abstract feature resolveConflicts
+}
+
+class RuleResolver extends RuleResolution {
+    feature resolveConflicts
+        alternative
+            MovieMode
+            Morning
+}
+
+abstract class ConstraintChecker {abstract}
+class SafetyConstraintChecker extends ConstraintChecker
+
+abstract class ConstraintEnabler {abstract}
+class AirConditionerEnabler extends ConstraintEnabler
+
+abstract class ConstraintDisabler {abstract}
+class SmartOvenDisabler extends ConstraintDisabler
+
+constraints
+   !MovieMode => Morning
+   !SmartOven => Away
+   !AirConditioner => all Open
+    AirConditioner.enable.after(5 * minutes)
+```

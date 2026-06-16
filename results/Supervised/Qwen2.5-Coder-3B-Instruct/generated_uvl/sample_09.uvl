@@ -1,0 +1,39 @@
+features
+    "PC Configurator" {abstract}
+        mandatory
+            "CPU Selection"
+                alternative
+                    "Intel CPU"
+                    "AMD CPU"
+                mandatory
+                    "Motherboard Socket Selection"
+                        alternative
+                            "LGA 1700 Socket"
+                            "AM5 Socket"
+            "Motherboard Chipset Selection"
+                alternative
+                    "Z790 Chipset"
+            "RAM Type Selection"
+                alternative
+                    "DDR4 RAM"
+                    "DDR5 RAM"
+        mandatory
+            "GPU Selection"
+                alternative
+                    "RTX 4090 GPU"
+                mandatory
+                    "Power Supply Requirement"
+                        constraint
+                            "Minimum Power Supply Capacity" {min_value: 850, unit: "W"}
+                    "GPU Physical Length Compatibility"
+                        constraint
+                            "Physical Length" {max_value: 350, unit: "mm"}
+        mandatory
+            "Case Selection"
+                alternative
+                    "ATX Case"
+                    "Micro-ATX Case"
+        optional
+            "Large Air Cooler Height Compatibility"
+                constraint
+                    "Height" {max_value: 20, unit: "mm"}

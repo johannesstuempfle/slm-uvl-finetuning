@@ -1,0 +1,219 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.0,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 0,
+    "failed": 12,
+    "mean_feature_f1": 0.0,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.0
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "```uvl\nCar {\n    Engine { type = \"diesel\", gasType = \"gasoline\" }\n    OptionalAssistSystem { name = \"lane assist\" }\n    OptionalAssistSystem { name = \"ESP\" }\n    Color { options = [\"red\", \"blue\", \"green\"] }\n}\n```",
+      "output_raw": "```uvl\nCar {\n    Engine { type = \"diesel\", gasType = \"gasoline\" }\n    OptionalAssistSystem { name = \"lane assist\" }\n    OptionalAssistSystem { name = \"ESP\" }\n    Color { options = [\"red\", \"blue\", \"green\"] }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "```uvl\nA security team requires:\n- A security architect\n- A security engineer\n\nThese roles cannot be held by the same individual.\n\nThe team also includes:\n- A manager\n- A separate Scrum master\n```",
+      "output_raw": "```uvl\nA security team requires:\n- A security architect\n- A security engineer\n\nThese roles cannot be held by the same individual.\n\nThe team also includes:\n- A manager\n- A separate Scrum master\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "```plaintext\nA komputer har installerat ett textredigeringsprogram (Microsoft Word, Pages etc.) och en tabellkalkylator (Microsoft Excel, Nummera etc.).\n```",
+      "output_raw": "```plaintext\nA komputer har installerat ett textredigeringsprogram (Microsoft Word, Pages etc.) och en tabellkalkylator (Microsoft Excel, Nummera etc.).\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "Sure! Here's the translation in UVL code:\n\n```uvl\n; Coffee Shop Database\n\n; Drinks\nDrinks = Coffee, Tea, Juice, Milkshake\n\n; Foods\nFoods = Croissant, Bagel, Sandwich, Pizza\n\n; Payment Methods\nPaymentMethods = Card, Cash\n```\n\nThis code defines the items sold at the coffee shop (drinks and foods), the payment methods available for customers, and organizes them into meaningful categories.",
+      "output_raw": "Sure! Here's the translation in UVL code:\n\n```uvl\n; Coffee Shop Database\n\n; Drinks\nDrinks = Coffee, Tea, Juice, Milkshake\n\n; Foods\nFoods = Croissant, Bagel, Sandwich, Pizza\n\n; Payment Methods\nPaymentMethods = Card, Cash\n```\n\nThis code defines the items sold at the coffee shop (drinks and foods), the payment methods available for customers, and organizes them into meaningful categories.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "Sure! Here's your text translated into UVL-code:\n\n```\nBicycle:\nGroupset: Manufacturer is SRAM or Shimano\nOther parts for different use-cases\n\nGravel Bike:\nWide tyres with some profile\nRoad Bike:\nSlim tyres with no profile\n\nBoth bikes:\nDrop bar handlebars\nMountain Bike:\nFlat handlebars\n\nExtra wide tyres with deep profile\nSlim tyres can be fitted on the Gravel Bike\n```",
+      "output_raw": "Sure! Here's your text translated into UVL-code:\n\n```\nBicycle:\nGroupset: Manufacturer is SRAM or Shimano\nOther parts for different use-cases\n\nGravel Bike:\nWide tyres with some profile\nRoad Bike:\nSlim tyres with no profile\n\nBoth bikes:\nDrop bar handlebars\nMountain Bike:\nFlat handlebars\n\nExtra wide tyres with deep profile\nSlim tyres can be fitted on the Gravel Bike\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "```plaintext\nclass Factory:\n    def __init__(self):\n        self.logistic_system = True\n        self.packaging_station = True\n\n    def add_normal_chocolate_production(self):\n        self.add_melting_station()\n        self.add_mixing_station()\n        self.add_cooling_station()\n\n    def add_nut_chocolate_production(self):\n        self.add_normal_chocolate_production()\n        self.add_baking_station()\n\n    def add_melting_station(self):\n        pass\n\n    def add_mixing_station(self):\n        pass\n\n    def add_cooling_station(self):\n        pass\n\n    def add_baking_station(self):\n        pass\n```\n\nExplanation:\n1. The class `Factory` represents the factory.\n2. It has attributes `logistic_system` (a boolean indicating if the logistic system is available) and `packaging_station` (a boolean indicating if the packaging station is available).\n3. The methods are defined as follows:\n\n   - `add_normal_chocolate_production`: This method adds the necessary stations for normal chocolate production (melting, mixing, cooling). After calling this method, it will have added the logistic system and packaging station.\n   \n   - `add_nut_chocolate_production`: This method adds the necessary stations for nut-chocolate production by adding all stations for normal chocolate plus an additional baking station. After calling this method, it will have added the logistic system and packaging station.\n\n   - `add_melting_station`, `add_mixing_station`, `add_cooling_station`, `add_baking_station`: These methods do nothing because they are placeholders for any specific implementation details related to these stations.",
+      "output_raw": "```plaintext\nclass Factory:\n    def __init__(self):\n        self.logistic_system = True\n        self.packaging_station = True\n\n    def add_normal_chocolate_production(self):\n        self.add_melting_station()\n        self.add_mixing_station()\n        self.add_cooling_station()\n\n    def add_nut_chocolate_production(self):\n        self.add_normal_chocolate_production()\n        self.add_baking_station()\n\n    def add_melting_station(self):\n        pass\n\n    def add_mixing_station(self):\n        pass\n\n    def add_cooling_station(self):\n        pass\n\n    def add_baking_station(self):\n        pass\n```\n\nExplanation:\n1. The class `Factory` represents the factory.\n2. It has attributes `logistic_system` (a boolean indicating if the logistic system is available) and `packaging_station` (a boolean indicating if the packaging station is available).\n3. The methods are defined as follows:\n\n   - `add_normal_chocolate_production`: This method adds the necessary stations for normal chocolate production (melting, mixing, cooling). After calling this method, it will have added the logistic system and packaging station.\n   \n   - `add_nut_chocolate_production`: This method adds the necessary stations for nut-chocolate production by adding all stations for normal chocolate plus an additional baking station. After calling this method, it will have added the logistic system and packaging station.\n\n   - `add_melting_station`, `add_mixing_station`, `add_cooling_station`, `add_baking_station`: These methods do nothing because they are placeholders for any specific implementation details related to these stations.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "```plaintext\n; UVL code translation\n\nMODULE TaxCalculator {\n    FUNCTION calculateTax(nettoPrice, sumOfProducts, location) {\n        let taxPerProduct = (nettoPrice * sumOfProducts) / 100;\n        let bruttoPrice = nettoPrice + taxPerProduct;\n        let taxRate = taxPerProduct / nettoPrice;\n\n        let auditData = {\n            \"calculatedBasePrice\": nettoPrice,\n            \"ruleOfCalculation\": \"Netto\"\n        };\n\n        return {\n            taxPerProduct: taxPerProduct,\n            bruttoPrice: bruttoPrice,\n            taxRate: taxRate,\n            auditData: auditData\n        };\n    }\n}\n```",
+      "output_raw": "```plaintext\n; UVL code translation\n\nMODULE TaxCalculator {\n    FUNCTION calculateTax(nettoPrice, sumOfProducts, location) {\n        let taxPerProduct = (nettoPrice * sumOfProducts) / 100;\n        let bruttoPrice = nettoPrice + taxPerProduct;\n        let taxRate = taxPerProduct / nettoPrice;\n\n        let auditData = {\n            \"calculatedBasePrice\": nettoPrice,\n            \"ruleOfCalculation\": \"Netto\"\n        };\n\n        return {\n            taxPerProduct: taxPerProduct,\n            bruttoPrice: bruttoPrice,\n            taxRate: taxRate,\n            auditData: auditData\n        };\n    }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Sure! Here's the translation into UVL (which appears to be a programming language):\n\n```ulv\nmodule RoomBookingService {\n    // Basic features of a room\n    struct RoomFeature {\n        int numberOfBeds;\n        string view;\n        float size;\n\n        // Optional features of a room\n        bool hasPersonalSpaArea = false; // Default value can be changed later if needed\n\n        // Best-view option availability condition\n        bool isBestViewAvailableForTwoBedRooms = true; // Default value can be changed later if needed\n\n        // Booking management\n        struct Booking {\n            DateTime startDate;\n            DateTime endDate;\n            float optionalFeesOrBookings; // Can store either fees or bookings as per requirement\n            \n            // Check function to determine if a room with best-view feature is eligible for booking based on bed type\n            boolean checkBestViewAvailability(RoomFeature room) {\n                return!isBestViewAvailableForTwoBedRooms || (room.numberOfBeds == 2);\n            }\n        }\n\n        // Function to manage room bookings\n        void bookRoom(Booking newBooking) {\n            // Implement logic here to process the booking\n        }\n\n        // Function to retrieve details of a specific room\n        RoomFeature getRoomDetails(int roomId) {\n            // Implement logic here to fetch room details\n        }\n    }\n}\n```\n\nThis code snippet represents an abstracted version of your description in terms of a structured data model using UVL-like syntax. The structure includes classes (`struct`) for `RoomFeature` and `Booking`, along with functions for managing these entities. Note that some parts of the original description may need further elaboration depending on the exact implementation requirements.",
+      "output_raw": "Sure! Here's the translation into UVL (which appears to be a programming language):\n\n```ulv\nmodule RoomBookingService {\n    // Basic features of a room\n    struct RoomFeature {\n        int numberOfBeds;\n        string view;\n        float size;\n\n        // Optional features of a room\n        bool hasPersonalSpaArea = false; // Default value can be changed later if needed\n\n        // Best-view option availability condition\n        bool isBestViewAvailableForTwoBedRooms = true; // Default value can be changed later if needed\n\n        // Booking management\n        struct Booking {\n            DateTime startDate;\n            DateTime endDate;\n            float optionalFeesOrBookings; // Can store either fees or bookings as per requirement\n            \n            // Check function to determine if a room with best-view feature is eligible for booking based on bed type\n            boolean checkBestViewAvailability(RoomFeature room) {\n                return!isBestViewAvailableForTwoBedRooms || (room.numberOfBeds == 2);\n            }\n        }\n\n        // Function to manage room bookings\n        void bookRoom(Booking newBooking) {\n            // Implement logic here to process the booking\n        }\n\n        // Function to retrieve details of a specific room\n        RoomFeature getRoomDetails(int roomId) {\n            // Implement logic here to fetch room details\n        }\n    }\n}\n```\n\nThis code snippet represents an abstracted version of your description in terms of a structured data model using UVL-like syntax. The structure includes classes (`struct`) for `RoomFeature` and `Booking`, along with functions for managing these entities. Note that some parts of the original description may need further elaboration depending on the exact implementation requirements.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "Sure! Here's your translation in UVL code:\n\n```ulv\n// University Course Registration System\n\nclass Student {\n    int credits;\n    String[] courses;\n\n    public void register(int minCredits) {\n        if (credits < minCredits) {\n            System.out.println(\"Please register at least \" + minCredits + \" credits.\");\n        } else {\n            // Implement logic for registering courses based on credit requirements.\n        }\n    }\n\n    public void selectCourse(String coreCourse) {\n        // Implement logic for selecting 100-level Core course for undergraduate students.\n    }\n\n    public void selectSeminar(String seminarLevel) {\n        // Implement logic for selecting 500-level Seminar for graduate students.\n    }\n\n    public boolean hasPrerequisite(String prerequisite) {\n        // Implement logic for checking if a course has the required prerequisite.\n    }\n\n    public void addElective(String elective) {\n        // Implement logic for adding optional electives without hard cap.\n    }\n\n    public boolean canEnrollInLab() {\n        return false; // Assuming no other elective or mandatory course caps.\n    }\n\n    public void applyForDefense() {\n        // Implement logic for applying for Thesis Defense after meeting certain criteria.\n    }\n}\n```\n\nNote: This is just a basic framework. You would need to fill in the specific methods according to your actual implementation details.",
+      "output_raw": "Sure! Here's your translation in UVL code:\n\n```ulv\n// University Course Registration System\n\nclass Student {\n    int credits;\n    String[] courses;\n\n    public void register(int minCredits) {\n        if (credits < minCredits) {\n            System.out.println(\"Please register at least \" + minCredits + \" credits.\");\n        } else {\n            // Implement logic for registering courses based on credit requirements.\n        }\n    }\n\n    public void selectCourse(String coreCourse) {\n        // Implement logic for selecting 100-level Core course for undergraduate students.\n    }\n\n    public void selectSeminar(String seminarLevel) {\n        // Implement logic for selecting 500-level Seminar for graduate students.\n    }\n\n    public boolean hasPrerequisite(String prerequisite) {\n        // Implement logic for checking if a course has the required prerequisite.\n    }\n\n    public void addElective(String elective) {\n        // Implement logic for adding optional electives without hard cap.\n    }\n\n    public boolean canEnrollInLab() {\n        return false; // Assuming no other elective or mandatory course caps.\n    }\n\n    public void applyForDefense() {\n        // Implement logic for applying for Thesis Defense after meeting certain criteria.\n    }\n}\n```\n\nNote: This is just a basic framework. You would need to fill in the specific methods according to your actual implementation details.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "```uvl-code\n# Define the configuration steps for a PC configurator tool\n\n# Step 1: Choose CPU\ncpu_choice = \"Intel\" if cpu_type == \"Intel\" else \"AMD\"\n\n# Step 2: Determine motherboard socket based on CPU selection\nsocket_type = \"LGA 1700\" if cpu_choice == \"Intel\" else \"AM5\"\n\n# Step 3: Select motherboard chipset\nchipset = \"Z790\"\n\n# Step 4: Determine supported RAM type based on chipset\nram_type = \"DDR4\" if chipset == \"Z790\" else \"DDR5\"\n\n# Step 5: High-end GPU requires a PSU with at least 850W\npower_supply_capacity = max(850, 650)\n\n# Step 6: Check GPU physical length compatibility with case clearance\ngpu_length = 350\ncase_clearance = gpu_length <= case_max_gpu_clearance\n\n# Step 7: Ensure motherboard matches case form factor\nmotherboard_form_factor = \"ATX\"\ncase_form_factor = motherboard_form_factor\n\n# Optional step: Check air cooler height against case CPU cooler clearance\nair_cooler_height = 200\ncase_cpu_cooler_clearance = 150\ncooling_system_compatibility = air_cooler_height < case_cpu_cooler_clearance\n```",
+      "output_raw": "```uvl-code\n# Define the configuration steps for a PC configurator tool\n\n# Step 1: Choose CPU\ncpu_choice = \"Intel\" if cpu_type == \"Intel\" else \"AMD\"\n\n# Step 2: Determine motherboard socket based on CPU selection\nsocket_type = \"LGA 1700\" if cpu_choice == \"Intel\" else \"AM5\"\n\n# Step 3: Select motherboard chipset\nchipset = \"Z790\"\n\n# Step 4: Determine supported RAM type based on chipset\nram_type = \"DDR4\" if chipset == \"Z790\" else \"DDR5\"\n\n# Step 5: High-end GPU requires a PSU with at least 850W\npower_supply_capacity = max(850, 650)\n\n# Step 6: Check GPU physical length compatibility with case clearance\ngpu_length = 350\ncase_clearance = gpu_length <= case_max_gpu_clearance\n\n# Step 7: Ensure motherboard matches case form factor\nmotherboard_form_factor = \"ATX\"\ncase_form_factor = motherboard_form_factor\n\n# Optional step: Check air cooler height against case CPU cooler clearance\nair_cooler_height = 200\ncase_cpu_cooler_clearance = 150\ncooling_system_compatibility = air_cooler_height < case_cpu_cooler_clearance\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "```uvl\nCI_CD_system_defines_deployment_pipelines.\nAll_pipelines_must_run_'Build'_and_'Unit_Test'_stages.\n'A_Staging'_deployment_is_mandatory_and_can_only_run_after_'Unit_Test'_passes.\n'The_Production'_deployment_requires_the_'Staging'_deployment_to_succeed,_and_also_requires_both_'Integration_Test'_and_'Security_Scan'_to_pass.\nFor_'The_Production'_pipeline,the_user_can_select_''either_a_Blue/Green''or_a_Canary''strategy'.\nChoosing_'Canary'_automatically_adds_a_'Monitoring'_stage_with_a_'Rollback'_trigger.\nChoosing_'Blue/Green'_requires_double_the_infrastructure_resources_during_the_swap.\nA_separate_'Hotfix'_pipeline_can_bypass_'Staging'_and_'Integration_Test'_but_requires_a_'Manual_QA_Approval'_step_and_must_still_pass_the_'Security_Scan'_.\n```",
+      "output_raw": "```uvl\nCI_CD_system_defines_deployment_pipelines.\nAll_pipelines_must_run_'Build'_and_'Unit_Test'_stages.\n'A_Staging'_deployment_is_mandatory_and_can_only_run_after_'Unit_Test'_passes.\n'The_Production'_deployment_requires_the_'Staging'_deployment_to_succeed,_and_also_requires_both_'Integration_Test'_and_'Security_Scan'_to_pass.\nFor_'The_Production'_pipeline,the_user_can_select_''either_a_Blue/Green''or_a_Canary''strategy'.\nChoosing_'Canary'_automatically_adds_a_'Monitoring'_stage_with_a_'Rollback'_trigger.\nChoosing_'Blue/Green'_requires_double_the_infrastructure_resources_during_the_swap.\nA_separate_'Hotfix'_pipeline_can_bypass_'Staging'_and_'Integration_Test'_but_requires_a_'Manual_QA_Approval'_step_and_must_still_pass_the_'Security_Scan'_.\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "```uvl\n// Smart Home Automation System\n\n// Rule for \"Movie Mode\" scene:\nrule MovieModeScene {\n    when \n        // Trigger: Scene initiated by user\n        HomeScene == \"Movie Mode\"\n        \n        // Optional condition: No other scenes active\n        Not(ActiveScenes.contains(\"Morning\"))\n    \n    then\n        // Action: Set lights to 10%\n        Light.set(10)\n}\n\n// Safety constraint for \"Smart Oven\":\nrule SmartOvenSafety {\n    when\n        // Trigger: User initiates oven operation\n        Ovens > 0\n        \n        // Optional condition: Home status is not away\n        HomeStatus!= \"Away\"\n\n    then\n        // Disable oven action\n        Oven.disable()\n}\n\n// Dynamic disabling of \"Air Conditioner\" if window sensors report open:\nrule AirConditionerDynamicDisable {\n    when\n        // Trigger: Any window sensor reports open\n        WindowSensors.any()\n\n        // Optional condition: All windows closed within 5 minutes\n        All(Windows.closedIn(5))\n\n    then\n        // Dynamically disable air conditioner\n        AirConditioner.disable()\n}\n```\n\nThis code translates the provided requirements into a structured format suitable for an event-driven system like those found in smart home automation systems. Each rule includes triggers, conditions, and actions necessary to achieve the desired functionality while adhering to the specified safety constraints.",
+      "output_raw": "```uvl\n// Smart Home Automation System\n\n// Rule for \"Movie Mode\" scene:\nrule MovieModeScene {\n    when \n        // Trigger: Scene initiated by user\n        HomeScene == \"Movie Mode\"\n        \n        // Optional condition: No other scenes active\n        Not(ActiveScenes.contains(\"Morning\"))\n    \n    then\n        // Action: Set lights to 10%\n        Light.set(10)\n}\n\n// Safety constraint for \"Smart Oven\":\nrule SmartOvenSafety {\n    when\n        // Trigger: User initiates oven operation\n        Ovens > 0\n        \n        // Optional condition: Home status is not away\n        HomeStatus!= \"Away\"\n\n    then\n        // Disable oven action\n        Oven.disable()\n}\n\n// Dynamic disabling of \"Air Conditioner\" if window sensors report open:\nrule AirConditionerDynamicDisable {\n    when\n        // Trigger: Any window sensor reports open\n        WindowSensors.any()\n\n        // Optional condition: All windows closed within 5 minutes\n        All(Windows.closedIn(5))\n\n    then\n        // Dynamically disable air conditioner\n        AirConditioner.disable()\n}\n```\n\nThis code translates the provided requirements into a structured format suitable for an event-driven system like those found in smart home automation systems. Each rule includes triggers, conditions, and actions necessary to achieve the desired functionality while adhering to the specified safety constraints.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

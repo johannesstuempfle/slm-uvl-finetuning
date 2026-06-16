@@ -1,0 +1,8 @@
+```uvl
+Car {
+    Engine { type = "diesel", gasType = "gasoline" }
+    OptionalAssistSystem { name = "lane assist" }
+    OptionalAssistSystem { name = "ESP" }
+    Color { options = ["red", "blue", "green"] }
+}
+```

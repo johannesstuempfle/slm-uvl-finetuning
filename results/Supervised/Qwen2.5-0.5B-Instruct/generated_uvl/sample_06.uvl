@@ -1,0 +1,14 @@
+features
+    TaxCalculator
+        mandatory
+            NetToPrice {type double}
+            SumOfProducts {type double}
+            BuyerLocation {type string}
+        optional
+            TaxPerProduct {type double}
+            BruttoPrice {type double}
+            TaxRate {type double}
+        optional
+            LoggingData
+                optional BasePrice {type double}
+                    optional RuleCalculation {optional bool}

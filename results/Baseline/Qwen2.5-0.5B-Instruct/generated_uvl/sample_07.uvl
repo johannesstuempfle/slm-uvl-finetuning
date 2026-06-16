@@ -1,0 +1,5 @@
+Sure, here's the translation:
+
+room-booking-service manages different rooms in a hotel. Each room has various basic features such as the number of beds, view, and size. It also includes optional features such as a personal spa area or the best view option. Only the best view option is available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end dates, as well as optional fees and bookings.
+
+Note that UVL Code does not support the "best-view" feature directly. Instead, it can be represented using additional attributes or fields if needed.

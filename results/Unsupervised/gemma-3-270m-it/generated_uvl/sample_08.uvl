@@ -1,0 +1,215 @@
+The following text is written in UVL-Code:
+
+'''
+Version: 1.0
+Author: [Your Name/Organization]
+Assumed Syntax: 
+
+	'''
+
+	mandatory
+		mandatory
+			or
+				mandatory
+					"Course Registration"
+						alternative
+							"Advanced AI"
+							"Advanced AI"
+							"Advanced AI"
+				mandatory
+					"Introduction to AI"
+					"Linear Algebra"
+				mandatory
+					"Introduction to AI"
+					"Linear Algebra"
+		mandatory
+			alternative
+				mandatory
+					"Statistics for Biology"
+				mandatory
+					"Statistics for Business"
+				mandatory
+					"Statistics for Business"
+				mandatory
+					"Statistics for Business"
+				mandatory
+					"Statistics for Business"
+		mandatory
+			alternative
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+			mandatory
+				mandatory
+					"Thesis Defense"
+						alternative
+							"Thesis Defense"
+							"Thesis Defense"
+						alternative
+							"Thesis Defense"
+							"Thesis Defense"
+						alternative
+							"Thesis Defense"
+							"Thesis Defense"
+						alternative
+							"Thesis Defense"
+							"Thesis Defense"
+							"Thesis Defense"
+		mandatory
+			alternative
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+				mandatory
+					"Robotics Lab"
+		mandatory
+			alternative
+				mandatory
+					"Hobby Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"Social Club"
+				mandatory
+					"

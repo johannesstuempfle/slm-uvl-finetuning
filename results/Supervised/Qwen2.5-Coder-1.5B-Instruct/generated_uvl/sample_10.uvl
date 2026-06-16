@@ -1,0 +1,28 @@
+features
+    CI_CD_System {abstract}
+        mandatory
+            Build
+            Unit_Test
+        optional
+            Staging {mandatory}
+                mandatory
+                    "Unit Test Passed"
+        optional
+            Production {mandatory}
+                mandatory
+                    Staging_Succeeded
+                        alternative
+                            Blue_Green
+                                mandatory
+                                    "Swap Infrastructure Resources"
+                            Canary
+                                mandatory
+                                    Monitoring
+                                        mandatory
+                                            Rollback
+        optional
+            Hotfix {optional}
+                mandatory
+                    Manual_QA_Approval
+                mandatory
+                    Security_Scan

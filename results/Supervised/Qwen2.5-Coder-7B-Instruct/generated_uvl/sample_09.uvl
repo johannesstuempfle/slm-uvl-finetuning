@@ -1,0 +1,48 @@
+features
+    "PC Configurator"
+        mandatory
+            "CPU Choice" {abstract}
+                alternative
+                    "Intel CPU"
+                    "AMD CPU"
+        mandatory
+            "Motherboard Socket" {abstract}
+                mandatory
+                    "Socket Dependency" {abstract}
+                        alternative
+                            "LGA 1700 Socket" {implies "Z790 Chipset"}
+                            "AM5 Socket" {implies "B650 Chipset"}
+        mandatory
+            "Chipset" {abstract}
+                alternative
+                    "Z790 Chipset" {implies "DDR4 RAM"}
+                    "B650 Chipset" {implies "DDR5 RAM"}
+        mandatory
+            "GPU Selection" {abstract}
+                mandatory
+                    "Power Requirement" {abstract}
+                        alternative
+                            "High End GPU" {implies "Minimum PSU 850W"}
+        mandatory
+            "GPU Compatibility" {abstract}
+                mandatory
+                    "Physical Length" {abstract}
+                        alternative
+                            "350mm GPU" {implies "Case Maximum Clearance 350mm"}
+        mandatory
+            "Case Type" {abstract}
+                alternative
+                    "ATX Case"
+                    "Micro-ATX Case"
+        optional
+            "Large Air Cooler" {abstract}
+                mandatory
+                    "Cooler Height" {abstract}
+                        alternative
+                            "Cooler Height <= 20mm" {implies "Case CPU Cooler Clearance >= 20mm"}
+
+constraints
+    "Socket Dependency" => "Z790 Chipset" || "B650 Chipset"
+    "Power Requirement" => "Minimum PSU 850W"
+    "Physical Length" => "Case Maximum Clearance 350mm"
+    "Cooler Height" => "Case CPU Cooler Clearance >= 20mm"

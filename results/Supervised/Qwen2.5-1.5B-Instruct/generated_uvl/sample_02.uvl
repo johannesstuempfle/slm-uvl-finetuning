@@ -1,0 +1,11 @@
+features
+    Computer
+        mandatory
+            "Text Editing Programm"
+                alternative
+                    MS_Word
+                    Pages
+            "Cell Calculation Tool"
+                alternative
+                    MS_Excel
+                    Numberts

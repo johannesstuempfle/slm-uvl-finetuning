@@ -1,0 +1,11 @@
+features
+    Computer {abstract}
+        mandatory
+            TextEditingProgram {abstract}
+                or
+                    MSWord
+                    Pages
+            CellCalculationTool {abstract}
+                or
+                    MSExcel
+                    Numberts

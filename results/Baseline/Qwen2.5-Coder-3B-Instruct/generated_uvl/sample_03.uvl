@@ -1,0 +1,20 @@
+Certainly! Here is the translation of the given text into UVL-Code:
+
+```uvl
+coffee-shop {
+    drinks = [
+        "Coffee",
+        "Tea"
+    ],
+    foods = [
+        "Croissant",
+        "Bagel"
+    ],
+    payment-methods = [
+        "Card",
+        "Cash"
+    ]
+}
+```
+
+This UVL-Code structure defines a `coffee-shop` with lists for drinks, foods, and payment methods. Each list contains strings representing the respective items.

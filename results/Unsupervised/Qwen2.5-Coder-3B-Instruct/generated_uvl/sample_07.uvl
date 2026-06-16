@@ -1,0 +1,219 @@
+Here is the UVL (Unified Vision Language) code for the given text:
+
+```uvl
+package RoomBookingService
+
+abstract class Room
+    attributes
+        number_of_beds: Integer
+        view: String
+        size: Float
+    abstract operations
+        getBasicFeatures(): Features
+        getOptionalFeatures(): Features
+
+class BasicFeatures
+    abstract properties
+        beds: Integer
+        view: String
+        size: Float
+
+class OptionalFeatures
+    abstract properties
+        personal_spa_area: Boolean
+        best_view_option: Boolean
+
+abstract class Features
+    abstract operations
+        getAllFeatures(): List[Feature]
+
+abstract class Feature
+
+class Bed extends Feature
+    attributes
+        count: Integer
+
+class View extends Feature
+    attributes
+        description: String
+
+class Size extends Feature
+    attributes
+        value: Float
+
+abstract class Booking
+    attributes
+        start_date: Date
+        end_date: Date
+    optional
+        fees: Fees
+        booking: Booking
+
+class Fees
+    abstract operations
+        getTotalFees(): Float
+
+abstract class Booking
+    abstract operations
+        getBookings(): List[Booking]
+        getFees(): Fees
+
+class Date
+    abstract properties
+        year: Integer
+        month: Integer
+        day: Integer
+
+class Features
+    operations
+        getAllFeatures(): List[Feature]
+            alternative
+                return this.getBasicFeatures.getAllFeatures() + this.getOptionalFeatures.getAllFeatures()
+
+class BasicFeatures
+    operations
+        getAllFeatures(): List[Feature]
+            return [this.beds, this.view, this.size]
+
+class OptionalFeatures
+    operations
+        getAllFeatures(): List[Feature]
+            if this.best_view_option
+                return [this.personal_spa_area, this.best_view_option]
+            else
+                return [this.personal_spa_area]
+
+class Features
+    operations
+        getAllFeatures(): List[Feature]
+            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]
+
+class Bed
+    attributes
+        count: Integer
+
+class View
+    attributes
+        description: String
+
+class Size
+    attributes
+        value: Float
+
+class Booking
+    operations
+        getBookings(): List[Booking]
+            return []
+
+        getFees(): Fees
+            return new Fees
+
+class Date
+    abstract properties
+        year: Integer
+        month: Integer
+        day: Integer
+
+class Fees
+    operations
+        getTotalFees(): Float
+            return 0.0
+
+abstract class Booking
+    abstract operations
+        getBookings(): List[Booking]
+        getFees(): Fees
+
+class Date
+    abstract properties
+        year: Integer
+        month: Integer
+        day: Integer
+
+class Features
+    operations
+        getAllFeatures(): List[Feature]
+            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]
+
+class BasicFeatures
+    operations
+        getAllFeatures(): List[Feature]
+            return [this.beds, this.view, this.size]
+
+class OptionalFeatures
+    operations
+        getAllFeatures(): List[Feature]
+            if this.best_view_option
+                return [this.personal_spa_area, this.best_view_option]
+            else
+                return [this.personal_spa_area]
+
+class Features
+    operations
+        getAllFeatures(): List[Feature]
+            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]
+
+class Bed
+    attributes
+        count: Integer
+
+class View
+    attributes
+        description: String
+
+class Size
+    attributes
+        value: Float
+
+class Booking
+    operations
+        getBookings(): List[Booking]
+            return []
+
+        getFees(): Fees
+            return new Fees
+
+class Date
+    abstract properties
+        year: Integer
+        month: Integer
+        day: Integer
+
+class Fees
+    operations
+        getTotalFees(): Float
+            return 0.0
+
+abstract class Booking
+    abstract operations
+        getBookings(): List[Booking]
+        getFees(): Fees
+
+class Date
+    abstract properties
+        year: Integer
+        month: Integer
+        day: Integer
+
+class Features
+    operations
+        getAllFeatures(): List[Feature]
+            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]
+
+class BasicFeatures
+    operations
+        getAllFeatures(): List[Feature]
+            return [this.beds, this.view, this.size]
+
+class OptionalFeatures
+    operations
+        getAllFeatures(): List[Feature]
+            if this.best_view_option
+                return [this.personal_spa_area, this.best_view_option]
+            else
+                return [this.personal_spa_area]
+
+class Features
+    operations
+        getAllFeatures(): List[Feature]
+            return [this.beds, this.view, this.size, this.personal_spa_area

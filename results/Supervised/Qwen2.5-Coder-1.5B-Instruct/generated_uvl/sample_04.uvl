@@ -1,0 +1,27 @@
+features
+    Bicycle
+        mandatory
+            "Groupset Manufacturer"
+                alternative
+                    SRAM
+                    Shimano
+        optional
+            GravelBike
+                alternative
+                    WideTyresWithProfile
+                    SlimTyresNoProfile
+        optional
+            RoadBike
+                alternative
+                    SlimTyresNoProfile
+        optional
+            MountainBike
+                alternative
+                    FlatHandlebars
+                    DropBarHandlebars
+        optional
+            ExtraWideTyresDeepProfile
+
+constraints
+    "GravelBike" implies "WideTyresWithProfile"
+    "MountainBike" implies "ExtraWideTyresDeepProfile"

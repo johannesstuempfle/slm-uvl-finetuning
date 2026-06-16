@@ -1,0 +1,12 @@
+features
+    ChocolateFactory {abstract}
+        mandatory
+            MeltingStation
+            MixingStation
+            CoolingStation
+            LogisticSystem
+            PackagingStation
+        alternative
+            NutChocolate {abstract}
+                mandatory
+                    BakingStation

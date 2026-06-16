@@ -1,0 +1,20 @@
+```uvl
+features
+    TaxCalculator
+        mandatory
+            NettoPrice
+            SumOfProducts
+            BuyerLocation
+            SellerLocation
+        optional
+            TaxPerProduct
+            BruttoPrice
+            TaxRate
+            AuditData {abstract}
+                CalculatedBasePrice
+                RuleOfCalculation
+
+constraints
+   !TaxPerProduct => BruttoPrice & TaxRate
+   !BruttoPrice => TaxPerProduct & TaxRate
+   !AuditData => TaxPerProduct | BruttoPrice | TaxRate

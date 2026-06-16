@@ -1,0 +1,18 @@
+features
+    "Chocolate Production Line"
+        mandatory
+            "Melting Station"
+            "Mixing Station"
+            "Cooling Station"
+            "Baking Station"
+            "Logistic System"
+            "Packaging Station"
+        optional
+            "Nut Chocolate" {alternative}
+                mandatory
+                    "Melting Station"
+                    "Mixing Station"
+                    "Cooling Station"
+                    "Baking Station"
+                    "Logistic System"
+                    "Packaging Station"

@@ -1,0 +1,58 @@
+Here is the translation in Uvl-Code format based on your instructions:
+
+```uvl
+Namespace RoomBookingService {
+    Features
+        "Room Booking Service" {abstract}
+            Cardinality [1..1]
+                Includes
+                    Room {abstract}
+                        Cardinality [1..*]
+                            Includes
+                                BasicFeatures {abstract}
+                                    Mandatory
+                                        NumberofBeds {abstract}
+                                            Cardinality [1..1]
+                                                Integer
+                                        View {abstract}
+                                            Cardinality [1..1]
+                                                String
+                                        Size {abstract}
+                                            Cardinality [1..1]
+                                                String
+                                OptionalFeatures {abstract}
+                                    Mandatory
+                                        PersonalSpaArea {abstract}
+                                            Cardinality [1..1]
+                                                Boolean
+                                        BestViewOption {abstract}
+                                            Cardinality [1..1]
+                                                Boolean
+                                    Optional
+                                        BestViewOption {abstract}
+                                            Cardinality [1..1]
+                                                Boolean
+                                            Constraint BestViewOption => NumberofBeds == 2
+
+                    Booking {abstract}
+                        Cardinality [1..*]
+                            Includes
+                                Dates {abstract}
+                                    Mandatory
+                                        StartDate {abstract}
+                                            Cardinality [1..1]
+                                                DateTime
+                                        EndDate {abstract}
+                                            Cardinality [1..1]
+                                                DateTime
+                                FeesBookings {abstract}
+                                    Optional
+                                        Fee {abstract}
+                                            Cardinality [1..1]
+                                                Decimal
+                                        Booking {abstract}
+                                            Cardinality [1..1]
+                                                String
+}    
+}    
+```

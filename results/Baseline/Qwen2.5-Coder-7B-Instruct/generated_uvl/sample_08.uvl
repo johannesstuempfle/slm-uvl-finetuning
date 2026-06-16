@@ -1,0 +1,61 @@
+Sure! Here's a possible translation of the text into UVL-Code:
+```
+class CourseRegistrationSystem {
+    Student[] students;
+    
+    public void registerStudent(Student s) {
+        if (s.getCredits() < 12) {
+            throw new IllegalArgumentException("All students must register for a minimum of 12 credits.");
+        }
+        
+        if (s instanceof Undergraduate) {
+            boolean selectedCoreCourse = false;
+            for (Course c : s.getSelectedCourses()) {
+                if (c.getLevel() == 100 && c.isCore()) {
+                    selectedCoreCourse = true;
+                    break;
+                }
+            }
+            
+            if (!selectedCoreCourse) {
+                throw new IllegalArgumentException("Undergraduate students must select one 100-level Core course.");
+            }
+        } else if (s instanceof Graduate) {
+            boolean selectedSeminar = false;
+            for (Course c : s.getSelectedCourses()) {
+                if (c.getLevel() == 500 && c.isSeminar()) {
+                    selectedSeminar = true;
+                    break;
+                }
+            }
+            
+            if (!selectedSeminar) {
+                throw new IllegalArgumentException("Graduate students must select a 500-level Seminar.");
+            }
+        }
+        
+        for (Course c : s.getSelectedCourses()) {
+            for (Course prereq : c.getPrerequisites()) {
+                if (!s.getSelectedCourses().contains(prereq)) {
+                    throw new IllegalArgumentException(c.getName() + " requires " + prereq.getName());
+                }
+            }
+            
+            for (Course mutualExclusion : c.getMutualExclusions()) {
+                if (s.getSelectedCourses().contains(mutualExclusion)) {
+                    throw new IllegalArgumentException(c.getName() + " is mutually exclusive with " + mutualExclusion.getName());
+                }
+            }
+        }
+        
+        if (s.getCourse("Robotics Lab")!= null && s.getCourse("Robotics Lab").getEnrollmentCount() >= 20) {
+            throw new IllegalArgumentException("The Robotics Lab has reached its maximum enrollment capacity.");
+        }
+        
+        if (s.getCredits() < 60 ||!s.hasPassedDissertationProposal()) {
+            throw new IllegalArgumentException("Only students who have completed 60 credits and passed their Dissertation Proposal can take the Thesis Defense module.");
+        }
+    }
+}
+``` 
+This code defines a `CourseRegistrationSystem` class that manages student enrollments in a university course registration system. It includes methods to check that each student meets the minimum credit requirement, selects the required core or seminar courses, takes the necessary prerequisites and mutual exclusions, does not exceed the enrollment limit for the Robotics Lab, and only takes the Thesis Defense module after completing 60 credits and passing their dissertation proposal. Note that this is just one possible implementation, and there may be other ways to structure the code depending on your specific requirements.

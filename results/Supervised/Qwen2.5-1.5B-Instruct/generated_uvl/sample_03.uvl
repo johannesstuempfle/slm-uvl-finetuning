@@ -1,0 +1,16 @@
+features
+    CoffeeShop {abstract}
+        mandatory
+            Drinks {abstract}
+                alternative
+                    'Coffee'
+                    'Tea'
+                    'Latte'
+                    'Americano'
+                optional
+                    Foods {abstract}
+                        alternative
+                            'Croissant'
+                            'Bagel'
+                            'Scone'
+                            'Donut'

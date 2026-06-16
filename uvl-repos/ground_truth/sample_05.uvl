@@ -1,0 +1,17 @@
+features
+    Factory
+        mandatory
+            ChocolateType
+                alternative
+                    NormalChocolate
+                    NutChocolate
+            MeltingStation
+            MixingStation
+            CoolingStation
+            LogisticSystem
+            PackagingStation
+        optional
+            BakingStation
+constraints
+    NutChocolate => BakingStation
+    BakingStation => NutChocolate

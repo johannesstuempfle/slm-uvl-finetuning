@@ -1,0 +1,25 @@
+features
+    "University Course Registration System"
+        mandatory
+            Students {credits >= 12}
+                alternative
+                    Undergraduates
+                        required
+                            "Core 100-Level Course"
+                    GraduateStudents
+                        required
+                            "Seminar 500-Level"
+
+        optional
+            Electives
+                alternative
+                    "Robotics Lab" {enrollmentCap == 20}
+
+        mandatory
+            "Thesis Defense" {creditsCompleted >= 60 && "Dissertation Proposal Review Passed"}
+
+        constraints
+            Prerequisites
+                "Advanced AI" implies ["Intro to AI", "Linear Algebra"]
+            Exclusions
+                "Statistics for Biology" excludes "Statistics for Business"

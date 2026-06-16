@@ -1,0 +1,22 @@
+```uvl-code
+class Room {
+    attribute numberOfBeds : Integer;
+    attribute view : String;
+    attribute size : Double;
+    attribute spaArea : Boolean;
+    attribute bestViewOption : Boolean;
+
+    method isBestViewOptionAvailable() : Boolean {
+        return (numberOfBeds == 2) && bestViewOption;
+    }
+}
+
+class Booking {
+    attribute startDate : Date;
+    attribute endDate : Date;
+    attribute optionalFees : List<Double>;
+    attribute optionalBookings : List<Room>;
+}
+```
+
+This UVL code represents the described system with classes `Room` and `Booking`. The `Room` class includes attributes for basic and optional features, and a method to check if the `bestViewOption` is available for a specific type of room. The `Booking` class includes attributes for dates and optional fees and bookings.

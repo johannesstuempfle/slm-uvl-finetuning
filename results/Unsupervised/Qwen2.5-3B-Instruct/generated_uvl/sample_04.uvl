@@ -1,0 +1,15 @@
+Here is the translation of the given text into Uvl-Code, considering the correct syntax:
+
+```uvl
+Package Bicycle {
+    Features { 
+        Groupset { Alternative { SRAM, Shimano } }
+        Tyres { Width { WidthOfGravel, SlimOfRoad, ExtraWideOfMountain } Profile { ProfileOfGravel, NoProfileOfRoad, DeepProfileOfMountain } }
+        Handlebars { DropBar { Bicycles { Gravel, Road } FlatOfMountain } }
+    }
+    Constraints { 
+        SlimOfRoad =>!ExtraWideOfMountain
+        ExtraWideOfMountain => SlimOfRoad
+    }
+}
+```

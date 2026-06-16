@@ -1,0 +1,13 @@
+features
+    Team
+        mandatory
+            Security_Architect {Person}
+            Security_Engineer {Person}
+        alternative
+            Manager {Person}
+        alternative
+            Scrum_Master {Person}
+
+constraints
+    Security_Architect!='Security_Engineer'
+    Manager!= Scrum_Master

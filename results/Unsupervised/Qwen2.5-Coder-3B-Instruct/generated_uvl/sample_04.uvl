@@ -1,0 +1,11 @@
+```uvl
+Bicycle {
+  Features {
+    Groupset { Manufacturer { SRAM | Shimano } }
+    Parts { Gravel { Tyres { Width { Wide } Profile { Some } } } Road { Tyres { Width { Slim } Profile { No } } } }
+    Handlebars { DropBar | Mountain { Flat } }
+    AdditionalFeatures { Gravel { Tyres { Width { ExtraWide } Profile { Deep } } } }
+    Tyres { Fit { Gravel | Road } }
+  }
+}
+```

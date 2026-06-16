@@ -1,0 +1,29 @@
+features
+    Bicycle
+        mandatory
+            Groupset {optional
+                alternative
+                    "SRAM"
+                    "Shimano"
+            }
+        optional
+            GravelBike
+                mandatory
+                    Wides
+                        mandatory
+                            Tyres {alternative
+                                "WideTyre" {profile "wide"}
+                                "SlimTyre" {profile ""}
+                            }
+            RoadBike
+                mandatory
+                    Slim
+                        mandatory
+                            Tyres {alternative
+                                "WidesTyre" {profile "wide"}
+                                "SlimTyre" {profile ""}
+                            }
+            MountainBike
+                mandatory
+                    FlatHandlebar
+                    ExtraWideTyres {profile "deep"}

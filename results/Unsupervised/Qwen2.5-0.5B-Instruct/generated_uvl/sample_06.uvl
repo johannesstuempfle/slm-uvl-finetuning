@@ -1,0 +1,18 @@
+Here's the translation in Uvl-Code:
+
+```uvl
+Tax Calculator Within Billing Software
+
+Inputs:
+- Netto Price
+- Sum of Products
+- Location of Buyer & Seller
+
+Outputs:
+- Tax Per Product
+- Brutto Price
+- Tax Rate
+- Logging Data for Audits (Calculated Base Price and Rule of Calculation)
+```
+
+This translation maintains the structure and content of the original text while adhering to the syntax rules specific to Uvl-Code.

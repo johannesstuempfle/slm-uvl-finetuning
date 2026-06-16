@@ -1,0 +1,18 @@
+features
+    CourseRegistrationSystem {abstract = "A system for managing student enrollment in university courses. Each student must meet the minimum requirements for their course selection."
+        optional
+            100LevelCore
+            500LevelSeminar
+        optional
+            OptionalPrerequisites
+            OptionalAdvancedAICourse
+            OptionalLinearAlgebraCourse
+            OptionalBiologyCourse
+            OptionalRoboticsLabCourse
+        mandatory
+            "Minimum 12 Credits"
+            "One 100-level Core course"
+            "A 500-level Seminar"
+            "Optional Advanced AI course"
+            "Optional Robotics Lab course"
+            "Optional Thesis Defense module"

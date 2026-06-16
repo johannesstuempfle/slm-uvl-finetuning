@@ -1,0 +1,44 @@
+Sure! Here's your translation in UVL code:
+
+```ulv
+// University Course Registration System
+
+class Student {
+    int credits;
+    String[] courses;
+
+    public void register(int minCredits) {
+        if (credits < minCredits) {
+            System.out.println("Please register at least " + minCredits + " credits.");
+        } else {
+            // Implement logic for registering courses based on credit requirements.
+        }
+    }
+
+    public void selectCourse(String coreCourse) {
+        // Implement logic for selecting 100-level Core course for undergraduate students.
+    }
+
+    public void selectSeminar(String seminarLevel) {
+        // Implement logic for selecting 500-level Seminar for graduate students.
+    }
+
+    public boolean hasPrerequisite(String prerequisite) {
+        // Implement logic for checking if a course has the required prerequisite.
+    }
+
+    public void addElective(String elective) {
+        // Implement logic for adding optional electives without hard cap.
+    }
+
+    public boolean canEnrollInLab() {
+        return false; // Assuming no other elective or mandatory course caps.
+    }
+
+    public void applyForDefense() {
+        // Implement logic for applying for Thesis Defense after meeting certain criteria.
+    }
+}
+```
+
+Note: This is just a basic framework. You would need to fill in the specific methods according to your actual implementation details.

@@ -1,0 +1,27 @@
+features
+    SmartHomeAutomationSystem
+        mandatory
+            Rule
+                mandatory
+                    Triggers
+                    optional
+                        Conditions
+                    mandatory
+                        Actions
+        optional
+            SafetyConstraints
+                mandatory
+                    SmartOven
+                        mandatory
+                            HomeStatus
+                            mandatory
+                                Away
+                mandatory
+                    AirConditioner
+                        optional
+                            WindowSensor
+                                mandatory
+                                    Open
+                                optional
+                                    AllWindowsClosed
+                                    delay 5 minutes

@@ -1,0 +1,57 @@
+```uvl
+system "CI/CD System" {
+  components {
+    Build
+    UnitTest
+    Staging
+    Production
+    Hotfix
+
+    DeploymentPipelines {
+      stages {
+        Build
+        UnitTest
+        Staging
+        Production
+        Hotfix
+      }
+    }
+
+    DeploymentStrategies {
+      types { BlueGreen Canary }
+    }
+
+    SecurityScan
+    IntegrationTest
+    Monitoring
+    RollbackTrigger
+
+    InfrastructureResources {
+      doubleResourcesForBlueGreen
+    }
+  }
+
+  requirements {
+    DeploymentPipelines.requirements {
+      stages.Requirements {
+        Build
+        UnitTest
+        Staging
+        Production
+        Hotfix
+      }
+    }
+
+    Production.Requirements {
+      DeploymentStrategies.BlueGreen => InfrastructureResources.doubleResourcesForBlueGreen
+      DeploymentStrategies.Canary => Monitoring.Monitoring & RollbackTrigger.RollbackTrigger
+    }
+
+    Hotfix.Requirements {
+     !DeploymentPipelines.Staging &!DeploymentPipelines.IntegrationTest
+      Hotfix.SecurityScan
+      Hotfix.ManualQAApproval
+    }
+  }
+}
+```

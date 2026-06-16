@@ -1,4 +1,5 @@
 savings/
+temp.uvl
 uvl-repos/uvl_data
 uvl-repos/uvl-models
 
@@ -12,3 +13,5 @@ wheels/
 
 # Virtual environments
 .venv
+
+CLAUDE.md

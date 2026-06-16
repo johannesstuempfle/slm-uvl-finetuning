@@ -1,0 +1,29 @@
+features
+    Room
+        mandatory
+            "Bed"
+                mandatory
+                    "Number"
+                    optional
+                        "Bed_size"
+            "View"
+                optional
+                    "Best_view"
+            optional
+                "Spa_area"
+            optional
+                "best_view_option"
+
+bookings
+    mandatory
+        "Start_date"
+        mandatory
+            "End_date"
+        optional
+            "Fee"
+            optional
+                "Booking_num"
+            optional
+                "Booking_type"
+            optional
+                "Payment_method"

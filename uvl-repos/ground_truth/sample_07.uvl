@@ -1,0 +1,22 @@
+features
+    RoomBookingService
+        mandatory
+            Room
+                mandatory
+                    NumberOfBeds
+                        alternative
+                            OneBed
+                            TwoBeds
+                    View
+                    Size
+                optional
+                    PersonalSpa
+                    BestView
+            BookingManagement
+                mandatory
+                    StartDate
+                    EndDate
+                optional
+                    OptionalFees
+constraints
+    BestView => TwoBeds

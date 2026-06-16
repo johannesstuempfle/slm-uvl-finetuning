@@ -1,0 +1,16 @@
+features
+    SmartHomeAutomationSystem
+
+constraints
+    Priority
+        MovieModePriority > MorningPriority
+
+    SafetyConstraints
+        SmartOvenAction => HomeStatus = Away
+
+    WindowSensorConstraint
+        AirConditionerAction
+            WindowSensorState = Open
+        AirConditionerAction
+            WindowSensorState = Closed
+                delay 5min

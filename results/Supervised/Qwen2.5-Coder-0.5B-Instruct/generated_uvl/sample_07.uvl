@@ -1,0 +1,28 @@
+features
+    Room
+        mandatory
+            BasicFeatures
+                alternative
+                    NumberOfBeds
+                        alternative
+                            SingleBed
+                            DoubleBed
+                    View
+                    Size
+        optional
+            PersonalSpaArea
+        optional
+            BestViewOption
+        optional
+            Bookings
+
+booking
+    mandatory
+        StartDate
+        EndDate
+    optional
+        Bookings
+            optional
+                Fee
+            optional
+                BookingFee

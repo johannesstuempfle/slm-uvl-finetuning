@@ -1,0 +1,33 @@
+Sure! Here's the translation:
+
+```uvl-code
+coffee_shop {
+    offers {
+        Coffee {
+            items {
+                Croissants
+                Bagels
+            }
+        }
+
+        Tea {
+            items {
+                Tea
+            }
+        }
+    }
+
+    payment {
+        cards {
+            {
+                { amount => "10$" }
+                { amount => "25$" }
+            }
+            {
+                { amount => "5$" }
+                { amount => "15$" }
+            }
+        }
+    }
+}
+```

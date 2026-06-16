@@ -1,0 +1,219 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.0,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 0,
+    "failed": 12,
+    "mean_feature_f1": 0.0,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.0
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "Kulj\u0161ka tr\u017eba je vsebna, ki ima eno motor, ki mo\u017ee b\u00fdt diesel, petrolno ali elektrikno. Tudi so bodo dodatne pomembni slike za \u010dar, kot bodo lahko biste lahko razlikali boje\u010dko. Tudi so tudi razli\u010dne boje\u010dke karata.",
+      "output_raw": "Kulj\u0161ka tr\u017eba je vsebna, ki ima eno motor, ki mo\u017ee b\u00fdt diesel, petrolno ali elektrikno. Tudi so bodo dodatne pomembni slike za \u010dar, kot bodo lahko biste lahko razlikali boje\u010dko. Tudi so tudi razli\u010dne boje\u010dke karata.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "O projekturne skupanje trebaju skupanja za sifra i upravljanje skupnog. To je mogu\u0107e isto samo za razli\u010dite korisnika. Skupanja se odre\u0111uje i \u010dlanovi, ali i prilju\u010dnik i specijalizirani scrum-master.",
+      "output_raw": "O projekturne skupanje trebaju skupanja za sifra i upravljanje skupnog. To je mogu\u0107e isto samo za razli\u010dite korisnika. Skupanja se odre\u0111uje i \u010dlanovi, ali i prilju\u010dnik i specijalizirani scrum-master.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "Eskriptin bir tabanl\u0131 uygulama, MS Word, MS Excel vb. uygulamalar\u0131 ve sayfa hesaplamak i\u00e7in MS Excel, Numberts vb. uygulamalar\u0131 i\u00e7eriyor.",
+      "output_raw": "Eskriptin bir tabanl\u0131 uygulama, MS Word, MS Excel vb. uygulamalar\u0131 ve sayfa hesaplamak i\u00e7in MS Excel, Numberts vb. uygulamalar\u0131 i\u00e7eriyor.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "Bakery serves different drinks (Coffee, Tea, etc.) and different foods (Croissants, Bagels etc.). You can either pay by card or cash.",
+      "output_raw": "Bakery serves different drinks (Coffee, Tea, etc.) and different foods (Croissants, Bagels etc.). You can either pay by card or cash.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "Ovo je pove\u010dena tr\u017eba, ki se srednjih biljev zare\u0161\u010da z grupem (Produkt je SRAM ali Shimano). Zbog pravilnosti tr\u017ebe je pravilno na\u0161ko zgodovino z \u0161irajkami. \n\n\u017deljajo\u0161ki biljevi so zgodovini z \u0161irajkami, ki so le\u017eajo za razli\u010dne potrebe. \n\nBike z \u0161irajkami je ali z karpom \u0161irajkami z vkladom z rastek. \n\nBike z \u0161irajkami je ali z karpom \u0161irajkami z vkladom z rastek. \n\nBike z \u0161irajkami je ali z karpom \u0161irajkami z vkladom z rastek. \n\nBike z \u0161irajkami je ali z karpom \u0161irajkami z vkladom z rastek.",
+      "output_raw": "Ovo je pove\u010dena tr\u017eba, ki se srednjih biljev zare\u0161\u010da z grupem (Produkt je SRAM ali Shimano). Zbog pravilnosti tr\u017ebe je pravilno na\u0161ko zgodovino z \u0161irajkami. \n\n\u017deljajo\u0161ki biljevi so zgodovini z \u0161irajkami, ki so le\u017eajo za razli\u010dne potrebe. \n\nBike z \u0161irajkami je ali z karpom \u0161irajkami z vkladom z rastek. \n\nBike z \u0161irajkami je ali z karpom \u0161irajkami z vkladom z rastek. \n\nBike z \u0161irajkami je ali z karpom \u0161irajkami z vkladom z rastek. \n\nBike z \u0161irajkami je ali z karpom \u0161irajkami z vkladom z rastek.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "A f\u00e1brica tem uma linha de produ\u00e7\u00e3o que produz diferentes tipos de chocolate. Para o chocolate normal, a colheita, a mistura e a colina est\u00e1 necess\u00e1ria. Para a produ\u00e7\u00e3o de nut-chocolate, todas as especificadas para o chocolate normal e um station de prepara\u00e7\u00e3o extra \u00e9 necess\u00e1rio. Todas as linhas exigem um sistema de log\u00edstica e um station de distribui\u00e7\u00e3o.",
+      "output_raw": "A f\u00e1brica tem uma linha de produ\u00e7\u00e3o que produz diferentes tipos de chocolate. Para o chocolate normal, a colheita, a mistura e a colina est\u00e1 necess\u00e1ria. Para a produ\u00e7\u00e3o de nut-chocolate, todas as especificadas para o chocolate normal e um station de prepara\u00e7\u00e3o extra \u00e9 necess\u00e1rio. Todas as linhas exigem um sistema de log\u00edstica e um station de distribui\u00e7\u00e3o.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "\u0160t\u011b\u017en\u00fd kalkula\u010dek v z\u00e1sobn\u00edch softwar\u00e1ch. Kalkula\u010dek vytvo\u0159\u00ed podle p\u0159edan\u00fdch pot\u0159eb: n\u00e1kladn\u00ed ceny, sou\u010det produkt\u016f a m\u011bsto v\u00fdsledku a vysv\u011btlen\u00ed z\u00e1vislost\u00ed: zapsan\u00e9 base cena a regul\u00e1rn\u00ed \u010d\u00e1stka.",
+      "output_raw": "\u0160t\u011b\u017en\u00fd kalkula\u010dek v z\u00e1sobn\u00edch softwar\u00e1ch. Kalkula\u010dek vytvo\u0159\u00ed podle p\u0159edan\u00fdch pot\u0159eb: n\u00e1kladn\u00ed ceny, sou\u010det produkt\u016f a m\u011bsto v\u00fdsledku a vysv\u011btlen\u00ed z\u00e1vislost\u00ed: zapsan\u00e9 base cena a regul\u00e1rn\u00ed \u010d\u00e1stka.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Svetelka pridobnik je opetno upravlja razli\u010dne mesta u hotelu. Mesto ima diferencije obi\u010dnih podatkov, kao broj stolova, prikori\u0161avanje i veli\u010dina. Koristno je opcionalno podatkovom mogu\u0107nosti, kao privatni spa ili najbolje prikori\u0161avanje. Najbolje prikori\u0161avanje je samo za dva stolovi. Operativna sistemka mo\u017ee upravlja preko biljezaka. U svetu preko preko prezentacije se nalazi detalji za preko\u010denje i opcionalni izbori.",
+      "output_raw": "Svetelka pridobnik je opetno upravlja razli\u010dne mesta u hotelu. Mesto ima diferencije obi\u010dnih podatkov, kao broj stolova, prikori\u0161avanje i veli\u010dina. Koristno je opcionalno podatkovom mogu\u0107nosti, kao privatni spa ili najbolje prikori\u0161avanje. Najbolje prikori\u0161avanje je samo za dva stolovi. Operativna sistemka mo\u017ee upravlja preko biljezaka. U svetu preko preko prezentacije se nalazi detalji za preko\u010denje i opcionalni izbori.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "\u00dcdv\u00f6kl\u00e1god, hogy egy universitiesen szem\u00e9lyen jelentkez\u0151 kurs regisztr\u00e1ci\u00f3 system seg\u00edts\u00e9g\u00e9vel. Azonban azok az \u00e9rdek\u00e9seknek csak 12 k\u00fcl\u00f6n\u00f6s fajtak sz\u00fcks\u00e9gesek: a 100-vel rendelkezett k\u00f6nyvt\u00e1r Core csapatos, \u00e9s a 500-vel rendelkezett seminarek Seminars. Miben azonban vannak kapcsolatok, mint 'Advanced AI', amelyek k\u00f6zvetlen\u00fcl egy 100-vel rendelkezett k\u00f6nyvt\u00e1r \u00e9s egy 500-vel rendelkezett seminarek k\u00f6zvetlen\u00fcl egy 100-vel rendelkezett k\u00f6nyvt\u00e1r. Az 'Robotics Lab' kurs nem \u00f6sszevonhat\u00f3, mert csak 20 felhaszn\u00e1l\u00f3k sz\u00fcks\u00e9gesek, amelyek m\u00e1r doktorok vagy folyamatosan haszn\u00e1lt\u00e1k. Az 'Thesis Defense' modul csak akkor \u00e9rdek\u00e9sekre van megjelenhet\u0151, ha azonban m\u00e1r 60 fajt\u00e1k \u00e9s a doktorok vagy folyamatosan 60-vel rendelkezett fajt\u00e1k k\u00f6nyvt\u00e1r\u00f3l \u00e9s a doktorok vagy folyamatosan 60-vel rendelkezett seminarek k\u00f6zvetlen\u00fcl egy 100-vel rendelkezett k\u00f6nyvt\u00e1r\u00f3l.",
+      "output_raw": "\u00dcdv\u00f6kl\u00e1god, hogy egy universitiesen szem\u00e9lyen jelentkez\u0151 kurs regisztr\u00e1ci\u00f3 system seg\u00edts\u00e9g\u00e9vel. Azonban azok az \u00e9rdek\u00e9seknek csak 12 k\u00fcl\u00f6n\u00f6s fajtak sz\u00fcks\u00e9gesek: a 100-vel rendelkezett k\u00f6nyvt\u00e1r Core csapatos, \u00e9s a 500-vel rendelkezett seminarek Seminars. Miben azonban vannak kapcsolatok, mint 'Advanced AI', amelyek k\u00f6zvetlen\u00fcl egy 100-vel rendelkezett k\u00f6nyvt\u00e1r \u00e9s egy 500-vel rendelkezett seminarek k\u00f6zvetlen\u00fcl egy 100-vel rendelkezett k\u00f6nyvt\u00e1r. Az 'Robotics Lab' kurs nem \u00f6sszevonhat\u00f3, mert csak 20 felhaszn\u00e1l\u00f3k sz\u00fcks\u00e9gesek, amelyek m\u00e1r doktorok vagy folyamatosan haszn\u00e1lt\u00e1k. Az 'Thesis Defense' modul csak akkor \u00e9rdek\u00e9sekre van megjelenhet\u0151, ha azonban m\u00e1r 60 fajt\u00e1k \u00e9s a doktorok vagy folyamatosan 60-vel rendelkezett fajt\u00e1k k\u00f6nyvt\u00e1r\u00f3l \u00e9s a doktorok vagy folyamatosan 60-vel rendelkezett seminarek k\u00f6zvetlen\u00fcl egy 100-vel rendelkezett k\u00f6nyvt\u00e1r\u00f3l.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "Opcijer za konfiguraciju PC je guide\u010dna toola koje koristi korisnike. Odabrani CPU (napravo Intel ili AMD) odre\u0111uje potrebnu socket motherboarda (napravo LGA 1700 ili AM5). Brojne chipset (napravo Z790) je koristljiva za pru\u017eenje dve strane RAM (DDR4 ili DDR5). Zdr\u017eajna GPU (napravo RTX 4090) ima minimalnu potrebu za zna\u010dajnost zna\u010dajnosti PSU (PSU), a potrebno je 850W ili ve\u0107e razli\u010dite od case's najbolje potrebno GPU clearance. Nakon toga, case (napravo ATX ili Micro-ATX) mora da se podijelje s motherboardom i mo\u017ee biti veliki vi\u0161ki aerozakutnik (case's maximum GPU cooler clearance).",
+      "output_raw": "Opcijer za konfiguraciju PC je guide\u010dna toola koje koristi korisnike. Odabrani CPU (napravo Intel ili AMD) odre\u0111uje potrebnu socket motherboarda (napravo LGA 1700 ili AM5). Brojne chipset (napravo Z790) je koristljiva za pru\u017eenje dve strane RAM (DDR4 ili DDR5). Zdr\u017eajna GPU (napravo RTX 4090) ima minimalnu potrebu za zna\u010dajnost zna\u010dajnosti PSU (PSU), a potrebno je 850W ili ve\u0107e razli\u010dite od case's najbolje potrebno GPU clearance. Nakon toga, case (napravo ATX ili Micro-ATX) mora da se podijelje s motherboardom i mo\u017ee biti veliki vi\u0161ki aerozakutnik (case's maximum GPU cooler clearance).",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "CI/CD sistem defini\u0161e pipelines deplomovanih. U\u017eivateljih pipelines moraju izvr\u0161iti 'Build' i 'Unit Test' stadije. A 'Staging' deplomovanih je obavezno i mo\u017ee samo da se izvr\u0161i posle 'Unit Test' uspe\u0161no. A 'Produkcija' deplomovanih trebaju da se izvr\u0161i 'Staging' i 'Integration Test', ali tako\u0111e potrebno da bude 'Integration Test' i 'Security Scan' uspe\u0161no. Za 'Produkciju', korisnik mo\u017ee odabrati odgovaraju\u0107i strategijama 'Blue/Green' ili 'Canary'. Zadnje za 'Produkciju', korisnik mo\u017ee izvr\u0161iti 'Monitoring' stadij, ali tako\u0111e trebaju da bude 'Rollback' pridru\u017een za swap. Zadnje za 'Produkciju', korisnik mo\u017ee izvr\u0161iti 'Hotfix' pipeline bez 'Staging' i 'Integration Test', ali trebaju da bude 'Manual QA Approval' step i treba da se uspe\u0161no izvr\u0161i 'Security Scan'.",
+      "output_raw": "CI/CD sistem defini\u0161e pipelines deplomovanih. U\u017eivateljih pipelines moraju izvr\u0161iti 'Build' i 'Unit Test' stadije. A 'Staging' deplomovanih je obavezno i mo\u017ee samo da se izvr\u0161i posle 'Unit Test' uspe\u0161no. A 'Produkcija' deplomovanih trebaju da se izvr\u0161i 'Staging' i 'Integration Test', ali tako\u0111e potrebno da bude 'Integration Test' i 'Security Scan' uspe\u0161no. Za 'Produkciju', korisnik mo\u017ee odabrati odgovaraju\u0107i strategijama 'Blue/Green' ili 'Canary'. Zadnje za 'Produkciju', korisnik mo\u017ee izvr\u0161iti 'Monitoring' stadij, ali tako\u0111e trebaju da bude 'Rollback' pridru\u017een za swap. Zadnje za 'Produkciju', korisnik mo\u017ee izvr\u0161iti 'Hotfix' pipeline bez 'Staging' i 'Integration Test', ali trebaju da bude 'Manual QA Approval' step i treba da se uspe\u0161no izvr\u0161i 'Security Scan'.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "Skupna inteligencija za automatske doma\u0107ine linkuje prilagodne device prema regijama. Regija ima potrebe priklju\u010davanja, opcionalnih predvidenja i operacija. Regije moraju imati prioriteta da respektiraju konflikte: 'Naravno' sceniranje (seta zeljenih lightova na 10%) bi trebalo zakrijeti 'Ukoliko' sceniranje (seta zeljenih lightova na 100%) izvan 'Dnevno' sceniranje (seta zeljenih lightova na 100%). Zasebnost je crvena: 'Smar\u0161teno' akcija se ne mo\u017ee zatvoriti ako 'Status samednog' je 'Zapremena'. Dodatno, 'Lampovica' akcija se ne mo\u017ee da bi trebalo da bi se aktivirao ako 'Kutni zvuk' ili 'Ponuda' preko svih prilagodnih smera je otvoreno i samo mo\u017ee da se aktivirao 5 minuta posle svih svih prilagodnih smera.",
+      "output_raw": "Skupna inteligencija za automatske doma\u0107ine linkuje prilagodne device prema regijama. Regija ima potrebe priklju\u010davanja, opcionalnih predvidenja i operacija. Regije moraju imati prioriteta da respektiraju konflikte: 'Naravno' sceniranje (seta zeljenih lightova na 10%) bi trebalo zakrijeti 'Ukoliko' sceniranje (seta zeljenih lightova na 100%) izvan 'Dnevno' sceniranje (seta zeljenih lightova na 100%). Zasebnost je crvena: 'Smar\u0161teno' akcija se ne mo\u017ee zatvoriti ako 'Status samednog' je 'Zapremena'. Dodatno, 'Lampovica' akcija se ne mo\u017ee da bi trebalo da bi se aktivirao ako 'Kutni zvuk' ili 'Ponuda' preko svih prilagodnih smera je otvoreno i samo mo\u017ee da se aktivirao 5 minuta posle svih svih prilagodnih smera.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

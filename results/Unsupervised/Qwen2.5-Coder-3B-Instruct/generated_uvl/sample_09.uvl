@@ -1,0 +1,62 @@
+```uvl
+PCConfiguratorTool {
+    GuideUsers
+    Choices {
+        CPU { 
+            Intel 
+            AMD 
+            Constraints { 
+                MotherboardSocket { 
+                    LGA1700 
+                    AM5 
+                } 
+            } 
+        }
+        Motherboard { 
+            Chipset { 
+                Z790 
+                Constraints { 
+                    SupportedRAMType { 
+                        DDR4 
+                        DDR5 
+                    } 
+                } 
+            } 
+        }
+        GPU { 
+            HighEndGPU { 
+                RTX4090 
+                Constraints { 
+                    PowerSupply { 
+                        850W | Higher 
+                    } 
+                } 
+                PhysicalLength { 
+                    350mm 
+                    Constraints { 
+                        CaseClearance { 
+                            MaximumGPUClearance 
+                        } 
+                    } 
+                } 
+            } 
+        }
+        Case { 
+            ATX 
+            MicroATX 
+            Constraints { 
+                MotherboardFormFactor 
+            } 
+        }
+        AirCooler { 
+            LargeAirCooler { 
+                Height { 
+                    LessThan { 
+                        CPUCoolerClearance 
+                    } 
+                } 
+            } 
+        } 
+    } 
+}
+```

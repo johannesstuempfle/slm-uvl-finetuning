@@ -1,0 +1,8 @@
+features
+    "Text Editing"
+        mandatory
+            MS_Word {package 'Word'}
+            Pages {package 'Word'}
+        optional
+            Excel {package 'Excel'}
+            Numbers {package 'Numbert'}

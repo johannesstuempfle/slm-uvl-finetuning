@@ -1,0 +1,49 @@
+features
+    PCConfiguratorTool
+        mandatory
+            CPU
+                alternative
+                    "Intel"
+                    "AMD"
+        mandatory
+            MotherboardSocket
+                alternative
+                    "LGA 1700"
+                    "AM5"
+        mandatory
+            MotherboardChipset
+                alternative
+                    "Z790"
+                    "Z690"
+        mandatory
+            RAMType
+                alternative
+                    "DDR4"
+                    "DDR5"
+        mandatory
+            GPU
+                mandatory
+                    "RTX 4090"
+                    "RTX 3090"
+                    "GTX 1660 Ti"
+                    "GTX 1660"
+        mandatory
+            PSU
+                alternative
+                    "850W"
+                    "1000W"
+                    "1200W"
+        mandatory
+            CaseFormFactor
+                alternative
+                    "ATX"
+                    "Micro-ATX"
+        optional
+            LargeAirCoolerHeight {constraint}
+                range [0, 350]
+
+constraints
+    CaseFormFactor = ATX implies MotherboardSocket = LGA 1700
+    CaseFormFactor = Micro-ATX implies MotherboardSocket = AM5
+    CaseFormFactor = ATX implies MotherboardChipset = Z790
+    CaseFormFactor = Micro-ATX implies MotherboardChipset = Z690

@@ -1,0 +1,7 @@
+features
+    TextEditor
+        mandatory
+            "A text editing programm"
+    ExcelCalculation
+        mandatory
+            "A cell calculation tool"

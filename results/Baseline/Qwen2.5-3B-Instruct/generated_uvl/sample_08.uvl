@@ -1,0 +1,61 @@
+```uvl-code
+module UniversityCourseRegistrationSystem {
+    property MinimumCredits : 12;
+
+    class Student {
+        attribute Credits : integer;
+        attribute CourseSelection : list<Course>;
+    }
+
+    class Course {
+        attribute Level : string;
+        attribute Prerequisites : list<Course>;
+        attribute MutualExclusions : list<Course>;
+        attribute EnrollmentCap : integer?;
+    }
+
+    class CoreCourse extends Course {
+        attribute Level : "100";
+        attribute CourseName : "100-Level Core Course";
+    }
+
+    class Seminar extends Course {
+        attribute Level : "500";
+        attribute CourseName : "Seminar";
+    }
+
+    class AdvancedAI extends Course {
+        attribute Prerequisites : list<CoreCourse>;
+        attribute CourseName : "Advanced AI";
+    }
+
+    class IntroToAI extends CoreCourse {
+        attribute CourseName : "Intro to AI";
+    }
+
+    class LinearAlgebra extends CoreCourse {
+        attribute CourseName : "Linear Algebra";
+    }
+
+    class StatisticsForBiology extends Course {
+        attribute MutualExclusions : list<StatisticsForBusiness>;
+        attribute CourseName : "Statistics for Biology";
+    }
+
+    class StatisticsForBusiness extends Course {
+        attribute CourseName : "Statistics for Business";
+    }
+
+    class RoboticsLab extends Course {
+        attribute EnrollmentCap : 20;
+        attribute CourseName : "Robotics Lab";
+    }
+
+    class ThesisDefense extends Module {
+        attribute Requirement : "Completed 60 Credits & Passed Dissertation Proposal Review";
+        attribute ModuleName : "Thesis Defense";
+    }
+}
+```
+
+This UVL (Unified Visual Language) code represents the structure of a university course registration system, including students, courses, prerequisites, mutual exclusions, and other constraints as described in your text.

@@ -1,0 +1,11 @@
+features
+    "Text Editor"
+        optional
+            "MS Word"
+        optional
+            "Pages"
+    "Cell Calculator"
+        optional
+            "MS Excel"
+        optional
+            "Numbers"

@@ -1,0 +1,14 @@
+The following is the UVL (Unified Variable Language) code for the given text:
+
+```
+coffee_shop
+    drinks
+        Coffee
+        Tea
+    foods
+        Croissant
+        Bagel
+    payment
+        Card
+        Cash
+```

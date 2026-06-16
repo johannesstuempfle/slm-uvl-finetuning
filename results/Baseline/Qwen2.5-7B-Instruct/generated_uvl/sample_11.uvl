@@ -1,0 +1,53 @@
+To translate the provided text into UVL (Universal Verification Language) code, we need to structure it according to the UVL syntax for defining rules, actions, and constraints. Here's how we can represent the given information in UVL:
+
+```uvl
+// Define the scenarios and their actions
+rule Movie_Mode {
+    trigger: Home_Status == "Home";
+    action: 
+        Light_Level = 10;
+}
+
+rule Morning {
+    trigger: Time == "Morning";
+    action:
+        Light_Level = 100;
+}
+
+// Define the priority for the rules
+priority:
+    Movie_Mode > Morning;
+
+// Define safety constraints
+constraint Smart_Oven_Disabled_Away {
+    when: Home_Status == "Away";
+    action: Smart_Oven.Enabled = false;
+}
+
+constraint Air_Conditioner_Window_Open {
+    when: Window_Sensor.Value == "Open";
+    action: Air_Conditioner.Enabled = false;
+    delay: 300; // 5 minutes
+}
+
+constraint Air_Conditioner_Window_Closed {
+    when: all Windows.Closed;
+    action: Air_Conditioner.Enabled = true;
+}
+```
+
+### Explanation:
+1. **Rules Definition**:
+   - `Movie_Mode` rule sets the light level to 10% when the home status is "Home".
+   - `Morning` rule sets the light level to 100% when the time is "Morning".
+
+2. **Priority**:
+   - The `Movie_Mode` rule has a higher priority than the `Morning` rule to ensure that the lights do not get set to 100% during movie mode.
+
+3. **Safety Constraints**:
+   - `Smart_Oven_Disabled_Away`: Disables the smart oven if the home status is "Away".
+   - `Air_Conditioner_Window_Open`: Disables the air conditioner if any window sensor reports "Open" and re-enables it 5 minutes after all windows are closed.
+     - `delay: 300` ensures the constraint waits for 5 minutes before re-enabling the air conditioner.
+     - `all Windows.Closed` checks if all windows are closed.
+
+This UVL code effectively captures the logic described in the text, ensuring that the rules and constraints are enforced as specified.

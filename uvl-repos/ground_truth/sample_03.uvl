@@ -1,0 +1,15 @@
+features
+    CoffeeShop
+        mandatory
+            Drink
+                alternative
+                    Coffee
+                    Tea
+            Food
+                alternative
+                    Croissant
+                    Bagel
+            Payment
+                alternative
+                    Card
+                    Cash

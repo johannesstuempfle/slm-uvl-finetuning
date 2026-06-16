@@ -1,0 +1,42 @@
+Certainly! Below is the translation of the given text into UVL (Unified Version Language) code:
+
+```uvl
+module RoomBookingService
+
+    // Define the Room type with basic features
+    type Room {
+        number_of_beds : Integer,
+        view : String,
+        size : Integer,
+        personal_spa_area : Boolean,
+        best_view_option : Boolean
+    }
+
+    // Define the Booking type with start and end dates and optional fees/bookings
+    type Booking {
+        start_date : Date,
+        end_date : Date,
+        optional_fees : List[Float],
+        optional_bookings : List[Room]
+    }
+
+    // Function to check if a best-view option is available for a room
+    function is_best_view_available(room : Room) -> Boolean {
+        return room.number_of_beds == 2
+    }
+
+    // Function to manage room bookings
+    function manage_bookings(bookings : List[Booking]) -> List[Booking] {
+        // Implementation details for managing bookings
+        return bookings
+    }
+end module
+```
+
+### Explanation:
+- **Room Type**: Defines the structure of a room with properties such as `number_of_beds`, `view`, `size`, `personal_spa_area`, and `best_view_option`.
+- **Booking Type**: Defines the structure of a booking with properties such as `start_date`, `end_date`, `optional_fees`, and `optional_bookings`.
+- **is_best_view_available Function**: Checks if a best-view option is available for a room based on the number of beds.
+- **manage_bookings Function**: Placeholder for managing bookings, which can include logic for processing and storing bookings.
+
+This code provides a basic framework for managing rooms and bookings within a hotel using UVL. You can expand upon this by adding more functionality and error handling as needed.

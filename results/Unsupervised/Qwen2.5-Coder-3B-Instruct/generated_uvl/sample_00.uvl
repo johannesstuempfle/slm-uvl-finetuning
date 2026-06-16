@@ -1,0 +1,9 @@
+Here's the translation of the given text into UVL-Code:
+
+```
+car {
+    engine { diesel | gasoline | electric }
+    optional { lane_assist | ESP }
+    colors { "red" | "blue" | "green" | "yellow" | "black" }
+}
+```

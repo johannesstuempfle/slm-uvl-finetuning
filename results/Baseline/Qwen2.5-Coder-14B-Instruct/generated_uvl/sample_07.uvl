@@ -1,0 +1,25 @@
+Sure, here's the translation of the given text into UML class diagram code:
+
+```uml
+@startuml
+class Room {
+    -int numberOfBeds
+    -String view
+    -String size
+    -boolean hasSpaArea
+    -boolean hasBestViewOption
+}
+
+class Booking {
+    -Date startDate
+    -Date endDate
+    -double optionalFee
+}
+
+Room "1" -- "0..*" Booking : manages
+@enduml
+```
+
+This UML class diagram defines two classes: `Room` and `Booking`. The `Room` class has attributes for the number of beds, view, size, and optional features like a personal spa area and best-view option. The `Booking` class has attributes for the start and end dates, as well as an optional fee.
+
+The relationship between the `Room` and `Booking` classes is indicated by the line connecting them, which shows that a single room can manage multiple bookings.

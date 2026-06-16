@@ -1,0 +1,39 @@
+Sure! Here's a translation of the given text into UVL-Code:
+
+```uvl
+features
+	"Coffee Shop"
+		mandatory
+			"Drinks"
+				or
+					Coffee
+					Tea
+			"Foods"
+				or
+					Croisant
+					Bagel
+			Payment
+				alternative
+					Card
+					Cash
+constraints
+	"Coffee Shop".Price > 0
+	"Coffee Shop".Calories > 0
+	"Coffee Shop".Allergens {Gluten, Lactose}
+	"Coffee Shop".Ingredients {Coffee, Milk, Sugar, Cream, Espresso, Oats, Honey, Butter, Chocolate, Caramel, Almond, Walnut, Banana, Apple, Pear, Plum, Blueberry, Raspberry, Strawberry, Lemon, Lime, Ginger, Cardamom, Nutmeg, Anise, StarAnise, Cinnamon, Coriander, Paprika, Turmeric, Mustard, Ketchup, SoySauce, Wasabi, Teriyaki, OysterOyster, TunaTuna, AvocadoAvocado, TomatoTomato, LettuceLettuce, OnionOnion, CucumberCucumber, CarrotCarrot, CeleryCelery, PicklePickle, EggEgg, BaconBacon, CheeseCheese, CroutonCrouton, TomatoPasteTomatoPaste, MayonnaiseMayonnaise, KetchupKetchup, BarbecueBarbecue, CurryCurry, SoySoy, MisoMiso, KimchiKimchi, EdibleEdible}
+	"Coffee Shop".NutritionalValue {Proteins, Fats, Carbs, Fiber, Calories}
+	"Coffee Shop".AllergenFree {Gluten, Lactose}
+	"Coffee Shop".Vegetarian
+	"Coffee Shop".Vegan
+	"Coffee Shop".Halal
+	"Coffee Shop".Kosher
+	"Coffee Shop".Organic
+	"Coffee Shop".Biodegradable
+	"Coffee Shop".Recyclable
+	"Coffee Shop".EnergySource {Solar, Wind, Hydroelectric, Nuclear, Coal, Oil, Gas}
+	"Coffee Shop".TransportMode {Bus, Train, Taxi, Car, Bike, Walk}
+	"Coffee Shop".PaymentMethod {CreditCard, DebitCard, Cash}
+	"Coffee Shop".ServiceType {DriveThrough, IndoorSeating, OutdoorSeating}
+	"Coffee Shop".MenuLanguage {English, German, French, Spanish, Italian, Japanese, Chinese, Korean, Arabic, Hindi, Bengali, Russian, Turkish, Ukrainian, Polish, Dutch, Swedish, Norwegian, Danish, Finnish, Hungarian, Czech, Slovak, Bulgarian, Serbian, Croatian, Slovenian, Lithuanian, Latvian, Estonian, Icelandic, Faroese, Greenlandic, Sami, Inuktitut, Maori, Hawaiian, Filipino, Indonesian, Thai, Vietnamese, Cambodian, Laotian, Burmese, Malay, Tamil, Telugu, Gujarati, Marathi, Punjabi, Sindhi, Urdu, Persian, Hebrew, Yiddish, Amharic, Somali, Swahili, Igbo, Hausa, Fulfulde, Kanuri, Tigrinya, Somali, Wolof, Zulu, Xhosa, Afrikaans, Sesotho, Setswana, Sepedi, Tswana, Tonga, Tsonga, Venda, Ndebele, Pedi, Sotho, Swazi, Tswana, Xitsonga, Xorobeni, Xhosa, Zulu}
+	"Coffee Shop".SustainabilityCertification {FairTrade, RainforestAlliance, Organic, CertifiedGMOFree, CertifiedHypersensitiveDairyFree, CertifiedHypersensitiveGlutenFree, CertifiedHypersensitiveLactoseFree, CertifiedHypersensitiveNutsFree, CertifiedHypersensitiveSeafoodFree, CertifiedHypersensitiveShellfishFree, CertifiedHypersensitiveTreeNutsFree, CertifiedHypersensitiveWheatFree}
+	"Coffee Shop".MarketingStrategy {SocialMediaAdvertising, EmailCampaigns, InfluencerPartnerships, SearchEngineOptimization, PayPerClickAdvertising, DisplayAdvertising, NativeAdvertising, VideoAdvertising, PodcastAdvertising, BlogAdvertising, WebinarAdvertising, EventAdvertising, SponsorshipAdvertising, AffiliateMarketing, ReferralPrograms, FreeTrialOffers, LoyaltyPrograms, GiftCards, VirtualRealityExperiences, AugmentedRealityExperiences, GamifiedExperiences, InteractiveContent, MobileAppAdvertising, WearableTechAdvertising, SmartHomeAdvertising, InternetOfThingsAdvertising, BlockchainAdvertising, ArtificialIntelligenceAdvertising, MachineLearningAdvertising, DeepLearningAdvertising, NeuralNetworkAdvertising, QuantumComputingAdvertising, NanotechnologyAdvertising, BiotechnologyAdvertising, RoboticsAdvertising, AutonomousVehicleAdvertising, DronesAdvertising, VirtualRealityAdvertising, Aug

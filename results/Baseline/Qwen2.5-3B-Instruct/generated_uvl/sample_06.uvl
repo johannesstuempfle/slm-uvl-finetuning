@@ -1,0 +1,18 @@
+```uvl-code
+calculator {
+    inputs = [
+        "netto_price",
+        "sum_of_products",
+        "buyer_location",
+        "seller_location"
+    ];
+    
+    outputs = [
+        "tax_per_product",
+        "brutto_price",
+        "tax_rate",
+        "calculated_base_price",
+        "calculation_rule"
+    ];
+}
+```

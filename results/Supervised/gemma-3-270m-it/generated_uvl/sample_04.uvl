@@ -1,0 +1,237 @@
+'''uvl
+features
+    Bicycle {abstract}
+        optional
+            SRAM_Sizes {optional
+                mandatory
+                    Rims {mandatory
+                    Profile {optional
+                        mandatory
+                            Profile_Length {optional
+                                   mandatory
+                                               wide_profile
+                                               standard_profile
+                                               slim_profile
+                                               flat_profile
+                                               deep_profile
+                                               optional
+                                                optional
+                                                optional
+                                                optional
+                                                   optional
+                                                optional
+                                                   optional
+                                               optional
+                                               optional
+                                               optional
+                                                   optional
+                                               optional
+                                                   optional
+                                               optional
+                                               optional
+                                                   optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+                                               optional
+        Shimano_Sizes {optional
+            mandatory
+                Rims {mandatory
+                    Profile {optional
+                        mandatory
+                            Profile_Length {optional
+                                   mandatory
+                                               wide_profile
+                                               standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                    optional
+                               optional
+                               optional
+                               optional
+                               optional
+                optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                    optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_profile
+                            deep_profile
+                            optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                               optional
+                Rims_Special_Length {optional
+                    mandatory
+                        Profile_Length {optional
+                            mandatory
+                                   wide_profile
+                                               standard_profile
+                            standard_profile
+                            slim_profile
+                            flat_

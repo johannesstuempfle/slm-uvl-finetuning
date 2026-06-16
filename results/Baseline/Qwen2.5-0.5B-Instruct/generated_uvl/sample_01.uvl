@@ -1,0 +1,11 @@
+Here's the translation:
+
+A security team needs a security architect and a security engineer. These individuals cannot be the same person. Additionally, the team has a manager and a separate scrum master.
+
+In UvL Code, this could look like this:
+
+```uvl
+SECURITY_TEAM NEEDS SECURITY_AGRICULTOR AND SECURITY_ENGINEER. THESE PERSONS CAN NOT BE THE SAME PERSON. ALSO, THE TEAM HAS A MANAGER AND A SEPARATE SCRUM_MASTER.
+```
+
+Note: I've kept the structure similar while changing some words and punctuation for clarity in UvL code.

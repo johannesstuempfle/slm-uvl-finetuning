@@ -1,0 +1,26 @@
+The following UVL-Code represents the given information:
+
+```
+factories {
+    name "factory"
+        productionLines {
+            name "normal"
+                stations {
+                    melting
+                    mixing
+                    cooling
+                }
+                logistics
+                packaging
+            name "nut-chocolate"
+                stations {
+                    melting
+                    mixing
+                    cooling
+                    baking
+                }
+                logistics
+                packaging
+        }
+}
+```

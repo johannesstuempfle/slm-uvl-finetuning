@@ -1,0 +1,19 @@
+features
+    CI/CD
+        mandatory
+            Build
+            Unit Test
+        mandatory
+            Staging
+            Staging
+        mandatory
+            Integration Test
+            Security Scan
+        mandatory
+            Production
+            Blue/Green
+            Canary
+        optional
+            Monitoring
+            Manual QA Approval
+            Hotfix

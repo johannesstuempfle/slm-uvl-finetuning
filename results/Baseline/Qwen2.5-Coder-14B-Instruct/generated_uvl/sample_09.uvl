@@ -1,0 +1,65 @@
+```uvl
+tool PCConfigurator {
+    component CPU {
+        option Intel {
+            requirement motherboardSocket = "LGA 1700"
+        }
+        option AMD {
+            requirement motherboardSocket = "AM5"
+        }
+    }
+
+    component Motherboard {
+        option Z790 {
+            requirement supportedRAMType = "DDR4"
+        }
+        // Add other motherboard options here
+    }
+
+    component RAM {
+        type DDR4
+        type DDR5
+    }
+
+    component GPU {
+        option RTX_4090 {
+            requirement powerRequirement = "850W"
+            requirement physicalLength = "350mm"
+        }
+        // Add other GPU options here
+    }
+
+    component PowerSupply {
+        type PSU_850W
+        // Add other PSU options here
+    }
+
+    component Case {
+        option ATX {
+            requirement motherboardFormFactor = "ATX"
+        }
+        option Micro_ATX {
+            requirement motherboardFormFactor = "Micro-ATX"
+        }
+        // Add other case options here
+    }
+
+    component AirCooler {
+        optional
+        requirement height < case.CPU_cooler_clearance
+    }
+
+    constraint {
+        CPU.Intel -> Motherboard.motherboardSocket = "LGA 1700"
+        CPU.AMD -> Motherboard.motherboardSocket = "AM5"
+        Motherboard.Z790 -> RAM.supportedRAMType = "DDR4"
+        GPU.RTX_4090 -> PowerSupply.powerRequirement >= "850W"
+        GPU.RTX_4090 -> Case.maxGPU_clearance >= "350mm"
+        Case.ATX -> Motherboard.formFactor = "ATX"
+        Case.Micro_ATX -> Motherboard.formFactor = "Micro-ATX"
+        AirCooler -> AirCooler.height < Case.CPU_cooler_clearance
+    }
+}
+```
+
+Please note that the above code is a simplified example and may need to be adjusted based on the specific requirements and constraints of your PC configurator tool.

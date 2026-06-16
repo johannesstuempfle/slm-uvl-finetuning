@@ -1,0 +1,87 @@
+Sure! Here's the translation of the given text into UVL-Code:
+
+```uvl
+features
+	PC_Configurator {abstract}
+		mandatory
+			User_Guide {abstract}
+				or
+					CPU_Choice {abstract}
+						alternative
+							Intel
+								mandatory
+									Motherboard_Socket {abstract}
+										alternative
+											LGA_1700
+											AM5
+					AMD_CPU {abstract}
+						mandatory
+							Motherboard_Socket {abstract}
+								alternative
+									LGA_1700
+									AM5
+					Motherboard_Chipset {abstract}
+						alternative
+							Z790
+					RAM_Type {abstract}
+						alternative
+							DDR4
+							DDR5
+					GPU_Choice {abstract}
+						alternative
+							RTX_4090
+								mandatory
+									Power_Supply {abstract}
+										minimum
+											Power_Requirement "850W"
+								optional
+									GPU_Cooler {abstract}
+										alternative
+											Small
+											Large
+												mandatory
+													CPU_Cooler_Clearance {abstract}
+														alternative
+															Low
+															Medium
+															High
+												mandatory
+													Case {abstract}
+														alternative
+															ATX
+															Micro_ATX
+												mandatory
+													Large_Air_Cooler {abstract}
+														alternative
+															Tiny
+															Small
+															Medium
+															Large
+																mandatory
+																	CPU_Cooler_Clearance {abstract}
+																		alternative
+																			Low
+																			Medium
+																			High
+	constraints
+		Motherboard_Socket == LGA_1700 => Motherboard_Chipset == Z790
+		Motherboard_Socket == AM5 => Motherboard_Chipset == Z790
+		GPU_Choice == RTX_4090 => Power_Supply >= 850W
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Medium
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.High
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Low
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Medium
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.High
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Low
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Medium
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.High
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Low
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Medium
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.High
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Low
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Medium
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.High
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Low
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.Medium
+		GPU_Choice == RTX_4090 => Large_Air_Cooler.Height < Case.CPU_Cooler_Clearance.High
+		GPU_Choice == RTX_4090 => Large_Air_C

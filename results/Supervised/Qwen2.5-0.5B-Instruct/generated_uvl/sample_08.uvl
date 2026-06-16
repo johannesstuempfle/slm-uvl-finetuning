@@ -1,0 +1,57 @@
+'''uvl
+features
+    "University Course Registration System" {abstract}
+        mandatory
+            "Enrollment Criteria"
+                alternative
+                    "12 Credits Required"
+                        mandatory
+                            "Minimum 12 Credits"
+                        optional
+                            "Core Courses"
+                                alternative
+                                    "100-Level Core"
+                                        mandatory
+                                            "Covers Intro to AI and Linear Algebra"
+                                            "Advanced AI"
+                            "Seminar Prerequisites"
+                            "Mutually Exclusive Courses"
+                                alternative
+                                    "Statistics for Biology"
+                                        mandatory
+                                            "Statistics for Business"
+                                        optional
+                                            "Robotics Lab"
+                        optional
+                            "Optional Elective"
+                        optional
+                            "Dissertation Review"
+
+constraints
+    "Robots Lab Course Enrollment Cap" => 20
+
+features
+    "Course Selection Rules"
+        alternative
+            "100-Level Core Course"
+            "500-Level Seminar"
+            "Mutual Prequisites"
+                alternative
+                    "Advanced AI"
+                    "Linear Algebra"
+                    "Statistics for Biology"
+                    "Statistics for Business"
+                optional
+                    "Robotics Lab"
+                    "Robotics Lab (Hard Enroll Cap)"
+                    "Robotics Lab (Soft Enroll Cap)"
+                    "Robotics Lab (Hard Enroll Cap)"
+
+constraints
+    "Elective Course Hard Enrollment Cap" => 20
+    "Elective Course Soft Enrollment Cap" => 20
+
+features
+    "Module Availability"
+        alternative
+            "Thesis Defense Module Available Only To Students Who Have Completed 60 Credits and Passed Their Dissertation Proposal Review"

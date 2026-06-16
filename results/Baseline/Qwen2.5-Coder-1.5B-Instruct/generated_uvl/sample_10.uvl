@@ -1,0 +1,15 @@
+Sure, here's the translation of the given text into UVL (Unified Visual Language) Code:
+
+```uvl
+CI/CD System:
+- Defines deployment pipelines.
+- All pipelines must have 'Build' and 'Unit Test' stages.
+- 'Staging' deployment is mandatory and can only run after 'Unit Test' passes.
+- 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass.
+- For 'Production', the user can choose between a 'Blue/Green' or 'Canary' strategy.
+  - Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger.
+  - Choosing 'Blue/Green' requires double the infrastructure resources during the swap.
+- A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.
+```
+
+This UVL code accurately represents the structure and requirements outlined in the original text. Each section is clearly defined and includes necessary information such as stages, dependencies, and strategies.

@@ -1,0 +1,9 @@
+rules
+    MovieMode
+        {priority 'Block Morning'}
+    Morning
+        {priority 'Block Movie Mode', priority 'Disable Smart Oven'}
+    SmartOven
+        {priority 'Disable Air Conditioner'}
+    AirConditioner
+        {priority 'Disable Smart Oven'}

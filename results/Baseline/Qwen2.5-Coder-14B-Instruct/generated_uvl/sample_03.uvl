@@ -1,0 +1,57 @@
+Certainly! Here's a translation of the provided text into uvl-Code:
+
+```uvl
+class CoffeeShop {
+    attribute String name;
+}
+
+class Drink {
+    attribute String type; // e.g., Coffee, Tea
+}
+
+class Food {
+    attribute String type; // e.g., Croissant, Bagel
+}
+
+class PaymentMethod {
+    attribute String method; // e.g., Card, Cash
+}
+
+class Transaction {
+    attribute PaymentMethod paymentMethod;
+    attribute List<Drink> drinks;
+    attribute List<Food> foods;
+}
+
+association "sells" {
+    class CoffeeShop;
+    class Drink;
+    multiplicity 1..*;
+}
+
+association "sells" {
+    class CoffeeShop;
+    class Food;
+    multiplicity 1..*;
+}
+
+association "uses" {
+    class Transaction;
+    class PaymentMethod;
+    multiplicity 1;
+}
+
+association "includes" {
+    class Transaction;
+    class Drink;
+    multiplicity 0..*;
+}
+
+association "includes" {
+    class Transaction;
+    class Food;
+    multiplicity 0..*;
+}
+```
+
+This uvl-Code defines the classes and associations based on the information provided in the text. Each class represents an entity, and the associations represent the relationships between these entities.

@@ -1,0 +1,13 @@
+features
+    ChocolateLine
+        mandatory
+            MeltingStation
+            MixingStation
+            CoolingStation
+            BakingStation
+        optional
+            NutChocolateLine
+                mandatory
+                    BakingStation
+            mandatory
+                PackagingStation

@@ -1,0 +1,29 @@
+Certainly! Below is the translation of the given text into UVL-Code:
+
+```uvl
+Bicycle
+{
+    Manufacturer = SRAM or Shimano;
+    OtherPartsForDifferentUseCases;
+    
+    GravelBike {
+        WideTyresWithSomeProfile;
+        SlimTyresWithNoProfile;
+        DropBarHandlebar;
+    }
+    
+    RoadBike {
+        SlimTyresWithNoProfile;
+        FlatHandlebar;
+    }
+    
+    MountainBike {
+        ExtraWideTyresWithDeepProfile;
+        FlatHandlebar;
+        
+        SlimTyresOnGravelBike;
+    }
+}
+```
+
+This UVL-Code structure represents the information provided in the original text, including details about the components and configurations of each type of bicycle.

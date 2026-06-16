@@ -1,0 +1,34 @@
+features
+    UniversityCourseRegistrationSystem
+        mandatory
+            StudentEnrollment
+                minCredits {12}
+        mandatory
+            UndergraduateStudent
+                or
+                    CoreCourse {100-level}
+        mandatory
+            GraduateStudent
+                or
+                    Seminar {500-level}
+        mandatory
+            CourseSelection
+                optional
+                    IntroToAI
+                        prerequisite
+                            AdvancedAI
+                optional
+                    LinearAlgebra
+                        prerequisite
+                            AdvancedAI
+                exclusive
+                    StatisticsForBiology
+                    StatisticsForBusiness
+        optional
+            RoboticsLab
+                maxStudents {20}
+        optional
+            ThesisDefense
+                if
+                    CreditsCompleted {60}
+                    DissertationProposalPassed

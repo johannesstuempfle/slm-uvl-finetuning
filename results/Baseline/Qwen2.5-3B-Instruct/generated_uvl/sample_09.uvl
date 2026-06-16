@@ -1,0 +1,51 @@
+```uvl-code
+ConfigureTool {
+    UserGuide {
+        Step {
+            Action = "Choose CPU"
+            Choices = { "Intel", "AMD" }
+            NextStep = {
+                Action = "Select Motherboard Socket"
+                Choices = {
+                    "LGA 1700",
+                    "AM5"
+                }
+            }
+        }
+        Step {
+            Action = "Choose Motherboard Chipset"
+            Choices = { "Z790" }
+            NextStep = {
+                Action = "Select Supported RAM Type"
+                Choices = { "DDR4", "DDR5" }
+            }
+        }
+        Step {
+            Action = "Select High-End GPU"
+            Choices = { "RTX 4090" }
+            NextStep = {
+                Action = "Choose PSU"
+                Choices = {
+                    "850W or higher"
+                }
+            }
+        }
+        Step {
+            Action = "Check GPU Physical Length"
+            Constraints = {
+                "Compatible with case's max GPU clearance"
+            }
+        }
+        Step {
+            Action = "Select Case Form Factor"
+            Choices = { "ATX", "Micro-ATX" }
+            NextStep = {
+                Action = "Select Air Cooler"
+                Constraints = {
+                    "Height < Case's CPU Cooler Clearance"
+                }
+            }
+        }
+    }
+}
+```

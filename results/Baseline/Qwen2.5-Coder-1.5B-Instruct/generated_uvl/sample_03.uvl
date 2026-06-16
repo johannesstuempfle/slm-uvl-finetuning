@@ -1,0 +1,14 @@
+Sure! Here's the translation of the given text into UVL-Code:
+
+```uvl
+coffeeShop: 
+    drinkTypes: Coffee, Tea
+    foodTypes: Croisant, Bagel
+    paymentOptions: Card, Cash
+```
+
+In this translation:
+- `coffeeShop` is the name of the coffee shop.
+- `drinkTypes` is a list of available drinks (Coffee, Tea).
+- `foodTypes` is a list of available foods (Croisant, Bagel).
+- `paymentOptions` is a list of available payment methods (Card, Cash).

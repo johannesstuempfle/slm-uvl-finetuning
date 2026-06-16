@@ -1,0 +1,13 @@
+Here's a possible translation of the given text into UVL code:
+
+features
+	Computer {abstract}
+		mandatory
+			Text_Editing_Programm {abstract}
+				alternative
+					MS_Word
+					Pages
+			Cell_Calculation_Tool {abstract}
+				alternative
+					MS_Excel
+					Numberts

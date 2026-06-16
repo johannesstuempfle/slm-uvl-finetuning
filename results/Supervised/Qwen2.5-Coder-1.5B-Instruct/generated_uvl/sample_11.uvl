@@ -1,0 +1,37 @@
+features
+    SmartHomeAutomationSystem {abstract}
+        mandatory
+            Rule
+                optional
+                    Conditions
+                optional
+                    Actions
+        alternative
+            "Movie Mode" Scene {priority 1}
+                mandatory
+                    Trigger
+                        literal "Movie Time"
+            "Morning" Scene {priority 2}
+                mandatory
+                    Trigger
+                        literal "Good Morning"
+        alternative
+            "Smart Oven" Action
+                mandatory
+                    Condition
+                        literal "Home Status" equals "Home"
+        alternative
+            "Air Conditioner" Action
+                mandatory
+                    Condition
+                        expression "!All Window Sensors equals Open"
+                alternative
+                    Action
+                        literal "Turn On Air Conditioning"
+                        duration 5 minutes
+
+constraints
+    "Movie Mode" Scene => "Morning" Scene disable
+    "Smart Oven" Action => "Home Status" equals "Away" disable
+    "Air Conditioner" Action => "All Window Sensors equals Open" disable
+    "Air Conditioner" Action => "All Window Sensors equals Closed" enable

@@ -1,0 +1,93 @@
+```uvl
+// Room Booking System
+
+// Room Definition
+// Each room has a unique ID
+// Room ID
+// Name
+// Number of Beds
+// View
+// Size
+
+// Optional Features
+// Personal Spa Area
+// Best View Option
+
+// Booking Logic
+// Booking contains:
+//   Start Date
+//   End Date
+//   Fees/Bookings
+//   Constraints:
+//     All Fees/Bookings must be valid dates
+
+// Function to manage bookings
+// Accepts:
+//   Room ID
+//   Start Date
+//   End Date
+//   Fees/Bookings
+// Returns:
+//   Boolean: True if booking is valid, False otherwise
+
+// Validates Booking Data
+// Check that Start Date and End Date are valid
+// Check that Fees/Bookings are valid
+// Check that Start Date is before End Date
+
+// Basic Room Features
+// Room has:
+//   Bed Count
+//   View
+//   Size
+
+// Optional Features
+// Personal Spa Area
+// Best View Option
+// Best View Option is only available for two-bed rooms
+
+// Core Logic - Booking Management
+// Booking structure
+// Booking is structured as:
+//   "Booking" => {
+//     "id" => "string"
+//     "room_id" => "string"
+//     "name" => "string"
+//     "bed_count" => "integer"
+//     "view" => "string"
+//     "size" => "string"
+//     "fees" => "integer"
+//     "bookings" => "array"
+//     "valid" => "boolean"
+//     "price" => "string"
+//     "booking_date" => "string"
+//     "end_date" => "string"
+//     "fees_optional" => "boolean"
+//     "fees_total" => "string"
+//     "fees_extra" => "string"
+//     "fees_extra_total" => "string"
+//     "booking_id" => "string" //Unique ID for each booking
+//     "booking_date" => "string"
+//     "booking_end_date" => "string"
+//     "booking_end_date_alternative" => "string"
+//     "booking_end_date_alternative_alternative" => "string"
+
+// Additional Notes:
+//   - Data types are defined explicitly.
+//   - Constraints are defined to ensure data integrity.
+//   -  Booking structure is well defined.
+//   - The logic enforces valid Dates and Fees/Bookings.
+//   -  "fees_extra" is a valid string that indicates an extra fee.
+//   - The logic correctly filters and validates the bookings.
+//   -  "fees_extra_total" and "fees_extra_alternative" are used to represent extra fees.
+
+// Error Handling Considerations:
+//   - Validate that fees/bookings are valid dates.
+//   - Validate the format of 'fees_extra_alternative'.
+
+// Further Refinement:
+//   - Consider adding validation of the total amount of fees/bookings.
+//   - Implement logic to calculate the total price.
+//   - Add more detailed validation of 'fees_extra_alternative'
+//   - Consider adding error handling for invalid input values.
+```

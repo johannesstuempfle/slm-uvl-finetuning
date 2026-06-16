@@ -1,0 +1,59 @@
+UVL (Unstructured Variable Language) is a specific formal language used in certain contexts, particularly in artificial intelligence and knowledge representation. However, the exact syntax and structure of UVL can vary depending on the specific application or implementation. Below is an attempt to represent the provided text in a structured form that resembles UVL:
+
+```uvl
+// Define the rules for student enrollments
+
+// Minimum credit requirement
+MIN_CREDITS = 12
+
+// Core Course Requirement for Undergraduate Students
+UNDERGRADUATE_CORE_COURSE = "100-level Core Course"
+
+// Seminar Requirement for Graduate Students
+GRADUATE_SEMINAR = "500-level Seminar"
+
+// Prerequisite relationships
+PREREQUISITES = {
+    "Advanced AI": ["Intro to AI", "Linear Algebra"]
+}
+
+// Mutual exclusivity
+MUTUALLY_EXCLUSIVE_COURSES = {
+    "Statistics for Biology": "Statistics for Business"
+}
+
+// Optional Elective with Enrollment Cap
+OPTIONAL_ELECTIVE = "Robotics Lab"
+ENROLLMENT_CAP = 20
+
+// Thesis Defense Module Availability
+THESIS_DEFENSE = "Thesis Defense"
+THESIS_CREDIT_REQUIREMENT = 60
+THESIS_PROPOSAL_REVIEW = "Dissertation Proposal Review"
+
+// Define the conditions for each rule
+rules = [
+    // Ensure all students register for at least 12 credits
+    {student.enrollments.sum() >= MIN_CREDITS},
+    
+    // Undergraduate students must select a 100-level Core Course
+    {student.type == "Undergraduate" -> student.enrollments.contains(UNDERGRADUATE_CORE_COURSE)},
+    
+    // Graduate students must select a 500-level Seminar
+    {student.type == "Graduate" -> student.enrollments.contains(GRADUATE_SEMINAR)},
+    
+    // Courses with prerequisites
+    {course.name == "Advanced AI" -> student.enrollments.containsAll(PREREQUISITES["Advanced AI"])},
+    
+    // Courses that are mutually exclusive
+    {course1.name == "Statistics for Biology" && course2.name == "Statistics for Business" ->!student.enrollments.containsBoth(course1, course2)},
+    
+    // Robotics Lab is an optional elective with a hard cap of 20 students
+    {course.name == OPTIONAL_ELECTIVE -> student.enrollments.size() <= ENROLLMENT_CAP},
+    
+    // Thesis Defense is available to students who have completed 60 credits and passed the Dissertation Proposal Review
+    {module.name == THESIS_DEFENSE -> student.credits >= THESIS_CREDIT_REQUIREMENT && student.reviews.contains(THESIS_PROPOSAL_REVIEW)}
+]
+```
+
+This UVL code defines the rules and conditions for a university course registration system based on the provided text. Each rule is structured to ensure that the system enforces the specified requirements and constraints.

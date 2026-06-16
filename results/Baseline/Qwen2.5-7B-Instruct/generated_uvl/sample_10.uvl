@@ -1,0 +1,80 @@
+Sure, let's translate the provided text into UVM (Unified Verification Methodology) code. Note that UVM is primarily used for hardware verification and not typically for defining CI/CD pipelines. However, we can represent the described CI/CD logic using UVM-like constructs.
+
+```systemverilog
+class CI_CD_Pipeline extends uvm_object;
+  `uvm_object_utils(CI_CD_Pipeline)
+
+  // Define stages
+  bit build_stage = 1;
+  bit unit_test_stage = 1;
+  bit staging_deploy = 0;
+  bit production_deploy = 0;
+  bit integration_test = 0;
+  bit security_scan = 0;
+  string deployment_strategy = "BLUE_GREEN";
+  bit hotfix_bypass = 0;
+  bit manual_qa_approval = 0;
+
+  function new(string name = "CI_CD_Pipeline");
+    super.new(name);
+  endfunction
+
+  function void configure_pipeline();
+    if (staging_deploy) begin
+      if (!unit_test_stage) begin
+        `uvm_error("CI_CD", "Staging deployment failed due to Unit Test failure")
+      end
+    end
+
+    if (production_deploy) begin
+      if (!staging_deploy) begin
+        `uvm_error("CI_CD", "Production deployment failed due to Staging failure")
+      end
+      if (!integration_test ||!security_scan) begin
+        `uvm_error("CI_CD", "Production deployment failed due to Integration Test or Security Scan failure")
+      end
+      if (deployment_strategy == "CANARY") begin
+        // Add Monitoring stage with Rollback trigger
+        add_stage("Monitoring");
+        add_trigger("Rollback");
+      end
+      else if (deployment_strategy == "BLUE_GREEN") begin
+        // Double the infrastructure resources
+        double_infrastructure_resources();
+      end
+    end
+
+    if (hotfix_bypass) begin
+      if (!security_scan) begin
+        `uvm_error("CI_CD", "Hotfix deployment failed due to Security Scan failure")
+      end
+      if (manual_qa_approval) begin
+        // Add Manual QA Approval step
+        add_step("Manual QA Approval");
+      end
+    end
+  end
+
+  function void add_stage(string name);
+    // Simulate adding a stage
+    `uvm_info("CI_CD", $sformatf("Added %s stage", name), UVM_LOW)
+  end
+
+  function void add_trigger(string name);
+    // Simulate adding a trigger
+    `uvm_info("CI_CD", $sformatf("Added %s trigger", name), UVM_LOW)
+  end
+
+  function void add_step(string name);
+    // Simulate adding a step
+    `uvm_info("CI_CD", $sformatf("Added %s step", name), UVM_LOW)
+  end
+
+  function void double_infrastructure_resources();
+    // Simulate doubling infrastructure resources
+    `uvm_info("CI_CD", "Doubled infrastructure resources", UVM_LOW)
+  end
+endclass
+```
+
+This UVM-based class `CI_CD_Pipeline` encapsulates the logic described in the text. It includes methods to configure the pipeline based on the defined stages and strategies. Note that the actual implementation of adding stages, triggers, and steps would depend on the specific environment and tools being used.

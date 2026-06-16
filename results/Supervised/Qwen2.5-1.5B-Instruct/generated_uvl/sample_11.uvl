@@ -1,0 +1,27 @@
+features
+    SmartHomeAutomationSystem {abstract}
+        mandatory
+            DeviceLinkingRule
+                alternative
+                    MovieModeScene {optional}
+                        or
+                            MorningScene {optional}
+
+            RulePriority {abstract}
+                alternative
+                    MovieModeScene {priority 1}
+                    MorningScene {priority 2}
+
+            SafetyConstraints
+                mandatory
+                    SmartOvenAction {disabled}
+                        when
+                            HomeStatus {status 'Away'}
+
+            DynamicDisablingActions
+                optional
+                    AirConditionerAction {dynamicDisable}
+                        when
+                            WindowSensor {state 'Open'}
+                        otherwise
+                            disableAfter 5m

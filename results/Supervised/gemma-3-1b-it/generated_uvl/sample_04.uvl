@@ -1,0 +1,39 @@
+features
+    Bicycle
+        mandatory
+            Manufacturer
+                alternative
+                    "SRAM"
+                    "Shimano"
+            Groupset
+                alternative
+                    "SRAM"
+                    "Shimano"
+            Tires
+                alternative
+                    "Wide tyres"
+                        alternative
+                            "Profile"
+            Profile
+                alternative
+                    "Wide profile"
+            Handlebar
+                alternative
+                    "Drop bar"
+            Handlebar_Type
+                        alternative
+                            "Flat bar"
+            Mounting
+                alternative
+                    "Drop bars"
+                    "Flat bars"
+            Tires
+                alternative
+                    "Slim tyres"
+                        alternative
+                            "Deep profile"
+            "Slim tyres"
+                alternative
+                    "Profile"
+            "Deep profile"
+            "Wide profile"

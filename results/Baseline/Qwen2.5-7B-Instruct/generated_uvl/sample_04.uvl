@@ -1,0 +1,50 @@
+Sure, let's translate the given text into UVL (Unified Vehicle Language) code. UVL is a structured language used to describe vehicles and their components. Here’s how we can represent the information in UVL:
+
+```uvl
+Bicycle {
+    Groupset {
+        Manufacturer { SRAM | Shimano }
+    }
+    Parts {
+        UseCase { Gravel | Road | Mountain }
+    }
+    Tyres {
+        Gravel {
+            Profile { Some }
+            Width { Wide }
+        }
+        Road {
+            Profile { None }
+            Width { Slim }
+        }
+        Mountain {
+            Profile { Deep }
+            Width { ExtraWide }
+        }
+    }
+    Handlebars {
+        Gravel { DropBar }
+        Road { DropBar }
+        Mountain { FlatBar }
+    }
+    AdditionalFeatures {
+        Gravel {
+            Option { RoadTyres { Profile { None } Width { Slim } } }
+        }
+    }
+}
+```
+
+### Explanation:
+1. **Groupset**: Specifies the manufacturer of the groupset.
+2. **Parts**: Defines the use cases for which the bicycle is designed (Gravel, Road, Mountain).
+3. **Tyres**: Describes the characteristics of the tyres for each use case.
+   - **Gravel**: Wide tyres with some profile.
+   - **Road**: Slim tyres with no profile.
+   - **Mountain**: Extra wide tyres with deep profile.
+4. **Handlebars**: Specifies the type of handlebars for each use case.
+   - **Gravel** and **Road**: Drop bar handlebars.
+   - **Mountain**: Flat bar handlebars.
+5. **AdditionalFeatures**: Adds an optional feature where the gravel bike can have the option to use slim tyres.
+
+This UVL code accurately captures the details provided in the original text.

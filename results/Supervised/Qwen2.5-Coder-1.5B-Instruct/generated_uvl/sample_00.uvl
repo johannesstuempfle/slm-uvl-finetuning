@@ -1,0 +1,15 @@
+features
+    Car {abstract}
+        mandatory
+            Engine {abstract}
+                alternative
+                    Diesel
+                    Gasoline
+                    Electric
+        optional
+            AssistanceSystems
+                alternative
+                    LaneAssist
+                    ESP
+        alternative
+            Colour

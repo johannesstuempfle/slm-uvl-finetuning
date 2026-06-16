@@ -1,0 +1,18 @@
+```uvl-code
+module RoomBookingService {
+    entity Room {
+        int numberOfBeds;
+        string view;
+        float size;
+        boolean hasPersonalSpaArea;
+        boolean hasBestViewOption;
+    }
+
+    entity Booking {
+        Date startDate;
+        Date endDate;
+        Optional<float> fee;
+        Optional<Booking> previousBooking;
+    }
+}
+```

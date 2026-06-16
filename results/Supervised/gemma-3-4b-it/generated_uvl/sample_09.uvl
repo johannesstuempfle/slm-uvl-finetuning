@@ -1,0 +1,108 @@
+features
+    PCConfigurator
+        mandatory
+            "CPU"
+                alternative
+                    Intel
+                    AMD
+            "Motherboard Socket"
+                alternative
+                    LGA1700
+                    AM5
+            "Motherboard Chipset"
+                alternative
+                    Z790
+            "RAM Type"
+                alternative
+                    DDR4
+                    DDR5
+            "GPU"
+                mandatory
+                    RTX4090
+                constraints
+                    "Power Supply"
+                        minimum 850W
+                    "GPU Length"
+                        minimum 350mm
+            "Case"
+                alternative
+                    "ATX"
+                    "Micro-ATX"
+            "CPU Cooler"
+                optional
+                    "Large Air Cooler"
+                        constraints
+                            "CPU Cooler Clearance"
+                                "Case Clearance"
+        alternative
+            "Case Clearance"
+                alternative
+                    "Large Air Cooler Clearance"
+                        minimum 0
+        alternative
+            "Case Clearance"
+                alternative
+                    "No Large Air Cooler"
+        alternative
+            "Case Clearance"
+                alternative
+                    "Large Air Cooler"
+                    "No Large Air Cooler"
+
+constraints
+    "Motherboard Socket"
+        alternative
+            LGA1700
+            AM5
+    "Motherboard Socket"
+        alternative
+            LGA1700
+            AM5
+    "Motherboard Chipset"
+        alternative
+            Z790
+    "RAM Type"
+        alternative
+            DDR4
+            DDR5
+    "GPU"
+        mandatory
+            RTX4090
+    "GPU"
+        mandatory
+        constraints
+            "Power Supply"
+                minimum 850W
+    "GPU"
+        mandatory
+        constraints
+            "GPU Length"
+                minimum 350mm
+    "Case"
+        alternative
+            "ATX"
+            "Micro-ATX"
+    "Case"
+        alternative
+            "ATX"
+            "Micro-ATX"
+    "CPU Cooler"
+        optional
+            "Large Air Cooler"
+            "No Large Air Cooler"
+    "CPU Cooler"
+        optional
+            "Large Air Cooler"
+        constraints
+            "Case Clearance"
+                "Large Air Cooler Clearance"
+                minimum 0
+    "Case Clearance"
+        alternative
+            "Large Air Cooler Clearance"
+                minimum 0
+        alternative
+            "No Large Air Cooler"
+        alternative
+            "Large Air Cooler"
+            "No Large Air Cooler"

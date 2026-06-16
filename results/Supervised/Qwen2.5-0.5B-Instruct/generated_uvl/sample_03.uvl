@@ -1,0 +1,18 @@
+features
+    CoffeeShop {abstract}
+        mandatory
+            Drinks
+                alternative
+                    "Coffee"
+                    "Tea"
+        optional
+            Foods
+                alternative
+                    Croissants
+                    Bagels
+
+constraints
+    PaymentMethod
+        alternative
+            Card
+            Cash

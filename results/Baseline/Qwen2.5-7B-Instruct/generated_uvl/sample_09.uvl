@@ -1,0 +1,93 @@
+Sure, here is the translation into UVL (Unified Verification Language) code:
+
+```uvl
+package PCConfiguratorTool;
+
+import SystemPackage::*;
+
+interface PCConfiguratorTool;
+    method Action chooseCPU(CPUType cpu);
+    method Action chooseMotherboardSocket(MotherboardSocket socket);
+    method Action chooseMotherboardChipset(MotherboardChipset chipset);
+    method Action chooseRAMType(RAMType ramType);
+    method Action chooseGPU(GPUType gpu);
+    method Action choosePowerSupply(PowerSupply psu);
+    method Action chooseCase(CaseType caseType);
+    method Action chooseAirCooler(AirCoolerType cooler);
+endinterface
+
+typedef enum {Intel, AMD} CPUType deriving(Bits, Eq);
+typedef enum {LGA_1700, AM_5} MotherboardSocket deriving(Bits, Eq);
+typedef enum {Z790} MotherboardChipset deriving(Bits, Eq);
+typedef enum {DDR4, DDR5} RAMType deriving(Bits, Eq);
+typedef enum {RTX_4090} GPUType deriving(Bits, Eq);
+typedef enum {PSU_850W, PSU_1000W} PowerSupply deriving(Bits, Eq);
+typedef enum {ATX, Micro_ATX} CaseType deriving(Bits, Eq);
+typedef enum {Air_Cooler_120mm, Air_Cooler_140mm} AirCoolerType deriving(Bits, Eq);
+
+(* synthesize *)
+module mkPCConfiguratorTool(PCConfiguratorTool);
+
+    Reg#(CPUType) cpu <- mkReg(Intel);
+    Reg#(MotherboardSocket) motherboardSocket <- mkReg(LGA_1700);
+    Reg#(MotherboardChipset) motherboardChipset <- mkReg(Z790);
+    Reg#(RAMType) ramType <- mkReg(DDR4);
+    Reg#(GPUType) gpu <- mkReg(RTX_4090);
+    Reg#(PowerSupply) psu <- mkReg(PSU_850W);
+    Reg#(CaseType) caseType <- mkReg(ATX);
+    Reg#(AirCoolerType) cooler <- mkReg(Air_Cooler_120mm);
+
+    method Action chooseCPU(CPUType newCPU);
+        cpu <= newCPU;
+        if (cpu == Intel)
+            begin
+                motherboardSocket <= LGA_1700;
+                motherboardChipset <= Z790;
+                ramType <= DDR4;
+            end
+        else if (cpu == AMD)
+            begin
+                motherboardSocket <= AM_5;
+                motherboardChipset <= Z790;
+                ramType <= DDR5;
+            end
+    endmethod
+
+    method Action chooseMotherboardSocket(MotherboardSocket newSocket);
+        motherboardSocket <= newSocket;
+    endmethod
+
+    method Action chooseMotherboardChipset(MotherboardChipset newChipset);
+        motherboardChipset <= newChipset;
+    endmethod
+
+    method Action chooseRAMType(RAMType newRamType);
+        ramType <= newRamType;
+    endmethod
+
+    method Action chooseGPU(GPUType newGPU);
+        gpu <= newGPU;
+        if (gpu == RTX_4090)
+            begin
+                psu <= PSU_1000W;
+            end
+    endmethod
+
+    method Action choosePowerSupply(PowerSupply newPSU);
+        psu <= newPSU;
+    endmethod
+
+    method Action chooseCase(CaseType newCaseType);
+        caseType <= newCaseType;
+    endmethod
+
+    method Action chooseAirCooler(AirCoolerType newCooler);
+        cooler <= newCooler;
+    endmethod
+
+endmodule
+
+endpackage
+```
+
+This UVL code defines a `PCConfiguratorTool` module that encapsulates the choices for a PC build, including CPU, motherboard socket, chipset, RAM type, GPU, power supply, case, and air cooler. The choices are made through methods that update the internal state of the module.

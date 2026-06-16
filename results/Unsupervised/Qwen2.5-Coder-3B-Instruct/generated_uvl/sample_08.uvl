@@ -1,0 +1,93 @@
+Here's the UVL-Code representation of the given text:
+
+```uvl
+module UniversityCourseRegistrationSystem
+
+    abstract base class Course
+        attributes
+            name : string
+            credit_hours : integer
+            prerequisites : [Course]
+            mutually_exclusive_with : [Course]
+            optional : boolean
+            max_enrollment : integer
+
+        operations
+            register(student: Student)
+
+    abstract base class CourseType
+        attributes
+            core : boolean
+            seminar : boolean
+
+    abstract base class Enrollment
+        attributes
+            student : Student
+            course : Course
+
+    abstract base class Student
+        attributes
+            name : string
+            credits_completed : integer
+            dissertation_proposal_review_passed : boolean
+            courses_registered : [Enrollment]
+
+        operations
+            register(course: Course)
+            unregister(course: Course)
+
+    class AdvancedAI extends Course
+        constraints
+            prerequisites == {IntroToAI, LinearAlgebra}
+
+    class IntroToAI extends Course
+        constraints
+            prerequisites == {Mathematics}
+
+    class LinearAlgebra extends Course
+
+    class RoboticsLab extends Course
+        constraints
+            optional == true
+            max_enrollment == 20
+
+    class StatisticsForBiology extends Course
+
+    class StatisticsForBusiness extends Course
+        constraints
+            mutually_exclusive_with == {StatisticsForBiology}
+
+    class ThesisDefense extends Course
+        constraints
+            prerequisites == {CompletedCredits(60), DissertationProposalReviewPassed}
+
+    class Mathematics extends Course
+
+    class CompletedCredits(credits: integer)
+        constraints
+            credits_completed == credits
+
+    class DissertationProposalReviewPassed
+
+    class BachelorStudent extends Student
+        attributes
+            course_type : CourseType
+            core_course : Course
+
+        operations
+            register(course: Course)
+                if course_type.core and course.credit_hours == 10
+                    core_course := course
+
+    class MasterStudent extends Student
+        attributes
+            course_type : CourseType
+            seminar_course : Course
+
+        operations
+            register(course: Course)
+                if course_type.seminar and course.credit_hours == 3
+                    seminar_course := course
+
+end UniversityCourseRegistrationSystem
+```

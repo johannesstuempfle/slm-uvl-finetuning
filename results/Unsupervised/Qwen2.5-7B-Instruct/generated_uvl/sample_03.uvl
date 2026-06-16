@@ -1,0 +1,24 @@
+Certainly! UVL (Unified Visual Language) is a modeling language used for specifying the structure and behavior of systems. Below is the translation of your text into UVL code:
+
+```uvl
+features
+    CoffeeShop {abstract}
+        mandatory
+            Payment {abstract}
+                alternative
+                    Card
+                    Cash
+            Drinks {abstract}
+                alternative
+                    Coffee
+                    Tea
+            Foods {abstract}
+                alternative
+                    Croissant
+                    Bagel
+
+constraints
+    CoffeeShop.Price == sum(Drinks.Price, Foods.Price)
+```
+
+This UVL code defines a `CoffeeShop` with optional features such as `Payment`, `Drinks`, and `Foods`. The `Payment` feature allows payment via `Card` or `Cash`, while the `Drinks` feature includes options like `Coffee` and `Tea`. Similarly, the `Foods` feature includes options like `Croissant` and `Bagel`. The constraints ensure that the total price of the `CoffeeShop` is the sum of the prices of the selected `Drinks` and `Foods`.

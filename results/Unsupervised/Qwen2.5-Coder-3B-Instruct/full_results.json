@@ -1,0 +1,260 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.06312433381875356,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 1,
+    "failed": 11,
+    "mean_feature_f1": 0.8148148148148148,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 1.0
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "Here's the translation of the given text into UVL-Code:\n\n```\ncar {\n    engine { diesel | gasoline | electric }\n    optional { lane_assist | ESP }\n    colors { \"red\" | \"blue\" | \"green\" | \"yellow\" | \"black\" }\n}\n```",
+      "output_raw": "Here's the translation of the given text into UVL-Code:\n\n```\ncar {\n    engine { diesel | gasoline | electric }\n    optional { lane_assist | ESP }\n    colors { \"red\" | \"blue\" | \"green\" | \"yellow\" | \"black\" }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "Sure, here's the equivalent uvl-Code for the given text:\n\n```uvl\nteam SecurityTeam {\n    roles {\n        SecurityArchitect\n        SecurityEngineer\n        Manager\n        ScrumMaster\n    }\n    constraints {\n        SecurityArchitect!= SecurityEngineer\n        Manager!= ScrumMaster\n    }\n}\n```",
+      "output_raw": "Sure, here's the equivalent uvl-Code for the given text:\n\n```uvl\nteam SecurityTeam {\n    roles {\n        SecurityArchitect\n        SecurityEngineer\n        Manager\n        ScrumMaster\n    }\n    constraints {\n        SecurityArchitect!= SecurityEngineer\n        Manager!= ScrumMaster\n    }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "Here is the translation of the given text into UVL-Code:\n\n```uvl\n\"Computer\" {\n    \"Installed Applications\" {\n        \"Text Editing Programms\" {\n            \"Microsoft Word\"\n            \"Pages\"\n            // Add more text editing programs as needed\n        }\n        \"Cell Calculation Tools\" {\n            \"Microsoft Excel\"\n            \"Numberts\"\n            // Add more cell calculation tools as needed\n        }\n    }\n}\n```\n\nThis UVL-Code structure represents the computer with its installed applications, categorizing them into text editing programs and cell calculation tools.",
+      "output_raw": "Here is the translation of the given text into UVL-Code:\n\n```uvl\n\"Computer\" {\n    \"Installed Applications\" {\n        \"Text Editing Programms\" {\n            \"Microsoft Word\"\n            \"Pages\"\n            // Add more text editing programs as needed\n        }\n        \"Cell Calculation Tools\" {\n            \"Microsoft Excel\"\n            \"Numberts\"\n            // Add more cell calculation tools as needed\n        }\n    }\n}\n```\n\nThis UVL-Code structure represents the computer with its installed applications, categorizing them into text editing programs and cell calculation tools.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "The following is the UVL (Unified Variable Language) code for the given text:\n\n```\ncoffee_shop\n    drinks\n        Coffee\n        Tea\n    foods\n        Croissant\n        Bagel\n    payment\n        Card\n        Cash\n```",
+      "output_raw": "The following is the UVL (Unified Variable Language) code for the given text:\n\n```\ncoffee_shop\n    drinks\n        Coffee\n        Tea\n    foods\n        Croissant\n        Bagel\n    payment\n        Card\n        Cash\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "```uvl\nBicycle {\n  Features {\n    Groupset { Manufacturer { SRAM | Shimano } }\n    Parts { Gravel { Tyres { Width { Wide } Profile { Some } } } Road { Tyres { Width { Slim } Profile { No } } } }\n    Handlebars { DropBar | Mountain { Flat } }\n    AdditionalFeatures { Gravel { Tyres { Width { ExtraWide } Profile { Deep } } } }\n    Tyres { Fit { Gravel | Road } }\n  }\n}\n```",
+      "output_raw": "```uvl\nBicycle {\n  Features {\n    Groupset { Manufacturer { SRAM | Shimano } }\n    Parts { Gravel { Tyres { Width { Wide } Profile { Some } } } Road { Tyres { Width { Slim } Profile { No } } } }\n    Handlebars { DropBar | Mountain { Flat } }\n    AdditionalFeatures { Gravel { Tyres { Width { ExtraWide } Profile { Deep } } } }\n    Tyres { Fit { Gravel | Road } }\n  }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "The following UVL-Code represents the given information:\n\n```\nfactories {\n    name \"factory\"\n        productionLines {\n            name \"normal\"\n                stations {\n                    melting\n                    mixing\n                    cooling\n                }\n                logistics\n                packaging\n            name \"nut-chocolate\"\n                stations {\n                    melting\n                    mixing\n                    cooling\n                    baking\n                }\n                logistics\n                packaging\n        }\n}\n```",
+      "output_raw": "The following UVL-Code represents the given information:\n\n```\nfactories {\n    name \"factory\"\n        productionLines {\n            name \"normal\"\n                stations {\n                    melting\n                    mixing\n                    cooling\n                }\n                logistics\n                packaging\n            name \"nut-chocolate\"\n                stations {\n                    melting\n                    mixing\n                    cooling\n                    baking\n                }\n                logistics\n                packaging\n        }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "Here is the UVL-Code based on the given text:\n\n```uvl\nnamespace BillingSoftware\n\nfeatures\n\tBillingSoftware {abstract}\n\t\tmandatory\n\t\t\tTaxCalculator {abstract}\n\t\t\t\tmandatory\n\t\t\t\t\tInputs\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\tNettoPrice {Measure 'Netto price'}\n\t\t\t\t\t\t\tSumOfProducts {Measure 'Sum of products'}\n\t\t\t\t\t\t\tLocationOfBuyerSeller {Text 'Location of buyer/seller'}\n\t\t\t\t\tOutputs\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\tTaxPerProduct {Measure 'Tax per product'}\n\t\t\t\t\t\t\tBruttoPrice {Measure 'Brutto price'}\n\t\t\t\t\t\t\tTaxRate {Measure 'Tax rate'}\n\t\t\t\t\t\toptional\n\t\t\t\t\t\t\tLoggingData {Text 'Logging data'}\n\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\tCalculatedBasePrice {Measure 'Calculated base price'}\n\t\t\t\t\t\t\t\t\tRuleOfCalculation {Text 'Rule of calculation'}\n\nconstraints\n\t!TaxCalculator.TaxCalculator => TaxCalculator\n```",
+      "output_raw": "Here is the UVL-Code based on the given text:\n\n```uvl\nnamespace BillingSoftware\n\nfeatures\n\tBillingSoftware {abstract}\n\t\tmandatory\n\t\t\tTaxCalculator {abstract}\n\t\t\t\tmandatory\n\t\t\t\t\tInputs\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\tNettoPrice {Measure 'Netto price'}\n\t\t\t\t\t\t\tSumOfProducts {Measure 'Sum of products'}\n\t\t\t\t\t\t\tLocationOfBuyerSeller {Text 'Location of buyer/seller'}\n\t\t\t\t\tOutputs\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\tTaxPerProduct {Measure 'Tax per product'}\n\t\t\t\t\t\t\tBruttoPrice {Measure 'Brutto price'}\n\t\t\t\t\t\t\tTaxRate {Measure 'Tax rate'}\n\t\t\t\t\t\toptional\n\t\t\t\t\t\t\tLoggingData {Text 'Logging data'}\n\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\tCalculatedBasePrice {Measure 'Calculated base price'}\n\t\t\t\t\t\t\t\t\tRuleOfCalculation {Text 'Rule of calculation'}\n\nconstraints\n\t!TaxCalculator.TaxCalculator => TaxCalculator\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "BillingSoftware",
+        "TaxCalculator",
+        "Inputs",
+        "NettoPrice",
+        "SumOfProducts",
+        "LocationOfBuyerSeller",
+        "Outputs",
+        "TaxPerProduct",
+        "BruttoPrice",
+        "TaxRate",
+        "LoggingData",
+        "CalculatedBasePrice",
+        "RuleOfCalculation"
+      ],
+      "semantic_similarity": 0.7574920058250427,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 11,
+          "fp": 2,
+          "fn": 3,
+          "precision": 0.8461538461538461,
+          "recall": 0.7857142857142857,
+          "f1": 0.8148148148148148,
+          "missed": [
+            "AuditLogging",
+            "BuyerLocation",
+            "SellerLocation"
+          ],
+          "hallucinated": [
+            "LocationOfBuyerSeller",
+            "LoggingData"
+          ]
+        },
+        "structure": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 8,
+          "n_edges_gt": 8,
+          "group_type_agreement": 1.0,
+          "n_group_compared": 10
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Here is the UVL (Unified Vision Language) code for the given text:\n\n```uvl\npackage RoomBookingService\n\nabstract class Room\n    attributes\n        number_of_beds: Integer\n        view: String\n        size: Float\n    abstract operations\n        getBasicFeatures(): Features\n        getOptionalFeatures(): Features\n\nclass BasicFeatures\n    abstract properties\n        beds: Integer\n        view: String\n        size: Float\n\nclass OptionalFeatures\n    abstract properties\n        personal_spa_area: Boolean\n        best_view_option: Boolean\n\nabstract class Features\n    abstract operations\n        getAllFeatures(): List[Feature]\n\nabstract class Feature\n\nclass Bed extends Feature\n    attributes\n        count: Integer\n\nclass View extends Feature\n    attributes\n        description: String\n\nclass Size extends Feature\n    attributes\n        value: Float\n\nabstract class Booking\n    attributes\n        start_date: Date\n        end_date: Date\n    optional\n        fees: Fees\n        booking: Booking\n\nclass Fees\n    abstract operations\n        getTotalFees(): Float\n\nabstract class Booking\n    abstract operations\n        getBookings(): List[Booking]\n        getFees(): Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            alternative\n                return this.getBasicFeatures.getAllFeatures() + this.getOptionalFeatures.getAllFeatures()\n\nclass BasicFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size]\n\nclass OptionalFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            if this.best_view_option\n                return [this.personal_spa_area, this.best_view_option]\n            else\n                return [this.personal_spa_area]\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]\n\nclass Bed\n    attributes\n        count: Integer\n\nclass View\n    attributes\n        description: String\n\nclass Size\n    attributes\n        value: Float\n\nclass Booking\n    operations\n        getBookings(): List[Booking]\n            return []\n\n        getFees(): Fees\n            return new Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Fees\n    operations\n        getTotalFees(): Float\n            return 0.0\n\nabstract class Booking\n    abstract operations\n        getBookings(): List[Booking]\n        getFees(): Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]\n\nclass BasicFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size]\n\nclass OptionalFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            if this.best_view_option\n                return [this.personal_spa_area, this.best_view_option]\n            else\n                return [this.personal_spa_area]\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]\n\nclass Bed\n    attributes\n        count: Integer\n\nclass View\n    attributes\n        description: String\n\nclass Size\n    attributes\n        value: Float\n\nclass Booking\n    operations\n        getBookings(): List[Booking]\n            return []\n\n        getFees(): Fees\n            return new Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Fees\n    operations\n        getTotalFees(): Float\n            return 0.0\n\nabstract class Booking\n    abstract operations\n        getBookings(): List[Booking]\n        getFees(): Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]\n\nclass BasicFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size]\n\nclass OptionalFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            if this.best_view_option\n                return [this.personal_spa_area, this.best_view_option]\n            else\n                return [this.personal_spa_area]\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area",
+      "output_raw": "Here is the UVL (Unified Vision Language) code for the given text:\n\n```uvl\npackage RoomBookingService\n\nabstract class Room\n    attributes\n        number_of_beds: Integer\n        view: String\n        size: Float\n    abstract operations\n        getBasicFeatures(): Features\n        getOptionalFeatures(): Features\n\nclass BasicFeatures\n    abstract properties\n        beds: Integer\n        view: String\n        size: Float\n\nclass OptionalFeatures\n    abstract properties\n        personal_spa_area: Boolean\n        best_view_option: Boolean\n\nabstract class Features\n    abstract operations\n        getAllFeatures(): List[Feature]\n\nabstract class Feature\n\nclass Bed extends Feature\n    attributes\n        count: Integer\n\nclass View extends Feature\n    attributes\n        description: String\n\nclass Size extends Feature\n    attributes\n        value: Float\n\nabstract class Booking\n    attributes\n        start_date: Date\n        end_date: Date\n    optional\n        fees: Fees\n        booking: Booking\n\nclass Fees\n    abstract operations\n        getTotalFees(): Float\n\nabstract class Booking\n    abstract operations\n        getBookings(): List[Booking]\n        getFees(): Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            alternative\n                return this.getBasicFeatures.getAllFeatures() + this.getOptionalFeatures.getAllFeatures()\n\nclass BasicFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size]\n\nclass OptionalFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            if this.best_view_option\n                return [this.personal_spa_area, this.best_view_option]\n            else\n                return [this.personal_spa_area]\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]\n\nclass Bed\n    attributes\n        count: Integer\n\nclass View\n    attributes\n        description: String\n\nclass Size\n    attributes\n        value: Float\n\nclass Booking\n    operations\n        getBookings(): List[Booking]\n            return []\n\n        getFees(): Fees\n            return new Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Fees\n    operations\n        getTotalFees(): Float\n            return 0.0\n\nabstract class Booking\n    abstract operations\n        getBookings(): List[Booking]\n        getFees(): Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]\n\nclass BasicFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size]\n\nclass OptionalFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            if this.best_view_option\n                return [this.personal_spa_area, this.best_view_option]\n            else\n                return [this.personal_spa_area]\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]\n\nclass Bed\n    attributes\n        count: Integer\n\nclass View\n    attributes\n        description: String\n\nclass Size\n    attributes\n        value: Float\n\nclass Booking\n    operations\n        getBookings(): List[Booking]\n            return []\n\n        getFees(): Fees\n            return new Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Fees\n    operations\n        getTotalFees(): Float\n            return 0.0\n\nabstract class Booking\n    abstract operations\n        getBookings(): List[Booking]\n        getFees(): Fees\n\nclass Date\n    abstract properties\n        year: Integer\n        month: Integer\n        day: Integer\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area, this.best_view_option]\n\nclass BasicFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size]\n\nclass OptionalFeatures\n    operations\n        getAllFeatures(): List[Feature]\n            if this.best_view_option\n                return [this.personal_spa_area, this.best_view_option]\n            else\n                return [this.personal_spa_area]\n\nclass Features\n    operations\n        getAllFeatures(): List[Feature]\n            return [this.beds, this.view, this.size, this.personal_spa_area",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "Here's the UVL-Code representation of the given text:\n\n```uvl\nmodule UniversityCourseRegistrationSystem\n\n    abstract base class Course\n        attributes\n            name : string\n            credit_hours : integer\n            prerequisites : [Course]\n            mutually_exclusive_with : [Course]\n            optional : boolean\n            max_enrollment : integer\n\n        operations\n            register(student: Student)\n\n    abstract base class CourseType\n        attributes\n            core : boolean\n            seminar : boolean\n\n    abstract base class Enrollment\n        attributes\n            student : Student\n            course : Course\n\n    abstract base class Student\n        attributes\n            name : string\n            credits_completed : integer\n            dissertation_proposal_review_passed : boolean\n            courses_registered : [Enrollment]\n\n        operations\n            register(course: Course)\n            unregister(course: Course)\n\n    class AdvancedAI extends Course\n        constraints\n            prerequisites == {IntroToAI, LinearAlgebra}\n\n    class IntroToAI extends Course\n        constraints\n            prerequisites == {Mathematics}\n\n    class LinearAlgebra extends Course\n\n    class RoboticsLab extends Course\n        constraints\n            optional == true\n            max_enrollment == 20\n\n    class StatisticsForBiology extends Course\n\n    class StatisticsForBusiness extends Course\n        constraints\n            mutually_exclusive_with == {StatisticsForBiology}\n\n    class ThesisDefense extends Course\n        constraints\n            prerequisites == {CompletedCredits(60), DissertationProposalReviewPassed}\n\n    class Mathematics extends Course\n\n    class CompletedCredits(credits: integer)\n        constraints\n            credits_completed == credits\n\n    class DissertationProposalReviewPassed\n\n    class BachelorStudent extends Student\n        attributes\n            course_type : CourseType\n            core_course : Course\n\n        operations\n            register(course: Course)\n                if course_type.core and course.credit_hours == 10\n                    core_course := course\n\n    class MasterStudent extends Student\n        attributes\n            course_type : CourseType\n            seminar_course : Course\n\n        operations\n            register(course: Course)\n                if course_type.seminar and course.credit_hours == 3\n                    seminar_course := course\n\nend UniversityCourseRegistrationSystem\n```",
+      "output_raw": "Here's the UVL-Code representation of the given text:\n\n```uvl\nmodule UniversityCourseRegistrationSystem\n\n    abstract base class Course\n        attributes\n            name : string\n            credit_hours : integer\n            prerequisites : [Course]\n            mutually_exclusive_with : [Course]\n            optional : boolean\n            max_enrollment : integer\n\n        operations\n            register(student: Student)\n\n    abstract base class CourseType\n        attributes\n            core : boolean\n            seminar : boolean\n\n    abstract base class Enrollment\n        attributes\n            student : Student\n            course : Course\n\n    abstract base class Student\n        attributes\n            name : string\n            credits_completed : integer\n            dissertation_proposal_review_passed : boolean\n            courses_registered : [Enrollment]\n\n        operations\n            register(course: Course)\n            unregister(course: Course)\n\n    class AdvancedAI extends Course\n        constraints\n            prerequisites == {IntroToAI, LinearAlgebra}\n\n    class IntroToAI extends Course\n        constraints\n            prerequisites == {Mathematics}\n\n    class LinearAlgebra extends Course\n\n    class RoboticsLab extends Course\n        constraints\n            optional == true\n            max_enrollment == 20\n\n    class StatisticsForBiology extends Course\n\n    class StatisticsForBusiness extends Course\n        constraints\n            mutually_exclusive_with == {StatisticsForBiology}\n\n    class ThesisDefense extends Course\n        constraints\n            prerequisites == {CompletedCredits(60), DissertationProposalReviewPassed}\n\n    class Mathematics extends Course\n\n    class CompletedCredits(credits: integer)\n        constraints\n            credits_completed == credits\n\n    class DissertationProposalReviewPassed\n\n    class BachelorStudent extends Student\n        attributes\n            course_type : CourseType\n            core_course : Course\n\n        operations\n            register(course: Course)\n                if course_type.core and course.credit_hours == 10\n                    core_course := course\n\n    class MasterStudent extends Student\n        attributes\n            course_type : CourseType\n            seminar_course : Course\n\n        operations\n            register(course: Course)\n                if course_type.seminar and course.credit_hours == 3\n                    seminar_course := course\n\nend UniversityCourseRegistrationSystem\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "```uvl\nPCConfiguratorTool {\n    GuideUsers\n    Choices {\n        CPU { \n            Intel \n            AMD \n            Constraints { \n                MotherboardSocket { \n                    LGA1700 \n                    AM5 \n                } \n            } \n        }\n        Motherboard { \n            Chipset { \n                Z790 \n                Constraints { \n                    SupportedRAMType { \n                        DDR4 \n                        DDR5 \n                    } \n                } \n            } \n        }\n        GPU { \n            HighEndGPU { \n                RTX4090 \n                Constraints { \n                    PowerSupply { \n                        850W | Higher \n                    } \n                } \n                PhysicalLength { \n                    350mm \n                    Constraints { \n                        CaseClearance { \n                            MaximumGPUClearance \n                        } \n                    } \n                } \n            } \n        }\n        Case { \n            ATX \n            MicroATX \n            Constraints { \n                MotherboardFormFactor \n            } \n        }\n        AirCooler { \n            LargeAirCooler { \n                Height { \n                    LessThan { \n                        CPUCoolerClearance \n                    } \n                } \n            } \n        } \n    } \n}\n```",
+      "output_raw": "```uvl\nPCConfiguratorTool {\n    GuideUsers\n    Choices {\n        CPU { \n            Intel \n            AMD \n            Constraints { \n                MotherboardSocket { \n                    LGA1700 \n                    AM5 \n                } \n            } \n        }\n        Motherboard { \n            Chipset { \n                Z790 \n                Constraints { \n                    SupportedRAMType { \n                        DDR4 \n                        DDR5 \n                    } \n                } \n            } \n        }\n        GPU { \n            HighEndGPU { \n                RTX4090 \n                Constraints { \n                    PowerSupply { \n                        850W | Higher \n                    } \n                } \n                PhysicalLength { \n                    350mm \n                    Constraints { \n                        CaseClearance { \n                            MaximumGPUClearance \n                        } \n                    } \n                } \n            } \n        }\n        Case { \n            ATX \n            MicroATX \n            Constraints { \n                MotherboardFormFactor \n            } \n        }\n        AirCooler { \n            LargeAirCooler { \n                Height { \n                    LessThan { \n                        CPUCoolerClearance \n                    } \n                } \n            } \n        } \n    } \n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "```uvl\nsystem \"CI/CD System\" {\n  components {\n    Build\n    UnitTest\n    Staging\n    Production\n    Hotfix\n\n    DeploymentPipelines {\n      stages {\n        Build\n        UnitTest\n        Staging\n        Production\n        Hotfix\n      }\n    }\n\n    DeploymentStrategies {\n      types { BlueGreen Canary }\n    }\n\n    SecurityScan\n    IntegrationTest\n    Monitoring\n    RollbackTrigger\n\n    InfrastructureResources {\n      doubleResourcesForBlueGreen\n    }\n  }\n\n  requirements {\n    DeploymentPipelines.requirements {\n      stages.Requirements {\n        Build\n        UnitTest\n        Staging\n        Production\n        Hotfix\n      }\n    }\n\n    Production.Requirements {\n      DeploymentStrategies.BlueGreen => InfrastructureResources.doubleResourcesForBlueGreen\n      DeploymentStrategies.Canary => Monitoring.Monitoring & RollbackTrigger.RollbackTrigger\n    }\n\n    Hotfix.Requirements {\n     !DeploymentPipelines.Staging &!DeploymentPipelines.IntegrationTest\n      Hotfix.SecurityScan\n      Hotfix.ManualQAApproval\n    }\n  }\n}\n```",
+      "output_raw": "```uvl\nsystem \"CI/CD System\" {\n  components {\n    Build\n    UnitTest\n    Staging\n    Production\n    Hotfix\n\n    DeploymentPipelines {\n      stages {\n        Build\n        UnitTest\n        Staging\n        Production\n        Hotfix\n      }\n    }\n\n    DeploymentStrategies {\n      types { BlueGreen Canary }\n    }\n\n    SecurityScan\n    IntegrationTest\n    Monitoring\n    RollbackTrigger\n\n    InfrastructureResources {\n      doubleResourcesForBlueGreen\n    }\n  }\n\n  requirements {\n    DeploymentPipelines.requirements {\n      stages.Requirements {\n        Build\n        UnitTest\n        Staging\n        Production\n        Hotfix\n      }\n    }\n\n    Production.Requirements {\n      DeploymentStrategies.BlueGreen => InfrastructureResources.doubleResourcesForBlueGreen\n      DeploymentStrategies.Canary => Monitoring.Monitoring & RollbackTrigger.RollbackTrigger\n    }\n\n    Hotfix.Requirements {\n     !DeploymentPipelines.Staging &!DeploymentPipelines.IntegrationTest\n      Hotfix.SecurityScan\n      Hotfix.ManualQAApproval\n    }\n  }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "Here's the UVL-Code for the given requirements:\n\n```uvl\npackage SmartHomeAutomation\n\nabstract class Rule {\n    abstract attribute priority : integer\n    abstract feature triggers\n    abstract feature conditions {optional}\n    abstract feature actions\n}\n\nabstract class Scene {\n    abstract attribute name : string\n    feature setLights(percentage : real)\n}\n\nclass MovieMode extends Scene {\n    name = 'Movie Mode'\n    setLights(percentage = 10.0)\n}\n\nclass Morning extends Scene {\n    name = 'Morning'\n    setLights(percentage = 100.0)\n}\n\nabstract class DeviceAction {\n    abstract feature perform\n}\n\nabstract class SafetyConstraint {\n    abstract feature checkConstraints\n}\n\nclass SmartOven extends DeviceAction {\n    perform = 'Disable Smart Oven'\n}\n\nclass HomeStatus {abstract}\nclass Away extends HomeStatus\n\nclass AirConditioner extends DeviceAction {\n    perform = 'Disable Air Conditioner'\n}\n\nabstract class WindowSensor {abstract}\nclass Open extends WindowSensor\n\nabstract class Device {\n    abstract feature disable\n    abstract feature enable\n}\n\nabstract class DeviceWithSensors {abstract}\nclass WindowSensorDevice extends DeviceWithSensors\n\nabstract class RuleResolution {\n    abstract feature resolveConflicts\n}\n\nclass RuleResolver extends RuleResolution {\n    feature resolveConflicts\n        alternative\n            MovieMode\n            Morning\n}\n\nabstract class ConstraintChecker {abstract}\nclass SafetyConstraintChecker extends ConstraintChecker\n\nabstract class ConstraintEnabler {abstract}\nclass AirConditionerEnabler extends ConstraintEnabler\n\nabstract class ConstraintDisabler {abstract}\nclass SmartOvenDisabler extends ConstraintDisabler\n\nconstraints\n   !MovieMode => Morning\n   !SmartOven => Away\n   !AirConditioner => all Open\n    AirConditioner.enable.after(5 * minutes)\n```",
+      "output_raw": "Here's the UVL-Code for the given requirements:\n\n```uvl\npackage SmartHomeAutomation\n\nabstract class Rule {\n    abstract attribute priority : integer\n    abstract feature triggers\n    abstract feature conditions {optional}\n    abstract feature actions\n}\n\nabstract class Scene {\n    abstract attribute name : string\n    feature setLights(percentage : real)\n}\n\nclass MovieMode extends Scene {\n    name = 'Movie Mode'\n    setLights(percentage = 10.0)\n}\n\nclass Morning extends Scene {\n    name = 'Morning'\n    setLights(percentage = 100.0)\n}\n\nabstract class DeviceAction {\n    abstract feature perform\n}\n\nabstract class SafetyConstraint {\n    abstract feature checkConstraints\n}\n\nclass SmartOven extends DeviceAction {\n    perform = 'Disable Smart Oven'\n}\n\nclass HomeStatus {abstract}\nclass Away extends HomeStatus\n\nclass AirConditioner extends DeviceAction {\n    perform = 'Disable Air Conditioner'\n}\n\nabstract class WindowSensor {abstract}\nclass Open extends WindowSensor\n\nabstract class Device {\n    abstract feature disable\n    abstract feature enable\n}\n\nabstract class DeviceWithSensors {abstract}\nclass WindowSensorDevice extends DeviceWithSensors\n\nabstract class RuleResolution {\n    abstract feature resolveConflicts\n}\n\nclass RuleResolver extends RuleResolution {\n    feature resolveConflicts\n        alternative\n            MovieMode\n            Morning\n}\n\nabstract class ConstraintChecker {abstract}\nclass SafetyConstraintChecker extends ConstraintChecker\n\nabstract class ConstraintEnabler {abstract}\nclass AirConditionerEnabler extends ConstraintEnabler\n\nabstract class ConstraintDisabler {abstract}\nclass SmartOvenDisabler extends ConstraintDisabler\n\nconstraints\n   !MovieMode => Morning\n   !SmartOven => Away\n   !AirConditioner => all Open\n    AirConditioner.enable.after(5 * minutes)\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

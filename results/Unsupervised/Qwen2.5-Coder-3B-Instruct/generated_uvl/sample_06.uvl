@@ -1,0 +1,29 @@
+Here is the UVL-Code based on the given text:
+
+```uvl
+namespace BillingSoftware
+
+features
+	BillingSoftware {abstract}
+		mandatory
+			TaxCalculator {abstract}
+				mandatory
+					Inputs
+						mandatory
+							NettoPrice {Measure 'Netto price'}
+							SumOfProducts {Measure 'Sum of products'}
+							LocationOfBuyerSeller {Text 'Location of buyer/seller'}
+					Outputs
+						mandatory
+							TaxPerProduct {Measure 'Tax per product'}
+							BruttoPrice {Measure 'Brutto price'}
+							TaxRate {Measure 'Tax rate'}
+						optional
+							LoggingData {Text 'Logging data'}
+								mandatory
+									CalculatedBasePrice {Measure 'Calculated base price'}
+									RuleOfCalculation {Text 'Rule of calculation'}
+
+constraints
+	!TaxCalculator.TaxCalculator => TaxCalculator
+```

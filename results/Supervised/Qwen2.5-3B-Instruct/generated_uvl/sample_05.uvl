@@ -1,0 +1,16 @@
+features
+    ChocolateFactory
+        mandatory
+            MeltingStation
+            MixingStation
+            CoolingStation
+        optional
+            BakingStation
+        mandatory
+            LogisticSystem
+        mandatory
+            PackagingStation
+
+constraints
+    if NutChocolate then
+        BakingStation

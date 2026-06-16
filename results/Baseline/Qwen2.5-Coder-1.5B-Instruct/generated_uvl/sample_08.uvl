@@ -1,0 +1,139 @@
+Certainly! Below is the translation of the given text into UVL (Unified Verification Language) code:
+
+```uvl
+module UniversityCourseRegistrationSystem;
+
+    // Define constants
+    constant MIN_CREDITS = 12;
+    constant MAX_ROBOTICS_LAB_STUDENTS = 20;
+
+    // Define enumerations
+    enumeration CourseType {
+        UNDERGRADUATE,
+        GRADUATE
+    }
+
+    enumeration EnrollmentStatus {
+        REGISTERED,
+        NOT_REGISTERED
+    }
+
+    // Define structures
+    struct Student {
+        string name;
+        CourseType courseType;
+        integer creditCount;
+        list<Course> registeredCourses;
+    }
+
+    struct Course {
+        string name;
+        integer creditCount;
+        boolean hasPrerequisites;
+        list<Course> prerequisiteCourses;
+        boolean isMutuallyExclusive;
+        EnrollmentStatus status;
+    }
+
+    // Define functions
+    function void registerStudent(Student& student, Course& course);
+    function void unregisterStudent(Student& student, Course& course);
+    function bool canRegisterStudent(Student& student, Course& course);
+    function void setEnrollmentStatus(Student& student, Course& course, EnrollmentStatus status);
+
+    // Define variables
+    var students: list<Student>;
+    var courses: list<Course>;
+
+    // Initialize data
+    initializeData();
+
+    // Main program
+    main() {
+        // Example usage
+        Student student1 = {"Alice", UNDERGRADUATE, 0, []};
+        Course advancedAI = {"Advanced AI", 4, true, [introToAI, linearAlgebra], false, ENROLLED};
+        registerStudent(student1, advancedAI);
+        print("Student " + student1.name + " registered in " + advancedAI.name);
+    }
+
+endmodule
+
+// Define helper functions
+function void initializeData() {
+    // Add some sample data
+    students = [];
+    courses = [];
+
+    introToAI = {"Introduction to AI", 3, false, [], false, NOT_REGISTERED};
+    linearAlgebra = {"Linear Algebra", 4, false, [], false, NOT_REGISTERED};
+
+    statisticsForBiology = {"Statistics for Biology", 3, true, [statisticsForBusiness], false, NOT_REGISTERED};
+    statisticsForBusiness = {"Statistics for Business", 3, true, [statisticsForBiology], false, NOT_REGISTERED};
+
+    roboticsLab = {"Robotics Lab", 4, true, [], false, NOT_REGISTERED};
+
+    thesisDefense = {"Thesis Defense", 8, false, [], false, NOT_REGISTERED};
+
+    students.append(student1);
+    courses.append(introToAI);
+    courses.append(linearAlgebra);
+    courses.append(statisticsForBiology);
+    courses.append(statisticsForBusiness);
+    courses.append(roboticsLab);
+    courses.append(thesisDefense);
+}
+
+function void registerStudent(Student& student, Course& course) {
+    if (!canRegisterStudent(student, course)) {
+        return;
+    }
+    student.registeredCourses.append(course);
+    setEnrollmentStatus(student, course, ENROLLED);
+}
+
+function void unregisterStudent(Student& student, Course& course) {
+    if (!isRegisteredInCourse(student, course)) {
+        return;
+    }
+    student.registeredCourses.remove(course);
+    setEnrollmentStatus(student, course, NOT_REGISTERED);
+}
+
+function bool canRegisterStudent(Student& student, Course& course) {
+    if (student.creditCount < MIN_CREDITS) {
+        return false;
+    }
+    if ((course.courseType == UNDERGRADUATE &&!hasSelectedCoreCourse(student, course)) || 
+        (course.courseType == GRADUATE &&!hasSelectedSeminar(course))) {
+        return false;
+    }
+    if (course.hasPrerequisites &&!areAllPrerequisitesMet(student, course)) {
+        return false;
+    }
+    if (course.isMutuallyExclusive && isRegisteredInOtherCourse(student, course)) {
+        return false;
+    }
+    return true;
+}
+
+function bool isRegisteredInCourse(Student& student, Course& course) {
+    return student.registeredCourses.contains(course);
+}
+
+function bool hasSelectedCoreCourse(Student& student, Course& coreCourse) {
+    // Implement logic to check if the student has selected the required core course
+    // This could involve checking if the student's registered courses include the core course
+    return false; // Placeholder, replace with actual logic
+}
+
+function hasSelectedSeminar(Student& student, Course& seminarCourse) {
+    // Implement logic to check if the student has selected the required seminar course
+    // This could involve checking if the student's registered courses include the seminar course
+    return false; // Placeholder, replace with actual logic
+}
+
+function areAllPrerequisitesMet(Student& student, Course& course) {
+    // Implement logic to check if all prerequisites for the course are met
+    // This could involve checking if the student has registered in all prerequisites
+    return false; // Placeholder, replace

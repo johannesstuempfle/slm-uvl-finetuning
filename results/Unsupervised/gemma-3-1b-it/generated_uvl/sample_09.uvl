@@ -1,0 +1,62 @@
+```uvl
+// PC Configuration Tool - UVL Code
+
+// Components & Requirements
+
+// CPU
+// - Intel vs. AMD - Determines Motherboard Socket
+// - CPU Selection: Intel vs. AMD
+
+// Motherboard
+// - Chipset: Z790
+// - Motherboard Socket: LGA 1700
+// - Motherboard Form Factor: ATX
+
+// RAM
+// - DDR4 or DDR5 - Dependent on CPU
+// - RAM Type: DDR4 or DDR5
+
+// Graphics Card
+// - High-end GPU (e.g., RTX 4090)
+// - Minimum Power Requirement: 850W
+// - GPU Length: 350mm
+// - Case Compatibility: Must match GPU Clearance
+
+// Case
+// - Case Form Factor: ATX
+// - Case Compatibility: Must match Motherboard Form Factor
+
+// Optional
+// - Large Air Cooler: Height must be less than CPU Cooler Clearance
+
+// Constraints
+// - CPU Selection & Motherboard Socket are mutually exclusive
+// - GPU Selection & Case Compatibility are mutually exclusive
+// - RAM Type & Case Compatibility are mutually exclusive
+
+// Output:
+// - CPU: Intel vs. AMD
+// - Motherboard: LGA 1700
+// - RAM: DDR4 or DDR5
+// - GPU: RTX 4090
+// - Case: ATX
+// - Cooler: Large Air Cooler
+// - CPU Cooler Clearance: 350mm
+// - Motherboard Clearance: 350mm
+
+// Alternative representation using keywords:
+// CPU { 'type' => 'Intel' | 'AMD' }
+// Motherboard { 'form_factor' => 'ATX' }
+// RAM { 'type' => 'DDR4' | 'DDR5' }
+// GPU { 'power_requirement' => '850W' }
+// Case { 'form_factor' => 'ATX' }
+// Cooler { 'height' => '350mm' }
+// CPU Cooler Clearance { 'height' => '350mm' }
+// Motherboard Clearance { 'height' => '350mm' }
+//
+
+// Additional Notes:
+// - This code focuses on the essential constraints. A more complex UVL program could include more detailed constraints (e.g., specific RAM speeds, CPU core counts, etc.).
+// - The provided constraints are mutually exclusive.
+// - The code assumes a standard case form factor.
+```

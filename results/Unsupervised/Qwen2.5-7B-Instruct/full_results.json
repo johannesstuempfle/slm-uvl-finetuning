@@ -1,0 +1,663 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.5777617543935776,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 10,
+    "failed": 2,
+    "mean_feature_f1": 0.8213717491935808,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.7305037704231252
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "Certainly! Below is the translation of the provided text into UVL (Unified Virtual Language) code:\n\n```uvl\nfeatures\n    Car\n        mandatory\n            Engine {alternative}\n                Diesel\n                Gasoline\n                Electric\n            \"Assistance Systems\" {optional}\n                LaneAssist\n                ESP\n        optional\n            Color {alternative}\n                Red\n                Blue\n                Green\n                Black\n                White\n                Gray\n\nconstraints\n    Color =>!Red |!Blue |!Green |!Black |!White |!Gray\n    \"Assistance Systems\" => LaneAssist & ESP\n\nfeatures\n    Car\n```\n\nThis UVL code defines the structure and constraints based on your description.",
+      "output_raw": "Certainly! Below is the translation of the provided text into UVL (Unified Virtual Language) code:\n\n```uvl\nfeatures\n    Car\n        mandatory\n            Engine {alternative}\n                Diesel\n                Gasoline\n                Electric\n            \"Assistance Systems\" {optional}\n                LaneAssist\n                ESP\n        optional\n            Color {alternative}\n                Red\n                Blue\n                Green\n                Black\n                White\n                Gray\n\nconstraints\n    Color =>!Red |!Blue |!Green |!Black |!White |!Gray\n    \"Assistance Systems\" => LaneAssist & ESP\n\nfeatures\n    Car\n```\n\nThis UVL code defines the structure and constraints based on your description.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "Car",
+        "Engine",
+        "Diesel",
+        "Gasoline",
+        "Electric",
+        "Assistance Systems",
+        "LaneAssist",
+        "ESP",
+        "Color",
+        "Red",
+        "Blue",
+        "Green",
+        "Black",
+        "White",
+        "Gray"
+      ],
+      "semantic_similarity": 0.5536335706710815,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 13,
+          "fp": 2,
+          "fn": 0,
+          "precision": 0.8666666666666667,
+          "recall": 1.0,
+          "f1": 0.9285714285714286,
+          "missed": [],
+          "hallucinated": [
+            "Gray",
+            "Green"
+          ]
+        },
+        "structure": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 12,
+          "n_edges_gt": 12,
+          "group_type_agreement": 0.3333333333333333,
+          "n_group_compared": 3
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "Certainly! Below is the translation of your text into UVL (Unified Verification Language) code:\n\n```uvl\nfeatures\n    SecurityTeam\n        mandatory\n            SecurityArchitect\n                alternative\n                    SecurityArchitectPerson {Role 'Security Architect'}\n            SecurityEngineer\n                alternative\n                    SecurityEngineerPerson {Role 'Security Engineer'}\n        optional\n            Manager\n                alternative\n                    ManagerPerson {Role 'Manager'}\n            ScrumMaster\n                alternative\n                    ScrumMasterPerson {Role 'Scrum Master'}\nconstraints\n    SecurityArchitectPerson & SecurityEngineerPerson == false\n    ManagerPerson | ScrumMasterPerson\n```\n\nThis UVL code ensures that:\n1. A Security Architect and a Security Engineer must be present in the Security Team.\n2. These roles cannot be filled by the same person.\n3. There can be an optional Manager or Scrum Master, but not both at the same time.",
+      "output_raw": "Certainly! Below is the translation of your text into UVL (Unified Verification Language) code:\n\n```uvl\nfeatures\n    SecurityTeam\n        mandatory\n            SecurityArchitect\n                alternative\n                    SecurityArchitectPerson {Role 'Security Architect'}\n            SecurityEngineer\n                alternative\n                    SecurityEngineerPerson {Role 'Security Engineer'}\n        optional\n            Manager\n                alternative\n                    ManagerPerson {Role 'Manager'}\n            ScrumMaster\n                alternative\n                    ScrumMasterPerson {Role 'Scrum Master'}\nconstraints\n    SecurityArchitectPerson & SecurityEngineerPerson == false\n    ManagerPerson | ScrumMasterPerson\n```\n\nThis UVL code ensures that:\n1. A Security Architect and a Security Engineer must be present in the Security Team.\n2. These roles cannot be filled by the same person.\n3. There can be an optional Manager or Scrum Master, but not both at the same time.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "SecurityTeam",
+        "SecurityArchitect",
+        "SecurityArchitectPerson",
+        "SecurityEngineer",
+        "SecurityEngineerPerson",
+        "Manager",
+        "ManagerPerson",
+        "ScrumMaster",
+        "ScrumMasterPerson"
+      ],
+      "semantic_similarity": 0.7120043635368347,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 5,
+          "fp": 4,
+          "fn": 0,
+          "precision": 0.5555555555555556,
+          "recall": 1.0,
+          "f1": 0.7142857142857143,
+          "missed": [],
+          "hallucinated": [
+            "ManagerPerson",
+            "ScrumMasterPerson",
+            "SecurityArchitectPerson",
+            "SecurityEngineerPerson"
+          ]
+        },
+        "structure": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 4,
+          "n_edges_gt": 4,
+          "group_type_agreement": 0.5,
+          "n_group_compared": 4
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "Certainly! Below is the translation of the provided text into UVL (Unified Virtual Language) code:\n\n```uvl\nfeatures\n    Computer\n        mandatory\n            TextEditingProgram\n                alternative\n                    MSWord\n                    Pages\n            CellCalculationTool\n                alternative\n                    MSExcel\n                    Numberts\n\nconstraints\n    TextEditingProgram | CellCalculationTool\n```\n\nThis UVL code defines the features of a computer with the necessary constraints and alternatives based on the given text.",
+      "output_raw": "Certainly! Below is the translation of the provided text into UVL (Unified Virtual Language) code:\n\n```uvl\nfeatures\n    Computer\n        mandatory\n            TextEditingProgram\n                alternative\n                    MSWord\n                    Pages\n            CellCalculationTool\n                alternative\n                    MSExcel\n                    Numberts\n\nconstraints\n    TextEditingProgram | CellCalculationTool\n```\n\nThis UVL code defines the features of a computer with the necessary constraints and alternatives based on the given text.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "Computer",
+        "TextEditingProgram",
+        "MSWord",
+        "Pages",
+        "CellCalculationTool",
+        "MSExcel",
+        "Numberts"
+      ],
+      "semantic_similarity": 0.5937366485595703,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 6,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.8571428571428571,
+          "recall": 0.8571428571428571,
+          "f1": 0.8571428571428571,
+          "missed": [
+            "Spreadsheet Tool"
+          ],
+          "hallucinated": [
+            "CellCalculationTool"
+          ]
+        },
+        "structure": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 3,
+          "n_edges_gt": 3,
+          "group_type_agreement": 1.0,
+          "n_group_compared": 5
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "Certainly! UVL (Unified Visual Language) is a modeling language used for specifying the structure and behavior of systems. Below is the translation of your text into UVL code:\n\n```uvl\nfeatures\n    CoffeeShop {abstract}\n        mandatory\n            Payment {abstract}\n                alternative\n                    Card\n                    Cash\n            Drinks {abstract}\n                alternative\n                    Coffee\n                    Tea\n            Foods {abstract}\n                alternative\n                    Croissant\n                    Bagel\n\nconstraints\n    CoffeeShop.Price == sum(Drinks.Price, Foods.Price)\n```\n\nThis UVL code defines a `CoffeeShop` with optional features such as `Payment`, `Drinks`, and `Foods`. The `Payment` feature allows payment via `Card` or `Cash`, while the `Drinks` feature includes options like `Coffee` and `Tea`. Similarly, the `Foods` feature includes options like `Croissant` and `Bagel`. The constraints ensure that the total price of the `CoffeeShop` is the sum of the prices of the selected `Drinks` and `Foods`.",
+      "output_raw": "Certainly! UVL (Unified Visual Language) is a modeling language used for specifying the structure and behavior of systems. Below is the translation of your text into UVL code:\n\n```uvl\nfeatures\n    CoffeeShop {abstract}\n        mandatory\n            Payment {abstract}\n                alternative\n                    Card\n                    Cash\n            Drinks {abstract}\n                alternative\n                    Coffee\n                    Tea\n            Foods {abstract}\n                alternative\n                    Croissant\n                    Bagel\n\nconstraints\n    CoffeeShop.Price == sum(Drinks.Price, Foods.Price)\n```\n\nThis UVL code defines a `CoffeeShop` with optional features such as `Payment`, `Drinks`, and `Foods`. The `Payment` feature allows payment via `Card` or `Cash`, while the `Drinks` feature includes options like `Coffee` and `Tea`. Similarly, the `Foods` feature includes options like `Croissant` and `Bagel`. The constraints ensure that the total price of the `CoffeeShop` is the sum of the prices of the selected `Drinks` and `Foods`.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "CoffeeShop",
+        "Payment",
+        "Card",
+        "Cash",
+        "Drinks",
+        "Coffee",
+        "Tea",
+        "Foods",
+        "Croissant",
+        "Bagel"
+      ],
+      "semantic_similarity": 0.7138949036598206,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "hallucinated": []
+        },
+        "structure": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 9,
+          "n_edges_gt": 9,
+          "group_type_agreement": 1.0,
+          "n_group_compared": 9
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "Certainly! Below is the UVL (Unified Vehicle Language) code translation based on the provided text:\n\n```uvl\nBicycle { \n    Groupset { \n        Manufacturer { \n            Or { \n                SRAM { }, \n                Shimano { } \n            } \n        } \n    } \n    Parts { \n        GravelBike { \n            WideTyres { Profile { } } \n            DropBarHandlebar { } \n        } \n        RoadBike { \n            SlimTyres { NoProfile { } } \n            DropBarHandlebar { } \n        } \n        MountainBike { \n            ExtraWideTyres { DeepProfile { } } \n            FlatHandlebar { } \n        } \n    } \n    PossibleConfigurations { \n        GravelBike { SlimTyres { } } \n    } \n}\n```\n\nThis UVL code structure accurately represents the given information about the bicycle's components and configurations.",
+      "output_raw": "Certainly! Below is the UVL (Unified Vehicle Language) code translation based on the provided text:\n\n```uvl\nBicycle { \n    Groupset { \n        Manufacturer { \n            Or { \n                SRAM { }, \n                Shimano { } \n            } \n        } \n    } \n    Parts { \n        GravelBike { \n            WideTyres { Profile { } } \n            DropBarHandlebar { } \n        } \n        RoadBike { \n            SlimTyres { NoProfile { } } \n            DropBarHandlebar { } \n        } \n        MountainBike { \n            ExtraWideTyres { DeepProfile { } } \n            FlatHandlebar { } \n        } \n    } \n    PossibleConfigurations { \n        GravelBike { SlimTyres { } } \n    } \n}\n```\n\nThis UVL code structure accurately represents the given information about the bicycle's components and configurations.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "Certainly! Below is the translation of the provided text into UVL (Unified Virtual Layer) code, ensuring that all necessary components and their relationships are correctly represented:\n\n```uvl\nfeatures\n    Factory\n        mandatory\n            ProductionLine\n                alternative\n                    NormalChocolate\n                        mandatory\n                            MeltingStation\n                            MixingStation\n                            CoolingStation\n                            LogisticSystem\n                            PackagingStation\n                    NutChocolate\n                        mandatory\n                            MeltingStation\n                            MixingStation\n                            CoolingStation\n                            LogisticSystem\n                            PackagingStation\n                            BakingStation\n\nconstraints\n    NutChocolate => MeltingStation & MixingStation & CoolingStation & LogisticSystem & PackagingStation & BakingStation\n    NormalChocolate => MeltingStation & MixingStation & CoolingStation & LogisticSystem & PackagingStation\n```\n\nThis UVL code defines the structure and constraints as described in your text, ensuring that all stations and their dependencies are accurately represented.",
+      "output_raw": "Certainly! Below is the translation of the provided text into UVL (Unified Virtual Layer) code, ensuring that all necessary components and their relationships are correctly represented:\n\n```uvl\nfeatures\n    Factory\n        mandatory\n            ProductionLine\n                alternative\n                    NormalChocolate\n                        mandatory\n                            MeltingStation\n                            MixingStation\n                            CoolingStation\n                            LogisticSystem\n                            PackagingStation\n                    NutChocolate\n                        mandatory\n                            MeltingStation\n                            MixingStation\n                            CoolingStation\n                            LogisticSystem\n                            PackagingStation\n                            BakingStation\n\nconstraints\n    NutChocolate => MeltingStation & MixingStation & CoolingStation & LogisticSystem & PackagingStation & BakingStation\n    NormalChocolate => MeltingStation & MixingStation & CoolingStation & LogisticSystem & PackagingStation\n```\n\nThis UVL code defines the structure and constraints as described in your text, ensuring that all stations and their dependencies are accurately represented.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "Factory",
+        "ProductionLine",
+        "NormalChocolate",
+        "MeltingStation",
+        "MixingStation",
+        "CoolingStation",
+        "LogisticSystem",
+        "PackagingStation",
+        "NutChocolate",
+        "MeltingStation",
+        "MixingStation",
+        "CoolingStation",
+        "LogisticSystem",
+        "PackagingStation",
+        "BakingStation"
+      ],
+      "semantic_similarity": 0.5688595175743103,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 9,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.9,
+          "recall": 0.9,
+          "f1": 0.9,
+          "missed": [
+            "ChocolateType"
+          ],
+          "hallucinated": [
+            "ProductionLine"
+          ]
+        },
+        "structure": {
+          "tp": 0,
+          "fp": 11,
+          "fn": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n_edges_gen": 11,
+          "n_edges_gt": 6,
+          "group_type_agreement": 0.875,
+          "n_group_compared": 8
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "Certainly! Below is the translation of the provided text into UVL (Unified Verification Language) code. UVL is often used for specifying requirements in software verification and validation. The following UVL code captures the essence of the tax-calculator within a billing-software as described.\n\n```uvl\nfeatures\n    TaxCalculator\n        mandatory\n            Inputs\n                mandatory\n                    NettoPrice {units Price}\n                    SumOfProducts {units Price}\n                    Location\n                        alternative\n                            BuyerLocation\n                            SellerLocation\n            Outputs\n                TaxPerProduct {units Price}\n                BruttoPrice {units Price}\n                TaxRate {units Percentage}\n                LoggingData\n                    mandatory\n                        CalculatedBasePrice {units Price}\n                        RuleOfCalculation\n\nconstraints\n    // Ensure the correct relationship between inputs and outputs\n    BruttoPrice == NettoPrice + SumOfProducts\n    TaxPerProduct == SumOfProducts * TaxRate\n    CalculatedBasePrice == NettoPrice + TaxPerProduct\n    RuleOfCalculation == \"NettoPrice + SumOfProducts * TaxRate\"\n```\n\n### Explanation:\n1. **Features**: The `TaxCalculator` feature is defined with mandatory sub-features such as `Inputs`, `Outputs`, and `LoggingData`.\n2. **Inputs**:\n   - `NettoPrice`: A mandatory input with units of `Price`.\n   - `SumOfProducts`: A mandatory input with units of `Price`.\n   - `Location`: An alternative input that can be either `BuyerLocation` or `SellerLocation`.\n3. **Outputs**:\n   - `TaxPerProduct`: A mandatory output with units of `Price`.\n   - `BruttoPrice`: A mandatory output with units of `Price`.\n   - `TaxRate`: A mandatory output with units of `Percentage`.\n   - `LoggingData`: A mandatory output that includes `CalculatedBasePrice` and `RuleOfCalculation`.\n\n4. **Constraints**:\n   - The `BruttoPrice` is calculated as the sum of `NettoPrice` and `SumOfProducts`.\n   - The `TaxPerProduct` is calculated as the `SumOfProducts` multiplied by the `TaxRate`.\n   - The `CalculatedBasePrice` is the sum of `NettoPrice` and `TaxPerProduct`.\n   - The `RuleOfCalculation` specifies the formula used for the calculation.\n\nThis UVL model ensures that the tax-calculator behaves according to the given requirements and constraints.",
+      "output_raw": "Certainly! Below is the translation of the provided text into UVL (Unified Verification Language) code. UVL is often used for specifying requirements in software verification and validation. The following UVL code captures the essence of the tax-calculator within a billing-software as described.\n\n```uvl\nfeatures\n    TaxCalculator\n        mandatory\n            Inputs\n                mandatory\n                    NettoPrice {units Price}\n                    SumOfProducts {units Price}\n                    Location\n                        alternative\n                            BuyerLocation\n                            SellerLocation\n            Outputs\n                TaxPerProduct {units Price}\n                BruttoPrice {units Price}\n                TaxRate {units Percentage}\n                LoggingData\n                    mandatory\n                        CalculatedBasePrice {units Price}\n                        RuleOfCalculation\n\nconstraints\n    // Ensure the correct relationship between inputs and outputs\n    BruttoPrice == NettoPrice + SumOfProducts\n    TaxPerProduct == SumOfProducts * TaxRate\n    CalculatedBasePrice == NettoPrice + TaxPerProduct\n    RuleOfCalculation == \"NettoPrice + SumOfProducts * TaxRate\"\n```\n\n### Explanation:\n1. **Features**: The `TaxCalculator` feature is defined with mandatory sub-features such as `Inputs`, `Outputs`, and `LoggingData`.\n2. **Inputs**:\n   - `NettoPrice`: A mandatory input with units of `Price`.\n   - `SumOfProducts`: A mandatory input with units of `Price`.\n   - `Location`: An alternative input that can be either `BuyerLocation` or `SellerLocation`.\n3. **Outputs**:\n   - `TaxPerProduct`: A mandatory output with units of `Price`.\n   - `BruttoPrice`: A mandatory output with units of `Price`.\n   - `TaxRate`: A mandatory output with units of `Percentage`.\n   - `LoggingData`: A mandatory output that includes `CalculatedBasePrice` and `RuleOfCalculation`.\n\n4. **Constraints**:\n   - The `BruttoPrice` is calculated as the sum of `NettoPrice` and `SumOfProducts`.\n   - The `TaxPerProduct` is calculated as the `SumOfProducts` multiplied by the `TaxRate`.\n   - The `CalculatedBasePrice` is the sum of `NettoPrice` and `TaxPerProduct`.\n   - The `RuleOfCalculation` specifies the formula used for the calculation.\n\nThis UVL model ensures that the tax-calculator behaves according to the given requirements and constraints.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "TaxCalculator",
+        "Inputs",
+        "NettoPrice",
+        "SumOfProducts",
+        "Location",
+        "BuyerLocation",
+        "SellerLocation",
+        "Outputs",
+        "TaxPerProduct",
+        "BruttoPrice",
+        "TaxRate",
+        "LoggingData",
+        "CalculatedBasePrice",
+        "RuleOfCalculation"
+      ],
+      "semantic_similarity": 0.7310295701026917,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 12,
+          "fp": 2,
+          "fn": 2,
+          "precision": 0.8571428571428571,
+          "recall": 0.8571428571428571,
+          "f1": 0.8571428571428571,
+          "missed": [
+            "AuditLogging",
+            "BillingSoftware"
+          ],
+          "hallucinated": [
+            "Location",
+            "LoggingData"
+          ]
+        },
+        "structure": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.7777777777777778,
+          "f1": 0.8750000000000001,
+          "n_edges_gen": 7,
+          "n_edges_gt": 9,
+          "group_type_agreement": 0.75,
+          "n_group_compared": 8
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Certainly! Below is the translation of the provided text into UVL (Unified Modeling Language) Code:\n\n```uvl\nfeatures\n    RoomBookingService\n        mandatory\n            Room\n                mandatory\n                    BasicFeatures\n                        alternative\n                            NumberOfBeds {abstract}\n                                alternative\n                                    SingleBed\n                                    DoubleBed\n                                    TwoBeds\n                                    FourBeds\n                            View {abstract}\n                                alternative\n                                    CityView\n                                    SeaView\n                                    MountainView\n                            Size {abstract}\n                                alternative\n                                    Small\n                                    Medium\n                                    Large\n                optional\n                    OptionalFeatures\n                        alternative\n                            PersonalSpaArea\n                            BestView\n\n        mandatory\n            ManagingSystem\n                mandatory\n                    Bookings {abstract}\n                        mandatory\n                            Dates\n                                alternative\n                                    StartDate\n                                    EndDate\n                        optional\n                            FeesBookings\nconstraints\n    BestView => TwoBeds\n    PersonalSpaArea =>!TwoBeds\n    BestView | PersonalSpaArea => TwoBeds\n    Bookings => Dates & FeesBookings\n```\n\nThis UVL code defines the structure and constraints of the room-booking service as described in your text.",
+      "output_raw": "Certainly! Below is the translation of the provided text into UVL (Unified Modeling Language) Code:\n\n```uvl\nfeatures\n    RoomBookingService\n        mandatory\n            Room\n                mandatory\n                    BasicFeatures\n                        alternative\n                            NumberOfBeds {abstract}\n                                alternative\n                                    SingleBed\n                                    DoubleBed\n                                    TwoBeds\n                                    FourBeds\n                            View {abstract}\n                                alternative\n                                    CityView\n                                    SeaView\n                                    MountainView\n                            Size {abstract}\n                                alternative\n                                    Small\n                                    Medium\n                                    Large\n                optional\n                    OptionalFeatures\n                        alternative\n                            PersonalSpaArea\n                            BestView\n\n        mandatory\n            ManagingSystem\n                mandatory\n                    Bookings {abstract}\n                        mandatory\n                            Dates\n                                alternative\n                                    StartDate\n                                    EndDate\n                        optional\n                            FeesBookings\nconstraints\n    BestView => TwoBeds\n    PersonalSpaArea =>!TwoBeds\n    BestView | PersonalSpaArea => TwoBeds\n    Bookings => Dates & FeesBookings\n```\n\nThis UVL code defines the structure and constraints of the room-booking service as described in your text.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "RoomBookingService",
+        "Room",
+        "BasicFeatures",
+        "NumberOfBeds",
+        "SingleBed",
+        "DoubleBed",
+        "TwoBeds",
+        "FourBeds",
+        "View",
+        "CityView",
+        "SeaView",
+        "MountainView",
+        "Size",
+        "Small",
+        "Medium",
+        "Large",
+        "OptionalFeatures",
+        "PersonalSpaArea",
+        "BestView",
+        "ManagingSystem",
+        "Bookings",
+        "Dates",
+        "StartDate",
+        "EndDate",
+        "FeesBookings"
+      ],
+      "semantic_similarity": 0.663102924823761,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 12,
+          "fp": 13,
+          "fn": 1,
+          "precision": 0.48,
+          "recall": 0.9230769230769231,
+          "f1": 0.631578947368421,
+          "missed": [
+            "BookingManagement"
+          ],
+          "hallucinated": [
+            "BasicFeatures",
+            "Bookings",
+            "CityView",
+            "Dates",
+            "DoubleBed",
+            "FeesBookings",
+            "FourBeds",
+            "Large",
+            "ManagingSystem",
+            "Medium",
+            "MountainView",
+            "SeaView",
+            "Small"
+          ]
+        },
+        "structure": {
+          "tp": 3,
+          "fp": 3,
+          "fn": 5,
+          "precision": 0.5,
+          "recall": 0.375,
+          "f1": 0.42857142857142855,
+          "n_edges_gen": 6,
+          "n_edges_gt": 8,
+          "group_type_agreement": 0.36363636363636365,
+          "n_group_compared": 11
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "Certainly! Below is the UVL (Unified Verification Language) code translation based on the provided text:\n\n```uvl\nfeatures\n    \"University Course Registration System\"\n        mandatory\n            \"All Students\"\n                alternative\n                    \"Register for Minimum 12 Credits\"\n                    \"Undergraduate Students\"\n                        mandatory\n                            \"Select One 100-Level Core Course\"\n                    \"Graduate Students\"\n                        mandatory\n                            \"Select One 500-Level Seminar\"\n        optional\n            \"Advanced AI\"\n                mandatory\n                    \"Intro to AI\"\n                    \"Linear Algebra\"\n            \"Robotics Lab\"\n                constraint\n                    \"Enrollment Cap\" {value: 20}\n            \"Statistics for Biology\"\n            \"Statistics for Business\"\n            \"Mutually Exclusive Courses\"\n                alternative\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n            \"Thesis Defense\"\n                mandatory\n                    \"Completed 60 Credits\"\n                    \"Passed Dissertation Proposal Review\"\n\nconstraints\n    \"Advanced AI\" => \"Intro to AI\"\n    \"Advanced AI\" => \"Linear Algebra\"\n    \"Robotics Lab\" => \"Enrollment Cap\" {value: 20}\n    \"Thesis Defense\" => \"Completed 60 Credits\"\n    \"Thesis Defense\" => \"Passed Dissertation Proposal Review\"\n```\n\nThis UVL code captures the requirements and constraints mentioned in your text, ensuring that all conditions and relationships are accurately represented.",
+      "output_raw": "Certainly! Below is the UVL (Unified Verification Language) code translation based on the provided text:\n\n```uvl\nfeatures\n    \"University Course Registration System\"\n        mandatory\n            \"All Students\"\n                alternative\n                    \"Register for Minimum 12 Credits\"\n                    \"Undergraduate Students\"\n                        mandatory\n                            \"Select One 100-Level Core Course\"\n                    \"Graduate Students\"\n                        mandatory\n                            \"Select One 500-Level Seminar\"\n        optional\n            \"Advanced AI\"\n                mandatory\n                    \"Intro to AI\"\n                    \"Linear Algebra\"\n            \"Robotics Lab\"\n                constraint\n                    \"Enrollment Cap\" {value: 20}\n            \"Statistics for Biology\"\n            \"Statistics for Business\"\n            \"Mutually Exclusive Courses\"\n                alternative\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n            \"Thesis Defense\"\n                mandatory\n                    \"Completed 60 Credits\"\n                    \"Passed Dissertation Proposal Review\"\n\nconstraints\n    \"Advanced AI\" => \"Intro to AI\"\n    \"Advanced AI\" => \"Linear Algebra\"\n    \"Robotics Lab\" => \"Enrollment Cap\" {value: 20}\n    \"Thesis Defense\" => \"Completed 60 Credits\"\n    \"Thesis Defense\" => \"Passed Dissertation Proposal Review\"\n```\n\nThis UVL code captures the requirements and constraints mentioned in your text, ensuring that all conditions and relationships are accurately represented.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "University Course Registration System",
+        "All Students",
+        "Register for Minimum 12 Credits",
+        "Undergraduate Students",
+        "Select One 100-Level Core Course",
+        "Graduate Students",
+        "Select One 500-Level Seminar",
+        "Advanced AI",
+        "Intro to AI",
+        "Linear Algebra",
+        "Robotics Lab",
+        "constraint",
+        "Enrollment Cap",
+        "Statistics for Biology",
+        "Statistics for Business",
+        "Mutually Exclusive Courses",
+        "Statistics for Biology",
+        "Statistics for Business",
+        "Thesis Defense",
+        "Completed 60 Credits",
+        "Passed Dissertation Proposal Review"
+      ],
+      "semantic_similarity": 0.854681670665741,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 12,
+          "fp": 7,
+          "fn": 2,
+          "precision": 0.631578947368421,
+          "recall": 0.8571428571428571,
+          "f1": 0.7272727272727273,
+          "missed": [
+            "CoreCourse",
+            "Seminar"
+          ],
+          "hallucinated": [
+            "Completed 60 Credits",
+            "Enrollment Cap",
+            "Mutually Exclusive Courses",
+            "Register for Minimum 12 Credits",
+            "Select One 100-Level Core Course",
+            "Select One 500-Level Seminar",
+            "constraint"
+          ]
+        },
+        "structure": {
+          "tp": 8,
+          "fp": 3,
+          "fn": 3,
+          "precision": 0.7272727272727273,
+          "recall": 0.7272727272727273,
+          "f1": 0.7272727272727273,
+          "n_edges_gen": 11,
+          "n_edges_gt": 11,
+          "group_type_agreement": 0.5454545454545454,
+          "n_group_compared": 11
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "Here is the translation into UVL-Code, following the provided text:\n\n```uvl\nFeatures\n    PCConfigurator\n        Mandatory\n            CPU\n                Alternative\n                    Intel\n                        Required\n                            MotherboardSocket\n                                Alternative\n                                    LGA1700\n                                        Optional\n                                            RAMType\n                                                Alternative\n                                                    DDR4\n                                                    DDR5\n                                    AM5\n                                        Optional\n                                            RAMType\n                                                Alternative\n                                                    DDR4\n                                                    DDR5\n            HighEndGPU\n                Alternative\n                    RTX4090\n                        Required\n                            PSU\n                                Constraint\n                                    Power >= 850\n                        Required\n                            Case\n                                Constraint\n                                    MaxGPULength >= 350\n            GPU\n                Alternative\n                    RTX4090\n                        Required\n                            PSU\n                                Constraint\n                                    Power >= 850\n                        Required\n                            Case\n                                Constraint\n                                    MaxGPULength >= 350\n            Case\n                Alternative\n                    ATX\n                    MicroATX\n                        Required\n                            MotherboardFormFactor\n                                Alternative\n                                    ATX\n                                    MicroATX\n                        OptionalLargeAirCooler\n                            Constraint\n                                Height < CPUcoolerClearance\n\n```\n\nThis UVL code captures the logical relationships and constraints described in your text, ensuring the correct syntax is used.",
+      "output_raw": "Here is the translation into UVL-Code, following the provided text:\n\n```uvl\nFeatures\n    PCConfigurator\n        Mandatory\n            CPU\n                Alternative\n                    Intel\n                        Required\n                            MotherboardSocket\n                                Alternative\n                                    LGA1700\n                                        Optional\n                                            RAMType\n                                                Alternative\n                                                    DDR4\n                                                    DDR5\n                                    AM5\n                                        Optional\n                                            RAMType\n                                                Alternative\n                                                    DDR4\n                                                    DDR5\n            HighEndGPU\n                Alternative\n                    RTX4090\n                        Required\n                            PSU\n                                Constraint\n                                    Power >= 850\n                        Required\n                            Case\n                                Constraint\n                                    MaxGPULength >= 350\n            GPU\n                Alternative\n                    RTX4090\n                        Required\n                            PSU\n                                Constraint\n                                    Power >= 850\n                        Required\n                            Case\n                                Constraint\n                                    MaxGPULength >= 350\n            Case\n                Alternative\n                    ATX\n                    MicroATX\n                        Required\n                            MotherboardFormFactor\n                                Alternative\n                                    ATX\n                                    MicroATX\n                        OptionalLargeAirCooler\n                            Constraint\n                                Height < CPUcoolerClearance\n\n```\n\nThis UVL code captures the logical relationships and constraints described in your text, ensuring the correct syntax is used.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "Certainly! Below is the translation of the provided text into UVL (Unified Verification Language) code:\n\n```uvl\nfeatures\n    \"CI/CD System\" \n        mandatory\n            \"Deployment Pipelines\"\n                mandatory\n                    \"Build\"\n                    \"Unit Test\"\n                optional\n                    \"Integration Test\"\n                    \"Security Scan\"\n                    \"Monitoring\"\n                    \"Manual QA Approval\"\n        alternative\n            \"Staging Deployment\"\n            \"Production Deployment\"\n                mandatory\n                    \"Staging Deployment\"\n                optional\n                    \"Blue/Green Strategy\"\n                        optional\n                            \"Double Infrastructure Resources\"\n                    \"Canary Strategy\"\n                        mandatory\n                            \"Monitoring\"\n                            \"Rollback Trigger\"\n                mandatory\n                    \"Integration Test\"\n                    \"Security Scan\"\n        alternative\n            \"Hotfix Pipeline\"\n                mandatory\n                    \"Skip Staging\"\n                    \"Skip Integration Test\"\n                    \"Security Scan\"\n                optional\n                    \"Manual QA Approval\"\n\nconstraints\n    \"Staging Deployment\" => \"Unit Test\"\n    \"Production Deployment\" => \"Staging Deployment\"\n    \"Production Deployment\" => \"Integration Test\"\n    \"Production Deployment\" => \"Security Scan\"\n    \"Production Deployment\" => \"Hotfix Pipeline\"\n    \"Canary Strategy\" => \"Monitoring\"\n    \"Canary Strategy\" => \"Rollback Trigger\"\n    \"Blue/Green Strategy\" => DoubleInfrastructureResources\n    \"Hotfix Pipeline\" => \"Skip Staging\"\n    \"Hotfix Pipeline\" => \"Skip Integration Test\"\n    \"Hotfix Pipeline\" => \"Security Scan\"\n    \"Hotfix Pipeline\" => \"Manual QA Approval\"\n```\n\nThis UVL code captures the constraints and relationships described in your text, ensuring all necessary conditions are met for the different deployment strategies and pipeline stages.",
+      "output_raw": "Certainly! Below is the translation of the provided text into UVL (Unified Verification Language) code:\n\n```uvl\nfeatures\n    \"CI/CD System\" \n        mandatory\n            \"Deployment Pipelines\"\n                mandatory\n                    \"Build\"\n                    \"Unit Test\"\n                optional\n                    \"Integration Test\"\n                    \"Security Scan\"\n                    \"Monitoring\"\n                    \"Manual QA Approval\"\n        alternative\n            \"Staging Deployment\"\n            \"Production Deployment\"\n                mandatory\n                    \"Staging Deployment\"\n                optional\n                    \"Blue/Green Strategy\"\n                        optional\n                            \"Double Infrastructure Resources\"\n                    \"Canary Strategy\"\n                        mandatory\n                            \"Monitoring\"\n                            \"Rollback Trigger\"\n                mandatory\n                    \"Integration Test\"\n                    \"Security Scan\"\n        alternative\n            \"Hotfix Pipeline\"\n                mandatory\n                    \"Skip Staging\"\n                    \"Skip Integration Test\"\n                    \"Security Scan\"\n                optional\n                    \"Manual QA Approval\"\n\nconstraints\n    \"Staging Deployment\" => \"Unit Test\"\n    \"Production Deployment\" => \"Staging Deployment\"\n    \"Production Deployment\" => \"Integration Test\"\n    \"Production Deployment\" => \"Security Scan\"\n    \"Production Deployment\" => \"Hotfix Pipeline\"\n    \"Canary Strategy\" => \"Monitoring\"\n    \"Canary Strategy\" => \"Rollback Trigger\"\n    \"Blue/Green Strategy\" => DoubleInfrastructureResources\n    \"Hotfix Pipeline\" => \"Skip Staging\"\n    \"Hotfix Pipeline\" => \"Skip Integration Test\"\n    \"Hotfix Pipeline\" => \"Security Scan\"\n    \"Hotfix Pipeline\" => \"Manual QA Approval\"\n```\n\nThis UVL code captures the constraints and relationships described in your text, ensuring all necessary conditions are met for the different deployment strategies and pipeline stages.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "CI/CD System",
+        "Deployment Pipelines",
+        "Build",
+        "Unit Test",
+        "Integration Test",
+        "Security Scan",
+        "Monitoring",
+        "Manual QA Approval",
+        "Staging Deployment",
+        "Production Deployment",
+        "Staging Deployment",
+        "Blue/Green Strategy",
+        "Double Infrastructure Resources",
+        "Canary Strategy",
+        "Monitoring",
+        "Rollback Trigger",
+        "Integration Test",
+        "Security Scan",
+        "Hotfix Pipeline",
+        "Skip Staging",
+        "Skip Integration Test",
+        "Security Scan",
+        "Manual QA Approval"
+      ],
+      "semantic_similarity": 0.8076080679893494,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 12,
+          "fp": 5,
+          "fn": 2,
+          "precision": 0.7058823529411765,
+          "recall": 0.8571428571428571,
+          "f1": 0.7741935483870968,
+          "missed": [
+            "BlueGreen",
+            "Canary"
+          ],
+          "hallucinated": [
+            "Canary Strategy",
+            "Deployment Pipelines",
+            "Double Infrastructure Resources",
+            "Skip Integration Test",
+            "Skip Staging"
+          ]
+        },
+        "structure": {
+          "tp": 5,
+          "fp": 4,
+          "fn": 6,
+          "precision": 0.5555555555555556,
+          "recall": 0.45454545454545453,
+          "f1": 0.5,
+          "n_edges_gen": 9,
+          "n_edges_gt": 11,
+          "group_type_agreement": 0.2727272727272727,
+          "n_group_compared": 11
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "Sure, let's translate the given text into UVL (Unified Virtual Language) code while ensuring the correct syntax and capturing all the provided information.\n\n```uvl\nfeatures\n    SmartHomeAutomation\n        mandatory\n            Rule\n                mandatory\n                    Trigger\n                    Action\n                optional\n                    Condition\n                mandatory\n                    Priority\n\n        mandatory\n            MovieModeScene\n                mandatory\n                    Action\n                        SetLightLevel \"10%\"\n                mandatory\n                    Priority\n\n        mandatory\n            MorningScene\n                mandatory\n                    Action\n                        SetLightLevel \"100%\"\n                mandatory\n                    Priority\n\n        mandatory\n            HomeStatus\n                alternative\n                    Away\n                    Home\n\n        mandatory\n            SmartOven\n                mandatory\n                    Action\n                mandatory\n                    SafetyConstraint\n                        disabled_if\n                            HomeStatus == Away\n\n        mandatory\n            AirConditioner\n                mandatory\n                    Action\n                mandatory\n                    SafetyConstraint\n                        disabled_if\n                            WindowSensor.Open\n                        enabled_after\n                            WindowSensor.Closed\n                            timeout(300)\n\nconstraints\n    MovieModeScene.Priority > MorningScene.Priority\n    SmartOven.Enabled <=> HomeStatus.Home\n    AirConditioner.Enabled =>!any(WindowSensor.Open)\n```\n\nExplanation:\n- The `SmartHomeAutomation` feature encompasses the entire system.\n- The `Rule` feature represents a general rule structure with triggers, conditions, actions, and priorities.\n- Specific scenes (`MovieModeScene`, `MorningScene`) define their respective actions and priorities.\n- The `HomeStatus` feature is used to determine whether the house is away or not, which affects the `SmartOven`.\n- The `WindowSensor` is used to monitor window states, affecting the `AirConditioner` only when all windows are closed for 5 minutes after being open.\n\nThis UVL code accurately reflects the described smart home automation system constraints and rules.",
+      "output_raw": "Sure, let's translate the given text into UVL (Unified Virtual Language) code while ensuring the correct syntax and capturing all the provided information.\n\n```uvl\nfeatures\n    SmartHomeAutomation\n        mandatory\n            Rule\n                mandatory\n                    Trigger\n                    Action\n                optional\n                    Condition\n                mandatory\n                    Priority\n\n        mandatory\n            MovieModeScene\n                mandatory\n                    Action\n                        SetLightLevel \"10%\"\n                mandatory\n                    Priority\n\n        mandatory\n            MorningScene\n                mandatory\n                    Action\n                        SetLightLevel \"100%\"\n                mandatory\n                    Priority\n\n        mandatory\n            HomeStatus\n                alternative\n                    Away\n                    Home\n\n        mandatory\n            SmartOven\n                mandatory\n                    Action\n                mandatory\n                    SafetyConstraint\n                        disabled_if\n                            HomeStatus == Away\n\n        mandatory\n            AirConditioner\n                mandatory\n                    Action\n                mandatory\n                    SafetyConstraint\n                        disabled_if\n                            WindowSensor.Open\n                        enabled_after\n                            WindowSensor.Closed\n                            timeout(300)\n\nconstraints\n    MovieModeScene.Priority > MorningScene.Priority\n    SmartOven.Enabled <=> HomeStatus.Home\n    AirConditioner.Enabled =>!any(WindowSensor.Open)\n```\n\nExplanation:\n- The `SmartHomeAutomation` feature encompasses the entire system.\n- The `Rule` feature represents a general rule structure with triggers, conditions, actions, and priorities.\n- Specific scenes (`MovieModeScene`, `MorningScene`) define their respective actions and priorities.\n- The `HomeStatus` feature is used to determine whether the house is away or not, which affects the `SmartOven`.\n- The `WindowSensor` is used to monitor window states, affecting the `AirConditioner` only when all windows are closed for 5 minutes after being open.\n\nThis UVL code accurately reflects the described smart home automation system constraints and rules.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "SmartHomeAutomation",
+        "Rule",
+        "Trigger",
+        "Action",
+        "Condition",
+        "Priority",
+        "MovieModeScene",
+        "Action",
+        "SetLightLevel",
+        "Priority",
+        "MorningScene",
+        "Action",
+        "SetLightLevel",
+        "Priority",
+        "HomeStatus",
+        "Away",
+        "Home",
+        "SmartOven",
+        "Action",
+        "SafetyConstraint",
+        "disabled_if",
+        "HomeStatus",
+        "AirConditioner",
+        "Action",
+        "SafetyConstraint",
+        "disabled_if",
+        "WindowSensor.Open",
+        "enabled_after",
+        "WindowSensor.Closed",
+        "timeout(300)"
+      ],
+      "semantic_similarity": 0.7345898151397705,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 14,
+          "fp": 6,
+          "fn": 0,
+          "precision": 0.7,
+          "recall": 1.0,
+          "f1": 0.8235294117647058,
+          "missed": [],
+          "hallucinated": [
+            "SafetyConstraint",
+            "SetLightLevel",
+            "WindowSensor.Closed",
+            "disabled_if",
+            "enabled_after",
+            "timeout(300)"
+          ]
+        },
+        "structure": {
+          "tp": 12,
+          "fp": 6,
+          "fn": 1,
+          "precision": 0.6666666666666666,
+          "recall": 0.9230769230769231,
+          "f1": 0.7741935483870968,
+          "n_edges_gen": 18,
+          "n_edges_gt": 13,
+          "group_type_agreement": 0.5,
+          "n_group_compared": 12
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    }
+  ]
+}

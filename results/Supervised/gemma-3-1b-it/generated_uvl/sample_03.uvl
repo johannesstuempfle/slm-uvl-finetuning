@@ -1,0 +1,11 @@
+features
+    Coffee
+        mandatory
+            drink_type
+                alternative
+                    Coffee
+                    Tea
+            mandatory
+                payment_method
+                    card
+                    cash

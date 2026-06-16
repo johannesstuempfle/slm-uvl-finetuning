@@ -1,0 +1,28 @@
+features
+	"Room_Booking_Service"
+		mandatory
+			Hotel
+				optional
+					Rooms
+						or
+							Single_Room
+								alternative
+									Pool_View
+										optional
+											Personal_Spa_Area
+									Balcony
+										optional
+											Best_View
+												mandatory
+													Two_Bed_Room
+		optional
+			Bookings
+				optional
+					Start_Date
+					End_Date
+				optional
+					Fees_Bookings
+
+constraints
+	Pool_View =>!Personal_Spa_Area &!Best_View
+	Best_View => Two_Bed_Room

@@ -1,0 +1,34 @@
+```uvl
+features
+    RoomBookingService {
+        abstract
+            Rooms { 
+                required
+                    NumberBeds { 
+                        cardinality upper 2
+                    }
+                    View { 
+                        cardinality upper 1
+                    }
+                    Size { 
+                        cardinality upper 1
+                    }
+                optional
+                    PersonalSpaArea
+                    BestViewOption
+            }
+        abstract
+            Booking {
+                required
+                    StartDate
+                    EndDate
+                    OptionalFees
+                    OptionalBookings
+            }
+    }
+constraints
+    "A best-view option is only available for two-bed rooms."
+    BestViewOption =>!NumberBeds[NumberBeds > 2]
+    "The managing system also manages the bookings."
+    Rooms => Booking
+```

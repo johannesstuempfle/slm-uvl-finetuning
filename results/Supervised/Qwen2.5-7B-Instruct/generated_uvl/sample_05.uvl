@@ -1,0 +1,15 @@
+features
+    ProductionLine {abstract}
+        mandatory
+            "LogisticSystem"
+            "PackagingStation"
+        optional
+            "BakingStation"
+        alternative
+            "MeltingStation"
+            "MixingStation"
+            "CoolingStation"
+
+constraints
+    "NutChocolate" => "BakingStation"
+    "NormalChocolate" => "MeltingStation" + "MixingStation" + "CoolingStation"

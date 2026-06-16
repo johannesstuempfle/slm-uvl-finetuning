@@ -1,0 +1,35 @@
+Here's the translation of the provided text into UVL (Unified Visual Language) code:
+
+```uvl
+Factory {
+    ProductionLine {
+        ChocolateType {
+            NormalChocolate {
+                MeltingStation
+                MixingStation
+                CoolingStation
+            }
+            NutChocolate {
+                MeltingStation
+                MixingStation
+                CoolingStation
+                BakingStation
+            }
+        }
+        CommonStations {
+            LogisticSystem
+            PackagingStation
+        }
+    }
+}
+```
+
+### Explanation:
+- **Factory**: Represents the overall structure.
+- **ProductionLine**: Encapsulates the different processes involved in producing chocolate.
+- **ChocolateType**: Differentiates between the types of chocolate produced.
+  - **NormalChocolate**: Requires `MeltingStation`, `MixingStation`, and `CoolingStation`.
+  - **NutChocolate**: Inherits the stations required for `NormalChocolate` and adds an additional `BakingStation`.
+- **CommonStations**: Lists stations that are common to all production lines, such as `LogisticSystem` and `PackagingStation`.
+
+This UVL code structure ensures that all necessary components for each type of chocolate production are clearly defined while also highlighting the shared elements among them.

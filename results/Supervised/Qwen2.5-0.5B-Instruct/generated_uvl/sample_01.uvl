@@ -1,0 +1,15 @@
+features
+    SecurityTeam
+        mandatory
+            SecurityArchitect {type 'Person'}
+            SecurityEngineer {type 'Person'}
+            Manager {type 'Person'}
+            ScrumMaster {type 'Person'}
+
+constraints
+    SecurityTeam
+        mandatory
+            SecurityArchitect
+            SecurityEngineer
+            Manager
+            ScrumMaster

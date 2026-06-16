@@ -1,0 +1,67 @@
+```uvl
+# Security Team Requirements
+
+# Roles
+roles:
+  - name: Security Architect
+    description: "Responsible for the overall security strategy and design."
+    unique: true # Ensures this role can't be assigned to the same person as Security Engineer
+    can_be_assigned_to: [Team Lead]
+
+  - name: Security Engineer
+    description: "Responsible for implementing and maintaining security controls."
+    unique: true # Ensures this role can't be assigned to the same person as Security Architect
+    can_be_assigned_to: [Team Lead]
+
+  - name: Team Lead
+    description: "Oversees the security team's activities."
+    can_be_assigned_to: [] # Can be assigned to anyone
+
+  - name: Manager
+    description: "Manages the security team."
+    can_be_assigned_to: [Team Lead]
+
+  - name: Scrum Master
+    description: "Facilitates the Scrum process for the security team."
+    can_be_assigned_to: [Team Lead]
+
+
+
+# Relationships (optional - but good practice for clarity)
+#  This section isn't strictly required, but helps visualize the structure.
+#  It's based on the text's implied relationships.
+
+# Relationships can be added here if more specific roles or team structures are defined.
+# For example:
+#  - Team Lead -> Security Architect
+#  - Team Lead -> Security Engineer
+#  - Team Lead -> Manager
+#  - Team Lead -> Scrum Master
+
+
+# Notes:
+#  - The 'unique: true' property on Security Architect and Security Engineer ensures they are distinct roles.
+#  -  'can_be_assigned_to' defines who can hold each role.
+#  - The Manager and Scrum Master are both under the Team Lead.
+```
+
+**Explanation and Key Considerations:**
+
+* **`roles:`**: This keyword defines a list of roles within the team.
+* **`name:`**:  The name of the role.
+* **`description:`**: A brief description of the role's responsibilities.
+* **`unique: true`**: This is *crucial* for enforcing the requirement that the Security Architect and Security Engineer are *different* people.  Without this, they could be the same role.
+* **`can_be_assigned_to:`**:  This specifies who is eligible to be assigned to the role.  I've set it to `[Team Lead]` for most roles, indicating that the Team Lead is responsible for assigning these positions.  The Team Lead can assign to anyone.
+* **`Team Lead`**: I've added a `Team Lead` role to represent the person who oversees the team. This is a common practice in organizational structure representation.  It's often a higher-level role.
+* **No explicit "person" concept:** UVL focuses on *roles*, not individual people.  It's up to the system using this UVL data to manage the assignment of those roles to individuals.
+* **Comments:** I've included comments to explain the purpose of different parts of the code and to highlight important considerations.
+
+**How this translates the text:**
+
+The UVL code directly reflects the information in the text:
+
+* **Security Team:**  The `roles` section defines the key roles within the security team.
+* **Distinct Roles:** The `unique: true` properties on the Security Architect and Security Engineer enforce that they cannot be the same person.
+* **Hierarchy:** The `can_be_assigned_to` properties show that the Team Lead is responsible for assigning these roles.
+
+This UVL code provides a structured representation of the security team's requirements, making it suitable for use in tools that manage and visualize team structures.  It's a clean, concise, and unambiguous way to capture the information.

@@ -1,0 +1,9 @@
+```uvl
+abstract class Car {
+    abstract Engine {Diesel | Gasoline | Electric}
+    abstract AssistanceSystem {LaneAssist | ESP}
+    abstract Color
+}
+
+Car => Engine & AssistanceSystem & Color
+```

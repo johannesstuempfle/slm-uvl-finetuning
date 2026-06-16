@@ -1,0 +1,219 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.0,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 0,
+    "failed": 12,
+    "mean_feature_f1": 0.0,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.0
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "Sure! Here's the translation of your text into UVL (Unified Vehicle Language) code:\n\n```uvl\nCar {\n    Engine {\n        Type: [Diesel, Gasoline, Electric];\n    }\n    \n    OptionalAssistanceSystems {\n        LaneAssist;\n        ESP;\n    }\n    \n    Colors {\n        // List of available colors\n        Red;\n        Blue;\n        Green;\n        Black;\n        White;\n        Silver;\n        Gold;\n        // Add more colors as needed\n    }\n}\n```\n\nThis code defines a `Car` object with properties for its `Engine`, `OptionalAssistanceSystems`, and `Colors`. The `Engine` type can be one of three options: Diesel, Gasoline, or Electric. The `OptionalAssistanceSystems` include Lane Assist and ESP. The `Colors` property lists several common car colors, and you can add more as needed.",
+      "output_raw": "Sure! Here's the translation of your text into UVL (Unified Vehicle Language) code:\n\n```uvl\nCar {\n    Engine {\n        Type: [Diesel, Gasoline, Electric];\n    }\n    \n    OptionalAssistanceSystems {\n        LaneAssist;\n        ESP;\n    }\n    \n    Colors {\n        // List of available colors\n        Red;\n        Blue;\n        Green;\n        Black;\n        White;\n        Silver;\n        Gold;\n        // Add more colors as needed\n    }\n}\n```\n\nThis code defines a `Car` object with properties for its `Engine`, `OptionalAssistanceSystems`, and `Colors`. The `Engine` type can be one of three options: Diesel, Gasoline, or Electric. The `OptionalAssistanceSystems` include Lane Assist and ESP. The `Colors` property lists several common car colors, and you can add more as needed.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "Here's a possible translation of the text into UVL-Code:\n```\nTeam \"Security Team\" {\n    Role \"Security Architect\"\n    Role \"Security Engineer\"\n    Constraint \"Security Architect\"!= \"Security Engineer\"\n\n    Role \"Manager\"\n    Role \"Scrum Master\"\n}\n```\n\nThis code defines a team called \"Security Team\" with two roles: \"Security Architect\" and \"Security Engineer\". It also specifies that these two roles cannot be filled by the same person (using the `!=` operator). Finally, it adds two additional roles to the team: \"Manager\" and \"Scrum Master\".",
+      "output_raw": "Here's a possible translation of the text into UVL-Code:\n```\nTeam \"Security Team\" {\n    Role \"Security Architect\"\n    Role \"Security Engineer\"\n    Constraint \"Security Architect\"!= \"Security Engineer\"\n\n    Role \"Manager\"\n    Role \"Scrum Master\"\n}\n```\n\nThis code defines a team called \"Security Team\" with two roles: \"Security Architect\" and \"Security Engineer\". It also specifies that these two roles cannot be filled by the same person (using the `!=` operator). Finally, it adds two additional roles to the team: \"Manager\" and \"Scrum Master\".",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "Here's a possible translation of the given text into UVL code:\n\n```\nComputer has:\n    Installed program: Text Editing Program (e.g. MS Word, Pages)\n    Installed program: Cell Calculation Tool (e.g. MS Excel, Numbers)\n```\n\nThis code uses the \"has\" verb to indicate that the computer possesses two programs - a text editing program and a cell calculation tool. The code also specifies some examples of each type of program that could be installed on the computer. Note that UVL is not a widely-used programming language, so it may not be familiar to everyone. If you have any questions about the code or need further assistance, feel free to ask!",
+      "output_raw": "Here's a possible translation of the given text into UVL code:\n\n```\nComputer has:\n    Installed program: Text Editing Program (e.g. MS Word, Pages)\n    Installed program: Cell Calculation Tool (e.g. MS Excel, Numbers)\n```\n\nThis code uses the \"has\" verb to indicate that the computer possesses two programs - a text editing program and a cell calculation tool. The code also specifies some examples of each type of program that could be installed on the computer. Note that UVL is not a widely-used programming language, so it may not be familiar to everyone. If you have any questions about the code or need further assistance, feel free to ask!",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "Sure, here's a possible translation of the given text into UVL-Code:\n```\ncoffeeShop {\n    drinks {\n        Coffee\n        Tea\n    }\n    foods {\n        Croissant\n        Bagel\n    }\n    paymentMethods {\n        card\n        cash\n    }\n}\n``` \nThis code defines a `coffeeShop` object with two child objects: `drinks` and `foods`. Each of these child objects contains a list of items available for purchase at the coffee shop. Additionally, there is a `paymentMethods` object that lists the accepted forms of payment (card and cash).",
+      "output_raw": "Sure, here's a possible translation of the given text into UVL-Code:\n```\ncoffeeShop {\n    drinks {\n        Coffee\n        Tea\n    }\n    foods {\n        Croissant\n        Bagel\n    }\n    paymentMethods {\n        card\n        cash\n    }\n}\n``` \nThis code defines a `coffeeShop` object with two child objects: `drinks` and `foods`. Each of these child objects contains a list of items available for purchase at the coffee shop. Additionally, there is a `paymentMethods` object that lists the accepted forms of payment (card and cash).",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "Here's a translation of the text into uvl-Code:\n\n```\nBicycle {\n    Groupset {\n        Manufacturer = [SRAM, Shimano]\n    }\n    Parts {\n        Use-case = [Gravel, Road, Mountain]\n        Gravel {\n            Tyres = {Width = large, Profile = moderate}\n        }\n        Road {\n            Tyres = {Width = narrow, Profile = none}\n        }\n        Mountain {\n            Tyres = {Width = very_large, Profile = deep}\n        }\n    }\n    Handlebars {\n        Gravel = Drop-bar\n        Road = Drop-bar\n        Mountain = Flat\n    }\n    Optional {\n        SlimTyresOnGravel = true\n    }\n}\n``` \n\nThis code describes a bicycle with a groupset manufactured by either SRAM or Shimano, and other parts designed for different use cases such as gravel, road, and mountain biking. The gravel bike has wider tires with some profile, while the road bike has narrower tires with no profile. Both bikes have drop bar handlebars, while the mountain bike has a flat handlebar with extra-wide tires and a deep profile. Additionally, it mentions that it is possible to fit slim tires on the gravel bike.",
+      "output_raw": "Here's a translation of the text into uvl-Code:\n\n```\nBicycle {\n    Groupset {\n        Manufacturer = [SRAM, Shimano]\n    }\n    Parts {\n        Use-case = [Gravel, Road, Mountain]\n        Gravel {\n            Tyres = {Width = large, Profile = moderate}\n        }\n        Road {\n            Tyres = {Width = narrow, Profile = none}\n        }\n        Mountain {\n            Tyres = {Width = very_large, Profile = deep}\n        }\n    }\n    Handlebars {\n        Gravel = Drop-bar\n        Road = Drop-bar\n        Mountain = Flat\n    }\n    Optional {\n        SlimTyresOnGravel = true\n    }\n}\n``` \n\nThis code describes a bicycle with a groupset manufactured by either SRAM or Shimano, and other parts designed for different use cases such as gravel, road, and mountain biking. The gravel bike has wider tires with some profile, while the road bike has narrower tires with no profile. Both bikes have drop bar handlebars, while the mountain bike has a flat handlebar with extra-wide tires and a deep profile. Additionally, it mentions that it is possible to fit slim tires on the gravel bike.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "Sure, here is a possible translation of the text into UVL-code:\n```\nproduction_line {\n    type = \"chocolate\";\n    stations {\n        melting_station;\n        mixing_station;\n        cooling_station;\n        if (type == \"nut_chocolate\") {\n            baking_station;\n        }\n    };\n    logistics_system;\n    packaging_station;\n};\n```\n\nThis code defines a production line for chocolate with three mandatory stations (melting, mixing, and cooling) and an optional baking station for nut-chocolate. It also includes a logistics system and a packaging station for all types of chocolate produced on the line.",
+      "output_raw": "Sure, here is a possible translation of the text into UVL-code:\n```\nproduction_line {\n    type = \"chocolate\";\n    stations {\n        melting_station;\n        mixing_station;\n        cooling_station;\n        if (type == \"nut_chocolate\") {\n            baking_station;\n        }\n    };\n    logistics_system;\n    packaging_station;\n};\n```\n\nThis code defines a production line for chocolate with three mandatory stations (melting, mixing, and cooling) and an optional baking station for nut-chocolate. It also includes a logistics system and a packaging station for all types of chocolate produced on the line.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "Sure, here's an example of how the code might look in UVL (Unified Variable Language):\n```\ntaxCalculator = {\n    \"inputs\": [\"nettoPrice\", \"sumOfProducts\", \"buyerLocation\", \"sellerLocation\"],\n    \"outputs\": [\"taxPerProduct\", \"bruttoPrice\", \"taxRate\", \"calculatedBasePrice\", \"calculationRule\"],\n    \"calculateTax\": function() {\n        // calculate tax based on inputs\n        var taxPerProduct = this.nettoPrice * this.taxRate;\n        var bruttoPrice = this.nettoPrice + taxPerProduct;\n        return [taxPerProduct, bruttoPrice];\n    },\n    \"logData\": function() {\n        // log data for audits\n        var calculatedBasePrice = this.nettoPrice / (1 + this.taxRate);\n        var calculationRule = \"tax rate: \" + this.taxRate + \", netto price: \" + this.nettoPrice;\n        return [calculatedBasePrice, calculationRule];\n    }\n};\n```\n\nThis code defines an object called `taxCalculator` with properties for the required inputs and outputs. The `calculateTax` method calculates the tax based on the inputs and returns an array of the tax per product and the brutto price. The `logData` method logs the calculated base price and calculation rule for auditing purposes.\nNote that this is just one possible implementation of a tax calculator in UVL, and there may be other ways to structure the code depending on the specific requirements of your application.",
+      "output_raw": "Sure, here's an example of how the code might look in UVL (Unified Variable Language):\n```\ntaxCalculator = {\n    \"inputs\": [\"nettoPrice\", \"sumOfProducts\", \"buyerLocation\", \"sellerLocation\"],\n    \"outputs\": [\"taxPerProduct\", \"bruttoPrice\", \"taxRate\", \"calculatedBasePrice\", \"calculationRule\"],\n    \"calculateTax\": function() {\n        // calculate tax based on inputs\n        var taxPerProduct = this.nettoPrice * this.taxRate;\n        var bruttoPrice = this.nettoPrice + taxPerProduct;\n        return [taxPerProduct, bruttoPrice];\n    },\n    \"logData\": function() {\n        // log data for audits\n        var calculatedBasePrice = this.nettoPrice / (1 + this.taxRate);\n        var calculationRule = \"tax rate: \" + this.taxRate + \", netto price: \" + this.nettoPrice;\n        return [calculatedBasePrice, calculationRule];\n    }\n};\n```\n\nThis code defines an object called `taxCalculator` with properties for the required inputs and outputs. The `calculateTax` method calculates the tax based on the inputs and returns an array of the tax per product and the brutto price. The `logData` method logs the calculated base price and calculation rule for auditing purposes.\nNote that this is just one possible implementation of a tax calculator in UVL, and there may be other ways to structure the code depending on the specific requirements of your application.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Sure, here's an example implementation in UVL (Unified Verification Language) code:\n```\nmodule RoomBookingService {\n    // Define the room type with basic features and optional features\n    type Room = record {\n        numBeds : integer,\n        view : string,\n        size : string,\n        optionalFeatures : list(string)\n    }\n    \n    // Define the booking type with start and end dates and optional fees/bookings\n    type Booking = record {\n        startDate : date,\n        endDate : date,\n        optionalFeesBookings : list(string)\n    }\n    \n    // Define the hotel type with a list of rooms and a list of bookings\n    type Hotel = record {\n        rooms : list(Room),\n        bookings : list(Booking)\n    }\n    \n    // Function to check if a room can have a best-view option\n    function canHaveBestViewOption(room : Room) : boolean {\n        return room.numBeds == 2;\n    }\n    \n    // Function to add a booking to the hotel\n    procedure addBooking(hotel : ref Hotel, booking : Booking) {\n        hotel.bookings := hotel.bookings ++ [booking];\n    }\n}\n```\n\nThis code defines three types: `Room`, `Booking`, and `Hotel`. It also includes two functions: `canHaveBestViewOption` and `addBooking`. The `canHaveBestViewOption` function checks if a room can have a best-view option based on its number of beds. The `addBooking` procedure adds a booking to the hotel.\nNote that this is just an example implementation, and there may be other ways to implement the same functionality using UVL.",
+      "output_raw": "Sure, here's an example implementation in UVL (Unified Verification Language) code:\n```\nmodule RoomBookingService {\n    // Define the room type with basic features and optional features\n    type Room = record {\n        numBeds : integer,\n        view : string,\n        size : string,\n        optionalFeatures : list(string)\n    }\n    \n    // Define the booking type with start and end dates and optional fees/bookings\n    type Booking = record {\n        startDate : date,\n        endDate : date,\n        optionalFeesBookings : list(string)\n    }\n    \n    // Define the hotel type with a list of rooms and a list of bookings\n    type Hotel = record {\n        rooms : list(Room),\n        bookings : list(Booking)\n    }\n    \n    // Function to check if a room can have a best-view option\n    function canHaveBestViewOption(room : Room) : boolean {\n        return room.numBeds == 2;\n    }\n    \n    // Function to add a booking to the hotel\n    procedure addBooking(hotel : ref Hotel, booking : Booking) {\n        hotel.bookings := hotel.bookings ++ [booking];\n    }\n}\n```\n\nThis code defines three types: `Room`, `Booking`, and `Hotel`. It also includes two functions: `canHaveBestViewOption` and `addBooking`. The `canHaveBestViewOption` function checks if a room can have a best-view option based on its number of beds. The `addBooking` procedure adds a booking to the hotel.\nNote that this is just an example implementation, and there may be other ways to implement the same functionality using UVL.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "Sure! Here's a possible translation of the text into UVL-Code:\n```\nclass CourseRegistrationSystem {\n    Student[] students;\n    \n    public void registerStudent(Student s) {\n        if (s.getCredits() < 12) {\n            throw new IllegalArgumentException(\"All students must register for a minimum of 12 credits.\");\n        }\n        \n        if (s instanceof Undergraduate) {\n            boolean selectedCoreCourse = false;\n            for (Course c : s.getSelectedCourses()) {\n                if (c.getLevel() == 100 && c.isCore()) {\n                    selectedCoreCourse = true;\n                    break;\n                }\n            }\n            \n            if (!selectedCoreCourse) {\n                throw new IllegalArgumentException(\"Undergraduate students must select one 100-level Core course.\");\n            }\n        } else if (s instanceof Graduate) {\n            boolean selectedSeminar = false;\n            for (Course c : s.getSelectedCourses()) {\n                if (c.getLevel() == 500 && c.isSeminar()) {\n                    selectedSeminar = true;\n                    break;\n                }\n            }\n            \n            if (!selectedSeminar) {\n                throw new IllegalArgumentException(\"Graduate students must select a 500-level Seminar.\");\n            }\n        }\n        \n        for (Course c : s.getSelectedCourses()) {\n            for (Course prereq : c.getPrerequisites()) {\n                if (!s.getSelectedCourses().contains(prereq)) {\n                    throw new IllegalArgumentException(c.getName() + \" requires \" + prereq.getName());\n                }\n            }\n            \n            for (Course mutualExclusion : c.getMutualExclusions()) {\n                if (s.getSelectedCourses().contains(mutualExclusion)) {\n                    throw new IllegalArgumentException(c.getName() + \" is mutually exclusive with \" + mutualExclusion.getName());\n                }\n            }\n        }\n        \n        if (s.getCourse(\"Robotics Lab\")!= null && s.getCourse(\"Robotics Lab\").getEnrollmentCount() >= 20) {\n            throw new IllegalArgumentException(\"The Robotics Lab has reached its maximum enrollment capacity.\");\n        }\n        \n        if (s.getCredits() < 60 ||!s.hasPassedDissertationProposal()) {\n            throw new IllegalArgumentException(\"Only students who have completed 60 credits and passed their Dissertation Proposal can take the Thesis Defense module.\");\n        }\n    }\n}\n``` \nThis code defines a `CourseRegistrationSystem` class that manages student enrollments in a university course registration system. It includes methods to check that each student meets the minimum credit requirement, selects the required core or seminar courses, takes the necessary prerequisites and mutual exclusions, does not exceed the enrollment limit for the Robotics Lab, and only takes the Thesis Defense module after completing 60 credits and passing their dissertation proposal. Note that this is just one possible implementation, and there may be other ways to structure the code depending on your specific requirements.",
+      "output_raw": "Sure! Here's a possible translation of the text into UVL-Code:\n```\nclass CourseRegistrationSystem {\n    Student[] students;\n    \n    public void registerStudent(Student s) {\n        if (s.getCredits() < 12) {\n            throw new IllegalArgumentException(\"All students must register for a minimum of 12 credits.\");\n        }\n        \n        if (s instanceof Undergraduate) {\n            boolean selectedCoreCourse = false;\n            for (Course c : s.getSelectedCourses()) {\n                if (c.getLevel() == 100 && c.isCore()) {\n                    selectedCoreCourse = true;\n                    break;\n                }\n            }\n            \n            if (!selectedCoreCourse) {\n                throw new IllegalArgumentException(\"Undergraduate students must select one 100-level Core course.\");\n            }\n        } else if (s instanceof Graduate) {\n            boolean selectedSeminar = false;\n            for (Course c : s.getSelectedCourses()) {\n                if (c.getLevel() == 500 && c.isSeminar()) {\n                    selectedSeminar = true;\n                    break;\n                }\n            }\n            \n            if (!selectedSeminar) {\n                throw new IllegalArgumentException(\"Graduate students must select a 500-level Seminar.\");\n            }\n        }\n        \n        for (Course c : s.getSelectedCourses()) {\n            for (Course prereq : c.getPrerequisites()) {\n                if (!s.getSelectedCourses().contains(prereq)) {\n                    throw new IllegalArgumentException(c.getName() + \" requires \" + prereq.getName());\n                }\n            }\n            \n            for (Course mutualExclusion : c.getMutualExclusions()) {\n                if (s.getSelectedCourses().contains(mutualExclusion)) {\n                    throw new IllegalArgumentException(c.getName() + \" is mutually exclusive with \" + mutualExclusion.getName());\n                }\n            }\n        }\n        \n        if (s.getCourse(\"Robotics Lab\")!= null && s.getCourse(\"Robotics Lab\").getEnrollmentCount() >= 20) {\n            throw new IllegalArgumentException(\"The Robotics Lab has reached its maximum enrollment capacity.\");\n        }\n        \n        if (s.getCredits() < 60 ||!s.hasPassedDissertationProposal()) {\n            throw new IllegalArgumentException(\"Only students who have completed 60 credits and passed their Dissertation Proposal can take the Thesis Defense module.\");\n        }\n    }\n}\n``` \nThis code defines a `CourseRegistrationSystem` class that manages student enrollments in a university course registration system. It includes methods to check that each student meets the minimum credit requirement, selects the required core or seminar courses, takes the necessary prerequisites and mutual exclusions, does not exceed the enrollment limit for the Robotics Lab, and only takes the Thesis Defense module after completing 60 credits and passing their dissertation proposal. Note that this is just one possible implementation, and there may be other ways to structure the code depending on your specific requirements.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "Here's a possible translation of the given text into uvl-Code:\n```\nPCConfiguratorTool {\n    User {\n        Choice {\n            Option \"CPU\" {\n                Value \"Intel\"\n                Value \"AMD\"\n                Consequence {\n                    MotherboardSocket {\n                        Value \"LGA 1700\"\n                        Value \"AM5\"\n                    }\n                }\n            }\n        }\n        Choice {\n            Option \"MotherboardChipset\" {\n                Value \"Z790\"\n                Consequence {\n                    SupportedRAMType {\n                        Value \"DDR4\"\n                        Value \"DDR5\"\n                    }\n                }\n            }\n        }\n        Choice {\n            Option \"GPU\" {\n                Value \"RTX 4090\"\n                Consequence {\n                    MinimumPowerRequirement {\n                        Value \"850W\"\n                    }\n                    PhysicalLength {\n                        Value \"350mm\"\n                        Constraint {\n                            CaseMaximumGPUClearance {\n                                Comparison \"<=\"\n                                Value \"350mm\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        Choice {\n            Option \"Case\" {\n                Value \"ATX\"\n                Value \"Micro-ATX\"\n                Constraint {\n                    MotherboardFormFactor {\n                        Comparison \"==\"\n                        Value \"ATX\"\n                    }\n                }\n            }\n        }\n        Choice {\n            Option \"AirCooler\" {\n                Type \"Large\"\n                Height {\n                    Comparison \"<\"\n                    CaseCPUCoolerClearance {\n                        Comparison \"<=\"\n                        Value \"Height\"\n                    }\n                }\n            }\n        }\n    }\n}\n```\nThis code defines a `PCConfiguratorTool` object with several nested choices representing different aspects of configuring a PC. Each choice can have multiple options, each with its own consequences and constraints. For example, choosing an Intel CPU will dictate the available motherboard sockets, while choosing a Z790 chipset will determine the supported RAM types. Constraints are applied to ensure compatibility between different components, such as the GPU's physical length being less than the case's maximum GPU clearance.",
+      "output_raw": "Here's a possible translation of the given text into uvl-Code:\n```\nPCConfiguratorTool {\n    User {\n        Choice {\n            Option \"CPU\" {\n                Value \"Intel\"\n                Value \"AMD\"\n                Consequence {\n                    MotherboardSocket {\n                        Value \"LGA 1700\"\n                        Value \"AM5\"\n                    }\n                }\n            }\n        }\n        Choice {\n            Option \"MotherboardChipset\" {\n                Value \"Z790\"\n                Consequence {\n                    SupportedRAMType {\n                        Value \"DDR4\"\n                        Value \"DDR5\"\n                    }\n                }\n            }\n        }\n        Choice {\n            Option \"GPU\" {\n                Value \"RTX 4090\"\n                Consequence {\n                    MinimumPowerRequirement {\n                        Value \"850W\"\n                    }\n                    PhysicalLength {\n                        Value \"350mm\"\n                        Constraint {\n                            CaseMaximumGPUClearance {\n                                Comparison \"<=\"\n                                Value \"350mm\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        Choice {\n            Option \"Case\" {\n                Value \"ATX\"\n                Value \"Micro-ATX\"\n                Constraint {\n                    MotherboardFormFactor {\n                        Comparison \"==\"\n                        Value \"ATX\"\n                    }\n                }\n            }\n        }\n        Choice {\n            Option \"AirCooler\" {\n                Type \"Large\"\n                Height {\n                    Comparison \"<\"\n                    CaseCPUCoolerClearance {\n                        Comparison \"<=\"\n                        Value \"Height\"\n                    }\n                }\n            }\n        }\n    }\n}\n```\nThis code defines a `PCConfiguratorTool` object with several nested choices representing different aspects of configuring a PC. Each choice can have multiple options, each with its own consequences and constraints. For example, choosing an Intel CPU will dictate the available motherboard sockets, while choosing a Z790 chipset will determine the supported RAM types. Constraints are applied to ensure compatibility between different components, such as the GPU's physical length being less than the case's maximum GPU clearance.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "Sure! Here's how you might represent the described CI/CD system in UVL (Unified Variable Language):\n\n```uvl\n// Define the deployment stages and their requirements\ndeployment Stages {\n    Build\n    UnitTest\n    Staging\n    IntegrationTest\n    SecurityScan\n    Production {\n        BlueGreen {\n            // Double the infrastructure resources for swapping\n        }\n        Canary {\n            Monitoring {\n                RollbackTrigger\n            }\n        }\n    }\n}\n\n// Define the pipeline rules\npipeline Rules {\n    allPipelines {\n        mustRun \"Build\"\n        mustRun \"UnitTest\"\n    }\n\n    StagingPipeline {\n        runsAfter \"UnitTest\"\n    }\n\n    ProductionPipeline {\n        dependsOn \"Staging\"\n        dependsOn \"IntegrationTest\"\n        dependsOn \"SecurityScan\"\n\n        hasStrategy \"BlueGreen\" {\n            requiresDoubleResources\n        }\n\n        hasStrategy \"Canary\" {\n            includes \"Monitoring\"\n            hasTrigger \"RollbackTrigger\"\n        }\n    }\n\n    HotfixPipeline {\n        bypasses \"Staging\"\n        bypasses \"IntegrationTest\"\n        requires \"ManualQAApproval\"\n        dependsOn \"SecurityScan\"\n    }\n}\n```\n\nThis code snippet outlines the deployment stages, their dependencies, and the strategies available for each deployment type. It ensures that all necessary steps are followed according to the given requirements.",
+      "output_raw": "Sure! Here's how you might represent the described CI/CD system in UVL (Unified Variable Language):\n\n```uvl\n// Define the deployment stages and their requirements\ndeployment Stages {\n    Build\n    UnitTest\n    Staging\n    IntegrationTest\n    SecurityScan\n    Production {\n        BlueGreen {\n            // Double the infrastructure resources for swapping\n        }\n        Canary {\n            Monitoring {\n                RollbackTrigger\n            }\n        }\n    }\n}\n\n// Define the pipeline rules\npipeline Rules {\n    allPipelines {\n        mustRun \"Build\"\n        mustRun \"UnitTest\"\n    }\n\n    StagingPipeline {\n        runsAfter \"UnitTest\"\n    }\n\n    ProductionPipeline {\n        dependsOn \"Staging\"\n        dependsOn \"IntegrationTest\"\n        dependsOn \"SecurityScan\"\n\n        hasStrategy \"BlueGreen\" {\n            requiresDoubleResources\n        }\n\n        hasStrategy \"Canary\" {\n            includes \"Monitoring\"\n            hasTrigger \"RollbackTrigger\"\n        }\n    }\n\n    HotfixPipeline {\n        bypasses \"Staging\"\n        bypasses \"IntegrationTest\"\n        requires \"ManualQAApproval\"\n        dependsOn \"SecurityScan\"\n    }\n}\n```\n\nThis code snippet outlines the deployment stages, their dependencies, and the strategies available for each deployment type. It ensures that all necessary steps are followed according to the given requirements.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "```uvl\n// Define the scenes and their corresponding actions\nscene MovieMode {\n    priority: high;\n    action {\n        setLightIntensity(10%);\n    }\n}\n\nscene Morning {\n    priority: low;\n    action {\n        setLightIntensity(100%);\n    }\n}\n\nscene SmartOven {\n    condition {\n        homeStatus == \"Away\";\n    }\n    action {\n        disable();\n    }\n}\n\nscene AirConditioner {\n    condition {\n        windowSensorReported(\"Open\");\n    }\n    action {\n        disable();\n    }\n    dynamicReEnable {\n        timeDelay(5 minutes);\n        condition {\n            allWindowsClosed();\n        }\n    }\n}\n```\n\n### Explanation:\n1. **Scene Definitions**: The `MovieMode` and `Morning` scenes are defined with their respective actions.\n2. **Priorities**: The `priority` keyword assigns a priority to each scene. Higher numbers indicate higher priority.\n3. **Conditions**:\n   - For `SmartOven`, there's a condition that disables the scene if `homeStatus` is `\"Away\"`.\n   - For `AirConditioner`, there's a condition that disables the scene if any `windowSensor` reports `\"Open\"`.\n4. **Dynamic Re-enablement**: The `dynamicReEnable` block ensures that the `AirConditioner` re-enables itself 5 minutes after all windows are closed.\n\nThis UVL code effectively captures the logic described in the text, ensuring that the smart home automation system operates as intended.",
+      "output_raw": "```uvl\n// Define the scenes and their corresponding actions\nscene MovieMode {\n    priority: high;\n    action {\n        setLightIntensity(10%);\n    }\n}\n\nscene Morning {\n    priority: low;\n    action {\n        setLightIntensity(100%);\n    }\n}\n\nscene SmartOven {\n    condition {\n        homeStatus == \"Away\";\n    }\n    action {\n        disable();\n    }\n}\n\nscene AirConditioner {\n    condition {\n        windowSensorReported(\"Open\");\n    }\n    action {\n        disable();\n    }\n    dynamicReEnable {\n        timeDelay(5 minutes);\n        condition {\n            allWindowsClosed();\n        }\n    }\n}\n```\n\n### Explanation:\n1. **Scene Definitions**: The `MovieMode` and `Morning` scenes are defined with their respective actions.\n2. **Priorities**: The `priority` keyword assigns a priority to each scene. Higher numbers indicate higher priority.\n3. **Conditions**:\n   - For `SmartOven`, there's a condition that disables the scene if `homeStatus` is `\"Away\"`.\n   - For `AirConditioner`, there's a condition that disables the scene if any `windowSensor` reports `\"Open\"`.\n4. **Dynamic Re-enablement**: The `dynamicReEnable` block ensures that the `AirConditioner` re-enables itself 5 minutes after all windows are closed.\n\nThis UVL code effectively captures the logic described in the text, ensuring that the smart home automation system operates as intended.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

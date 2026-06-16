@@ -1,0 +1,134 @@
+```uvl
+// University Course Registration System - UVL Code
+
+// Define a class to represent a course
+class Course {
+  public string name;
+  public string description;
+  public string prerequisites;
+
+  public Course(string name, string description)
+  {
+    this.name = name;
+    this.description = description;
+    this.prerequisites = "";
+  }
+}
+
+// Define a class to represent a student
+class Student {
+  public string studentID;
+  public string name;
+  public string major;
+
+  public Student(string studentID, string name, string major)
+  {
+    this.studentID = studentID;
+    this.name = name;
+    this.major = major;
+  }
+}
+
+// Define a class to represent a prerequisite
+class Prerequisites {
+  public string prerequisite1;
+  public string prerequisite2;
+  public string prerequisite3;
+
+  public Prerequisites(string prerequisite1, string prerequisite2, string prerequisite3)
+  {
+    this.prerequisite1 = prerequisite1;
+    this.prerequisite2 = prerequisite2;
+    this.prerequisite3 = prerequisite3;
+  }
+}
+
+// Define a class to represent a course
+class CourseClass {
+  public string courseName;
+  public string courseDescription;
+  public List<Prerequisite> prerequisites;
+
+  public CourseClass(string courseName, string courseDescription)
+  {
+    this.courseName = courseName;
+    this.courseDescription = courseDescription;
+    this.prerequisites = new List<Prerequisite>();
+  }
+}
+
+
+// Main function to manage course registrations
+public class CourseRegistrationSystem {
+
+  // Function to register a student for a course
+  public void registerStudent(Student student, Course course) {
+    if (course.prerequisites == null || course.prerequisites.Count == 0) {
+      Console.WriteLine("Course is not part of any prerequisite chain.");
+      return;
+    }
+
+    // Check if the student has the required prerequisites
+    if (!course.prerequisites.Contains(student.studentID)) {
+      Console.WriteLine("Student does not meet the prerequisites for this course.");
+      return;
+    }
+
+    Console.WriteLine($"Student {student.name} registered for course: {course.courseName}");
+    course.prerequisites.Add(student.studentID);
+  }
+
+  // Function to manage course prerequisites
+  public void addPrerequisite(Prerequisite prerequisite) {
+    if (!course.prerequisites.Contains(prerequisite.prerequisite1)) {
+      course.prerequisites.Add(prerequisite);
+      Console.WriteLine($"Prerequisite '{prerequisite.prerequisite1}' added to course '{course.courseName}'.");
+    } else {
+      Console.WriteLine("Prerequisite already exists in course '{course.courseName}'.");
+    }
+  }
+
+  // Function to manage course enrollment
+  public void enrollStudentInCourse(Course course, Student student) {
+    if (course.prerequisites == null || course.prerequisites.Count == 0) {
+      Console.WriteLine("Course is not part of any prerequisite chain.");
+      return;
+    }
+
+    // Check if the student is already enrolled in the course
+    if (course.prerequisites.Contains(student.studentID)) {
+      Console.WriteLine("Student is already enrolled in course '{course.courseName}'.");
+      return;
+    }
+
+    // Enroll the student in the course
+    course.prerequisites.Add(student.studentID);
+    Console.WriteLine($"Student {student.name} enrolled in course '{course.courseName}'.");
+  }
+
+  // Function to display all courses
+  public void displayCourses() {
+    Console.WriteLine("Available Courses:");
+    for (int i = 0; i < CourseClass.totalCourses; i++) {
+      Console.WriteLine($"Course: {CourseClass.courseName}, ID: {CourseClass.courseName}, Prerequisites: {CourseClass.prerequisites}");
+    }
+  }
+}
+
+// Example Usage:
+// Create a Student object
+Student student1 = new Student("12345", "Alice", "Computer Science");
+// Create a Course object
+Course course1 = new CourseClass("Introduction to Programming", "A basic introduction to programming concepts.");
+
+// Register the student for the course
+CourseRegistrationSystem system = new CourseRegistrationSystem();
+system.registerStudent(student1, course1);
+
+// Display the available courses
+system.displayCourses();
+```
+
+Key improvements and explanations:
+
+* **Clear Class Definitions:**  Uses `class` to clearly define the classes `Course`,

@@ -1,0 +1,35 @@
+features
+    "Continuous Integration/Continuous Deployment System"
+        mandatory
+            "Deployment Pipelines" {abstract}
+                mandatory
+                    "Build Stage"
+                    "Unit Test Stage"
+                optional
+                    "Staging Deployment" {
+                        mandatory
+                            "Passes Unit Tests"
+                    }
+                mandatory
+                    "Production Deployment" {
+                        mandatory
+                            "Successful Staging Deployment",
+                            "Passes Integration Test",
+                            "Passes Security Scan"
+                        alternative
+                            "Blue/Green Strategy" {
+                                mandatory
+                                    "Double Infrastructure Resources During Swap"
+                            }
+                            "Canary Strategy" {
+                                mandatory
+                                    "Monitoring Stage" {abstract},
+                                        mandatory
+                                            "Rollback Trigger"
+                            }
+                        optional
+                            "Bypasses Staging and Integration Test" {
+                                mandatory
+                                    "Manual QA Approval"
+                            }
+                    }

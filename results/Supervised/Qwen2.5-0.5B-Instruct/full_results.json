@@ -1,0 +1,831 @@
+{
+  "score": 0.3333333333333333,
+  "semantic_score": 0.6544384211301804,
+  "flamapy_summary": {
+    "analyzed": 4,
+    "void_rate": 0.0,
+    "mean_dead_features": 0.0,
+    "mean_false_optional_features": 0.0,
+    "mean_configurations": 8.0
+  },
+  "semantic_eval_summary": {
+    "ok": 3,
+    "features_only": 9,
+    "failed": 0,
+    "mean_feature_f1": 0.671496858337878,
+    "mean_semantic_f1": 0.1785714285714286,
+    "mean_structural_f1": 0.44880174291938996
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "features\n    \"Engine type\"\n        alternative\n            Diesel\n            Gasoline\n            Electric\n        optional\n            Lane Assist\n            ESP\n            Colour",
+      "output_raw": "'''uvl\nfeatures\n    \"Engine type\"\n        alternative\n            Diesel\n            Gasoline\n            Electric\n        optional\n            Lane Assist\n            ESP\n            Colour\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "Engine type",
+        "Diesel",
+        "Gasoline",
+        "Electric",
+        "Lane",
+        "ESP",
+        "Colour"
+      ],
+      "semantic_similarity": 0.5385071635246277,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 6,
+          "fp": 1,
+          "fn": 7,
+          "precision": 0.8571428571428571,
+          "recall": 0.46153846153846156,
+          "f1": 0.6,
+          "missed": [
+            "AssistanceSystems",
+            "Black",
+            "Blue",
+            "Car",
+            "LaneAssist",
+            "Red",
+            "White"
+          ],
+          "hallucinated": [
+            "Lane"
+          ]
+        },
+        "structure": {
+          "tp": 3,
+          "fp": 2,
+          "fn": 0,
+          "precision": 0.6,
+          "recall": 1.0,
+          "f1": 0.7499999999999999,
+          "n_edges_gen": 5,
+          "n_edges_gt": 3,
+          "group_type_agreement": 0.6,
+          "n_group_compared": 5
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "features\n    SecurityTeam\n        mandatory\n            SecurityArchitect {type 'Person'}\n            SecurityEngineer {type 'Person'}\n            Manager {type 'Person'}\n            ScrumMaster {type 'Person'}\n\nconstraints\n    SecurityTeam\n        mandatory\n            SecurityArchitect\n            SecurityEngineer\n            Manager\n            ScrumMaster",
+      "output_raw": "'''uvl\nfeatures\n    SecurityTeam\n        mandatory\n            SecurityArchitect {type 'Person'}\n            SecurityEngineer {type 'Person'}\n            Manager {type 'Person'}\n            ScrumMaster {type 'Person'}\n\nconstraints\n    SecurityTeam\n        mandatory\n            SecurityArchitect\n            SecurityEngineer\n            Manager\n            ScrumMaster\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "SecurityTeam",
+        "SecurityArchitect",
+        "SecurityEngineer",
+        "Manager",
+        "ScrumMaster"
+      ],
+      "semantic_similarity": 0.6613080501556396,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "hallucinated": []
+        },
+        "structure": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 4,
+          "n_edges_gt": 4,
+          "group_type_agreement": 1.0,
+          "n_group_compared": 4
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "features\n    \"Text Editing\"\n        mandatory\n            MS_Word {package 'Word'}\n            Pages {package 'Word'}\n        optional\n            Excel {package 'Excel'}\n            Numbers {package 'Numbert'}",
+      "output_raw": "'''uvl\nfeatures\n    \"Text Editing\"\n        mandatory\n            MS_Word {package 'Word'}\n            Pages {package 'Word'}\n        optional\n            Excel {package 'Excel'}\n            Numbers {package 'Numbert'}\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "Text Editing",
+          "MS_Word",
+          "Pages"
+        ],
+        "configurations_number": 4
+      },
+      "feature_names": [
+        "Text Editing",
+        "MS_Word",
+        "Pages",
+        "Excel",
+        "Numbers"
+      ],
+      "semantic_similarity": 0.5390300154685974,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": null,
+        "features": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "f1": 0.8333333333333333,
+          "missed": [
+            "Computer",
+            "Spreadsheet Tool"
+          ],
+          "hallucinated": []
+        },
+        "structure": {
+          "tp": 2,
+          "fp": 2,
+          "fn": 0,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "n_edges_gen": 4,
+          "n_edges_gt": 2,
+          "group_type_agreement": 0.0,
+          "n_group_compared": 4
+        },
+        "semantics": {
+          "n_products_gen": 4,
+          "n_products_gt": 4,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "features\n    CoffeeShop {abstract}\n        mandatory\n            Drinks\n                alternative\n                    \"Coffee\"\n                    \"Tea\"\n        optional\n            Foods\n                alternative\n                    Croissants\n                    Bagels\n\nconstraints\n    PaymentMethod\n        alternative\n            Card\n            Cash",
+      "output_raw": "'''uvl\nfeatures\n    CoffeeShop {abstract}\n        mandatory\n            Drinks\n                alternative\n                    \"Coffee\"\n                    \"Tea\"\n        optional\n            Foods\n                alternative\n                    Croissants\n                    Bagels\n\nconstraints\n    PaymentMethod\n        alternative\n            Card\n            Cash\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "CoffeeShop",
+        "Drinks",
+        "Coffee",
+        "Tea",
+        "Foods",
+        "Croissants",
+        "Bagels"
+      ],
+      "semantic_similarity": 0.6159178018569946,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 3,
+          "precision": 1.0,
+          "recall": 0.7,
+          "f1": 0.8235294117647058,
+          "missed": [
+            "Card",
+            "Cash",
+            "Payment"
+          ],
+          "hallucinated": []
+        },
+        "structure": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n_edges_gen": 6,
+          "n_edges_gt": 6,
+          "group_type_agreement": 0.8333333333333334,
+          "n_group_compared": 6
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "features\n    \"Bicycle\"\n        mandatory\n            \"Groupset\"\n                alternative\n                    \"SRAM\" {brand 'SRAM'}\n                    \"Shimano\"\n            \"Tyres\"\n                alternative\n                    \"Wide tyres\"\n                        optional\n                            \"Profile\"\n            \"Handlebars\"\n                alternative\n                    \"Drop bar handlebar\"\n                    \"Flat handlebar\"\n            \"Additional Features\"\n                optional\n                    \"Extra wide tyres\"\n                        alternative\n                            \"Deep profile\"",
+      "output_raw": "'''uvl\nfeatures\n    \"Bicycle\"\n        mandatory\n            \"Groupset\"\n                alternative\n                    \"SRAM\" {brand 'SRAM'}\n                    \"Shimano\"\n            \"Tyres\"\n                alternative\n                    \"Wide tyres\"\n                        optional\n                            \"Profile\"\n            \"Handlebars\"\n                alternative\n                    \"Drop bar handlebar\"\n                    \"Flat handlebar\"\n            \"Additional Features\"\n                optional\n                    \"Extra wide tyres\"\n                        alternative\n                            \"Deep profile\"\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "Bicycle",
+          "Groupset",
+          "Tyres",
+          "Wide tyres",
+          "Handlebars",
+          "Additional Features"
+        ],
+        "configurations_number": 16
+      },
+      "feature_names": [
+        "Bicycle",
+        "Groupset",
+        "SRAM",
+        "Shimano",
+        "Tyres",
+        "Wide tyres",
+        "Profile",
+        "Handlebars",
+        "Drop bar handlebar",
+        "Flat handlebar",
+        "Additional Features",
+        "Extra wide tyres",
+        "Deep profile"
+      ],
+      "semantic_similarity": 0.6155344247817993,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": null,
+        "features": {
+          "tp": 10,
+          "fp": 3,
+          "fn": 5,
+          "precision": 0.7692307692307693,
+          "recall": 0.6666666666666666,
+          "f1": 0.7142857142857142,
+          "missed": [
+            "BikeType",
+            "GravelBike",
+            "MountainBike",
+            "RoadBike",
+            "SlimTyres"
+          ],
+          "hallucinated": [
+            "Additional Features",
+            "Deep profile",
+            "Profile"
+          ]
+        },
+        "structure": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.8888888888888888,
+          "f1": 0.9411764705882353,
+          "n_edges_gen": 8,
+          "n_edges_gt": 9,
+          "group_type_agreement": 0.8888888888888888,
+          "n_group_compared": 9
+        },
+        "semantics": {
+          "n_products_gen": 8,
+          "n_products_gt": 6,
+          "tp": 2,
+          "fp": 6,
+          "fn": 4,
+          "precision": 0.25,
+          "recall": 0.3333333333333333,
+          "f1": 0.28571428571428575,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "features\n    ChocolateProductionLine {abstract}\n        mandatory\n            \"Melt\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            \"Mixing\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            \"Colling\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            LogisticSystem\n        mandatory\n            PackagingStation\n\nconstraints\n    NutChocolate => NutChocolate",
+      "output_raw": "'''uvl\nfeatures\n    ChocolateProductionLine {abstract}\n        mandatory\n            \"Melt\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            \"Mixing\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            \"Colling\"\n                alternative\n                    NormalChocolate\n                optional\n                    NutChocolate\n        mandatory\n            LogisticSystem\n        mandatory\n            PackagingStation\n\nconstraints\n    NutChocolate => NutChocolate\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "ChocolateProductionLine",
+          "Melt",
+          "NormalChocolate",
+          "Mixing",
+          "Colling",
+          "LogisticSystem",
+          "PackagingStation"
+        ],
+        "configurations_number": 4
+      },
+      "feature_names": [
+        "ChocolateProductionLine",
+        "Melt",
+        "NormalChocolate",
+        "NutChocolate",
+        "Mixing",
+        "NormalChocolate",
+        "NutChocolate",
+        "Colling",
+        "NormalChocolate",
+        "NutChocolate",
+        "LogisticSystem",
+        "PackagingStation"
+      ],
+      "semantic_similarity": 0.6646995544433594,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "analysis error: KeyError: 'NormalChocolate'",
+        "features": {
+          "tp": 6,
+          "fp": 6,
+          "fn": 4,
+          "precision": 0.5,
+          "recall": 0.6,
+          "f1": 0.5454545454545454,
+          "missed": [
+            "BakingStation",
+            "CoolingStation",
+            "Factory",
+            "MeltingStation"
+          ],
+          "hallucinated": [
+            "Colling",
+            "Melt"
+          ]
+        },
+        "structure": {
+          "tp": 0,
+          "fp": 5,
+          "fn": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n_edges_gen": 5,
+          "n_edges_gt": 2,
+          "group_type_agreement": 0.8,
+          "n_group_compared": 5
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "features\n    TaxCalculator\n        mandatory\n            NetToPrice {type double}\n            SumOfProducts {type double}\n            BuyerLocation {type string}\n        optional\n            TaxPerProduct {type double}\n            BruttoPrice {type double}\n            TaxRate {type double}\n        optional\n            LoggingData\n                optional BasePrice {type double}\n                    optional RuleCalculation {optional bool}",
+      "output_raw": "'''uvl\nfeatures\n    TaxCalculator\n        mandatory\n            NetToPrice {type double}\n            SumOfProducts {type double}\n            BuyerLocation {type string}\n        optional\n            TaxPerProduct {type double}\n            BruttoPrice {type double}\n            TaxRate {type double}\n        optional\n            LoggingData\n                optional BasePrice {type double}\n                    optional RuleCalculation {optional bool}\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "TaxCalculator",
+        "NetToPrice",
+        "SumOfProducts",
+        "BuyerLocation",
+        "TaxPerProduct",
+        "BruttoPrice",
+        "TaxRate",
+        "LoggingData"
+      ],
+      "semantic_similarity": 0.6826207041740417,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 7,
+          "fp": 1,
+          "fn": 7,
+          "precision": 0.875,
+          "recall": 0.5,
+          "f1": 0.6363636363636364,
+          "missed": [
+            "AuditLogging",
+            "BillingSoftware",
+            "CalculatedBasePrice",
+            "Inputs",
+            "Outputs",
+            "RuleOfCalculation",
+            "SellerLocation"
+          ],
+          "hallucinated": [
+            "LoggingData"
+          ]
+        },
+        "structure": {
+          "tp": 0,
+          "fp": 6,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n_edges_gen": 6,
+          "n_edges_gt": 0,
+          "group_type_agreement": 0.5,
+          "n_group_compared": 6
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "features\n    RoomBookingService {abstract}\n        mandatory\n            BasicFeatures\n                alternative\n                    Beds {number 2}\n                        optional\n                            SpaArea\n                            ViewSize\n            OptionalFeatures\n                alternative\n                    PersonalSpa\n                    BestViewOption",
+      "output_raw": "'''uvl\nfeatures\n    RoomBookingService {abstract}\n        mandatory\n            BasicFeatures\n                alternative\n                    Beds {number 2}\n                        optional\n                            SpaArea\n                            ViewSize\n            OptionalFeatures\n                alternative\n                    PersonalSpa\n                    BestViewOption\n\n'''",
+      "parsable": true,
+      "flamapy_analysis": {
+        "void": false,
+        "dead_features": [],
+        "false_optional_features": [],
+        "core_features": [
+          "RoomBookingService",
+          "BasicFeatures",
+          "Beds",
+          "OptionalFeatures"
+        ],
+        "configurations_number": 8
+      },
+      "feature_names": [
+        "RoomBookingService",
+        "BasicFeatures",
+        "Beds",
+        "SpaArea",
+        "ViewSize",
+        "OptionalFeatures",
+        "PersonalSpa",
+        "BestViewOption"
+      ],
+      "semantic_similarity": 0.5487415194511414,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": null,
+        "features": {
+          "tp": 6,
+          "fp": 2,
+          "fn": 7,
+          "precision": 0.75,
+          "recall": 0.46153846153846156,
+          "f1": 0.5714285714285714,
+          "missed": [
+            "BookingManagement",
+            "EndDate",
+            "NumberOfBeds",
+            "OneBed",
+            "Room",
+            "Size",
+            "StartDate"
+          ],
+          "hallucinated": [
+            "BasicFeatures",
+            "SpaArea"
+          ]
+        },
+        "structure": {
+          "tp": 0,
+          "fp": 4,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n_edges_gen": 4,
+          "n_edges_gt": 0,
+          "group_type_agreement": 0.2,
+          "n_group_compared": 5
+        },
+        "semantics": {
+          "n_products_gen": 4,
+          "n_products_gt": 12,
+          "tp": 2,
+          "fp": 2,
+          "fn": 10,
+          "precision": 0.5,
+          "recall": 0.16666666666666666,
+          "f1": 0.25,
+          "exact_equivalence": false
+        },
+        "status": "ok"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "'''uvl\nfeatures\n    \"University Course Registration System\" {abstract}\n        mandatory\n            \"Enrollment Criteria\"\n                alternative\n                    \"12 Credits Required\"\n                        mandatory\n                            \"Minimum 12 Credits\"\n                        optional\n                            \"Core Courses\"\n                                alternative\n                                    \"100-Level Core\"\n                                        mandatory\n                                            \"Covers Intro to AI and Linear Algebra\"\n                                            \"Advanced AI\"\n                            \"Seminar Prerequisites\"\n                            \"Mutually Exclusive Courses\"\n                                alternative\n                                    \"Statistics for Biology\"\n                                        mandatory\n                                            \"Statistics for Business\"\n                                        optional\n                                            \"Robotics Lab\"\n                        optional\n                            \"Optional Elective\"\n                        optional\n                            \"Dissertation Review\"\n\nconstraints\n    \"Robots Lab Course Enrollment Cap\" => 20\n\nfeatures\n    \"Course Selection Rules\"\n        alternative\n            \"100-Level Core Course\"\n            \"500-Level Seminar\"\n            \"Mutual Prequisites\"\n                alternative\n                    \"Advanced AI\"\n                    \"Linear Algebra\"\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n                optional\n                    \"Robotics Lab\"\n                    \"Robotics Lab (Hard Enroll Cap)\"\n                    \"Robotics Lab (Soft Enroll Cap)\"\n                    \"Robotics Lab (Hard Enroll Cap)\"\n\nconstraints\n    \"Elective Course Hard Enrollment Cap\" => 20\n    \"Elective Course Soft Enrollment Cap\" => 20\n\nfeatures\n    \"Module Availability\"\n        alternative\n            \"Thesis Defense Module Available Only To Students Who Have Completed 60 Credits and Passed Their Dissertation Proposal Review\"",
+      "output_raw": "'''uvl\nfeatures\n    \"University Course Registration System\" {abstract}\n        mandatory\n            \"Enrollment Criteria\"\n                alternative\n                    \"12 Credits Required\"\n                        mandatory\n                            \"Minimum 12 Credits\"\n                        optional\n                            \"Core Courses\"\n                                alternative\n                                    \"100-Level Core\"\n                                        mandatory\n                                            \"Covers Intro to AI and Linear Algebra\"\n                                            \"Advanced AI\"\n                            \"Seminar Prerequisites\"\n                            \"Mutually Exclusive Courses\"\n                                alternative\n                                    \"Statistics for Biology\"\n                                        mandatory\n                                            \"Statistics for Business\"\n                                        optional\n                                            \"Robotics Lab\"\n                        optional\n                            \"Optional Elective\"\n                        optional\n                            \"Dissertation Review\"\n\nconstraints\n    \"Robots Lab Course Enrollment Cap\" => 20\n\nfeatures\n    \"Course Selection Rules\"\n        alternative\n            \"100-Level Core Course\"\n            \"500-Level Seminar\"\n            \"Mutual Prequisites\"\n                alternative\n                    \"Advanced AI\"\n                    \"Linear Algebra\"\n                    \"Statistics for Biology\"\n                    \"Statistics for Business\"\n                optional\n                    \"Robotics Lab\"\n                    \"Robotics Lab (Hard Enroll Cap)\"\n                    \"Robotics Lab (Soft Enroll Cap)\"\n                    \"Robotics Lab (Hard Enroll Cap)\"\n\nconstraints\n    \"Elective Course Hard Enrollment Cap\" => 20\n    \"Elective Course Soft Enrollment Cap\" => 20\n\nfeatures\n    \"Module Availability\"\n        alternative\n            \"Thesis Defense Module Available Only To Students Who Have Completed 60 Credits and Passed Their Dissertation Proposal Review\"",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "University Course Registration System",
+        "Enrollment Criteria",
+        "12 Credits Required",
+        "Minimum 12 Credits",
+        "Core Courses",
+        "100-Level Core",
+        "Covers Intro to AI and Linear Algebra",
+        "Advanced AI",
+        "Seminar Prerequisites",
+        "Mutually Exclusive Courses",
+        "Statistics for Biology",
+        "Statistics for Business",
+        "Robotics Lab",
+        "Optional Elective",
+        "Dissertation Review"
+      ],
+      "semantic_similarity": 0.8025336265563965,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 7,
+          "fp": 7,
+          "fn": 7,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "missed": [
+            "Graduate",
+            "IntroToAI",
+            "LinearAlgebra",
+            "Seminar",
+            "Student",
+            "ThesisDefense",
+            "Undergraduate"
+          ],
+          "hallucinated": [
+            "100-Level Core",
+            "12 Credits Required",
+            "Covers Intro to AI and Linear Algebra",
+            "Enrollment Criteria",
+            "Minimum 12 Credits",
+            "Mutually Exclusive Courses",
+            "Seminar Prerequisites"
+          ]
+        },
+        "structure": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n_edges_gen": 2,
+          "n_edges_gt": 6,
+          "group_type_agreement": 0.5,
+          "n_group_compared": 6
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "'''uvl\nfeatures\n    \"PC Configurator Tool\"\n        mandatory\n            \"CPU\"\n                alternative\n                    \"Intel\" | \"AMD\"\n                        alternative\n                            \"LGA 1700\" | \"AM5\"\n                        alternative\n                            \"Z790\"\n        mandatory\n            \"Motherboard Chipset\"\n                alternative\n                    \"Z790\"\n        mandatory\n            \"RAM Type\"\n                alternative\n                    \"DDR4\" | \"DDR5\"\n        mandatory\n            \"GPU\"\n                alternative\n                    \"RTX 4090\" | \"High-end GPU\"\n                        optional\n                            \"Power Supply\" {power {max 850W}}\n                                optional\n                                    \"PSU\" {min 600W}\n                                optional\n                                    \"Air Cooler Height\" {height < 350mm}\n        mandatory\n            \"Case\"\n                alternative\n                    \"ATX\", \"Micro-ATX\"\n\nconstraints\n    \"ATX Case\" => \"LGA 1700\" || \"AM5\" || \"Z790\"\n    \"Micro-ATX Case\" => \"ATX\" || \"Micro-ATX\"\n    \"Large Air Cooler\" => \"Power Supply\" && \"Air Cooler Height\"",
+      "output_raw": "'''uvl\nfeatures\n    \"PC Configurator Tool\"\n        mandatory\n            \"CPU\"\n                alternative\n                    \"Intel\" | \"AMD\"\n                        alternative\n                            \"LGA 1700\" | \"AM5\"\n                        alternative\n                            \"Z790\"\n        mandatory\n            \"Motherboard Chipset\"\n                alternative\n                    \"Z790\"\n        mandatory\n            \"RAM Type\"\n                alternative\n                    \"DDR4\" | \"DDR5\"\n        mandatory\n            \"GPU\"\n                alternative\n                    \"RTX 4090\" | \"High-end GPU\"\n                        optional\n                            \"Power Supply\" {power {max 850W}}\n                                optional\n                                    \"PSU\" {min 600W}\n                                optional\n                                    \"Air Cooler Height\" {height < 350mm}\n        mandatory\n            \"Case\"\n                alternative\n                    \"ATX\", \"Micro-ATX\"\n\nconstraints\n    \"ATX Case\" => \"LGA 1700\" || \"AM5\" || \"Z790\"\n    \"Micro-ATX Case\" => \"ATX\" || \"Micro-ATX\"\n    \"Large Air Cooler\" => \"Power Supply\" && \"Air Cooler Height\"",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "PC Configurator Tool",
+        "CPU",
+        "Intel",
+        "LGA 1700",
+        "Z790",
+        "Motherboard Chipset",
+        "Z790",
+        "RAM Type",
+        "DDR4",
+        "GPU",
+        "RTX 4090",
+        "Power Supply",
+        "PSU",
+        "Air Cooler Height",
+        "Case",
+        "ATX"
+      ],
+      "semantic_similarity": 0.7141993045806885,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 9,
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "f1": 0.6666666666666666,
+          "missed": [
+            "1000W",
+            "650W",
+            "850W",
+            "AM5",
+            "AMD",
+            "DDR5",
+            "MicroATX",
+            "OtherGPU",
+            "RAM"
+          ],
+          "hallucinated": [
+            "Power Supply",
+            "RAM Type",
+            "Z790"
+          ]
+        },
+        "structure": {
+          "tp": 7,
+          "fp": 1,
+          "fn": 3,
+          "precision": 0.875,
+          "recall": 0.7,
+          "f1": 0.7777777777777777,
+          "n_edges_gen": 8,
+          "n_edges_gt": 10,
+          "group_type_agreement": 0.9090909090909091,
+          "n_group_compared": 11
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "features\n    \"CI/CD System\"\n        mandatory\n            \"Deployment Pipelines\"\n                optional\n                    \"Build\" {stage 'Build'}\n                    optional\n                        \"Unit Test\" {stage 'Unit Test'}\n                        mandatory\n                            \"Staging Deployment\"\n                                optional\n                                    \"Staging Pipeline\"\n                                        optional\n                                            \"Optional Strategy\"\n                                                mandatory\n                                                    \"Staging\"\n                                                        optional\n                                                            \"Pipeline Steps\"\n                                                                optional\n                                                                    Build\n                                                                    Unit Test\n                    mandatory\n                        \"Production Deployment\"\n                            optional\n                                \"Staging Deployment\"\n                                    mandatory\n                                        optional\n                                            \"Staging Pipeline\"\n                                                optional\n                                                    \"Pipeline Steps\"\n                                                        optional\n                                                            Build\n                                                        optional\n                                                            Unit Test\n                                mandatory\n                                    optional\n                                        optional\n                                            \"Production Deployment\"\n                                                optional\n                                                    \"Reduction Stage\"\n                                                        mandatory\n                                                            Monitoring\n                                                                optional\n                                                                    Rollback Trigger\n                                                                optional\n                                                                    \"Rollback Trigger\"\n                                                        optional\n                                                            Hotfix Pipeline\n                                                optional\n                                                    optional\n                                                        optional\n                                                            Manual QA Approval\n                                                        optional\n                                                            Security Scan\n\nconstraints\n    \"Production Deployment\" => \"Staging Deployment\"\n    \"Staging Deployment\" => \"Staging Pipeline\"\n    \"Staging Deployment\" => \"Integration Test\"\n    \"Staging Deployment\" => \"Security Scan\"\n    \"Production Deployment\" => \"Production Pipeline\"\n    \"Production Deployment\" => \"Staging Pipeline\"\n    \"Production Deployment\" => \"Rollback Trigger\"\n    \"Production Deployment\" => \"Hotfix Pipeline\"",
+      "output_raw": "'''uvl\nfeatures\n    \"CI/CD System\"\n        mandatory\n            \"Deployment Pipelines\"\n                optional\n                    \"Build\" {stage 'Build'}\n                    optional\n                        \"Unit Test\" {stage 'Unit Test'}\n                        mandatory\n                            \"Staging Deployment\"\n                                optional\n                                    \"Staging Pipeline\"\n                                        optional\n                                            \"Optional Strategy\"\n                                                mandatory\n                                                    \"Staging\"\n                                                        optional\n                                                            \"Pipeline Steps\"\n                                                                optional\n                                                                    Build\n                                                                    Unit Test\n                    mandatory\n                        \"Production Deployment\"\n                            optional\n                                \"Staging Deployment\"\n                                    mandatory\n                                        optional\n                                            \"Staging Pipeline\"\n                                                optional\n                                                    \"Pipeline Steps\"\n                                                        optional\n                                                            Build\n                                                        optional\n                                                            Unit Test\n                                mandatory\n                                    optional\n                                        optional\n                                            \"Production Deployment\"\n                                                optional\n                                                    \"Reduction Stage\"\n                                                        mandatory\n                                                            Monitoring\n                                                                optional\n                                                                    Rollback Trigger\n                                                                optional\n                                                                    \"Rollback Trigger\"\n                                                        optional\n                                                            Hotfix Pipeline\n                                                optional\n                                                    optional\n                                                        optional\n                                                            Manual QA Approval\n                                                        optional\n                                                            Security Scan\n\nconstraints\n    \"Production Deployment\" => \"Staging Deployment\"\n    \"Staging Deployment\" => \"Staging Pipeline\"\n    \"Staging Deployment\" => \"Integration Test\"\n    \"Staging Deployment\" => \"Security Scan\"\n    \"Production Deployment\" => \"Production Pipeline\"\n    \"Production Deployment\" => \"Staging Pipeline\"\n    \"Production Deployment\" => \"Rollback Trigger\"\n    \"Production Deployment\" => \"Hotfix Pipeline\"\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "CI/CD System",
+        "Deployment Pipelines",
+        "Build",
+        "Unit Test",
+        "Staging Deployment",
+        "Staging Pipeline",
+        "Optional Strategy",
+        "Staging",
+        "Pipeline Steps",
+        "Build",
+        "Unit",
+        "Production Deployment",
+        "Staging Deployment",
+        "Staging Pipeline",
+        "Pipeline Steps",
+        "Build",
+        "Unit",
+        "Production Deployment",
+        "Reduction Stage",
+        "Monitoring",
+        "Rollback",
+        "Rollback Trigger",
+        "Hotfix",
+        "Manual",
+        "Security"
+      ],
+      "semantic_similarity": 0.7959995865821838,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 10,
+          "fp": 7,
+          "fn": 4,
+          "precision": 0.5882352941176471,
+          "recall": 0.7142857142857143,
+          "f1": 0.6451612903225806,
+          "missed": [
+            "BlueGreen",
+            "Canary",
+            "IntegrationTest",
+            "ManualQAApproval"
+          ],
+          "hallucinated": [
+            "Hotfix",
+            "Manual",
+            "Pipeline Steps",
+            "Reduction Stage",
+            "Rollback Trigger",
+            "Staging",
+            "Unit"
+          ]
+        },
+        "structure": {
+          "tp": 0,
+          "fp": 10,
+          "fn": 9,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n_edges_gen": 10,
+          "n_edges_gt": 9,
+          "group_type_agreement": 0.5555555555555556,
+          "n_group_compared": 9
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "features\n    SmartHomeAutomationSystem {abstract}\n        mandatory\n            Rule {abstract}\n                mandatory\n                    Trigger {abstract}\n                        mandatory\n                            OptionalConditions {abstract}\n                                mandatory\n                                    Action {abstract}\n                                        alternative\n                                            MovieMode {abstract}\n                                                mandatory\n                                                    Priority {abstract}\n                                                        alternative\n                                                            BlockMorning {abstract}\n                                                                mandatory\n                                                                    Scenes {abstract} {abstract}\n                                                                        optional\n                                                                            Morning {abstract}\n                                                                                optional\n                                                                                    SetsLightsTo {abstract} {lights_to_10%}\n                                                                                     optional\n                                                                                                                                                       100%\n                                                                                optional\n                                                                                    BlocksRunning {abstract}\n                                                                                            mandatory\n                                                                                                'Morning'\n                                                                                         optional\n                                                                                                                                                           Running\n                                                                                                                                                          mandatory\n                                                                                                                                                              True\n                                                                                                                                                             optional\n                                                                                                                                                                 False\n                                                                                                                                                                     mandatory\n                                                                                                                                                                         'SmartOven'\n                                                                                                                                                                             mandatory\n                                                                                                                                                                                 disableIf {abstract} 'HomeStatus' {abstract}\n                                                                                                                                                                                     optional\n                                                                                                                                                                                         'Away'\n                                                                                                                                                                                             mandatory\n                                                                                                                                                                                                 '\n                                                                                         mandatory\n                                                                                                                                                             WindowSensorReports {abstract} {open {abstract}}\n                                                                                                                                                                   mandatory\n                                                                                                                                                                       WindowSensorReported {abstract} {open {abstract}}\n                                                                                                                                                                                   mandatory\n                                                                                                                                                                                       Open {abstract}\n                                                                                                                                                                                           optional\n                                                                                                                                                                                               Closed {abstract}\n                                                                                                                                                                                                   mandatory\n                                                                                                                                                                                                     WindowsClosed {abstract}\n                                                                                                                                                                                                         mandatory\n                                                                                                                                                                                                             5MinutesAfterAllWindowsClosed\n                                                                                                                                                                                                          optional\n                                                                                                                                                                                                              ReEnables5MinutesAfterAllWindowsClosed {abstract}\n                                                                                                                                                                                                        \n        mandatory\n            SafetyConstraints {abstract}\n                mandatory\n                    Constraint {abstract}\n                        mandatory\n                            DisableIf {abstract} 'SmartOven'\n                                                                                   optional\n                                                                                       Mandatory {abstract} AirConditioner\n                                                                                           optional\n                                                                                               DynamicDisable {abstract} IfAnyWindowSensorReports {abstract} And {abstract} OnlyReenables5MinutesAfterAllWindowsClosed\n                                                                                                                     optional\n                                                                                                                         5MinutesAfterAllWindowsClosed\n                                                                                                                             optional\n                                                                                                                                                                                              ReEnables5MinutesAfterAllWindowsClosed {abstract}",
+      "output_raw": "'''uvl\nfeatures\n    SmartHomeAutomationSystem {abstract}\n        mandatory\n            Rule {abstract}\n                mandatory\n                    Trigger {abstract}\n                        mandatory\n                            OptionalConditions {abstract}\n                                mandatory\n                                    Action {abstract}\n                                        alternative\n                                            MovieMode {abstract}\n                                                mandatory\n                                                    Priority {abstract}\n                                                        alternative\n                                                            BlockMorning {abstract}\n                                                                mandatory\n                                                                    Scenes {abstract} {abstract}\n                                                                        optional\n                                                                            Morning {abstract}\n                                                                                optional\n                                                                                    SetsLightsTo {abstract} {lights_to_10%}\n                                                                                     optional\n                                                                                                                                                       100%\n                                                                                optional\n                                                                                    BlocksRunning {abstract}\n                                                                                            mandatory\n                                                                                                'Morning'\n                                                                                         optional\n                                                                                                                                                           Running\n                                                                                                                                                          mandatory\n                                                                                                                                                              True\n                                                                                                                                                             optional\n                                                                                                                                                                 False\n                                                                                                                                                                     mandatory\n                                                                                                                                                                         'SmartOven'\n                                                                                                                                                                             mandatory\n                                                                                                                                                                                 disableIf {abstract} 'HomeStatus' {abstract}\n                                                                                                                                                                                     optional\n                                                                                                                                                                                         'Away'\n                                                                                                                                                                                             mandatory\n                                                                                                                                                                                                 '\n                                                                                         mandatory\n                                                                                                                                                             WindowSensorReports {abstract} {open {abstract}}\n                                                                                                                                                                   mandatory\n                                                                                                                                                                       WindowSensorReported {abstract} {open {abstract}}\n                                                                                                                                                                                   mandatory\n                                                                                                                                                                                       Open {abstract}\n                                                                                                                                                                                           optional\n                                                                                                                                                                                               Closed {abstract}\n                                                                                                                                                                                                   mandatory\n                                                                                                                                                                                                     WindowsClosed {abstract}\n                                                                                                                                                                                                         mandatory\n                                                                                                                                                                                                             5MinutesAfterAllWindowsClosed\n                                                                                                                                                                                                          optional\n                                                                                                                                                                                                              ReEnables5MinutesAfterAllWindowsClosed {abstract}\n                                                                                                                                                                                                        \n        mandatory\n            SafetyConstraints {abstract}\n                mandatory\n                    Constraint {abstract}\n                        mandatory\n                            DisableIf {abstract} 'SmartOven'\n                                                                                   optional\n                                                                                       Mandatory {abstract} AirConditioner\n                                                                                           optional\n                                                                                               DynamicDisable {abstract} IfAnyWindowSensorReports {abstract} And {abstract} OnlyReenables5MinutesAfterAllWindowsClosed\n                                                                                                                     optional\n                                                                                                                         5MinutesAfterAllWindowsClosed\n                                                                                                                             optional\n                                                                                                                                                                                              ReEnables5MinutesAfterAllWindowsClosed {abstract}\n\n'''",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "SmartHomeAutomationSystem",
+        "Rule",
+        "Trigger",
+        "OptionalConditions",
+        "Action",
+        "MovieMode",
+        "Priority",
+        "BlockMorning",
+        "Scenes",
+        "Morning",
+        "SetsLightsTo",
+        "100%",
+        "BlocksRunning",
+        "'Morning'",
+        "Running",
+        "'SmartOven'",
+        "disableIf",
+        "'Away'",
+        "'",
+        "WindowSensorReports",
+        "WindowSensorReported",
+        "Open",
+        "Closed",
+        "WindowsClosed",
+        "5MinutesAfterAllWindowsClosed",
+        "ReEnables5MinutesAfterAllWindowsClosed",
+        "SafetyConstraints",
+        "Constraint",
+        "DisableIf",
+        "DynamicDisable",
+        "5MinutesAfterAllWindowsClosed",
+        "ReEnables5MinutesAfterAllWindowsClosed"
+      ],
+      "semantic_similarity": 0.6741693019866943,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 12,
+          "fp": 20,
+          "fn": 2,
+          "precision": 0.375,
+          "recall": 0.8571428571428571,
+          "f1": 0.5217391304347825,
+          "missed": [
+            "Home",
+            "HomeStatus"
+          ],
+          "hallucinated": [
+            "'",
+            "'Morning'",
+            "100%",
+            "5MinutesAfterAllWindowsClosed",
+            "BlockMorning",
+            "BlocksRunning",
+            "Closed",
+            "DisableIf",
+            "DynamicDisable",
+            "False",
+            "Open",
+            "ReEnables5MinutesAfterAllWindowsClosed",
+            "Running",
+            "SafetyConstraints",
+            "Scenes",
+            "SetsLightsTo",
+            "True",
+            "WindowSensorReported",
+            "WindowsClosed",
+            "disableIf"
+          ]
+        },
+        "structure": {
+          "tp": 2,
+          "fp": 4,
+          "fn": 8,
+          "precision": 0.3333333333333333,
+          "recall": 0.2,
+          "f1": 0.25,
+          "n_edges_gen": 6,
+          "n_edges_gt": 10,
+          "group_type_agreement": 0.36363636363636365,
+          "n_group_compared": 11
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    }
+  ]
+}

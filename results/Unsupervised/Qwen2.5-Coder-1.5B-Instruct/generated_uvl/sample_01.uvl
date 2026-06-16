@@ -1,0 +1,28 @@
+```json
+{
+  "securityTeam": {
+    "requiredMembers": [
+      {
+        "name": "securityArchitect",
+        "functionality": "security"
+      },
+      {
+        "name": "securityEngineer",
+        "functionality": "security"
+      }
+    ],
+    "constraints": {
+      "mustBeUnique": true,
+      "exclusionRules": [
+        {
+          "members": ["securityArchitect", "securityEngineer"]
+        }
+      ]
+    }
+  },
+  "additionalRoles": {
+    "manager": {},
+    "scrumMaster": {}
+  }
+}
+```

@@ -1,0 +1,38 @@
+```plaintext
+class Factory:
+    def __init__(self):
+        self.logistic_system = True
+        self.packaging_station = True
+
+    def add_normal_chocolate_production(self):
+        self.add_melting_station()
+        self.add_mixing_station()
+        self.add_cooling_station()
+
+    def add_nut_chocolate_production(self):
+        self.add_normal_chocolate_production()
+        self.add_baking_station()
+
+    def add_melting_station(self):
+        pass
+
+    def add_mixing_station(self):
+        pass
+
+    def add_cooling_station(self):
+        pass
+
+    def add_baking_station(self):
+        pass
+```
+
+Explanation:
+1. The class `Factory` represents the factory.
+2. It has attributes `logistic_system` (a boolean indicating if the logistic system is available) and `packaging_station` (a boolean indicating if the packaging station is available).
+3. The methods are defined as follows:
+
+   - `add_normal_chocolate_production`: This method adds the necessary stations for normal chocolate production (melting, mixing, cooling). After calling this method, it will have added the logistic system and packaging station.
+   
+   - `add_nut_chocolate_production`: This method adds the necessary stations for nut-chocolate production by adding all stations for normal chocolate plus an additional baking station. After calling this method, it will have added the logistic system and packaging station.
+
+   - `add_melting_station`, `add_mixing_station`, `add_cooling_station`, `add_baking_station`: These methods do nothing because they are placeholders for any specific implementation details related to these stations.

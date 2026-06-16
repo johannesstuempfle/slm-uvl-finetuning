@@ -1,0 +1,219 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.0,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 0,
+    "failed": 12,
+    "mean_feature_f1": 0.0,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.0
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "Here is the translation into Uvl-Code based on the provided text:\n\n```uvl-code\nVehicle {\n  Engine {\n    Type = Diesel\n    Type = Gasoline\n    Type = Electric\n  }\n  Optional_Assistance_Systems {\n    Lane_Assist\n    ESP\n  }\n  Colors {\n    // List of colors\n  }\n}\n```\n\nPlease note that in Uvl-Code, lists need to be explicitly defined, and placeholders are used for missing information (like the list of colors).",
+      "output_raw": "Here is the translation into Uvl-Code based on the provided text:\n\n```uvl-code\nVehicle {\n  Engine {\n    Type = Diesel\n    Type = Gasoline\n    Type = Electric\n  }\n  Optional_Assistance_Systems {\n    Lane_Assist\n    ESP\n  }\n  Colors {\n    // List of colors\n  }\n}\n```\n\nPlease note that in Uvl-Code, lists need to be explicitly defined, and placeholders are used for missing information (like the list of colors).",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "In uvl-code, the provided sentence can be translated as follows:\n\n```uvl-code\nteam-requirements {\n    requires {\n        security-architect,\n        security-engineer\n    }\n    excludes {\n        security-architect,\n        security-engineer\n    }\n    includes {\n        manager,\n        scrum-master\n    }\n}\n```\n\nThis translation adheres to the structure of uvl-code, ensuring that the roles are correctly specified and their relationships (exclusion and inclusion) are accurately represented.",
+      "output_raw": "In uvl-code, the provided sentence can be translated as follows:\n\n```uvl-code\nteam-requirements {\n    requires {\n        security-architect,\n        security-engineer\n    }\n    excludes {\n        security-architect,\n        security-engineer\n    }\n    includes {\n        manager,\n        scrum-master\n    }\n}\n```\n\nThis translation adheres to the structure of uvl-code, ensuring that the roles are correctly specified and their relationships (exclusion and inclusion) are accurately represented.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "In UVL-Code, the given English sentence can be translated as follows:\n\n```\nA COMPUTER has INSTALLED a TEXT_EDITING_PROGRAMM (MS_Word, Pages__etc.) AND a CELL_CALCULATION_TOOL (MS_Excel, Numbers__etc.)\n```\n\nPlease note that UVL-Code (Unified Vocabulary Language) is not a standard coding or programming language. It's more of a structured representation of information where each word or concept is represented by its corresponding code. However, in this context, I've provided a close approximation to represent the structure and content of the original sentence.",
+      "output_raw": "In UVL-Code, the given English sentence can be translated as follows:\n\n```\nA COMPUTER has INSTALLED a TEXT_EDITING_PROGRAMM (MS_Word, Pages__etc.) AND a CELL_CALCULATION_TOOL (MS_Excel, Numbers__etc.)\n```\n\nPlease note that UVL-Code (Unified Vocabulary Language) is not a standard coding or programming language. It's more of a structured representation of information where each word or concept is represented by its corresponding code. However, in this context, I've provided a close approximation to represent the structure and content of the original sentence.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "Here is the translation of the provided text into a hypothetical Uvl-Code format, considering the correct syntax:\n\n```uvl-code\nstore {\n    products = [\n        {name = \"Coffee\", category = \"Drinks\"},\n        {name = \"Tea\", category = \"Drinks\"},\n        {name = \"Croissant\", category = \"Foods\"},\n        {name = \"Bagel\", category = \"Foods\"}\n    ];\n    payment_options = [\"Card\", \"Cash\"];\n}\n```\n\nThis structure adheres to the specified requirements and maintains the original meaning of the provided text.",
+      "output_raw": "Here is the translation of the provided text into a hypothetical Uvl-Code format, considering the correct syntax:\n\n```uvl-code\nstore {\n    products = [\n        {name = \"Coffee\", category = \"Drinks\"},\n        {name = \"Tea\", category = \"Drinks\"},\n        {name = \"Croissant\", category = \"Foods\"},\n        {name = \"Bagel\", category = \"Foods\"}\n    ];\n    payment_options = [\"Card\", \"Cash\"];\n}\n```\n\nThis structure adheres to the specified requirements and maintains the original meaning of the provided text.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "Here is the translation into Uvl-Code based on the provided text:\n\n```uvl-code\nBicycle { \n    Groupset { Manufacturer = \"SRAM\" || \"Shimano\" } \n    Parts { \n        ForGravel = {\n            Tyres { Width = \"Wide\" ; Profile = \"Some\" }\n        }\n        ForRoad = {\n            Tyres { Width = \"Slim\" ; Profile = \"None\" }\n        }\n    }\n    Handlebar { \n        DropBar { }\n        Mountain { \n            Handlebar = \"Flat\"\n            Tyres { Width = \"Extra Wide\" ; Profile = \"Deep\" }\n        }\n    }\n    Option { FitTyres = \"Slim\" onto Gravel }\n}\n```\n\nThis Uvl-Code maintains the structure and meaning of the original text while adhering to the correct syntax for Uvl-Code.",
+      "output_raw": "Here is the translation into Uvl-Code based on the provided text:\n\n```uvl-code\nBicycle { \n    Groupset { Manufacturer = \"SRAM\" || \"Shimano\" } \n    Parts { \n        ForGravel = {\n            Tyres { Width = \"Wide\" ; Profile = \"Some\" }\n        }\n        ForRoad = {\n            Tyres { Width = \"Slim\" ; Profile = \"None\" }\n        }\n    }\n    Handlebar { \n        DropBar { }\n        Mountain { \n            Handlebar = \"Flat\"\n            Tyres { Width = \"Extra Wide\" ; Profile = \"Deep\" }\n        }\n    }\n    Option { FitTyres = \"Slim\" onto Gravel }\n}\n```\n\nThis Uvl-Code maintains the structure and meaning of the original text while adhering to the correct syntax for Uvl-Code.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "Here is the translation in UGLY Code (uVL-Code) format based on the provided text:\n\n```uVL\nfactory{\n    producLine{\n        type choclate{\n            meltStation;\n            mixStation;\n            coolStation;\n        }\n        type nutChoclate{\n            choclate{meltStation; mixStation; coolStation};\n            bakeStation;\n        }\n    }\n    require{\n        logisticSystem;\n        packStation;\n    }\n}\n```\n\nPlease note that UGLY Code (uVL-Code) is a humorous and informal way to represent code, and it doesn't follow actual programming syntax or conventions. The provided translation maintains the structure and meaning of the original text while adhering to the style of UGLY Code.",
+      "output_raw": "Here is the translation in UGLY Code (uVL-Code) format based on the provided text:\n\n```uVL\nfactory{\n    producLine{\n        type choclate{\n            meltStation;\n            mixStation;\n            coolStation;\n        }\n        type nutChoclate{\n            choclate{meltStation; mixStation; coolStation};\n            bakeStation;\n        }\n    }\n    require{\n        logisticSystem;\n        packStation;\n    }\n}\n```\n\nPlease note that UGLY Code (uVL-Code) is a humorous and informal way to represent code, and it doesn't follow actual programming syntax or conventions. The provided translation maintains the structure and meaning of the original text while adhering to the style of UGLY Code.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "```uvl-code\ncalculator {\n    inputs = [\n        \"netto_price\",\n        \"sum_of_products\",\n        \"buyer_location\",\n        \"seller_location\"\n    ];\n    \n    outputs = [\n        \"tax_per_product\",\n        \"brutto_price\",\n        \"tax_rate\",\n        \"calculated_base_price\",\n        \"calculation_rule\"\n    ];\n}\n```",
+      "output_raw": "```uvl-code\ncalculator {\n    inputs = [\n        \"netto_price\",\n        \"sum_of_products\",\n        \"buyer_location\",\n        \"seller_location\"\n    ];\n    \n    outputs = [\n        \"tax_per_product\",\n        \"brutto_price\",\n        \"tax_rate\",\n        \"calculated_base_price\",\n        \"calculation_rule\"\n    ];\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "```uvl-code\nclass Room {\n    attribute numberOfBeds : Integer;\n    attribute view : String;\n    attribute size : Double;\n    attribute spaArea : Boolean;\n    attribute bestViewOption : Boolean;\n\n    method isBestViewOptionAvailable() : Boolean {\n        return (numberOfBeds == 2) && bestViewOption;\n    }\n}\n\nclass Booking {\n    attribute startDate : Date;\n    attribute endDate : Date;\n    attribute optionalFees : List<Double>;\n    attribute optionalBookings : List<Room>;\n}\n```\n\nThis UVL code represents the described system with classes `Room` and `Booking`. The `Room` class includes attributes for basic and optional features, and a method to check if the `bestViewOption` is available for a specific type of room. The `Booking` class includes attributes for dates and optional fees and bookings.",
+      "output_raw": "```uvl-code\nclass Room {\n    attribute numberOfBeds : Integer;\n    attribute view : String;\n    attribute size : Double;\n    attribute spaArea : Boolean;\n    attribute bestViewOption : Boolean;\n\n    method isBestViewOptionAvailable() : Boolean {\n        return (numberOfBeds == 2) && bestViewOption;\n    }\n}\n\nclass Booking {\n    attribute startDate : Date;\n    attribute endDate : Date;\n    attribute optionalFees : List<Double>;\n    attribute optionalBookings : List<Room>;\n}\n```\n\nThis UVL code represents the described system with classes `Room` and `Booking`. The `Room` class includes attributes for basic and optional features, and a method to check if the `bestViewOption` is available for a specific type of room. The `Booking` class includes attributes for dates and optional fees and bookings.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "```uvl-code\nmodule UniversityCourseRegistrationSystem {\n    property MinimumCredits : 12;\n\n    class Student {\n        attribute Credits : integer;\n        attribute CourseSelection : list<Course>;\n    }\n\n    class Course {\n        attribute Level : string;\n        attribute Prerequisites : list<Course>;\n        attribute MutualExclusions : list<Course>;\n        attribute EnrollmentCap : integer?;\n    }\n\n    class CoreCourse extends Course {\n        attribute Level : \"100\";\n        attribute CourseName : \"100-Level Core Course\";\n    }\n\n    class Seminar extends Course {\n        attribute Level : \"500\";\n        attribute CourseName : \"Seminar\";\n    }\n\n    class AdvancedAI extends Course {\n        attribute Prerequisites : list<CoreCourse>;\n        attribute CourseName : \"Advanced AI\";\n    }\n\n    class IntroToAI extends CoreCourse {\n        attribute CourseName : \"Intro to AI\";\n    }\n\n    class LinearAlgebra extends CoreCourse {\n        attribute CourseName : \"Linear Algebra\";\n    }\n\n    class StatisticsForBiology extends Course {\n        attribute MutualExclusions : list<StatisticsForBusiness>;\n        attribute CourseName : \"Statistics for Biology\";\n    }\n\n    class StatisticsForBusiness extends Course {\n        attribute CourseName : \"Statistics for Business\";\n    }\n\n    class RoboticsLab extends Course {\n        attribute EnrollmentCap : 20;\n        attribute CourseName : \"Robotics Lab\";\n    }\n\n    class ThesisDefense extends Module {\n        attribute Requirement : \"Completed 60 Credits & Passed Dissertation Proposal Review\";\n        attribute ModuleName : \"Thesis Defense\";\n    }\n}\n```\n\nThis UVL (Unified Visual Language) code represents the structure of a university course registration system, including students, courses, prerequisites, mutual exclusions, and other constraints as described in your text.",
+      "output_raw": "```uvl-code\nmodule UniversityCourseRegistrationSystem {\n    property MinimumCredits : 12;\n\n    class Student {\n        attribute Credits : integer;\n        attribute CourseSelection : list<Course>;\n    }\n\n    class Course {\n        attribute Level : string;\n        attribute Prerequisites : list<Course>;\n        attribute MutualExclusions : list<Course>;\n        attribute EnrollmentCap : integer?;\n    }\n\n    class CoreCourse extends Course {\n        attribute Level : \"100\";\n        attribute CourseName : \"100-Level Core Course\";\n    }\n\n    class Seminar extends Course {\n        attribute Level : \"500\";\n        attribute CourseName : \"Seminar\";\n    }\n\n    class AdvancedAI extends Course {\n        attribute Prerequisites : list<CoreCourse>;\n        attribute CourseName : \"Advanced AI\";\n    }\n\n    class IntroToAI extends CoreCourse {\n        attribute CourseName : \"Intro to AI\";\n    }\n\n    class LinearAlgebra extends CoreCourse {\n        attribute CourseName : \"Linear Algebra\";\n    }\n\n    class StatisticsForBiology extends Course {\n        attribute MutualExclusions : list<StatisticsForBusiness>;\n        attribute CourseName : \"Statistics for Biology\";\n    }\n\n    class StatisticsForBusiness extends Course {\n        attribute CourseName : \"Statistics for Business\";\n    }\n\n    class RoboticsLab extends Course {\n        attribute EnrollmentCap : 20;\n        attribute CourseName : \"Robotics Lab\";\n    }\n\n    class ThesisDefense extends Module {\n        attribute Requirement : \"Completed 60 Credits & Passed Dissertation Proposal Review\";\n        attribute ModuleName : \"Thesis Defense\";\n    }\n}\n```\n\nThis UVL (Unified Visual Language) code represents the structure of a university course registration system, including students, courses, prerequisites, mutual exclusions, and other constraints as described in your text.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "```uvl-code\nConfigureTool {\n    UserGuide {\n        Step {\n            Action = \"Choose CPU\"\n            Choices = { \"Intel\", \"AMD\" }\n            NextStep = {\n                Action = \"Select Motherboard Socket\"\n                Choices = {\n                    \"LGA 1700\",\n                    \"AM5\"\n                }\n            }\n        }\n        Step {\n            Action = \"Choose Motherboard Chipset\"\n            Choices = { \"Z790\" }\n            NextStep = {\n                Action = \"Select Supported RAM Type\"\n                Choices = { \"DDR4\", \"DDR5\" }\n            }\n        }\n        Step {\n            Action = \"Select High-End GPU\"\n            Choices = { \"RTX 4090\" }\n            NextStep = {\n                Action = \"Choose PSU\"\n                Choices = {\n                    \"850W or higher\"\n                }\n            }\n        }\n        Step {\n            Action = \"Check GPU Physical Length\"\n            Constraints = {\n                \"Compatible with case's max GPU clearance\"\n            }\n        }\n        Step {\n            Action = \"Select Case Form Factor\"\n            Choices = { \"ATX\", \"Micro-ATX\" }\n            NextStep = {\n                Action = \"Select Air Cooler\"\n                Constraints = {\n                    \"Height < Case's CPU Cooler Clearance\"\n                }\n            }\n        }\n    }\n}\n```",
+      "output_raw": "```uvl-code\nConfigureTool {\n    UserGuide {\n        Step {\n            Action = \"Choose CPU\"\n            Choices = { \"Intel\", \"AMD\" }\n            NextStep = {\n                Action = \"Select Motherboard Socket\"\n                Choices = {\n                    \"LGA 1700\",\n                    \"AM5\"\n                }\n            }\n        }\n        Step {\n            Action = \"Choose Motherboard Chipset\"\n            Choices = { \"Z790\" }\n            NextStep = {\n                Action = \"Select Supported RAM Type\"\n                Choices = { \"DDR4\", \"DDR5\" }\n            }\n        }\n        Step {\n            Action = \"Select High-End GPU\"\n            Choices = { \"RTX 4090\" }\n            NextStep = {\n                Action = \"Choose PSU\"\n                Choices = {\n                    \"850W or higher\"\n                }\n            }\n        }\n        Step {\n            Action = \"Check GPU Physical Length\"\n            Constraints = {\n                \"Compatible with case's max GPU clearance\"\n            }\n        }\n        Step {\n            Action = \"Select Case Form Factor\"\n            Choices = { \"ATX\", \"Micro-ATX\" }\n            NextStep = {\n                Action = \"Select Air Cooler\"\n                Constraints = {\n                    \"Height < Case's CPU Cooler Clearance\"\n                }\n            }\n        }\n    }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "Here is the translation of your text into Uvl-Code format based on the provided instructions:\n\n```uvl-code\nSystem CI/CD {\n    Pipeline {\n        Build {\n            Mandatory\n        }\n        UnitTest {\n            Mandatory\n        }\n    }\n\n    DeploymentPipeline {\n        Staging {\n            MandatoryAfter {\n                UnitTest\n            }\n        }\n        Production {\n            MandatoryAfter {\n                Staging\n            }\n            MandatoryIfAllPass {\n                IntegrationTest\n                SecurityScan\n            }\n        }\n\n        Strategy {\n            Canary {\n                Monitoring {\n                    RollbackTrigger\n                }\n            }\n            BlueGreen {\n                RequiresDoubleInfrastructureResources\n            }\n        }\n\n        HotfixPipeline {\n            Bypasses {\n                Staging\n                IntegrationTest\n            }\n            Requires {\n                ManualQAApproval\n            }\n            MandatoryIfAllPass {\n                SecurityScan\n            }\n        }\n    }\n}\n```\n\nPlease note that Uvl-Code is not a standard programming language but rather a conceptual framework for describing systems. The above translation aims to capture the logic and relationships described in your original text in a structured format.",
+      "output_raw": "Here is the translation of your text into Uvl-Code format based on the provided instructions:\n\n```uvl-code\nSystem CI/CD {\n    Pipeline {\n        Build {\n            Mandatory\n        }\n        UnitTest {\n            Mandatory\n        }\n    }\n\n    DeploymentPipeline {\n        Staging {\n            MandatoryAfter {\n                UnitTest\n            }\n        }\n        Production {\n            MandatoryAfter {\n                Staging\n            }\n            MandatoryIfAllPass {\n                IntegrationTest\n                SecurityScan\n            }\n        }\n\n        Strategy {\n            Canary {\n                Monitoring {\n                    RollbackTrigger\n                }\n            }\n            BlueGreen {\n                RequiresDoubleInfrastructureResources\n            }\n        }\n\n        HotfixPipeline {\n            Bypasses {\n                Staging\n                IntegrationTest\n            }\n            Requires {\n                ManualQAApproval\n            }\n            MandatoryIfAllPass {\n                SecurityScan\n            }\n        }\n    }\n}\n```\n\nPlease note that Uvl-Code is not a standard programming language but rather a conceptual framework for describing systems. The above translation aims to capture the logic and relationships described in your original text in a structured format.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "```uvlang\nscene Movie_Mode {\n    set light_level to 10%\n}\n\nscene Morning {\n    set light_level to 100%\n    conflict with Movie_Mode\n}\n\naction Smart_Oven {\n    condition Home_Status == \"Away\"\n    disable\n}\n\naction Air_Conditioner {\n    condition any Window_Sensor == \"Open\"\n    disable\n    delay 5 minutes\n    condition all Window_Sensor == \"Closed\"\n    enable\n}\n```\n\nPlease note that `uvlang` is a fictional language for the purpose of this translation. In actual UML or State Machine modeling languages, such logic would be represented differently.",
+      "output_raw": "```uvlang\nscene Movie_Mode {\n    set light_level to 10%\n}\n\nscene Morning {\n    set light_level to 100%\n    conflict with Movie_Mode\n}\n\naction Smart_Oven {\n    condition Home_Status == \"Away\"\n    disable\n}\n\naction Air_Conditioner {\n    condition any Window_Sensor == \"Open\"\n    disable\n    delay 5 minutes\n    condition all Window_Sensor == \"Closed\"\n    enable\n}\n```\n\nPlease note that `uvlang` is a fictional language for the purpose of this translation. In actual UML or State Machine modeling languages, such logic would be represented differently.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

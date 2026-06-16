@@ -1,0 +1,144 @@
+```uvl
+// This is a simplified UVL representation.  A full UVL would be more detailed.
+
+// Define a type for the input parameters
+type Product
+    mandatory
+        NettoPrice
+        SumOfProducts
+        Location
+    optional
+        Seller
+        Rules
+constraints
+    // The calculator's calculation logic is defined here.
+    NettoPrice == SumOfProducts + Location
+    SumOfProducts == Location
+    Location == Seller
+    SumOfProducts == Location
+    NettoPrice == SumOfProducts * 1.0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts == 0
+    Location == Seller
+    SumOfProducts == 0
+    NettoPrice == 0
+    SumOfProducts ==

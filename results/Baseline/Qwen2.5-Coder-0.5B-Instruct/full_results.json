@@ -1,0 +1,219 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.0,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 0,
+    "failed": 12,
+    "mean_feature_f1": 0.0,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.0
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "Cara sempre tem um motor que pode ser diesel, g\u00e1solina ou el\u00e9trico. Tamb\u00e9m tem algumas sistemas de auxiliar adicionais como assistente da parada ou ESP. H\u00e1 tamb\u00e9m cores diferentes para o carro.",
+      "output_raw": "Cara sempre tem um motor que pode ser diesel, g\u00e1solina ou el\u00e9trico. Tamb\u00e9m tem algumas sistemas de auxiliar adicionais como assistente da parada ou ESP. H\u00e1 tamb\u00e9m cores diferentes para o carro.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "Kontrolla\u010dna sekcija treba se razvijati i skrivanja. Ovo se ne mo\u017ee se podobno koristiti kao jedan osoba. Team ima \u010dlanaka i razvojsko korisnik.",
+      "output_raw": "Kontrolla\u010dna sekcija treba se razvijati i skrivanja. Ovo se ne mo\u017ee se podobno koristiti kao jedan osoba. Team ima \u010dlanaka i razvojsko korisnik.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "A komputer installuje edytory tekstu (MS Word, Pages etc.) i narz\u0119dzia do wykonywania kalkulatora (MS Excel, Numbers etc.).",
+      "output_raw": "A komputer installuje edytory tekstu (MS Word, Pages etc.) i narz\u0119dzia do wykonywania kalkulatora (MS Excel, Numbers etc.).",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "A caf\u00e9 shop sells different drinks (Coffee, Tea, etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output_raw": "A caf\u00e9 shop sells different drinks (Coffee, Tea, etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "\u00dcl-Kode:\n\nA biletikte bir grupset (\u00dcl-Kodunuz SRAM veya Shimano) ve di\u011fer belirli kullan\u0131mlar i\u00e7in farkl\u0131 kullan\u0131labilir. Gravel biletikte geni\u015f t\u00fcrler ve baz\u0131 profiye sahiptir. Road biletikte slim t\u00fcrler ve hi\u00e7bir profiye sahiptir. Both biletikte drop bar handlebar ve mountain biletikte flat handlebar i\u00e7erir. Ayr\u0131ca, genel olarak grubsette slim t\u00fcrlerle sahiptir.",
+      "output_raw": "\u00dcl-Kode:\n\nA biletikte bir grupset (\u00dcl-Kodunuz SRAM veya Shimano) ve di\u011fer belirli kullan\u0131mlar i\u00e7in farkl\u0131 kullan\u0131labilir. Gravel biletikte geni\u015f t\u00fcrler ve baz\u0131 profiye sahiptir. Road biletikte slim t\u00fcrler ve hi\u00e7bir profiye sahiptir. Both biletikte drop bar handlebar ve mountain biletikte flat handlebar i\u00e7erir. Ayr\u0131ca, genel olarak grubsette slim t\u00fcrlerle sahiptir.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "Uval-Code translation:\n\"A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing-, and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for normal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station. \"\nThis translation maintains the original meaning while adhering to Uval-Code syntax rules.",
+      "output_raw": "Uval-Code translation:\n\"A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing-, and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for normal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station. \"\nThis translation maintains the original meaning while adhering to Uval-Code syntax rules.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "Vl-Code translation:\n\n\"Ch\u00e1ta\u010dka v\u00fddaje v z\u00e1sobn\u00edm softwaru m\u016f\u017ee vykonovat n\u00e1sleduj\u00edc\u00ed vstavy: netto cen, sou\u010det produkt\u016f a adresu kup\u011bce a soubor\u016f dorozd\u011blen\u00e9ho. V\u00fdsledek by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo",
+      "output_raw": "Vl-Code translation:\n\n\"Ch\u00e1ta\u010dka v\u00fddaje v z\u00e1sobn\u00edm softwaru m\u016f\u017ee vykonovat n\u00e1sleduj\u00edc\u00ed vstavy: netto cen, sou\u010det produkt\u016f a adresu kup\u011bce a soubor\u016f dorozd\u011blen\u00e9ho. V\u00fdsledek by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo b\u00fdt vypisovan v n\u00e1sleduj\u00edc\u00edch vstav\u00e1ch: v\u00fddaj pro jednoho produktu, brutto cen a rozhodn\u00fd krok. Pokud se vykonov\u00e1 v\u00fddaj pro jednoho produktu, by m\u011blo",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Evet, en enhanced hotel booking service, die verschiedene Zimmer in einem Hotel verwalten. Eine Zimmer hat verschiedene grundlegende Features wie Anzahl der B\u00e4ume, View und Gr\u00f6\u00dfe. Es gibt auch optionaler Features wie Personal Spa Area oder Best-View Option. Ein Best-View Option ist nur verf\u00fcgbar f\u00fcr zwei-Bedr\u00e4men. Die Verwaltungssystem hat auch die Beziehungen zwischen den Bookings.\u6bcf\u4e2a Bookings enth\u00e4lt den Start und Enddatum und optionalen Fehlers und Bookings.",
+      "output_raw": "Evet, en enhanced hotel booking service, die verschiedene Zimmer in einem Hotel verwalten. Eine Zimmer hat verschiedene grundlegende Features wie Anzahl der B\u00e4ume, View und Gr\u00f6\u00dfe. Es gibt auch optionaler Features wie Personal Spa Area oder Best-View Option. Ein Best-View Option ist nur verf\u00fcgbar f\u00fcr zwei-Bedr\u00e4men. Die Verwaltungssystem hat auch die Beziehungen zwischen den Bookings.\u6bcf\u4e2a Bookings enth\u00e4lt den Start und Enddatum und optionalen Fehlers und Bookings.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "A universitet kursregistrationsystem bezeichnet einen Studiengangssystem, der Studenten f\u00fcr mindestens 12Kurse registrieren m\u00fcssen. Unternehmensstudenten m\u00fcssen eine 100-Level Corekurs ausw\u00e4hlen, w\u00e4hrend Graduates m\u00fcssen eine 500-Level Seminar ausw\u00e4hlen. Many kurs haben Prerequisites, z.B. 'Advanced AI' ben\u00f6tigt 'Intro to AI' und 'Linear Algebra'. Some kurs sind mutually exclusive, wie 'Statistics for Biology' und 'Statistics for Business'. Der 'Robotics Lab' Course ist optional, mit einer Hard Enrollment Cap von 20 Studenten. Lastly, der 'Thesis Defense' Module ist nur verf\u00fcgbar, wenn der Studenten 60Kurse und ihre 'Dissertation Proposal Review' durchgef\u00fchrt haben.",
+      "output_raw": "A universitet kursregistrationsystem bezeichnet einen Studiengangssystem, der Studenten f\u00fcr mindestens 12Kurse registrieren m\u00fcssen. Unternehmensstudenten m\u00fcssen eine 100-Level Corekurs ausw\u00e4hlen, w\u00e4hrend Graduates m\u00fcssen eine 500-Level Seminar ausw\u00e4hlen. Many kurs haben Prerequisites, z.B. 'Advanced AI' ben\u00f6tigt 'Intro to AI' und 'Linear Algebra'. Some kurs sind mutually exclusive, wie 'Statistics for Biology' und 'Statistics for Business'. Der 'Robotics Lab' Course ist optional, mit einer Hard Enrollment Cap von 20 Studenten. Lastly, der 'Thesis Defense' Module ist nur verf\u00fcgbar, wenn der Studenten 60Kurse und ihre 'Dissertation Proposal Review' durchgef\u00fchrt haben.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output_raw": "PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "CI/CD \u0441\u0438\u0441\u0442\u0435\u043c \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u0435\u0442 \u043f\u0430\u0439\u043f\u043b\u0435\u0439\u0441\u044b \u0440\u0430\u0437\u0432\u0435\u0440\u0442\u044b\u0432\u0430\u043d\u0438\u044f. \u0412\u0441\u0435 \u043f\u0430\u0439\u043f\u043b\u0435\u0439\u0441\u044b \u0434\u043e\u043b\u0436\u043d\u044b \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0442\u044c \u044d\u0442\u0430\u043f\u044b 'Build' \u0438 'Unit Test'. \u041f\u0430\u0439\u043f\u043b\u0435\u0439\u0441 'Staging' \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u0438 \u043c\u043e\u0436\u0435\u0442 \u0442\u043e\u043b\u044c\u043a\u043e \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c\u0441\u044f \u043f\u043e\u0441\u043b\u0435 \u0442\u043e\u0433\u043e, \u043a\u0430\u043a 'Unit Test' \u043f\u0440\u043e\u0439\u0434\u0435\u0442. \u041f\u0430\u0439\u043f\u043b\u0435\u0439\u0441 'Production' \u0442\u0440\u0435\u0431\u0443\u0435\u0442, \u0447\u0442\u043e\u0431\u044b 'Staging' \u0432\u044b\u043f\u043e\u043b\u043d\u0438\u043b\u0441\u044f \u0443\u0441\u043f\u0435\u0448\u043d\u043e, \u0438 \u0442\u0430\u043a\u0436\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043e\u0431\u0430 'Integration Test' \u0438 'Security Scan' \u043f\u0440\u043e\u0439\u0434\u0443\u0442. \u0414\u043b\u044f 'Production' \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043c\u043e\u0436\u0435\u0442 \u0432\u044b\u0431\u0440\u0430\u0442\u044c either 'Blue/Green' \u0438\u043b\u0438 'Canary' \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044e. \u0412 \u0441\u043b\u0443\u0447\u0430\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438 'Canary', \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0434\u043e\u0431\u0430\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043d\u043e\u0432\u044b\u0439 \u044d\u0442\u0430\u043f \u0441 \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435\u043c \u043e Rollback. \u0412 \u0441\u043b\u0443\u0447\u0430\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438 'Blue/Green', \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0434\u0432\u0430\u0436\u0434\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432 \u0438\u043d\u0444\u0440\u0430\u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b \u0434\u043b\u044f \u043e\u0431\u043c\u0435\u043d\u0430. \u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u044d\u0442\u0430\u043f 'Hotfix' \u043c\u043e\u0436\u043d\u043e \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u0438\u0437 \u043f\u0430\u0439\u043f\u043b\u0435\u0439\u0441\u0430 'Staging' \u0438 'Integration Test', \u043d\u043e \u043e\u043d \u0434\u043e\u043b\u0436\u0435\u043d \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0442\u044c\u0441\u044f \u0431\u0435\u0437 'Staging' \u0438 'Integration Test'. \u0422\u0430\u043a\u0436\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f 'Manual QA Approval' \u0448\u0430\u0433\u0430 \u0438 \u0434\u043e\u043b\u0436\u0435\u043d \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0442\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 'Security Scan'.",
+      "output_raw": "CI/CD \u0441\u0438\u0441\u0442\u0435\u043c \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u0435\u0442 \u043f\u0430\u0439\u043f\u043b\u0435\u0439\u0441\u044b \u0440\u0430\u0437\u0432\u0435\u0440\u0442\u044b\u0432\u0430\u043d\u0438\u044f. \u0412\u0441\u0435 \u043f\u0430\u0439\u043f\u043b\u0435\u0439\u0441\u044b \u0434\u043e\u043b\u0436\u043d\u044b \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0442\u044c \u044d\u0442\u0430\u043f\u044b 'Build' \u0438 'Unit Test'. \u041f\u0430\u0439\u043f\u043b\u0435\u0439\u0441 'Staging' \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u0438 \u043c\u043e\u0436\u0435\u0442 \u0442\u043e\u043b\u044c\u043a\u043e \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c\u0441\u044f \u043f\u043e\u0441\u043b\u0435 \u0442\u043e\u0433\u043e, \u043a\u0430\u043a 'Unit Test' \u043f\u0440\u043e\u0439\u0434\u0435\u0442. \u041f\u0430\u0439\u043f\u043b\u0435\u0439\u0441 'Production' \u0442\u0440\u0435\u0431\u0443\u0435\u0442, \u0447\u0442\u043e\u0431\u044b 'Staging' \u0432\u044b\u043f\u043e\u043b\u043d\u0438\u043b\u0441\u044f \u0443\u0441\u043f\u0435\u0448\u043d\u043e, \u0438 \u0442\u0430\u043a\u0436\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043e\u0431\u0430 'Integration Test' \u0438 'Security Scan' \u043f\u0440\u043e\u0439\u0434\u0443\u0442. \u0414\u043b\u044f 'Production' \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043c\u043e\u0436\u0435\u0442 \u0432\u044b\u0431\u0440\u0430\u0442\u044c either 'Blue/Green' \u0438\u043b\u0438 'Canary' \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044e. \u0412 \u0441\u043b\u0443\u0447\u0430\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438 'Canary', \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0434\u043e\u0431\u0430\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043d\u043e\u0432\u044b\u0439 \u044d\u0442\u0430\u043f \u0441 \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435\u043c \u043e Rollback. \u0412 \u0441\u043b\u0443\u0447\u0430\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438 'Blue/Green', \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0434\u0432\u0430\u0436\u0434\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432 \u0438\u043d\u0444\u0440\u0430\u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b \u0434\u043b\u044f \u043e\u0431\u043c\u0435\u043d\u0430. \u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u044d\u0442\u0430\u043f 'Hotfix' \u043c\u043e\u0436\u043d\u043e \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u0438\u0437 \u043f\u0430\u0439\u043f\u043b\u0435\u0439\u0441\u0430 'Staging' \u0438 'Integration Test', \u043d\u043e \u043e\u043d \u0434\u043e\u043b\u0436\u0435\u043d \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0442\u044c\u0441\u044f \u0431\u0435\u0437 'Staging' \u0438 'Integration Test'. \u0422\u0430\u043a\u0436\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f 'Manual QA Approval' \u0448\u0430\u0433\u0430 \u0438 \u0434\u043e\u043b\u0436\u0435\u043d \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0442\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 'Security Scan'.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "Smart Home Automation System Links Devices Based on Rules. A Rule Has Triggers, Optional Conditions, and Actions. Rules Must Have Priorities to Resolve Conflicts: The 'Movie Mode' Scene (Sets Lights to 10%) Must Block the 'Morning' Scene (Sets Lights to 100%) from Running. Safety Constraints Are Critical: The 'Smart Oven' Action Is Disabled If 'Home Status' Is 'Away'. Also, The 'Air Conditioner' Action Is Dynamically Disabled If Any 'Window Sensor' Reports 'Open' and Only Re-enables 5 Minutes After All Windows Are Closed.",
+      "output_raw": "Smart Home Automation System Links Devices Based on Rules. A Rule Has Triggers, Optional Conditions, and Actions. Rules Must Have Priorities to Resolve Conflicts: The 'Movie Mode' Scene (Sets Lights to 10%) Must Block the 'Morning' Scene (Sets Lights to 100%) from Running. Safety Constraints Are Critical: The 'Smart Oven' Action Is Disabled If 'Home Status' Is 'Away'. Also, The 'Air Conditioner' Action Is Dynamically Disabled If Any 'Window Sensor' Reports 'Open' and Only Re-enables 5 Minutes After All Windows Are Closed.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

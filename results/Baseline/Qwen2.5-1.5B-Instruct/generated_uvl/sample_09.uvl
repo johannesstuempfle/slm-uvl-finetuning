@@ -1,0 +1,31 @@
+```uvl-code
+# Define the configuration steps for a PC configurator tool
+
+# Step 1: Choose CPU
+cpu_choice = "Intel" if cpu_type == "Intel" else "AMD"
+
+# Step 2: Determine motherboard socket based on CPU selection
+socket_type = "LGA 1700" if cpu_choice == "Intel" else "AM5"
+
+# Step 3: Select motherboard chipset
+chipset = "Z790"
+
+# Step 4: Determine supported RAM type based on chipset
+ram_type = "DDR4" if chipset == "Z790" else "DDR5"
+
+# Step 5: High-end GPU requires a PSU with at least 850W
+power_supply_capacity = max(850, 650)
+
+# Step 6: Check GPU physical length compatibility with case clearance
+gpu_length = 350
+case_clearance = gpu_length <= case_max_gpu_clearance
+
+# Step 7: Ensure motherboard matches case form factor
+motherboard_form_factor = "ATX"
+case_form_factor = motherboard_form_factor
+
+# Optional step: Check air cooler height against case CPU cooler clearance
+air_cooler_height = 200
+case_cpu_cooler_clearance = 150
+cooling_system_compatibility = air_cooler_height < case_cpu_cooler_clearance
+```

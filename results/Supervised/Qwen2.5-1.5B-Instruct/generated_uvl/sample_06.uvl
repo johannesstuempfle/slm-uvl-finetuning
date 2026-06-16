@@ -1,0 +1,20 @@
+features
+    "Tax Calculator" {abstract}
+        mandatory
+            NettoPrice
+            SumOfProducts
+            LocationBuyer
+            LocationSeller
+        alternative
+            Output = TaxPerProduct
+            Output = BruttoPrice
+            Output = TaxRate
+        optional
+            LoggingData
+                or
+                    CalculatedBasePrice
+                    RuleOfCalculation
+
+constraints
+    LoggingData => CalculatedBasePrice | RuleOfCalculation
+    LoggingData => (CalculatedBasePrice | RuleOfCalculation) => True

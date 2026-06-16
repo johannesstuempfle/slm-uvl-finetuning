@@ -1,0 +1,26 @@
+Sure! Here's the translation of the given text into UVL-Code:
+
+```uvl
+features
+	Factory {abstract}
+		mandatory
+			Production_Line {abstract}
+				alternative
+					Normal_Chocolate
+						mandatory
+							Melting_Station
+							Mixing_Station
+							Cooling_Station
+					Nut_Chocolate
+						mandatory
+							Normal_Chocolate
+							Baking_Station
+				optional
+					Logistic_System
+					Packaging_Station
+constraints
+	Production_Line & Logistic_System
+	Production_Line & Packaging_Station
+```
+
+This UVL code defines the features of a factory with a production line capable of producing both normal chocolate and nut-chocolate, including the necessary stations and optional systems.

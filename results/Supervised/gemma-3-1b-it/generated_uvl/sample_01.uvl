@@ -1,0 +1,11 @@
+features
+    SecurityArchitect
+        mandatory
+            Role
+                alternative
+                    SecurityArchitect
+                    SecurityEngineer
+            Manager
+            ScrumMaster
+        optional
+            OrchestrationTool

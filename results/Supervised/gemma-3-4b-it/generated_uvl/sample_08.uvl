@@ -1,0 +1,39 @@
+features
+    CourseRegistrationSystem
+        mandatory
+            "Minimum Credits" >= 12
+        mandatory
+            Undergraduate
+                mandatory
+                    "Core Course"
+                        mandatory
+                            "100-level Course"
+                        optional
+                    "Seminar"
+                        mandatory
+                            "500-level Course"
+        optional
+            Graduate
+        optional
+            "Robotics Lab"
+                constraints
+                    enrollment_cap 20
+        mandatory
+            "Thesis Defense"
+                mandatory
+                    "Dissertation Proposal"
+                        mandatory
+                    "Credits" >= 60
+        optional
+            "Statistics for Biology"
+                exclusive_with "Statistics for Business"
+        optional
+            "Statistics for Business"
+                exclusive_with "Statistics for Biology"
+        optional
+            "Advanced AI"
+                prerequisite
+                    "Intro to AI"
+                        mandatory
+                    "Linear Algebra"
+                        mandatory

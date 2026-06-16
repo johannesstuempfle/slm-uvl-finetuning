@@ -1,0 +1,40 @@
+```uvl
+ci_cd_system {
+    deployment_pipelines {
+        mandatory {
+            build;
+            unit_test;
+            staging { 
+                after {unit_test};
+            }
+            production { 
+                after {staging};
+                optional { 
+                    integration_test;
+                    security_scan;
+                };
+                mandatory { 
+                    if (strategy == "canary") {
+                        monitoring { 
+                            trigger {rollback};
+                        };
+                    } else {
+                        blue_green { 
+                            infra_resources_double;
+                        };
+                    };
+                }
+            }
+        }
+        optional {
+            hotfix { 
+                before {staging}; 
+                mandatory { 
+                    manual_qa_approval; 
+                    security_scan;
+                };
+            }
+        }
+    }
+}
+```

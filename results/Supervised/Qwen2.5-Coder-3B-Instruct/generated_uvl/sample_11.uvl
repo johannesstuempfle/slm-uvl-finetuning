@@ -1,0 +1,25 @@
+features
+    SmartHomeAutomationSystem {abstract}
+        mandatory
+            Rules
+                mandatory
+                    'Movie Mode'Scene
+                        mandatory
+                            Lights
+                                optional
+                                    Priority
+                    'Morning'Scene
+                        mandatory
+                            Lights
+                            optional
+                                Priority
+        optional
+            SafetyConstraints
+                mandatory
+                    SmartOvenAction
+                        mandatory
+                            DisableIfHomeStatusIsAway
+                    AirConditionerAction
+                        mandatory
+                            DynamicDisableIfAnyWindowSensorReportsOpen
+                            ReenableAfterFiveMinutesAllWindowsClosed

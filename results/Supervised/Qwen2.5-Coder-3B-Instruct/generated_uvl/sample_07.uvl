@@ -1,0 +1,21 @@
+features
+    RoomBookingService {abstract}
+        mandatory
+            Rooms
+                alternative
+                    SingleBedRoom
+                    DoubleBedRoom
+                    TripleBedRoom
+                    QuadBedRoom
+            OptionalFeatures
+                mandatory
+                    PersonalSpaArea {optional}
+                optional
+                    BestViewOption {onlyFor DoubleBedRoom}
+        mandatory
+            Bookings
+                mandatory
+                    StartDate
+                    EndDate
+                optional
+                    FeesOrBookings

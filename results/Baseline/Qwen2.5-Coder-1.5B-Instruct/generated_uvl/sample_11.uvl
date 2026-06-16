@@ -1,0 +1,72 @@
+Certainly! Below is the translation of the given text into UVL-Code:
+
+```uvl
+// Define a smart home automation system with rules
+
+// Define a rule for Movie Mode
+rule "Movie Mode"
+    // Triggers when the 'Movie Mode' button is pressed
+    trigger button_press("Movie Mode Button")
+    // Optional condition: if the 'Movie Mode' button is already pressed
+    optional_condition movie_mode_button_pressed()
+        return true
+    // Actions to execute when the rule is triggered
+    action {
+        // Set the lights to 10%
+        set_light_intensity(10)
+    }
+end_rule
+
+// Define a rule for Morning Scene
+rule "Morning Scene"
+    // Triggers when the 'Morning' button is pressed
+    trigger button_press("Morning Button")
+    // Optional condition: if the 'Morning' button is already pressed
+    optional_condition morning_button_pressed()
+        return true
+    // Actions to execute when the rule is triggered
+    action {
+        // Set the lights to 100%
+        set_light_intensity(100)
+    }
+end_rule
+
+// Define a rule for Smart Oven Action
+rule "Smart Oven Action"
+    // Triggers when the 'Smart Oven' button is pressed
+    trigger button_press("Smart Oven Button")
+    // Optional condition: if the 'Home Status' is 'Away'
+    optional_condition home_status_away()
+        return home_status == "Away"
+    // Actions to execute when the rule is triggered
+    action {
+        // Disable the 'Smart Oven' action
+        disable_action("Smart Oven")
+    }
+end_rule
+
+// Define a rule for Air Conditioner Action
+rule "Air Conditioner Action"
+    // Triggers when one or more window sensors report 'Open'
+    trigger window_sensor_open()
+    // Optional condition: if all windows are closed
+    optional_condition all_windows_closed()
+        return!window_sensor_open() &&!window_sensor_open() &&!window_sensor_open()
+    // Actions to execute when the rule is triggered
+    action {
+        // Disable the 'Air Conditioner' action
+        disable_action("Air Conditioner")
+        // Re-enable the 'Air Conditioner' action after 5 minutes
+        wait(300) // 300 seconds = 5 minutes
+        enable_action("Air Conditioner")
+    }
+end_rule
+```
+
+### Explanation:
+- **Rules**: Each rule is defined using the `rule` keyword followed by the rule name.
+- **Triggers**: The `trigger` keyword is used to specify when a rule should be executed. In this case, it's triggered by pressing buttons named "Movie Mode Button", "Morning Button", and "Smart Oven Button".
+- **Optional Conditions**: The `optional_condition` keyword is used to add optional conditions that can prevent a rule from executing. If the condition returns `true`, the rule will not execute.
+- **Actions**: The `action` keyword is used to specify what should happen when a rule is triggered. In this case, it sets the light intensity or disables actions based on specific conditions.
+
+This UVL-Code defines a smart home automation system with rules that handle various scenarios such as setting lights, controlling appliances, and managing home status.

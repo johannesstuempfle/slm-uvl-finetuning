@@ -1,0 +1,25 @@
+Here is the translation into Uvl-Code based on the provided text:
+
+```uvl-code
+Bicycle { 
+    Groupset { Manufacturer = "SRAM" || "Shimano" } 
+    Parts { 
+        ForGravel = {
+            Tyres { Width = "Wide" ; Profile = "Some" }
+        }
+        ForRoad = {
+            Tyres { Width = "Slim" ; Profile = "None" }
+        }
+    }
+    Handlebar { 
+        DropBar { }
+        Mountain { 
+            Handlebar = "Flat"
+            Tyres { Width = "Extra Wide" ; Profile = "Deep" }
+        }
+    }
+    Option { FitTyres = "Slim" onto Gravel }
+}
+```
+
+This Uvl-Code maintains the structure and meaning of the original text while adhering to the correct syntax for Uvl-Code.

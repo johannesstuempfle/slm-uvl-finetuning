@@ -1,0 +1,80 @@
+```uvl
+features {
+  abstract class Room {
+    mandatory "Number of beds" Integer
+    mandatory "Size" Integer
+    optional "View" {
+      alternative
+        "Standard view"
+        "Panoramic view"
+        "City view"
+    }
+    optional "Personal spa area" {
+      mandatory "Price" Decimal
+    }
+    optional "Best view" {
+      mandatory "Price" Decimal
+      alternative
+        "Two-bed room"
+        "Suite" 
+    }
+  }
+
+  abstract class Booking {
+    mandatory "Start date" Date
+    mandatory "End date" Date
+    optional "Extra fees" {
+      mandatory "Price" Decimal
+    }
+  }
+
+  service "Room Booking Service" {
+    abstract class Hotel {
+      mandatory "Rooms" {
+        alternative
+          Room
+          HotelRoom
+      }
+    }
+
+    class HotelRoom extends Room {
+      mandatory "Room type" {
+        alternative
+          "Single room"
+          "Double room"
+          "Twin room"
+          "Suite"
+      }
+    }
+  }
+}
+```
+
+**Explanation and Considerations:**
+
+* **`features`**:  This keyword indicates the start of the UVL code structure.
+* **`abstract class Room`**:  Defines a generic "Room" class as the base for all room types.  It's abstract, meaning you can't directly instantiate it – it's meant to be extended.
+    * **`mandatory`**:  Indicates a required attribute.
+    * **`optional`**: Indicates an optional attribute.
+    * **`alternative`**:  Allows for multiple possible values for a single feature (e.g., different views).
+    * **"Price"**: This is included as a price for optional features like "Personal Spa Area" and "Best View".
+* **`abstract class Booking`**: Defines a generic "Booking" class, also abstract.
+    * **`Date`**:  Specifies the data type of the date fields.
+* **`service "Room Booking Service"`**:  Defines the overall service.
+* **`abstract class Hotel`**:  A new abstract class to represent a hotel.
+    * **`mandatory "Rooms" {... }`**: Specifies that each hotel *must* have rooms, and allows for multiple room types.
+    * **`alternative "Single room" "Double room" "Twin room" "Suite"`**: defines the different room types available.
+* **`class HotelRoom extends Room`**: This is a concrete class that extends the `Room` class.  This is crucial because we need a specific room *type* that inherits all the general room features.
+    * **`mandatory "Room type" {... }`**: This is a mandatory field defining the specific type of room.
+    * **`alternative "Single room" "Double room" "Twin room" "Suite"`**: defines the different room types available.
+
+**Key Improvements and Justifications:**
+
+* **Explicit `Room` and `HotelRoom` classes:** Separating the generic `Room` and the specific `HotelRoom` is a cleaner approach.
+* **Price for Optional Features:**  The "Price" attribute is now included for optional features that have a cost, following the prompt's specifications.
+* **"Best view" constraint:**  The "Best view" option is now correctly linked to the "Two-bed room" option.
+* **Clearer Structure:** The code is structured to reflect the relationships described in the text: rooms are part of a hotel.
+* **Data Types:** Specified `Date` as the data type for the date fields, making the code more precise.
+* **Mandatory vs. Optional:**  Correctly marked attributes as mandatory or optional.
+
+This UVL code attempts to be a precise representation of the given text, adhering to UVL's syntax and semantics.  It's more structured and easier to understand than a single, monolithic definition.  Remember that UVL is a modeling language, and this is just one possible interpretation of the given text.  The specific requirements of your UVL implementation might slightly alter the code.

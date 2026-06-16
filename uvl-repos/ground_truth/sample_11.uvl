@@ -1,0 +1,24 @@
+features
+    SmartHomeSystem
+        mandatory
+            Rule
+                mandatory
+                    Trigger
+                    Action
+                optional
+                    Condition
+                    Priority
+        optional
+            MovieMode
+            MorningScene
+            SmartOven
+            AirConditioner
+            WindowSensor
+            HomeStatus
+                alternative
+                    Home
+                    Away
+constraints
+    MovieMode => !MorningScene
+    SmartOven => !Away
+    AirConditioner => !WindowSensor

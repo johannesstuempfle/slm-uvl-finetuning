@@ -1,0 +1,30 @@
+features
+    Bicycle {abstract}
+        optional
+            Groupset {abstract}
+                alternative
+                    SRAM {abstract}
+                    Shimano {abstract}
+        optional
+            GravelBike {abstract}
+                mandatory
+                    WideTyres {abstract}
+                    DropBarHandlebar {abstract}
+            RoadBike {abstract}
+                mandatory
+                    SlimTyres {abstract}
+                    DropBarHandlebar {abstract}
+            MountainBike {abstract}
+                mandatory
+                    ExtraWideTyres {abstract}
+                    FlatHandlebar {abstract}
+
+constraints
+    SRAM => WideTyres
+    Shimano => WideTyres
+    SRAM => DropBarHandlebar
+    Shimano => DropBarHandlebar
+    RoadBike => SlimTyres
+    RoadBike => DropBarHandlebar
+    MountainBike => ExtraWideTyres
+    MountainBike => FlatHandlebar

@@ -1,0 +1,18 @@
+Sure, here is a possible translation of the text into UVL-code:
+```
+production_line {
+    type = "chocolate";
+    stations {
+        melting_station;
+        mixing_station;
+        cooling_station;
+        if (type == "nut_chocolate") {
+            baking_station;
+        }
+    };
+    logistics_system;
+    packaging_station;
+};
+```
+
+This code defines a production line for chocolate with three mandatory stations (melting, mixing, and cooling) and an optional baking station for nut-chocolate. It also includes a logistics system and a packaging station for all types of chocolate produced on the line.

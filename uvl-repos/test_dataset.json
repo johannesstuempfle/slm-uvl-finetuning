@@ -1,51 +1,63 @@
 {"data" : [
         {
             "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
-            "class": "Easy"
+            "class": "Easy",
+            "code": "features\n    Car\n        mandatory\n            Engine\n                alternative\n                    Diesel\n                    Gasoline\n                    Electric\n            Color\n                alternative\n                    Red\n                    Blue\n                    White\n                    Black\n        optional\n            AssistanceSystems\n                or\n                    LaneAssist\n                    ESP"
         },
         {
             "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
-            "class": "Easy"
+            "class": "Easy",
+            "code": "features\n    SecurityTeam\n        mandatory\n            SecurityArchitect\n            SecurityEngineer\n            Manager\n            ScrumMaster"
         },
         {
             "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
-            "class": "Easy"
+            "class": "Easy",
+            "code": "features\n    Computer\n        mandatory\n            \"Text Editor\"\n                alternative\n                    \"MS Word\"\n                    Pages\n            \"Spreadsheet Tool\"\n                alternative\n                    \"MS Excel\"\n                    Numbers"
         },
         {
             "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
-            "class": "Easy"
+            "class": "Easy",
+            "code": "features\n    CoffeeShop\n        mandatory\n            Drink\n                alternative\n                    Coffee\n                    Tea\n            Food\n                alternative\n                    Croissant\n                    Bagel\n            Payment\n                alternative\n                    Card\n                    Cash"
         },
         {
             "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
-            "class": "Medium"
+            "class": "Medium",
+            "code": "features\n    Bicycle\n        mandatory\n            Groupset\n                alternative\n                    SRAM\n                    Shimano\n            BikeType\n                alternative\n                    GravelBike\n                    RoadBike\n                    MountainBike\n            Tyres\n                alternative\n                    WideTyres\n                    SlimTyres\n                    ExtraWideTyres\n            Handlebar\n                alternative\n                    DropBar\n                    FlatBar\nconstraints\n    GravelBike => DropBar\n    RoadBike => DropBar\n    MountainBike => FlatBar\n    RoadBike => SlimTyres\n    MountainBike => ExtraWideTyres\n    GravelBike => (WideTyres | SlimTyres)\n    WideTyres => GravelBike\n    ExtraWideTyres => MountainBike\n    DropBar => (GravelBike | RoadBike)\n    FlatBar => MountainBike"
         },
         {
             "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
-            "class": "Medium"
+            "class": "Medium",
+            "code": "features\n    Factory\n        mandatory\n            ChocolateType\n                alternative\n                    NormalChocolate\n                    NutChocolate\n            MeltingStation\n            MixingStation\n            CoolingStation\n            LogisticSystem\n            PackagingStation\n        optional\n            BakingStation\nconstraints\n    NutChocolate => BakingStation\n    BakingStation => NutChocolate"
         },
         {
             "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
-            "class": "Medium"
+            "class": "Medium",
+            "code": "features\n    BillingSoftware\n        mandatory\n            TaxCalculator\n                mandatory\n                    Inputs\n                        mandatory\n                            NettoPrice\n                            SumOfProducts\n                            BuyerLocation\n                            SellerLocation\n                    Outputs\n                        mandatory\n                            TaxPerProduct\n                            BruttoPrice\n                            TaxRate\n                    AuditLogging\n                        mandatory\n                            CalculatedBasePrice\n                            RuleOfCalculation"
         },
         {
             "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
-            "class": "Medium"
+            "class": "Medium",
+            "code": "features\n    RoomBookingService\n        mandatory\n            Room\n                mandatory\n                    NumberOfBeds\n                        alternative\n                            OneBed\n                            TwoBeds\n                    View\n                    Size\n                optional\n                    PersonalSpa\n                    BestView\n            BookingManagement\n                mandatory\n                    StartDate\n                    EndDate\n                optional\n                    OptionalFees\nconstraints\n    BestView => TwoBeds"
         },
         {
             "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
-            "class": "Hard"
+            "class": "Hard",
+            "code": "features\n    CourseRegistrationSystem\n        mandatory\n            Student\n                alternative\n                    Undergraduate\n                    Graduate\n        optional\n            CoreCourse\n            Seminar\n            AdvancedAI\n            IntroToAI\n            LinearAlgebra\n            StatisticsForBiology\n            StatisticsForBusiness\n            RoboticsLab\n            ThesisDefense\n            DissertationProposal\nconstraints\n    Undergraduate => CoreCourse\n    Graduate => Seminar\n    AdvancedAI => IntroToAI & LinearAlgebra\n    StatisticsForBiology => !StatisticsForBusiness\n    ThesisDefense => DissertationProposal"
         },
         {
             "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
-            "class": "Hard"
+            "class": "Hard",
+            "code": "features\n    PCConfigurator\n        mandatory\n            CPU\n                alternative\n                    Intel\n                    AMD\n            Motherboard\n                alternative\n                    LGA1700\n                    AM5\n            RAM\n                alternative\n                    DDR4\n                    DDR5\n            GPU\n                alternative\n                    RTX4090\n                    OtherGPU\n            PSU\n                alternative\n                    \"650W\"\n                    \"850W\"\n                    \"1000W\"\n            Case\n                alternative\n                    ATX\n                    MicroATX\n        optional\n            LargeAirCooler\nconstraints\n    Intel => LGA1700\n    AMD => AM5\n    AM5 => DDR5\n    LGA1700 => (DDR4 | DDR5)\n    RTX4090 => (\"850W\" | \"1000W\")\n    ATX => (LGA1700 | AM5)\n    MicroATX => (LGA1700 | AM5)"
         },
         {
             "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
-            "class": "Hard"
+            "class": "Hard",
+            "code": "features\n    CICDSystem\n        mandatory\n            Build\n            UnitTest\n            StagingDeployment\n        optional\n            IntegrationTest\n            SecurityScan\n            ProductionDeployment\n                mandatory\n                    DeploymentStrategy\n                        alternative\n                            BlueGreen\n                            Canary\n                optional\n                    Monitoring\n                    Rollback\n            HotfixPipeline\n                mandatory\n                    ManualQAApproval\nconstraints\n    ProductionDeployment => IntegrationTest & SecurityScan\n    Canary => Monitoring & Rollback\n    HotfixPipeline => SecurityScan"
         },
         {
             "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
-            "class": "Hard"
+            "class": "Hard",
+            "code": "features\n    SmartHomeSystem\n        mandatory\n            Rule\n                mandatory\n                    Trigger\n                    Action\n                optional\n                    Condition\n                    Priority\n        optional\n            MovieMode\n            MorningScene\n            SmartOven\n            AirConditioner\n            WindowSensor\n            HomeStatus\n                alternative\n                    Home\n                    Away\nconstraints\n    MovieMode => !MorningScene\n    SmartOven => !Away\n    AirConditioner => !WindowSensor"
         }
     ]
 }

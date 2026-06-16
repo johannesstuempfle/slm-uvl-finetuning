@@ -1,0 +1,15 @@
+```uvl
+factory {
+    name: "Chocolate Factory"
+    productionLines: [
+        type: "Normal Chocolate",
+        stations: ["Melting Station", "Mixing Station", "Colling Station"],
+        requirements: ["Logistic System", "Packaging Station"]
+    ],
+    productionLines: [
+        type: "Nut-Chocolate",
+        stations: ["Melting Station", "Mixing Station", "Colling Station", "Baking Station"],
+        requirements: ["Logistic System", "Packaging Station"]
+    ]
+}
+```

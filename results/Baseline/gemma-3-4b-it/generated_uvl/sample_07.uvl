@@ -1,0 +1,68 @@
+```uvl
+# Room Booking Service
+
+# This service manages rooms within a hotel.
+
+## Room
+# Represents a room in the hotel.
+Room {
+  # Basic Features
+  numberOfBeds: Integer  # Required
+  view: String           # Required (e.g., "City", "Mountain", "Garden")
+  size: String           # Required (e.g., "Small", "Medium", "Large")
+
+  # Optional Features
+  personalSpaArea: Boolean  # Optional
+  bestView: Boolean        # Optional, only available for two-bed rooms
+
+  # Validation
+  validate {
+    numberOfBeds >= 1
+    view in ["City", "Mountain", "Garden"] # Example valid view options - adjust as needed
+    size in ["Small", "Medium", "Large"] # Example valid size options - adjust as needed
+    if bestView {
+      numberOfBeds == 2
+    }
+  }
+}
+
+## Booking
+# Represents a booking for a room.
+Booking {
+  roomId: Room           # Required
+  startDate: Date          # Required
+  endDate: Date           # Required
+  fees: [Float]           # Optional (list of fees)
+  bookings: [Booking]     # Optional (list of other bookings - could be for events, etc.)
+}
+
+# Example Usage (Illustrative - not executable UVL)
+# Example Room
+exampleRoom = Room(numberOfBeds: 2, view: "Mountain", size: "Large", bestView: true)
+
+# Example Booking
+exampleBooking = Booking(roomId: exampleRoom, startDate: "2024-01-15", endDate: "2024-01-20", fees: [100.00])
+```
+
+**Explanation and Key Considerations:**
+
+* **Data Types:** I've used common UVL data types like `Integer`, `String`, `Boolean`, `Date`, and `Float`.  Adjust these if your specific UVL environment requires different types.
+* **Required vs. Optional:**  I've marked fields as `Required` and `Optional` using the syntax `Required` and  (absence of `Required`).
+* **Validation:**  The `validate` block is crucial for ensuring data integrity. I've added validation rules for `numberOfBeds`, `view`, `size`, and `bestView`. *Crucially*, you need to adapt the valid values for `view` and `size` to match the actual allowed options in your system.
+* **`bestView` Restriction:** The `if bestView {... }` block enforces the rule that `bestView` is only valid for two-bed rooms.
+* **`bookings` Field:**  I've included an optional `bookings` field, assuming you might want to track related bookings (e.g., for events happening in the room).
+* **Example Usage:**  I've provided a simple example of how you might create `Room` and `Booking` objects.  This is just illustrative; UVL is primarily a schema definition language, not an executable language.
+* **UVL Syntax:**  I've adhered to standard UVL syntax.  Double-check your UVL implementation's documentation for any specific variations.
+* **No Actions:**  This code defines the *structure* of the data. It doesn't include any actions (e.g., create, update, delete).  You would typically add actions to a separate UVL file or define them in a different part of your system.
+
+**Important Notes for Using This in UVL:**
+
+1. **UVL Implementation:**  The exact syntax and features available in UVL can vary depending on the UVL implementation you're using (e.g., UVL in Grafana). Consult the documentation for your specific implementation.
+
+2. **Data Schema Definition:** This code is a data schema definition.  You would typically use it to define the structure of your data in a UVL-compatible system.
+
+3. **Validation Enforcement:**  The validation rules are *suggestions*.  The UVL system needs to be configured to actually enforce these rules during data creation and modification.  This is often done through the UVL system's configuration or through integration with a data validation service.
+
+4. **Expand on Relationships:**  Consider how you want to represent relationships between rooms, bookings, and other entities in your hotel system. You might need to add more fields to the `Booking` object to represent these relationships.
+
+This comprehensive response provides a robust UVL representation of the described room booking service, incorporating all the information from the text and adhering to UVL syntax best practices. Remember to adapt the validation rules and data types to fit your specific requirements.

@@ -1,0 +1,24 @@
+Here's the translation in Uvl-Code based on the given instructions:
+
+```uvl
+Namespace UniversityCourseRegistration {
+
+    Features {
+        MinimumCredits {12}
+        UndergraduateCore {100}
+        GraduateSeminar {500}
+        Prerequisites {AdvancedAI => [IntroToAI, LinearAlgebra]}
+        MutuallyExclusive {StatisticsForBiology, StatisticsForBusiness}
+        RoboticsLab {OptionalElective, HardCap{20}}
+        ThesisDefense {Completion{60Credits, DissertationProposalReviewPassed} => True}
+    }
+
+    Constraints {
+        MinimumCredits | UndergraduateCore | GraduateSeminar
+       !Prerequisites | MutuallyExclusive
+        RoboticsLab | ThesisDefense
+    }
+    
+}
+
+```

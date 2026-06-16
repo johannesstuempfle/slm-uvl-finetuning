@@ -1,0 +1,50 @@
+Here's the translation in UML State Machine Representation (UML-Code) considering the given text:
+
+```uml
+features
+    "Smart Home Automation" {
+        mandatory
+            "Movie Mode" {abstract}
+                mandatory
+                    "Set Lights" {abstract}
+                        alternative
+                            "10%" {abstract}
+                            "100%" {abstract}
+            "Morning" {abstract}
+                mandatory
+                    "Set Lights" {abstract}
+                        alternative
+                            "10%" {abstract}
+                            "100%" {abstract}
+            "Smart Oven"
+                mandatory
+                    "Enable Action" {abstract}
+                        mandatory
+                            "Safety Constraint" {abstract}
+                                alternative
+                                    "Home Status" {abstract}
+                                        alternative
+                                            "Away" {abstract}
+                                                mandatory
+                                                    "Smart Oven Disable" {abstract}
+            "Air Conditioner"
+                mandatory
+                    "Enable Action" {abstract}
+                        mandatory
+                            "Dynamic Constraint" {abstract}
+                                mandatory
+                                    "Any Window Sensor Open" {abstract}
+                                        mandatory
+                                            "All Windows Closed" {abstract}
+                                                mandatory
+                                                    "Air Conditioner Enable" {abstract}
+                                                        note before "Air Conditioner Enable": "5 minutes later"
+
+constraints
+    "Movie Mode" =>!"Morning"
+    "Smart Oven" =>!("Home Status" "Away")
+    "Air Conditioner" =>!"Any Window Sensor Open"
+    "All Windows Closed" => "Air Conditioner Enable"
+```
+
+This UML-Code captures the relationships, alternatives, and constraints described in the given text.

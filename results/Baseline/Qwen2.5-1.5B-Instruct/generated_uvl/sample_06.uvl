@@ -1,0 +1,23 @@
+```plaintext
+; UVL code translation
+
+MODULE TaxCalculator {
+    FUNCTION calculateTax(nettoPrice, sumOfProducts, location) {
+        let taxPerProduct = (nettoPrice * sumOfProducts) / 100;
+        let bruttoPrice = nettoPrice + taxPerProduct;
+        let taxRate = taxPerProduct / nettoPrice;
+
+        let auditData = {
+            "calculatedBasePrice": nettoPrice,
+            "ruleOfCalculation": "Netto"
+        };
+
+        return {
+            taxPerProduct: taxPerProduct,
+            bruttoPrice: bruttoPrice,
+            taxRate: taxRate,
+            auditData: auditData
+        };
+    }
+}
+```

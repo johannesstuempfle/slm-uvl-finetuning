@@ -1,0 +1,13 @@
+Sure! Here's the translation into UVL Code:
+
+```uvl
+PC Configurator Tool Guides Users.
+CPU Selection Determines Required Motherboard Socket (LGA 1700 vs. AM5).
+Motherboard Chipset Determines Supported RAM Type (DDR4/DDR5).
+High-end GPU (RTX 4090) Has Minimum Power Requirement, Constrains PSU to 850W or Higher.
+GPU Physical Length (350mm) Must Be Compatible With Case's Maximum GPU Clearance.
+Case (ATX, Micro-ATX) Must Match Motherboard Form Factor.
+Optional Large Air Cooler Height Must Be Less Than Case's CPU Cooler Clearance.
+```
+
+This code follows the structure and meaning of the original English text while adhering to UVL (Unified Visual Language) conventions.

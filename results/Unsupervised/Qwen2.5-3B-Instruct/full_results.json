@@ -1,0 +1,327 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.13900351524353027,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 2,
+    "failed": 10,
+    "mean_feature_f1": 0.695043103448276,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.40476190476190477
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "Here's the translation in UVL-Code based on the provided text:\n\n\"\u2200c (Car(c) \u2192 \u2203e (Engine(e) & e \u2208 {Diesel, Gasoline, Electric}))\n\u2200c (Car(c) \u2192 \u2203s (Assistance(s) & s \u2208 {Lane_Assist, ESP}))\n\u2200c (Car(c) \u2192 \u2203colors (Colors(colors)))\"",
+      "output_raw": "Here's the translation in UVL-Code based on the provided text:\n\n\"\u2200c (Car(c) \u2192 \u2203e (Engine(e) & e \u2208 {Diesel, Gasoline, Electric}))\n\u2200c (Car(c) \u2192 \u2203s (Assistance(s) & s \u2208 {Lane_Assist, ESP}))\n\u2200c (Car(c) \u2192 \u2203colors (Colors(colors)))\"",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "Here is the translation of the given English text into Uglified Code (UVL-Code), considering the constraints and correct syntax:\n\n```ufl\nteam {\n    requires [\n        [\"security_architect\", \"security_engineer\"]\n    ]\n    \"security_architect\"!= \"security_engineer\"\n    has [\n        manager\n        scrum_master\n    ]\n}\n```",
+      "output_raw": "Here is the translation of the given English text into Uglified Code (UVL-Code), considering the constraints and correct syntax:\n\n```ufl\nteam {\n    requires [\n        [\"security_architect\", \"security_engineer\"]\n    ]\n    \"security_architect\"!= \"security_engineer\"\n    has [\n        manager\n        scrum_master\n    ]\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "Here's the translation of the given text into Uglified Code (assuming it's a playful term for a simplified or code-like representation):\n\n```ucl\n\"cpr\" \"ms-word\"\n\"cpr\" \"pages\"\n\"cct\" \"ms-excel\"\n\"cct\" \"numberts\"\n```",
+      "output_raw": "Here's the translation of the given text into Uglified Code (assuming it's a playful term for a simplified or code-like representation):\n\n```ucl\n\"cpr\" \"ms-word\"\n\"cpr\" \"pages\"\n\"cct\" \"ms-excel\"\n\"cct\" \"numberts\"\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "Here is the translation in UVL-Code based on the provided text:\n\n\"ds Drinks {s Coffee, s Tea} pf Foods {s Croissant, s Bagel} cm Payment {c Card, c Cash}\"",
+      "output_raw": "Here is the translation in UVL-Code based on the provided text:\n\n\"ds Drinks {s Coffee, s Tea} pf Foods {s Croissant, s Bagel} cm Payment {c Card, c Cash}\"",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "Here is the translation of the given text into Uvl-Code, considering the correct syntax:\n\n```uvl\nPackage Bicycle {\n    Features { \n        Groupset { Alternative { SRAM, Shimano } }\n        Tyres { Width { WidthOfGravel, SlimOfRoad, ExtraWideOfMountain } Profile { ProfileOfGravel, NoProfileOfRoad, DeepProfileOfMountain } }\n        Handlebars { DropBar { Bicycles { Gravel, Road } FlatOfMountain } }\n    }\n    Constraints { \n        SlimOfRoad =>!ExtraWideOfMountain\n        ExtraWideOfMountain => SlimOfRoad\n    }\n}\n```",
+      "output_raw": "Here is the translation of the given text into Uvl-Code, considering the correct syntax:\n\n```uvl\nPackage Bicycle {\n    Features { \n        Groupset { Alternative { SRAM, Shimano } }\n        Tyres { Width { WidthOfGravel, SlimOfRoad, ExtraWideOfMountain } Profile { ProfileOfGravel, NoProfileOfRoad, DeepProfileOfMountain } }\n        Handlebars { DropBar { Bicycles { Gravel, Road } FlatOfMountain } }\n    }\n    Constraints { \n        SlimOfRoad =>!ExtraWideOfMountain\n        ExtraWideOfMountain => SlimOfRoad\n    }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "Here is the translation in Uvl-Code based on the given text:\n\n```uvl\nPackage ChocolateProduction {\n    Features\n        ProductionLine {abstract}\n            Mandatory\n                MeltingStation\n                MixingStation\n                CoolingStation\n                LogisticsSystem\n                PackagingStation\n            Optional\n                NutChocolate\n                    Alternative\n                        MeltingStation\n                        MixingStation\n                        CoolingStation\n                        BakingStation\n\n        TypesOfChocolate\n            Normal\n                Feature MeltingStation\n                Feature MixingStation\n                Feature CoolingStation\n            NutChocolate\n                Feature MeltingStation\n                Feature MixingStation\n                Feature CoolingStation\n                Feature BakingStation\n}",
+      "output_raw": "Here is the translation in Uvl-Code based on the given text:\n\n```uvl\nPackage ChocolateProduction {\n    Features\n        ProductionLine {abstract}\n            Mandatory\n                MeltingStation\n                MixingStation\n                CoolingStation\n                LogisticsSystem\n                PackagingStation\n            Optional\n                NutChocolate\n                    Alternative\n                        MeltingStation\n                        MixingStation\n                        CoolingStation\n                        BakingStation\n\n        TypesOfChocolate\n            Normal\n                Feature MeltingStation\n                Feature MixingStation\n                Feature CoolingStation\n            NutChocolate\n                Feature MeltingStation\n                Feature MixingStation\n                Feature CoolingStation\n                Feature BakingStation\n}",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "Here is the translation in UGLY-Code format based on the provided English text:\n\nWE HVE A TS-CALCULATOR WNIN A BLG-FTW. A CLC-CALCULATOR NLWD SFGGLNG FGFLGS: NETO PRCE, SM OF PRODS ND LGCT OF BGRD SRLLR. TNL THEN CGNLGLS FG FLGS: TSK PRD, BRGTO PRCE ND TSK-RTE. TNL LGLGLS DLGD DTA FR ADRSTS: CALCULATED BSG PRCE ND RG OF CGLCLTN.",
+      "output_raw": "Here is the translation in UGLY-Code format based on the provided English text:\n\nWE HVE A TS-CALCULATOR WNIN A BLG-FTW. A CLC-CALCULATOR NLWD SFGGLNG FGFLGS: NETO PRCE, SM OF PRODS ND LGCT OF BGRD SRLLR. TNL THEN CGNLGLS FG FLGS: TSK PRD, BRGTO PRCE ND TSK-RTE. TNL LGLGLS DLGD DTA FR ADRSTS: CALCULATED BSG PRCE ND RG OF CGLCLTN.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Here is the translation in Uvl-Code format based on your instructions:\n\n```uvl\nNamespace RoomBookingService {\n    Features\n        \"Room Booking Service\" {abstract}\n            Cardinality [1..1]\n                Includes\n                    Room {abstract}\n                        Cardinality [1..*]\n                            Includes\n                                BasicFeatures {abstract}\n                                    Mandatory\n                                        NumberofBeds {abstract}\n                                            Cardinality [1..1]\n                                                Integer\n                                        View {abstract}\n                                            Cardinality [1..1]\n                                                String\n                                        Size {abstract}\n                                            Cardinality [1..1]\n                                                String\n                                OptionalFeatures {abstract}\n                                    Mandatory\n                                        PersonalSpaArea {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                        BestViewOption {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                    Optional\n                                        BestViewOption {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                            Constraint BestViewOption => NumberofBeds == 2\n\n                    Booking {abstract}\n                        Cardinality [1..*]\n                            Includes\n                                Dates {abstract}\n                                    Mandatory\n                                        StartDate {abstract}\n                                            Cardinality [1..1]\n                                                DateTime\n                                        EndDate {abstract}\n                                            Cardinality [1..1]\n                                                DateTime\n                                FeesBookings {abstract}\n                                    Optional\n                                        Fee {abstract}\n                                            Cardinality [1..1]\n                                                Decimal\n                                        Booking {abstract}\n                                            Cardinality [1..1]\n                                                String\n}    \n}    \n```",
+      "output_raw": "Here is the translation in Uvl-Code format based on your instructions:\n\n```uvl\nNamespace RoomBookingService {\n    Features\n        \"Room Booking Service\" {abstract}\n            Cardinality [1..1]\n                Includes\n                    Room {abstract}\n                        Cardinality [1..*]\n                            Includes\n                                BasicFeatures {abstract}\n                                    Mandatory\n                                        NumberofBeds {abstract}\n                                            Cardinality [1..1]\n                                                Integer\n                                        View {abstract}\n                                            Cardinality [1..1]\n                                                String\n                                        Size {abstract}\n                                            Cardinality [1..1]\n                                                String\n                                OptionalFeatures {abstract}\n                                    Mandatory\n                                        PersonalSpaArea {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                        BestViewOption {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                    Optional\n                                        BestViewOption {abstract}\n                                            Cardinality [1..1]\n                                                Boolean\n                                            Constraint BestViewOption => NumberofBeds == 2\n\n                    Booking {abstract}\n                        Cardinality [1..*]\n                            Includes\n                                Dates {abstract}\n                                    Mandatory\n                                        StartDate {abstract}\n                                            Cardinality [1..1]\n                                                DateTime\n                                        EndDate {abstract}\n                                            Cardinality [1..1]\n                                                DateTime\n                                FeesBookings {abstract}\n                                    Optional\n                                        Fee {abstract}\n                                            Cardinality [1..1]\n                                                Decimal\n                                        Booking {abstract}\n                                            Cardinality [1..1]\n                                                String\n}    \n}    \n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "Here's the translation in Uvl-Code based on the given instructions:\n\n```uvl\nNamespace UniversityCourseRegistration {\n\n    Features {\n        MinimumCredits {12}\n        UndergraduateCore {100}\n        GraduateSeminar {500}\n        Prerequisites {AdvancedAI => [IntroToAI, LinearAlgebra]}\n        MutuallyExclusive {StatisticsForBiology, StatisticsForBusiness}\n        RoboticsLab {OptionalElective, HardCap{20}}\n        ThesisDefense {Completion{60Credits, DissertationProposalReviewPassed} => True}\n    }\n\n    Constraints {\n        MinimumCredits | UndergraduateCore | GraduateSeminar\n       !Prerequisites | MutuallyExclusive\n        RoboticsLab | ThesisDefense\n    }\n    \n}\n\n```",
+      "output_raw": "Here's the translation in Uvl-Code based on the given instructions:\n\n```uvl\nNamespace UniversityCourseRegistration {\n\n    Features {\n        MinimumCredits {12}\n        UndergraduateCore {100}\n        GraduateSeminar {500}\n        Prerequisites {AdvancedAI => [IntroToAI, LinearAlgebra]}\n        MutuallyExclusive {StatisticsForBiology, StatisticsForBusiness}\n        RoboticsLab {OptionalElective, HardCap{20}}\n        ThesisDefense {Completion{60Credits, DissertationProposalReviewPassed} => True}\n    }\n\n    Constraints {\n        MinimumCredits | UndergraduateCore | GraduateSeminar\n       !Prerequisites | MutuallyExclusive\n        RoboticsLab | ThesisDefense\n    }\n    \n}\n\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "Here is the translation in UGLY CODE format based on your request:\n\nPCCT{CPU{Intel|AMD}MST{LGA1700|AM5}MC{Z790}RMT{DDR4|DDR5}GPUC{RTX4090}PSUMIN{850W}GPUPL{350mm}CASFM{ATX|MicroATX}CLCF{CPU Cooler Clearance}ACC{Air Cooler Height}",
+      "output_raw": "Here is the translation in UGLY CODE format based on your request:\n\nPCCT{CPU{Intel|AMD}MST{LGA1700|AM5}MC{Z790}RMT{DDR4|DDR5}GPUC{RTX4090}PSUMIN{850W}GPUPL{350mm}CASFM{ATX|MicroATX}CLCF{CPU Cooler Clearance}ACC{Air Cooler Height}",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "Here is the translation of the given text into Uglified Vietnamese Code (UVL-Code) format:\n\n```uvl\nfeatures\n\t\"CI/CD system\"\n\t\tmandatory\n\t\t\t\"Deployment pipelines\"\n\t\t\t\tall\n\t\t\t\t\t\"Build\"\n\t\t\t\t\t\"Unit Test\"\n\t\t\t\tmandatory\n\t\t\t\t\t\"Staging\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Unit Test\"\n\t\t\t\tmandatory\n\t\t\t\t\t\"Production\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Staging\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Integration Test\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Security Scan\"\n\t\t\t\t\t\t\t\talternative\n\t\t\t\t\t\t\t\t\t\"Blue/Green\"\n\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\"Monitoring\"\n\t\t\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"Rollback\"\n\t\t\t\t\t\t\t\t\tCanary\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Manual QA Approval\"\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Security Scan\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Hotfix\"\n\t\t\t\t\t\t\t\tor\n\t\t\t\t\t\t\t\t\t\"Blue/Green\"\n\t\t\t\t\t\t\t\t\tCanary\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Monitoring\"\n\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\"Rollback\"\nconstraints\n\t\"Canary\" => \"Monitoring\" & \"Rollback\"\n\t\"Blue/Green\" =>!\"Staging\" &!\"Integration Test\"\n\t\"Blue/Green\" => \"Manual QA Approval\"\n\t\"Blue/Green\" =>!\"Security Scan\"\n```\n\nThis UVL-Code accurately captures the structure and logic of the given English text, adhering to the specified syntax.",
+      "output_raw": "Here is the translation of the given text into Uglified Vietnamese Code (UVL-Code) format:\n\n```uvl\nfeatures\n\t\"CI/CD system\"\n\t\tmandatory\n\t\t\t\"Deployment pipelines\"\n\t\t\t\tall\n\t\t\t\t\t\"Build\"\n\t\t\t\t\t\"Unit Test\"\n\t\t\t\tmandatory\n\t\t\t\t\t\"Staging\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Unit Test\"\n\t\t\t\tmandatory\n\t\t\t\t\t\"Production\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Staging\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Integration Test\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Security Scan\"\n\t\t\t\t\t\t\t\talternative\n\t\t\t\t\t\t\t\t\t\"Blue/Green\"\n\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\"Monitoring\"\n\t\t\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"Rollback\"\n\t\t\t\t\t\t\t\t\tCanary\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Manual QA Approval\"\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Security Scan\"\n\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\"Hotfix\"\n\t\t\t\t\t\t\t\tor\n\t\t\t\t\t\t\t\t\t\"Blue/Green\"\n\t\t\t\t\t\t\t\t\tCanary\n\t\t\t\t\t\t\t\t\t\tmandatory\n\t\t\t\t\t\t\t\t\t\t\t\"Monitoring\"\n\t\t\t\t\t\t\t\t\t\toptional\n\t\t\t\t\t\t\t\t\t\t\t\"Rollback\"\nconstraints\n\t\"Canary\" => \"Monitoring\" & \"Rollback\"\n\t\"Blue/Green\" =>!\"Staging\" &!\"Integration Test\"\n\t\"Blue/Green\" => \"Manual QA Approval\"\n\t\"Blue/Green\" =>!\"Security Scan\"\n```\n\nThis UVL-Code accurately captures the structure and logic of the given English text, adhering to the specified syntax.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "CI/CD system",
+        "Deployment pipelines",
+        "Build",
+        "Unit Test",
+        "Staging",
+        "Unit Test",
+        "Production",
+        "Staging",
+        "Integration Test",
+        "Security Scan",
+        "Blue/Green",
+        "Monitoring",
+        "Rollback",
+        "Canary",
+        "Manual QA Approval",
+        "Security Scan",
+        "Hotfix",
+        "Blue/Green",
+        "Canary",
+        "Monitoring",
+        "Rollback"
+      ],
+      "semantic_similarity": 0.8322907090187073,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 2,
+          "precision": 0.8,
+          "recall": 0.8571428571428571,
+          "f1": 0.8275862068965518,
+          "missed": [
+            "DeploymentStrategy",
+            "StagingDeployment"
+          ],
+          "hallucinated": [
+            "Hotfix",
+            "Staging",
+            "all"
+          ]
+        },
+        "structure": {
+          "tp": 1,
+          "fp": 11,
+          "fn": 8,
+          "precision": 0.08333333333333333,
+          "recall": 0.1111111111111111,
+          "f1": 0.09523809523809525,
+          "n_edges_gen": 12,
+          "n_edges_gt": 9,
+          "group_type_agreement": 0.3,
+          "n_group_compared": 10
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "Here's the translation in UML State Machine Representation (UML-Code) considering the given text:\n\n```uml\nfeatures\n    \"Smart Home Automation\" {\n        mandatory\n            \"Movie Mode\" {abstract}\n                mandatory\n                    \"Set Lights\" {abstract}\n                        alternative\n                            \"10%\" {abstract}\n                            \"100%\" {abstract}\n            \"Morning\" {abstract}\n                mandatory\n                    \"Set Lights\" {abstract}\n                        alternative\n                            \"10%\" {abstract}\n                            \"100%\" {abstract}\n            \"Smart Oven\"\n                mandatory\n                    \"Enable Action\" {abstract}\n                        mandatory\n                            \"Safety Constraint\" {abstract}\n                                alternative\n                                    \"Home Status\" {abstract}\n                                        alternative\n                                            \"Away\" {abstract}\n                                                mandatory\n                                                    \"Smart Oven Disable\" {abstract}\n            \"Air Conditioner\"\n                mandatory\n                    \"Enable Action\" {abstract}\n                        mandatory\n                            \"Dynamic Constraint\" {abstract}\n                                mandatory\n                                    \"Any Window Sensor Open\" {abstract}\n                                        mandatory\n                                            \"All Windows Closed\" {abstract}\n                                                mandatory\n                                                    \"Air Conditioner Enable\" {abstract}\n                                                        note before \"Air Conditioner Enable\": \"5 minutes later\"\n\nconstraints\n    \"Movie Mode\" =>!\"Morning\"\n    \"Smart Oven\" =>!(\"Home Status\" \"Away\")\n    \"Air Conditioner\" =>!\"Any Window Sensor Open\"\n    \"All Windows Closed\" => \"Air Conditioner Enable\"\n```\n\nThis UML-Code captures the relationships, alternatives, and constraints described in the given text.",
+      "output_raw": "Here's the translation in UML State Machine Representation (UML-Code) considering the given text:\n\n```uml\nfeatures\n    \"Smart Home Automation\" {\n        mandatory\n            \"Movie Mode\" {abstract}\n                mandatory\n                    \"Set Lights\" {abstract}\n                        alternative\n                            \"10%\" {abstract}\n                            \"100%\" {abstract}\n            \"Morning\" {abstract}\n                mandatory\n                    \"Set Lights\" {abstract}\n                        alternative\n                            \"10%\" {abstract}\n                            \"100%\" {abstract}\n            \"Smart Oven\"\n                mandatory\n                    \"Enable Action\" {abstract}\n                        mandatory\n                            \"Safety Constraint\" {abstract}\n                                alternative\n                                    \"Home Status\" {abstract}\n                                        alternative\n                                            \"Away\" {abstract}\n                                                mandatory\n                                                    \"Smart Oven Disable\" {abstract}\n            \"Air Conditioner\"\n                mandatory\n                    \"Enable Action\" {abstract}\n                        mandatory\n                            \"Dynamic Constraint\" {abstract}\n                                mandatory\n                                    \"Any Window Sensor Open\" {abstract}\n                                        mandatory\n                                            \"All Windows Closed\" {abstract}\n                                                mandatory\n                                                    \"Air Conditioner Enable\" {abstract}\n                                                        note before \"Air Conditioner Enable\": \"5 minutes later\"\n\nconstraints\n    \"Movie Mode\" =>!\"Morning\"\n    \"Smart Oven\" =>!(\"Home Status\" \"Away\")\n    \"Air Conditioner\" =>!\"Any Window Sensor Open\"\n    \"All Windows Closed\" => \"Air Conditioner Enable\"\n```\n\nThis UML-Code captures the relationships, alternatives, and constraints described in the given text.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [
+        "Smart Home Automation",
+        "Movie Mode",
+        "Set Lights",
+        "10%",
+        "100%",
+        "Morning",
+        "Set Lights",
+        "10%",
+        "100%",
+        "Smart Oven",
+        "Enable Action",
+        "Safety Constraint",
+        "Home Status",
+        "Away",
+        "Smart Oven Disable",
+        "Air Conditioner",
+        "Enable Action",
+        "Dynamic Constraint",
+        "Any Window Sensor Open",
+        "All Windows Closed",
+        "Air Conditioner Enable",
+        "note"
+      ],
+      "semantic_similarity": 0.835751473903656,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": {
+          "tp": 9,
+          "fp": 9,
+          "fn": 5,
+          "precision": 0.5,
+          "recall": 0.6428571428571429,
+          "f1": 0.5625000000000001,
+          "missed": [
+            "Condition",
+            "Home",
+            "Priority",
+            "Rule",
+            "Trigger"
+          ],
+          "hallucinated": [
+            "10%",
+            "100%",
+            "Air Conditioner Enable",
+            "All Windows Closed",
+            "Dynamic Constraint",
+            "Safety Constraint",
+            "Set Lights",
+            "Smart Oven Disable",
+            "note"
+          ]
+        },
+        "structure": {
+          "tp": 5,
+          "fp": 2,
+          "fn": 2,
+          "precision": 0.7142857142857143,
+          "recall": 0.7142857142857143,
+          "f1": 0.7142857142857143,
+          "n_edges_gen": 7,
+          "n_edges_gt": 7,
+          "group_type_agreement": 0.25,
+          "n_group_compared": 8
+        },
+        "semantics": null,
+        "status": "features_only"
+      }
+    }
+  ]
+}

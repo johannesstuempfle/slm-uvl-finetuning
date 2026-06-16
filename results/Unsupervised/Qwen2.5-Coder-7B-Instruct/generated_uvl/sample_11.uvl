@@ -1,0 +1,41 @@
+The following UVL code represents the given smart home automation system:
+
+smart_home_automation_system {
+	Scene "Movie Mode" { 
+		priority 20; 
+		Lighting { set 10%; } 
+	} 
+
+	Scene "Morning" { 
+		priority 10; 
+		Lighting { set 100%; } 
+	} 
+
+	Rule "Prevent Morning during Movie Mode" { 
+		Scene "Movie Mode"; 
+		not Scene "Morning"; 
+	} 
+
+	Scene "Smart Oven" { 
+		Action { disable; 
+			if Home_Status == Away; 
+		} 
+		Oven { cook; } 
+	} 
+
+	Sensor "Window Sensor" { 
+		type { Contact; } 
+		value { Open; Closed; } 
+	} 
+
+	Scene "Air Conditioner" { 
+		Cooling { setpoint 24°C; } 
+		disable_conditions { 
+			if Window_Sensor == Open; 
+		} 
+		re_enable_conditions { 
+			after 300 sec; 
+				unless Window_Sensor == Open; 
+		} 
+	} 
+}

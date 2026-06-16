@@ -1,0 +1,38 @@
+'''uvl
+features
+    "PC Configurator Tool"
+        mandatory
+            "CPU"
+                alternative
+                    "Intel" | "AMD"
+                        alternative
+                            "LGA 1700" | "AM5"
+                        alternative
+                            "Z790"
+        mandatory
+            "Motherboard Chipset"
+                alternative
+                    "Z790"
+        mandatory
+            "RAM Type"
+                alternative
+                    "DDR4" | "DDR5"
+        mandatory
+            "GPU"
+                alternative
+                    "RTX 4090" | "High-end GPU"
+                        optional
+                            "Power Supply" {power {max 850W}}
+                                optional
+                                    "PSU" {min 600W}
+                                optional
+                                    "Air Cooler Height" {height < 350mm}
+        mandatory
+            "Case"
+                alternative
+                    "ATX", "Micro-ATX"
+
+constraints
+    "ATX Case" => "LGA 1700" || "AM5" || "Z790"
+    "Micro-ATX Case" => "ATX" || "Micro-ATX"
+    "Large Air Cooler" => "Power Supply" && "Air Cooler Height"

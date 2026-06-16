@@ -1,0 +1,32 @@
+features
+    CI_CD_System {abstract}
+        mandatory
+            Build
+            Unit_Test
+        optional
+            Staging {mandatory if Unit_Test_passed}
+                mandatory
+                    Staging_Deployment
+        mandatory
+            Production
+                mandatory
+                    Integration_Test
+                    Security_Scan
+                alternative
+                    Blue_Green_Strategy
+                        mandatory
+                            Infrastructure_Resources_Doubled
+                        optional
+                            Monitoring_Stage
+                                mandatory
+                                    Rollback_Trigger
+                    Canary_Strategy
+                        mandatory
+                            Monitoring_Stage
+                            Rollback_Trigger
+                mandatory
+                    Hotfix_Pipeline {abstract}
+                        mandatory
+                            Manual_QA_Approval
+                        mandatory
+                            Security_Scan

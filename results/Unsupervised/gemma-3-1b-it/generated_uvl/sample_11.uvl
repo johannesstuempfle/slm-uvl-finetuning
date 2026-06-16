@@ -1,0 +1,97 @@
+```uvl
+// Rule: Movie Mode
+// Triggers:
+//   - 'Home Status' == 'Away'
+//   - 'Movie Mode'
+// Actions:
+//   - 'Lights' {percentage = 10}
+//   - 'Air Conditioner' {dynamic = true}
+
+// Rule: Morning
+// Triggers:
+//   - 'Home Status' == 'Home'
+// Actions:
+//   - 'Lights' {percentage = 100}
+//   - 'Air Conditioner' {dynamic = true}
+
+// Rule: Smart Oven
+// Triggers:
+//   - 'Home Status' == 'Away'
+// Actions:
+//   - 'Lights' {percentage = 10}
+//   - 'Air Conditioner' {dynamic = true}
+
+// Rule: Window Sensor
+// Conditions:
+//   - 'Window Sensor' == 'Open'
+// Actions:
+//   - 'Air Conditioner' {dynamic = true}
+//     or
+//       'Air Conditioner' {dynamic = true}
+//         when 'Window Sensor' == 'Open'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Open'
+//         and 'Window Sensor' == 'Open'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Open'
+//         and 'Window Sensor' == 'Open'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and 'Window Sensor' == 'Closed'
+//         and

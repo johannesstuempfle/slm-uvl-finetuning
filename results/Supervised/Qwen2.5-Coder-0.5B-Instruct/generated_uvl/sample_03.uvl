@@ -1,0 +1,12 @@
+features
+    CoffeeShop
+        optional
+            Drinks
+                alternative
+                    Coffee
+                    Tea
+        optional
+            Foods
+                alternative
+                    Croisant
+                    Bagel

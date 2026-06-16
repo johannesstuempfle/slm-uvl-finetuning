@@ -1,0 +1,32 @@
+Sure, here's the translation of the given text into UVL (Unified Variable Language) code:
+
+```uvl
+features
+	"Billing Software"
+		mandatory
+			"Tax-Calculator"
+				mandatory
+					Inputs
+						alternative
+							"Netto Price"
+							"Sum of Products"
+							"Buyer Location"
+							"Seller Location"
+				optional
+					Tax-Rate
+				alternative
+					Brutto_Price
+					Tax_Per_Product
+				optional
+					Logging_Data
+						or
+							Calculated_Base_Price
+							Rule_Of_Calculation
+constraints
+	Buyer_Location & Seller_Location => Tax_Rate
+	Tax_Rate | Tax_Per_Product => Brutto_Price
+	Tax_Rate & Calculated_Base_Price => Logging_Data
+	Rule_Of_Calculation & Calculated_Base_Price => Logging_Data
+```
+
+This UVL code represents the structure and relationships described in the given text, ensuring that all necessary constraints are included.

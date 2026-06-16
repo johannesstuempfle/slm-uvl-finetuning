@@ -1,0 +1,39 @@
+features
+    Bicycle
+        mandatory
+            Groupset
+                alternative
+                    SRAM
+                    Shimano
+            Handlebar
+                alternative
+                    Drop Bar
+                    Flat Bar
+            Tire
+                alternative
+                    Road Bike
+                        mandatory
+                            Slim Tires
+                            No Profile
+                    Gravel Bike
+                        mandatory
+                            Wide Tires
+                            Some Profile
+                    Mountain Bike
+                        mandatory
+                            Extra Wide Tires
+                            Deep Profile
+
+constraints
+    Road Bike
+        implies
+            Slim Tires
+            No Profile
+    Gravel Bike
+        implies
+            Wide Tires
+            Some Profile
+    Mountain Bike
+        implies
+            Extra Wide Tires
+            Deep Profile

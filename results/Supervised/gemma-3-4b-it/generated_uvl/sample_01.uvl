@@ -1,0 +1,8 @@
+features
+    SecurityTeam
+        mandatory
+            SecurityArchitect
+            SecurityEngineer
+        optional
+            Manager
+            ScrumMaster

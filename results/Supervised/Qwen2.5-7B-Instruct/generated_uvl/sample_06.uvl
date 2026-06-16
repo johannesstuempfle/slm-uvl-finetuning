@@ -1,0 +1,24 @@
+features "Tax-Calculator"
+    mandatory
+        feature "Netto_Price"
+            optional
+                alternative 0.0
+                alternative 10.0
+                alternative 20.0
+        feature "Product_Sum"
+            optional
+                alternative 5.0
+                alternative 15.0
+        feature "Location"
+            mandatory
+                alternative "Buyer_Location"
+                alternative "Seller_Location"
+
+    optional
+        feature "Tax_Per_Product"
+        feature "Brutto_Price"
+        feature "Tax_Rate"
+
+    mandatory
+        feature "Calculated_Base_Price"
+        feature "Calculation_Rule"

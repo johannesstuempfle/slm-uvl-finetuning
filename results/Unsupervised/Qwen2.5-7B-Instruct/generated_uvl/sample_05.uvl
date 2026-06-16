@@ -1,0 +1,30 @@
+Certainly! Below is the translation of the provided text into UVL (Unified Virtual Layer) code, ensuring that all necessary components and their relationships are correctly represented:
+
+```uvl
+features
+    Factory
+        mandatory
+            ProductionLine
+                alternative
+                    NormalChocolate
+                        mandatory
+                            MeltingStation
+                            MixingStation
+                            CoolingStation
+                            LogisticSystem
+                            PackagingStation
+                    NutChocolate
+                        mandatory
+                            MeltingStation
+                            MixingStation
+                            CoolingStation
+                            LogisticSystem
+                            PackagingStation
+                            BakingStation
+
+constraints
+    NutChocolate => MeltingStation & MixingStation & CoolingStation & LogisticSystem & PackagingStation & BakingStation
+    NormalChocolate => MeltingStation & MixingStation & CoolingStation & LogisticSystem & PackagingStation
+```
+
+This UVL code defines the structure and constraints as described in your text, ensuring that all stations and their dependencies are accurately represented.

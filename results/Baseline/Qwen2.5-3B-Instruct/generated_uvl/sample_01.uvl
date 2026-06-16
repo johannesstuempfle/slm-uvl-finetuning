@@ -1,0 +1,20 @@
+In uvl-code, the provided sentence can be translated as follows:
+
+```uvl-code
+team-requirements {
+    requires {
+        security-architect,
+        security-engineer
+    }
+    excludes {
+        security-architect,
+        security-engineer
+    }
+    includes {
+        manager,
+        scrum-master
+    }
+}
+```
+
+This translation adheres to the structure of uvl-code, ensuring that the roles are correctly specified and their relationships (exclusion and inclusion) are accurately represented.

@@ -1,0 +1,38 @@
+Sure, here's an example implementation in UVL (Unified Verification Language) code:
+```
+module RoomBookingService {
+    // Define the room type with basic features and optional features
+    type Room = record {
+        numBeds : integer,
+        view : string,
+        size : string,
+        optionalFeatures : list(string)
+    }
+    
+    // Define the booking type with start and end dates and optional fees/bookings
+    type Booking = record {
+        startDate : date,
+        endDate : date,
+        optionalFeesBookings : list(string)
+    }
+    
+    // Define the hotel type with a list of rooms and a list of bookings
+    type Hotel = record {
+        rooms : list(Room),
+        bookings : list(Booking)
+    }
+    
+    // Function to check if a room can have a best-view option
+    function canHaveBestViewOption(room : Room) : boolean {
+        return room.numBeds == 2;
+    }
+    
+    // Function to add a booking to the hotel
+    procedure addBooking(hotel : ref Hotel, booking : Booking) {
+        hotel.bookings := hotel.bookings ++ [booking];
+    }
+}
+```
+
+This code defines three types: `Room`, `Booking`, and `Hotel`. It also includes two functions: `canHaveBestViewOption` and `addBooking`. The `canHaveBestViewOption` function checks if a room can have a best-view option based on its number of beds. The `addBooking` procedure adds a booking to the hotel.
+Note that this is just an example implementation, and there may be other ways to implement the same functionality using UVL.

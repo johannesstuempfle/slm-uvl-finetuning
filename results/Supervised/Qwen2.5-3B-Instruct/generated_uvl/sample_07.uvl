@@ -1,0 +1,19 @@
+features
+    Room
+        mandatory
+            Number_of_Beds
+            View
+            Size
+        optional
+            Personal_Spa_Area
+            Best_View
+    Booking
+        mandatory
+            Start_Date
+            End_Date
+        optional
+            Fees
+            Bookings
+
+constraints
+    Best_View => Two_Bed_Room

@@ -1,0 +1,23 @@
+Here is the translation in UGLY Code (uVL-Code) format based on the provided text:
+
+```uVL
+factory{
+    producLine{
+        type choclate{
+            meltStation;
+            mixStation;
+            coolStation;
+        }
+        type nutChoclate{
+            choclate{meltStation; mixStation; coolStation};
+            bakeStation;
+        }
+    }
+    require{
+        logisticSystem;
+        packStation;
+    }
+}
+```
+
+Please note that UGLY Code (uVL-Code) is a humorous and informal way to represent code, and it doesn't follow actual programming syntax or conventions. The provided translation maintains the structure and meaning of the original text while adhering to the style of UGLY Code.

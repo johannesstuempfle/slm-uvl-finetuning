@@ -1,0 +1,36 @@
+Sure, I can help you translate that text into UVL-Code. Here's the translation:
+
+```uvl
+# PC Configurator Tool Guide
+
+## Choosing the CPU
+
+- **Intel vs. AMD**: These are two popular processor brands. Each has its own set of advantages and disadvantages.
+
+## Motherboard Socket Selection
+
+- **LGA 1700 vs. AM5**: These are two different types of motherboard sockets. They are designed for different processors.
+
+## Motherboard Chipset Selection
+
+- **Z790**: This is a chipset for the motherboard. It supports different types of RAM.
+
+## High-End GPU Requirements
+
+- **RTX 4090**: This is a high-end graphics card. It requires a minimum power requirement.
+
+## PSU Selection
+
+- **Power Supply (PSU)**: The PSU must be at least 850W in order to support the GPU.
+
+## GPU Physical Length
+
+- **Physical Length**: The physical length of the GPU must be compatible with the case's maximum GPU clearance.
+
+## Case Compatibility
+
+- **Case (ATX, Micro-ATX)**: The case must match the motherboard's form factor.
+- **Optional Large Air Cooler Height**: The height of the optional large air cooler must be less than the case's CPU cooler clearance.
+```
+
+I hope this helps! Let me know if you have any further questions.

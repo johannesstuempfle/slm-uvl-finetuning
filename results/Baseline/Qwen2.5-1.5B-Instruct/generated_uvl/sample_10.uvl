@@ -1,0 +1,10 @@
+```uvl
+CI_CD_system_defines_deployment_pipelines.
+All_pipelines_must_run_'Build'_and_'Unit_Test'_stages.
+'A_Staging'_deployment_is_mandatory_and_can_only_run_after_'Unit_Test'_passes.
+'The_Production'_deployment_requires_the_'Staging'_deployment_to_succeed,_and_also_requires_both_'Integration_Test'_and_'Security_Scan'_to_pass.
+For_'The_Production'_pipeline,the_user_can_select_''either_a_Blue/Green''or_a_Canary''strategy'.
+Choosing_'Canary'_automatically_adds_a_'Monitoring'_stage_with_a_'Rollback'_trigger.
+Choosing_'Blue/Green'_requires_double_the_infrastructure_resources_during_the_swap.
+A_separate_'Hotfix'_pipeline_can_bypass_'Staging'_and_'Integration_Test'_but_requires_a_'Manual_QA_Approval'_step_and_must_still_pass_the_'Security_Scan'_.
+```

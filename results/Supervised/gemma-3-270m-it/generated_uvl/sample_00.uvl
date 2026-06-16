@@ -1,0 +1,91 @@
+'''uvl
+features
+    Car {abstract = true}
+        optional
+            -'engineType' {abstract = true}
+            -'assistanceSystems' {abstract = true}
+                optional
+                    'LaneAssist' {alternative = 'Automatic' {description = 'Automatic lane assistance')
+                        optional
+                            'Type' {alternative = 'Diesel' {description = 'Diesel-powered car')
+                                optional
+                                       'Colour' {alternative = 'Red' {description = 'Red colour')
+                                           optional
+                                           'Price' {alternative = 'Economy' {description = 'Economy price')
+                                               optional
+                                           'Price' {alternative = 'Regular' {description = 'Regular price')
+                                               optional
+                                           'Colour' {alternative = 'Blue' {description = 'Blue colour')
+                                           optional
+                                           'Price' {alternative = 'Blue' {description = 'Blue price')
+                                               optional
+                                           'Colour' {alternative = 'Green' {description = 'Green colour')
+                                           optional
+                                           'Price' {alternative = 'Green' {description = 'Green price')
+                                               optional
+                                           'Colour' {alternative = 'Green' {description = 'Green price')
+DHL_car_optional_features {alternative = 'Automatic Lane Assist' {description = 'Automatic lane assistance')
+        optional
+            'Type' {alternative = 'Diesel' {description = 'Diesel-powered car')
+                optional
+                    'Colour' {alternative = 'Red' {description = 'Red colour')
+                        optional
+                            'Price' {alternative = 'Economy' {description = 'Economy price')
+                                optional
+                                       'Price' {alternative = 'Regular' {description = 'Regular price')
+                                               optional
+                                           'Colour' {alternative = 'Blue' {description = 'Blue colour')
+                                           optional
+                                           'Price' {alternative = 'Regular' {description = 'Regular price')
+                                               optional
+                                           'Colour' {alternative = 'Blue' {description = 'Blue price')
+                                           optional
+                                           'Colour' {alternative = 'Green' {description = 'Green colour')
+                                           optional
+                                           'Price' {alternative = 'Economy' {description = 'Economy price')
+                                               optional
+                                           'Price' {alternative = 'Regular' {description = 'Regular price')
+                                               optional
+                                           'Colour' {alternative = 'Blue' {description = 'Blue colour')
+                                           optional
+                                           'Price' {alternative = 'Regular' {description = 'Regular price')
+                                               optional
+                                           'Colour' {alternative = 'Green' {description = 'Green colour')
+                                           optional
+                                           'Price' {alternative = 'Green' {description = 'Green price')
+                                               optional
+                                           'Colour' {alternative = 'Green' {description = 'Green price')
+                                           optional
+                                           'Colour' {alternative = 'Green' {description = 'Green price')
+                                           optional
+                                           'Colour' {alternative = 'Green' {description = 'Green price')
+                                           optional
+                                           'Price' {alternative = 'Economy' {description = 'Economy price')
+                                               optional
+                                           'Price' {alternative = 'Regular' {description = 'Regular price')
+                                               optional
+                                           'Colour' {alternative = 'Blue' {description = 'Blue colour')
+                                           optional
+                                           'Price' {alternative = 'Regular' {description = 'Regular price')
+                                               optional
+                                           'Colour' {alternative = 'Blue' {description = 'Blue price')
+                                           optional
+                                           'Colour' {alternative = 'Green' {description = 'Green colour')
+                                           optional
+                                           'Price' {alternative = 'Economy' {description = 'Economy price')
+                                               optional
+                                           'Price' {alternative = 'Regular' {description = 'Regular price')
+                                               optional
+                                           'Colour' {alternative = 'Blue' {description = 'Blue colour')
+                                           optional
+                                           'Price' {alternative = 'Regular' {description = 'Regular price')
+                                           optional
+                                           'Colour' {alternative = 'Green' {description = 'Green colour')
+                                           optional
+                                           'Price' {alternative = 'Green' {description = 'Green price')
+                                           optional
+                                           'Colour' {alternative = 'Green' {description = 'Green price')
+                                           optional
+                                           'Colour' {alternative = 'Green' {description = 'Green price')
+            optional
+                'Type' {alternative = 'Diesel' {description = 'Diesel-powered car')

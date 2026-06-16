@@ -1,0 +1,21 @@
+```uvl
+module CoffeeShop
+
+types
+    PaymentMethod {abstract}
+        constraints
+            PaymentMethod.Cash | PaymentMethod.Card
+    Drink {abstract}
+        constraints
+            Drink.Coffee | Drink.Tea | Drink.Bagel | Drink.Croissant
+    Food {abstract}
+        constraints
+            Food.Bagel | Food.Croissant | Food.Pancake | Food.Sandwich
+
+associations
+    PaymentMethod -> Drink
+    PaymentMethod -> Food
+
+constraints
+    PaymentMethod.Cash =>!Drink.Coffee &!Food.Bagel
+    PaymentMethod.Card => Drink.Coffee | Food.Bagel

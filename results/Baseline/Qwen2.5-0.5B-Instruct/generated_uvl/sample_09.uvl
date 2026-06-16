@@ -1,0 +1,10 @@
+```uvm-code
+PC_CONFIGURATOR_TOOL_Guides_USERS;
+CPU_CHOSEN = "Intel" || "AMD";
+BOTH_MOTHERBOARD_SOCKETS = "LGA 1700" || "AM5";
+MOTHERBOARD_CHIPSET = "Z790";
+GPU_POWER_MIN = "850W";
+GPU_LENGTH = "350mm";
+CASE_MATCHING = "ATX" || "Micro-ATX";
+OPTIONAL_COOLER_HEIGHT = "less_than_case_cooler_clearance";
+```

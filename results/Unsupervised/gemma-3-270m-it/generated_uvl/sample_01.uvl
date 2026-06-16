@@ -1,0 +1,72 @@
+The following text is written in UVL-Code:
+
+'''
+'''
+	or
+		"_Security_Architects" {}
+			mandatory
+				"_Security_Architects" {optional, optional}
+		"_Security_Engineer" {}
+			mandatory
+				"_Security_Engineer" {optional, optional}
+					alternative
+						"_Security_Engineer_101" {optional, optional}
+						"_Security_Engineer_102" {optional, optional}
+						"_Security_Engineer_103" {optional, optional}
+						"_Security_Engineer_104" {optional, optional}
+						"_Security_Engineer_105" {optional, optional}
+						"_Security_Engineer_106" {optional, optional}
+						"_Security_Engineer_107" {optional, optional}
+						"_Security_Engineer_108" {optional, optional}
+						"_Security_Engineer_109" {optional, optional}
+						"_Security_Engineer_110" {optional, optional}
+						"_Security_Engineer_111" {optional, optional}
+						"_Security_Engineer_112" {optional, optional}
+						"_Security_Engineer_113" {optional, optional}
+						"_Security_Engineer_114" {optional, optional}
+						"_Security_Engineer_115" {optional, optional}
+						"_Security_Engineer_116" {optional, optional}
+						"_Security_Engineer_117" {optional, optional}
+						"_Security_Engineer_118" {optional, optional}
+						"_Security_Engineer_119" {optional, optional}
+						"_Security_Engineer_120" {optional, optional}
+						"_Security_Engineer_121" {optional, optional}
+						"_Security_Engineer_122" {optional, optional}
+						"_Security_Engineer_123" {optional, optional}
+						"_Security_Engineer_124" {optional, optional}
+						"_Security_Engineer_125" {optional, optional}
+						"_Security_Engineer_126" {optional, optional}
+						"_Security_Engineer_127" {optional, optional}
+						"_Security_Engineer_128" {optional, optional}
+						"_Security_Engineer_129" {optional, optional}
+						"_Security_Engineer_130" {optional, optional}
+						"_Security_Engineer_131" {optional, optional}
+						"_Security_Engineer_132" {optional, optional}
+						"_Security_Engineer_133" {optional, optional}
+						"_Security_Engineer_134" {optional, optional}
+						"_Security_Engineer_135" {optional, optional}
+						"_Security_Engineer_136" {optional, optional}
+						"_Security_Engineer_137" {optional, optional}
+						"_Security_Engineer_138" {optional, optional}
+						"_Security_Engineer_139" {optional, optional}
+						"_Security_Engineer_140" {optional, optional}
+						"_Security_Engineer_141" {optional, optional}
+						"_Security_Engineer_142" {optional, optional}
+						"_Security_Engineer_143" {optional, optional}
+						"_Security_Engineer_144" {optional, optional}
+						"_Security_Engineer_145" {optional, optional}
+						"_Security_Engineer_146" {optional, optional}
+						"_Security_Engineer_147" {optional, optional}
+						"_Security_Engineer_148" {optional, optional}
+						"_Security_Engineer_149" {optional, optional}
+						"_Security_Engineer_150" {optional, optional}
+						"_Security_Engineer_151" {optional, optional}
+						"_Security_Engineer_152" {optional, optional}
+						"_Security_Engineer_153" {optional, optional}
+						"_Security_Engineer_154" {optional, optional}
+						"_Security_Engineer_155" {optional, optional}
+						"_Security_Engineer_156" {optional, optional}
+						"_Security_Engineer_157" {optional, optional}
+						"_Security_Engineer_158" {optional, optional}
+						"_Security_Engineer_159" {optional, optional}
+						"_Security_Engineer_160"

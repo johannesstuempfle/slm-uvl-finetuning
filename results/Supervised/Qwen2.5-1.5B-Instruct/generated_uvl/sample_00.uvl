@@ -1,0 +1,17 @@
+features
+    Car {abstract}
+        mandatory
+            Engine {abstract}
+                alternative
+                    Diesel
+                    Gasoline
+                    Electric
+            OptionalAssistSystem
+                alternative
+                    LaneAssist
+                    ESP
+            Colour
+
+constraints
+    Colour => 'Red'
+    Colour => 'Blue'

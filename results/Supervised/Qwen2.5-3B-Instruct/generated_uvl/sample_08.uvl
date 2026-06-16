@@ -1,0 +1,80 @@
+features
+    CourseRegistrationSystem {abstract}
+        mandatory
+            CreditRequirement {abstract}
+                mandatory
+                    MinimumCreditsRequirement {abstract}
+                        mandatory
+                            Credits {integer} 12
+        mandatory
+            EnrollmentRules {abstract}
+                mandatory
+                    StudentCreditRequirement {abstract}
+                        mandatory
+                            CreditMinimumRequirement {abstract}
+                                mandatory
+                                    Credits {integer} 12
+                mandatory
+                    StudentTypeRequirement {abstract}
+                        mandatory
+                            UndergraduateStudents {abstract}
+                                mandatory
+                                    CoreCourseSelectionRequirement {abstract}
+                                        mandatory
+                                            SelectCoreCourseRequirement {abstract}
+                                                mandatory
+                                                    SelectCoreCourse {string} "100-level Core course"
+                mandatory
+                    StudentTypeRequirement {abstract}
+                        mandatory
+                            GraduateStudents {abstract}
+                                mandatory
+                                    SeminarSelectionRequirement {abstract}
+                                        mandatory
+                                            SelectSeminarRequirement {abstract}
+                                                mandatory
+                                                    SelectSeminar {string} "500-level Seminar"
+        mandatory
+            PrerequisiteRules {abstract}
+                mandatory
+                    Prerequisites {abstract}
+                        mandatory
+                            RequiredPrerequisites {abstract}
+                                mandatory
+                                    Prerequisite {string} "Intro to AI"
+                                mandatory
+                                    Prerequisite {string} "Linear Algebra"
+        mandatory
+            MutualExclusionRules {abstract}
+                mandatory
+                    MutualExclusions {abstract}
+                        mandatory
+                            ExclusiveCourses {abstract}
+                                mandatory
+                                    ExclusiveCourse {string} "Statistics for Biology"
+                                mandatory
+                                    ExclusiveCourse {string} "Statistics for Business"
+        mandatory
+            OptionalElectives {abstract}
+                mandatory
+                    Elective {abstract}
+                        mandatory
+                            RoboticsLab {abstract}
+                                mandatory
+                                    HardEnrollmentCap {abstract}
+                                        mandatory
+                                            Cap {integer} 20
+        mandatory
+            MandatoryModules {abstract}
+                mandatory
+                    ThesisDefense {abstract}
+                        mandatory
+                            Eligibility {abstract}
+                                mandatory
+                                    CompletedCreditsRequirement {abstract}
+                                        mandatory
+                                            Credits {integer} 60
+                                mandatory
+                                    ReviewPassedRequirement {abstract}
+                                        mandatory
+                                            Review {string} "Dissertation Proposal"

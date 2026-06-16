@@ -1,0 +1,33 @@
+features
+    SmartHomeController {abstract}
+        mandatory
+            MovieMode
+                implies
+                    LightLevel_10percent
+            Morning
+                implies
+                    LightLevel_100percent
+                conflict
+                    MovieMode
+        mandatory
+            SmartOven
+                implies
+                    HomeStatus_Away =>!SmartOvenActive
+        mandatory
+            AirConditioner
+                implies
+                    WindowSensor_Open =>!AirConditionerActive
+                implies
+                    all(WindowSensor_Closed) => AirConditionerActive
+                implies
+                    all(WindowSensor_Closed) => disableAfter(300, AirConditionerActive)
+        optional
+            WindowSensor
+                or
+                    WindowSensor_Open
+                    WindowSensor_Closed
+
+constraints
+    HomeStatus_Away =>!SmartOvenActive
+    all(WindowSensor_Closed) => AirConditionerActive
+    all(WindowSensor_Closed) => disableAfter(300, AirConditionerActive)

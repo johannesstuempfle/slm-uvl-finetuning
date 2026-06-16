@@ -1,0 +1,43 @@
+features
+    PC_Configurator
+        mandatory
+            CPU
+                alternative
+                    Intel
+                    AMD
+            Motherboard
+                alternative
+                    LGA_1700
+                    AM5
+            Motherboard_Chipset
+                alternative
+                    Z790
+                    AM4
+            RAM_Type
+                alternative
+                    DDR4
+                    DDR5
+            GPU
+                alternative
+                    RTX_4090
+            GPU_Length
+                alternative
+                    350
+                    360
+                    340
+            GPU_Clearance
+                alternative
+                    ATX
+                    Micro_ATX
+                    Small_Air_Cooler
+            Case
+                alternative
+                    ATX
+                    Micro_ATX
+                    Large_Air_Cooler
+
+constraints
+    "CPU selection must be one of the options listed above."
+    "GPU must be supported by the chosen Case."
+    "Case must match the chosen CPU."
+    "RAM type must match the chosen CPU."

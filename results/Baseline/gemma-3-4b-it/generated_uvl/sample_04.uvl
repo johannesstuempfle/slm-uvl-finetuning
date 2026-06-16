@@ -1,0 +1,112 @@
+```uvl
+{
+  "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+  "entities": [
+    {
+      "entity_type": "bicycle_type",
+      "value": "bicycle"
+    },
+    {
+      "entity_type": "groupset_manufacturer",
+      "value": "SRAM or Shimano"
+    },
+    {
+      "entity_type": "tyre_width",
+      "value": "wide"
+    },
+    {
+      "entity_type": "tyre_profile",
+      "value": "some profile"
+    },
+    {
+      "entity_type": "tyre_width",
+      "value": "slim"
+    },
+    {
+      "entity_type": "tyre_profile",
+      "value": "no profile"
+    },
+    {
+      "entity_type": "handlebar_type",
+      "value": "drop bar handlebar"
+    },
+    {
+      "entity_type": "handlebar_type",
+      "value": "flat handlebar"
+    },
+    {
+      "entity_type": "tyre_width",
+      "value": "extra wide"
+    },
+    {
+      "entity_type": "tyre_profile",
+      "value": "deep profile"
+    }
+  ],
+  "relationships": [
+    {
+      "subject": "bicycle",
+      "relation": "equipped_with",
+      "object": "groupset"
+    },
+    {
+      "subject": "groupset",
+      "relation": "manufacturer",
+      "object": "SRAM or Shimano"
+    },
+    {
+      "subject": "gravel bike",
+      "relation": "has_tyre_width",
+      "object": "wide"
+    },
+    {
+      "subject": "gravel bike",
+      "relation": "has_tyre_profile",
+      "object": "some profile"
+    },
+    {
+      "subject": "road bike",
+      "relation": "has_tyre_width",
+      "object": "slim"
+    },
+    {
+      "subject": "road bike",
+      "relation": "has_tyre_profile",
+      "object": "no profile"
+    },
+    {
+      "subject": "bicycle",
+      "relation": "equipped_with",
+      "object": "drop bar handlebar"
+    },
+    {
+      "subject": "mountain bike",
+      "relation": "equipped_with",
+      "object": "flat handlebar"
+    },
+    {
+      "subject": "mountain bike",
+      "relation": "has_tyre_width",
+      "object": "extra wide"
+    },
+    {
+      "subject": "mountain bike",
+      "relation": "has_tyre_profile",
+      "object": "deep profile"
+    },
+    {
+      "subject": "slim tyres",
+      "relation": "can_be_fitted_on",
+      "object": "gravel bike"
+    }
+  ]
+}
+```
+
+**Explanation and Considerations:**
+
+* **`text`:**  The original text is included as a string.
+* **`entities`:** This section lists the key pieces of information (bicycle type, groupset manufacturer, tyre types, handlebar types) and categorizes them.  I've used specific entity types for clarity.
+* **`relationships`:** This section defines how the entities relate to each other.  I've used relations like `equipped_with`, `manufacturer`, `has_tyre_width`, `has_tyre_profile`, and `can_be_fitted_on` to represent the connections in the text.  This is the core of the UVL representation.
+* **Clarity and Granularity:** I've aimed for a level of granularity that's useful for querying and reasoning.  For example, separating "wide" and "slim" tyres into distinct entities.
+* **Synonym Handling:**  The text uses "some profile" and "no profile".  I've represented these as literal strings.  A more sophisticated system might

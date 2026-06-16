@@ -1,0 +1,18 @@
+```uvl
+// Security Team Structure
+
+// Security Architect and Security Engineer roles require separate personnel.
+// No two individuals can hold both roles simultaneously.
+
+// The team also includes a manager and a Scrum Master.
+```
+
+**Explanation:**
+
+*   **`//`:**  Used for comments.  Comments are ignored by the UVL parser.
+*   **`Security Team Structure`:**  This is a clear and concise title for the code block.
+*   **`Security Architect and Security Engineer roles require separate personnel.`:** This is the core message, presented in a structured way.
+*   **`No two individuals can hold both roles simultaneously.`:** This clarifies the constraint, making it easily understandable.
+*   **`The team also includes a manager and a Scrum Master.`:**  This provides the additional team members and their roles.
+
+This UVL code is formatted for readability and easy parsing by the UVL interpreter.  It effectively conveys the information in a structured manner.

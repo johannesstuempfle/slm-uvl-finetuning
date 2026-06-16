@@ -1,0 +1,15 @@
+features
+    SecurityTeam {abstract}
+        mandatory
+            Manager
+            ScrumMaster
+        optional
+            SecurityArchitect
+            SecurityEngineer
+
+constraints
+    SecurityArchitect!= SecurityEngineer
+    SecurityArchitect!= Manager
+    SecurityArchitect!= ScrumMaster
+    SecurityEngineer!= Manager
+    SecurityEngineer!= ScrumMaster

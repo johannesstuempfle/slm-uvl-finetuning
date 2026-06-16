@@ -1,0 +1,21 @@
+features
+    "Bicycle"
+        mandatory
+            "Groupset"
+                alternative
+                    "SRAM" {brand 'SRAM'}
+                    "Shimano"
+            "Tyres"
+                alternative
+                    "Wide tyres"
+                        optional
+                            "Profile"
+            "Handlebars"
+                alternative
+                    "Drop bar handlebar"
+                    "Flat handlebar"
+            "Additional Features"
+                optional
+                    "Extra wide tyres"
+                        alternative
+                            "Deep profile"

@@ -1,0 +1,37 @@
+```json
+{
+  "type": "course_registration_system",
+  "requirements": {
+    "min_credits": 12,
+    "undergraduates": {
+      "core_course": {
+        "level": 100
+      }
+    },
+    "graduates": {
+      "seminar": {
+        "level": 500
+      }
+    },
+    "prerequisites": [
+      {
+        "course": "Advanced AI",
+        "dependencies": ["Intro to AI", "Linear Algebra"]
+      },
+      {
+        "course": "Statistics for Biology",
+        "exclusive_with": "Statistics for Business"
+      }
+    ],
+    "electives": {
+      "robotics_lab": {
+        "capacity": 20
+      }
+    },
+    "thesis_defense": {
+      "credits": 60,
+      "review_passed": true
+    }
+  }
+}
+```

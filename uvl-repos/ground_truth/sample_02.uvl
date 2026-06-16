@@ -1,0 +1,11 @@
+features
+    Computer
+        mandatory
+            "Text Editor"
+                alternative
+                    "MS Word"
+                    Pages
+            "Spreadsheet Tool"
+                alternative
+                    "MS Excel"
+                    Numbers

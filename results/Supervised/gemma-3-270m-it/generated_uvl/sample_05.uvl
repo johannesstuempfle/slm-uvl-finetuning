@@ -1,0 +1,9 @@
+features
+    "Chocolate Production Line"
+        mandatory
+            "Melting",
+                optional
+                    "Mixing",
+                    "Colling",
+                    "Logistic System",
+                    "Packaging Station"

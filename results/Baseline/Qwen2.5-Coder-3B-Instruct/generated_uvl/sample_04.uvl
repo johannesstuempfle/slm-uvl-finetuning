@@ -1,0 +1,23 @@
+Sure, here is the translation of the given text into UVL-Code:
+
+```
+Bicycle {
+    Groupset {
+        Manufacturer { SRAM or Shimano }
+        Parts { 
+            Gravel Bike {
+                Tyres { Wide tyres with some profile }
+                Handlebar { Drop bar }
+            }
+            Road Bike {
+                Tyres { Slim tyres with no profile }
+                Handlebar { Drop bar }
+            }
+            Mountain Bike {
+                Tyres { Extra wide tyres with deep profile }
+                Handlebar { Flat bar }
+            }
+        }
+    }
+}
+```

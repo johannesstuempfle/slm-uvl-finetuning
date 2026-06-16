@@ -1,0 +1,27 @@
+features
+    ChocolateProductionLine {abstract}
+        mandatory
+            "Melt"
+                alternative
+                    NormalChocolate
+                optional
+                    NutChocolate
+        mandatory
+            "Mixing"
+                alternative
+                    NormalChocolate
+                optional
+                    NutChocolate
+        mandatory
+            "Colling"
+                alternative
+                    NormalChocolate
+                optional
+                    NutChocolate
+        mandatory
+            LogisticSystem
+        mandatory
+            PackagingStation
+
+constraints
+    NutChocolate => NutChocolate

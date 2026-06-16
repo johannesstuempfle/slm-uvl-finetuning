@@ -1,0 +1,62 @@
+Here is the translation into UVL-Code, following the provided text:
+
+```uvl
+Features
+    PCConfigurator
+        Mandatory
+            CPU
+                Alternative
+                    Intel
+                        Required
+                            MotherboardSocket
+                                Alternative
+                                    LGA1700
+                                        Optional
+                                            RAMType
+                                                Alternative
+                                                    DDR4
+                                                    DDR5
+                                    AM5
+                                        Optional
+                                            RAMType
+                                                Alternative
+                                                    DDR4
+                                                    DDR5
+            HighEndGPU
+                Alternative
+                    RTX4090
+                        Required
+                            PSU
+                                Constraint
+                                    Power >= 850
+                        Required
+                            Case
+                                Constraint
+                                    MaxGPULength >= 350
+            GPU
+                Alternative
+                    RTX4090
+                        Required
+                            PSU
+                                Constraint
+                                    Power >= 850
+                        Required
+                            Case
+                                Constraint
+                                    MaxGPULength >= 350
+            Case
+                Alternative
+                    ATX
+                    MicroATX
+                        Required
+                            MotherboardFormFactor
+                                Alternative
+                                    ATX
+                                    MicroATX
+                        OptionalLargeAirCooler
+                            Constraint
+                                Height < CPUcoolerClearance
+
+```
+
+This UVL code captures the logical relationships and constraints described in your text, ensuring the correct syntax is used.

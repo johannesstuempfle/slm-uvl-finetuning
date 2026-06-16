@@ -1,0 +1,45 @@
+features
+    CI/CD_Pipeline
+        mandatory
+            Build
+                optional
+                    Staging
+                    Unit Test
+                optional
+                    Production
+                        mandatory
+                            Staging
+                            Integration Test
+                            Security Scan
+        optional
+            Production
+                mandatory
+                    Blue/Green
+                        optional
+                            Monitoring
+                            Rollback Trigger
+        optional
+                Canary
+                    Monitoring
+                    Rollback Trigger
+        optional
+            Hotfix
+                mandatory
+                    Manual QA Approval
+        optional
+                Blue/Green
+                    Configuration
+                        optional
+                            Infrastructure Resources
+                                optional
+                                    Blue/Green
+                                              or
+                                              Canary
+                                              or
+                                               Monitoring
+                                                  optional
+            Hotfix
+                optional
+                    Manual QA Approval
+                mandatory
+                    Security Scan

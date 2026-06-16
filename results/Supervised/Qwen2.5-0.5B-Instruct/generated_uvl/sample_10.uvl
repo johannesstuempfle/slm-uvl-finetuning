@@ -1,0 +1,64 @@
+features
+    "CI/CD System"
+        mandatory
+            "Deployment Pipelines"
+                optional
+                    "Build" {stage 'Build'}
+                    optional
+                        "Unit Test" {stage 'Unit Test'}
+                        mandatory
+                            "Staging Deployment"
+                                optional
+                                    "Staging Pipeline"
+                                        optional
+                                            "Optional Strategy"
+                                                mandatory
+                                                    "Staging"
+                                                        optional
+                                                            "Pipeline Steps"
+                                                                optional
+                                                                    Build
+                                                                    Unit Test
+                    mandatory
+                        "Production Deployment"
+                            optional
+                                "Staging Deployment"
+                                    mandatory
+                                        optional
+                                            "Staging Pipeline"
+                                                optional
+                                                    "Pipeline Steps"
+                                                        optional
+                                                            Build
+                                                        optional
+                                                            Unit Test
+                                mandatory
+                                    optional
+                                        optional
+                                            "Production Deployment"
+                                                optional
+                                                    "Reduction Stage"
+                                                        mandatory
+                                                            Monitoring
+                                                                optional
+                                                                    Rollback Trigger
+                                                                optional
+                                                                    "Rollback Trigger"
+                                                        optional
+                                                            Hotfix Pipeline
+                                                optional
+                                                    optional
+                                                        optional
+                                                            Manual QA Approval
+                                                        optional
+                                                            Security Scan
+
+constraints
+    "Production Deployment" => "Staging Deployment"
+    "Staging Deployment" => "Staging Pipeline"
+    "Staging Deployment" => "Integration Test"
+    "Staging Deployment" => "Security Scan"
+    "Production Deployment" => "Production Pipeline"
+    "Production Deployment" => "Staging Pipeline"
+    "Production Deployment" => "Rollback Trigger"
+    "Production Deployment" => "Hotfix Pipeline"

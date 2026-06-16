@@ -1,0 +1,14 @@
+features
+    Room_Booking_Service {abstract}
+        mandatory
+            Rooms {abstract}
+                alternative
+                    Two_Bed_Room
+                    Single_Bed_Room
+                    Suite_Room
+        mandatory
+            Bookings {abstract}
+
+constraints
+    Two_Bed_Room -> Best_View_Option
+    Two_Bed_Room -> Personal_Spa_Area

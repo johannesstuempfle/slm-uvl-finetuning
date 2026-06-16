@@ -1,0 +1,37 @@
+Sure! Here's the translation of the given text into UVL-Code:
+
+```uvl
+-- Define the Car entity with its attributes and relationships
+entity Car {
+    -- Attributes
+    engineType : string;
+    color : string;
+
+    -- Relationships
+    hasLaneAssist : boolean;
+    hasESP : boolean;
+}
+
+-- Define the Diesel engine type
+entity DieselEngine {
+    -- Attributes
+    engineType : string;
+}
+
+-- Define the Gasoline engine type
+entity GasolineEngine {
+    -- Attributes
+    engineType : string;
+}
+
+-- Define the Electric engine type
+entity ElectricEngine {
+    -- Attributes
+    engineType : string;
+}
+```
+
+In this UVL-Code:
+- The `Car` entity includes attributes such as `engineType`, `color`, `hasLaneAssist`, and `hasESP`.
+- Different types of engines (`DieselEngine`, `GasolineEngine`, and `ElectricEngine`) are defined separately.
+- These entities represent the various components of a car and their relationships with each other.

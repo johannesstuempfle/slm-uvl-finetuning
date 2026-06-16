@@ -1,0 +1,219 @@
+{
+  "score": 0.0,
+  "semantic_score": 0.0,
+  "flamapy_summary": {},
+  "semantic_eval_summary": {
+    "ok": 0,
+    "features_only": 0,
+    "failed": 12,
+    "mean_feature_f1": 0.0,
+    "mean_semantic_f1": 0.0,
+    "mean_structural_f1": 0.0
+  },
+  "eval_data": [
+    {
+      "text": "A car always has an engine that can be a diesel, gasoline or electric. It will also has some optional assistance systems like lane assist or ESP. There are also different colours for the car.",
+      "output": "In Uvl-Code, the translation of the given text would be:\n\n```\nCar always has an Engine which can be Diesel, Gasoline or Electric. It will also have some Optional Assistance Systems like Lane Assist or ESP. There are also Different Colours for the Car.\n```\n\nThis translation maintains the original meaning and structure of the English text while adhering to the syntax rules of Uvl-Code.",
+      "output_raw": "In Uvl-Code, the translation of the given text would be:\n\n```\nCar always has an Engine which can be Diesel, Gasoline or Electric. It will also have some Optional Assistance Systems like Lane Assist or ESP. There are also Different Colours for the Car.\n```\n\nThis translation maintains the original meaning and structure of the English text while adhering to the syntax rules of Uvl-Code.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 48,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A secutity team requires a security architect and a security engineer. Those persons can not be the same person. The team also has a manager and a seperate scrum master.",
+      "output": "Sure, here's the translation of the text into Uvl-Code:\n\n```uvl\nteam SecurityTeam {\n    roles {\n        securityArchitect: SecurityArchitect\n        securityEngineer: SecurityEngineer\n        manager: Manager\n        scrumMaster: ScrumMaster\n    }\n    requirements {\n        \"securityTeam\" {\n            \"requirement1\": \"There should be at least one security architect and one security engineer.\"\n            \"requirement2\": \"The security architect and the security engineer cannot be the same person.\"\n            \"requirement3\": \"The team should have a manager.\"\n            \"requirement4\": \"The team should have a separate scrum master.\"\n        }\n    }\n}\n```\n\nThis Uvl-Code defines a team named `SecurityTeam` with specific roles and requirements.",
+      "output_raw": "Sure, here's the translation of the text into Uvl-Code:\n\n```uvl\nteam SecurityTeam {\n    roles {\n        securityArchitect: SecurityArchitect\n        securityEngineer: SecurityEngineer\n        manager: Manager\n        scrumMaster: ScrumMaster\n    }\n    requirements {\n        \"securityTeam\" {\n            \"requirement1\": \"There should be at least one security architect and one security engineer.\"\n            \"requirement2\": \"The security architect and the security engineer cannot be the same person.\"\n            \"requirement3\": \"The team should have a manager.\"\n            \"requirement4\": \"The team should have a separate scrum master.\"\n        }\n    }\n}\n```\n\nThis Uvl-Code defines a team named `SecurityTeam` with specific roles and requirements.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A computer has installed a text editing programm (MS Word, Pages etc.) and a cell calculation tool (MS Excel, Numberts etc.).",
+      "output": "Here is the translation of the given text into UVL-Code:\n\n```\nA computer has installed a text editing program (MS Word, Pages, etc.) and a cell calculation tool (MS Excel, Numberts, etc.).\n```",
+      "output_raw": "Here is the translation of the given text into UVL-Code:\n\n```\nA computer has installed a text editing program (MS Word, Pages, etc.) and a cell calculation tool (MS Excel, Numberts, etc.).\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 4,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A coffee shop sells different drinks (Coffee, Tea etc.) and different foods (Croisant, Bagel etc.). You can either pay by card or cash.",
+      "output": "Certainly! Here is the translation of the given text into UVL-Code:\n\n```uvl\ncoffee-shop {\n    drinks = [\n        \"Coffee\",\n        \"Tea\"\n    ],\n    foods = [\n        \"Croissant\",\n        \"Bagel\"\n    ],\n    payment-methods = [\n        \"Card\",\n        \"Cash\"\n    ]\n}\n```\n\nThis UVL-Code structure defines a `coffee-shop` with lists for drinks, foods, and payment methods. Each list contains strings representing the respective items.",
+      "output_raw": "Certainly! Here is the translation of the given text into UVL-Code:\n\n```uvl\ncoffee-shop {\n    drinks = [\n        \"Coffee\",\n        \"Tea\"\n    ],\n    foods = [\n        \"Croissant\",\n        \"Bagel\"\n    ],\n    payment-methods = [\n        \"Card\",\n        \"Cash\"\n    ]\n}\n```\n\nThis UVL-Code structure defines a `coffee-shop` with lists for drinks, foods, and payment methods. Each list contains strings representing the respective items.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A bicycle is equipped with a groupset (Manufacturer is SRAM or Shimano) and other parts for different use-cases. The gravel bike features wide tyres with some profile, while the road bike has slim tyres with no profile. Both bikes are equipped with a drop bar handlebar, while the mountain bike is equipped with a flat handlebar. It also features extra wide tyres with deep profile. It is also possible to fit the slim tyres on the gravel bike.",
+      "output": "Sure, here is the translation of the given text into UVL-Code:\n\n```\nBicycle {\n    Groupset {\n        Manufacturer { SRAM or Shimano }\n        Parts { \n            Gravel Bike {\n                Tyres { Wide tyres with some profile }\n                Handlebar { Drop bar }\n            }\n            Road Bike {\n                Tyres { Slim tyres with no profile }\n                Handlebar { Drop bar }\n            }\n            Mountain Bike {\n                Tyres { Extra wide tyres with deep profile }\n                Handlebar { Flat bar }\n            }\n        }\n    }\n}\n```",
+      "output_raw": "Sure, here is the translation of the given text into UVL-Code:\n\n```\nBicycle {\n    Groupset {\n        Manufacturer { SRAM or Shimano }\n        Parts { \n            Gravel Bike {\n                Tyres { Wide tyres with some profile }\n                Handlebar { Drop bar }\n            }\n            Road Bike {\n                Tyres { Slim tyres with no profile }\n                Handlebar { Drop bar }\n            }\n            Mountain Bike {\n                Tyres { Extra wide tyres with deep profile }\n                Handlebar { Flat bar }\n            }\n        }\n    }\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 8,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A factory has a production line that produces different types of chocolate. For normal chocolate, the melting-, mixing- and colling-station is needed. For the production of nut-chocolate, all mentioned statitions for nomal chocolate and an additional baking-station is required. All lines require a logistic-system and a packaging station.",
+      "output": "```uvl\nfactory {\n    name: \"Chocolate Factory\"\n    productionLines: [\n        type: \"Normal Chocolate\",\n        stations: [\"Melting Station\", \"Mixing Station\", \"Colling Station\"],\n        requirements: [\"Logistic System\", \"Packaging Station\"]\n    ],\n    productionLines: [\n        type: \"Nut-Chocolate\",\n        stations: [\"Melting Station\", \"Mixing Station\", \"Colling Station\", \"Baking Station\"],\n        requirements: [\"Logistic System\", \"Packaging Station\"]\n    ]\n}\n```",
+      "output_raw": "```uvl\nfactory {\n    name: \"Chocolate Factory\"\n    productionLines: [\n        type: \"Normal Chocolate\",\n        stations: [\"Melting Station\", \"Mixing Station\", \"Colling Station\"],\n        requirements: [\"Logistic System\", \"Packaging Station\"]\n    ],\n    productionLines: [\n        type: \"Nut-Chocolate\",\n        stations: [\"Melting Station\", \"Mixing Station\", \"Colling Station\", \"Baking Station\"],\n        requirements: [\"Logistic System\", \"Packaging Station\"]\n    ]\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 2,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "We have a tax-calculator within a billing-software. A calculator always needs following inputs: netto price, sum of products and the location of the buyer and seller. It then calculates follwing outputs: tax per product, brutto price and tax-rate. It also outputs logging data for audits: calculated base price and rule of calculation.",
+      "output": "Certainly! Below is the UVL (Unified Virtual Language) code that translates the given information into a structured format:\n\n```uvl\n// Define the TaxCalculator component\ncomponent TaxCalculator {\n    // Define the required inputs\n    input nettoPrice: number;\n    input sumOfProducts: number;\n    input buyerLocation: string;\n    input sellerLocation: string;\n\n    // Define the required outputs\n    output taxPerProduct: number[];\n    output bruttoPrice: number;\n    output taxRate: number;\n\n    // Define the logging data\n    output calculatedBasePrice: number;\n    output ruleOfCalculation: string;\n\n    // Define the calculation logic\n    calculate() {\n        // Calculate tax per product\n        taxPerProduct = [];\n        for (let i = 0; i < sumOfProducts.length; i++) {\n            taxPerProduct[i] = nettoPrice[i] * (taxRate / 100);\n        }\n\n        // Calculate brutto price\n        bruttoPrice = nettoPrice.reduce((acc, val) => acc + val, 0);\n\n        // Calculate tax rate\n        taxRate = calculateTaxRate(bruttoPrice, sumOfProducts);\n\n        // Calculate calculated base price\n        calculatedBasePrice = nettoPrice.reduce((acc, val) => acc + val, 0);\n\n        // Determine the rule of calculation\n        ruleOfCalculation = \"Standard tax calculation\";\n    }\n\n    // Helper function to calculate tax rate\n    calculateTaxRate(bruttoPrice: number, sumOfProducts: number[]): number {\n        // Example logic: calculate tax rate based on total sum of products\n        const totalSum = sumOfProducts.reduce((acc, val) => acc + val, 0);\n        return (bruttoPrice - totalSum) / totalSum * 100;\n    }\n}\n```\n\nThis code defines a `TaxCalculator` component with the specified inputs, outputs, and calculation logic. The `calculate` method computes the tax per product, brutto price, tax rate, calculated base price, and rule of calculation based on the provided inputs.",
+      "output_raw": "Certainly! Below is the UVL (Unified Virtual Language) code that translates the given information into a structured format:\n\n```uvl\n// Define the TaxCalculator component\ncomponent TaxCalculator {\n    // Define the required inputs\n    input nettoPrice: number;\n    input sumOfProducts: number;\n    input buyerLocation: string;\n    input sellerLocation: string;\n\n    // Define the required outputs\n    output taxPerProduct: number[];\n    output bruttoPrice: number;\n    output taxRate: number;\n\n    // Define the logging data\n    output calculatedBasePrice: number;\n    output ruleOfCalculation: string;\n\n    // Define the calculation logic\n    calculate() {\n        // Calculate tax per product\n        taxPerProduct = [];\n        for (let i = 0; i < sumOfProducts.length; i++) {\n            taxPerProduct[i] = nettoPrice[i] * (taxRate / 100);\n        }\n\n        // Calculate brutto price\n        bruttoPrice = nettoPrice.reduce((acc, val) => acc + val, 0);\n\n        // Calculate tax rate\n        taxRate = calculateTaxRate(bruttoPrice, sumOfProducts);\n\n        // Calculate calculated base price\n        calculatedBasePrice = nettoPrice.reduce((acc, val) => acc + val, 0);\n\n        // Determine the rule of calculation\n        ruleOfCalculation = \"Standard tax calculation\";\n    }\n\n    // Helper function to calculate tax rate\n    calculateTaxRate(bruttoPrice: number, sumOfProducts: number[]): number {\n        // Example logic: calculate tax rate based on total sum of products\n        const totalSum = sumOfProducts.reduce((acc, val) => acc + val, 0);\n        return (bruttoPrice - totalSum) / totalSum * 100;\n    }\n}\n```\n\nThis code defines a `TaxCalculator` component with the specified inputs, outputs, and calculation logic. The `calculate` method computes the tax per product, brutto price, tax rate, calculated base price, and rule of calculation based on the provided inputs.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 1,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "There is a room-booking-service that manages different rooms within a hotel. A room has different basic features like: number of beds, view and size. There are also optional features like personal spa area or best-view option. A best-view option is only available for two-bed rooms. The managing system also manages the bookings. Each booking contains the start and end date and optional fees/bookings. ",
+      "output": "Certainly! Below is the translation of the given text into UVL (Unified Version Language) code:\n\n```uvl\nmodule RoomBookingService\n\n    // Define the Room type with basic features\n    type Room {\n        number_of_beds : Integer,\n        view : String,\n        size : Integer,\n        personal_spa_area : Boolean,\n        best_view_option : Boolean\n    }\n\n    // Define the Booking type with start and end dates and optional fees/bookings\n    type Booking {\n        start_date : Date,\n        end_date : Date,\n        optional_fees : List[Float],\n        optional_bookings : List[Room]\n    }\n\n    // Function to check if a best-view option is available for a room\n    function is_best_view_available(room : Room) -> Boolean {\n        return room.number_of_beds == 2\n    }\n\n    // Function to manage room bookings\n    function manage_bookings(bookings : List[Booking]) -> List[Booking] {\n        // Implementation details for managing bookings\n        return bookings\n    }\nend module\n```\n\n### Explanation:\n- **Room Type**: Defines the structure of a room with properties such as `number_of_beds`, `view`, `size`, `personal_spa_area`, and `best_view_option`.\n- **Booking Type**: Defines the structure of a booking with properties such as `start_date`, `end_date`, `optional_fees`, and `optional_bookings`.\n- **is_best_view_available Function**: Checks if a best-view option is available for a room based on the number of beds.\n- **manage_bookings Function**: Placeholder for managing bookings, which can include logic for processing and storing bookings.\n\nThis code provides a basic framework for managing rooms and bookings within a hotel using UVL. You can expand upon this by adding more functionality and error handling as needed.",
+      "output_raw": "Certainly! Below is the translation of the given text into UVL (Unified Version Language) code:\n\n```uvl\nmodule RoomBookingService\n\n    // Define the Room type with basic features\n    type Room {\n        number_of_beds : Integer,\n        view : String,\n        size : Integer,\n        personal_spa_area : Boolean,\n        best_view_option : Boolean\n    }\n\n    // Define the Booking type with start and end dates and optional fees/bookings\n    type Booking {\n        start_date : Date,\n        end_date : Date,\n        optional_fees : List[Float],\n        optional_bookings : List[Room]\n    }\n\n    // Function to check if a best-view option is available for a room\n    function is_best_view_available(room : Room) -> Boolean {\n        return room.number_of_beds == 2\n    }\n\n    // Function to manage room bookings\n    function manage_bookings(bookings : List[Booking]) -> List[Booking] {\n        // Implementation details for managing bookings\n        return bookings\n    }\nend module\n```\n\n### Explanation:\n- **Room Type**: Defines the structure of a room with properties such as `number_of_beds`, `view`, `size`, `personal_spa_area`, and `best_view_option`.\n- **Booking Type**: Defines the structure of a booking with properties such as `start_date`, `end_date`, `optional_fees`, and `optional_bookings`.\n- **is_best_view_available Function**: Checks if a best-view option is available for a room based on the number of beds.\n- **manage_bookings Function**: Placeholder for managing bookings, which can include logic for processing and storing bookings.\n\nThis code provides a basic framework for managing rooms and bookings within a hotel using UVL. You can expand upon this by adding more functionality and error handling as needed.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 12,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A university course registration system manages student enrollments. All students must register for a minimum of 12 credits. Undergraduate students must select one 100-level Core course, while Graduate students must select a 500-level Seminar. Many courses have prerequisites; for example, 'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'. Some courses are mutually exclusive, like 'Statistics for Biology' and 'Statistics for Business'. The 'Robotics Lab' course is an optional elective with a hard enrollment cap of 20 students. Finally, the 'Thesis Defense' module is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.",
+      "output": "Certainly! Below is the translation of the given text into UVL-Code:\n\n```uvl\n// Define the Course class\nclass Course {\n    string name;\n    int creditHours;\n    list<string> prerequisites;\n    bool mutualExclusion;\n    int enrollmentCap;\n\n    // Constructor for Course\n    constructor(string name, int creditHours, list<string> prerequisites, bool mutualExclusion, int enrollmentCap) {\n        this.name = name;\n        this.creditHours = creditHours;\n        this.prerequisites = prerequisites;\n        this.mutualExclusion = mutualExclusion;\n        this.enrollmentCap = enrollmentCap;\n    }\n}\n\n// Define the Student class\nclass Student {\n    string name;\n    int creditHours;\n    list<Course> enrolledCourses;\n    bool hasPassedDissertationProposal;\n\n    // Constructor for Student\n    constructor(string name, int creditHours) {\n        this.name = name;\n        this.creditHours = creditHours;\n        this.enrolledCourses = [];\n        this.hasPassedDissertationProposal = false;\n    }\n\n    // Method to enroll in a course\n    enroll(Course course) {\n        if (this.creditHours + course.creditHours <= 12) {\n            if (!course.mutualExclusion ||!any(course.name in this.enrolledCourses)) {\n                if (course.enrollmentCap > 0 && this.enrolledCourses.size() >= course.enrollmentCap) {\n                    return false; // Enrollment cap reached\n                }\n                this.enrolledCourses.add(course);\n                this.creditHours += course.creditHours;\n                return true;\n            } else {\n                return false; // Mutual exclusion violation\n            }\n        } else {\n            return false; // Credit limit exceeded\n        }\n    }\n\n    // Method to pass the dissertation proposal\n    passDissertationProposal() {\n        this.hasPassedDissertationProposal = true;\n    }\n}\n\n// Define the CoreCourse class\nclass CoreCourse : Course {\n    constructor(string name, int creditHours) : super(name, creditHours, [], false, 0) {\n    }\n}\n\n// Define the Seminar class\nclass Seminar : Course {\n    constructor(string name, int creditHours) : super(name, creditHours, [], false, 0) {\n    }\n}\n\n// Define the OptionalElective class\nclass OptionalElective : Course {\n    constructor(string name, int creditHours) : super(name, creditHours, [], false, 20) {\n    }\n}\n\n// Define the ThesisDefense class\nclass ThesisDefense : Course {\n    constructor(string name, int creditHours) : super(name, creditHours, ['Dissertation Proposal'], true, 0) {\n    }\n}\n\n// Example usage\nCoreCourse coreCourse = new CoreCourse(\"Intro to AI\", 3);\nSeminar seminar = new Seminar(\"Advanced AI\", 4);\nOptionalElective optionalElective = new OptionalElective(\"Robotics Lab\", 4);\nThesisDefense thesisDefense = new ThesisDefense(\"Thesis Defense\", 3);\n\nStudent student = new Student(\"John Doe\", 0);\n\nif (student.enroll(coreCourse)) {\n    println(student.name + \" enrolled in \" + coreCourse.name);\n}\n\nif (student.enroll(seminar)) {\n    println(student.name + \" enrolled in \" + seminar.name);\n}\n\nif (student.enroll(optionalElective)) {\n    println(student.name + \" enrolled in \" + optionalElective.name);\n}\n\nstudent.passDissertationProposal();\n\nif (student.enroll(thesisDefense)) {\n    println(student.name + \" enrolled in \" + thesisDefense.name);\n} else {\n    println(student.name + \" cannot enroll in \" + thesisDefense.name);\n}\n```\n\nThis UVL-Code defines classes for different types of courses, students, and includes methods for enrolling students in courses, passing the dissertation proposal, and checking enrollment limits.",
+      "output_raw": "Certainly! Below is the translation of the given text into UVL-Code:\n\n```uvl\n// Define the Course class\nclass Course {\n    string name;\n    int creditHours;\n    list<string> prerequisites;\n    bool mutualExclusion;\n    int enrollmentCap;\n\n    // Constructor for Course\n    constructor(string name, int creditHours, list<string> prerequisites, bool mutualExclusion, int enrollmentCap) {\n        this.name = name;\n        this.creditHours = creditHours;\n        this.prerequisites = prerequisites;\n        this.mutualExclusion = mutualExclusion;\n        this.enrollmentCap = enrollmentCap;\n    }\n}\n\n// Define the Student class\nclass Student {\n    string name;\n    int creditHours;\n    list<Course> enrolledCourses;\n    bool hasPassedDissertationProposal;\n\n    // Constructor for Student\n    constructor(string name, int creditHours) {\n        this.name = name;\n        this.creditHours = creditHours;\n        this.enrolledCourses = [];\n        this.hasPassedDissertationProposal = false;\n    }\n\n    // Method to enroll in a course\n    enroll(Course course) {\n        if (this.creditHours + course.creditHours <= 12) {\n            if (!course.mutualExclusion ||!any(course.name in this.enrolledCourses)) {\n                if (course.enrollmentCap > 0 && this.enrolledCourses.size() >= course.enrollmentCap) {\n                    return false; // Enrollment cap reached\n                }\n                this.enrolledCourses.add(course);\n                this.creditHours += course.creditHours;\n                return true;\n            } else {\n                return false; // Mutual exclusion violation\n            }\n        } else {\n            return false; // Credit limit exceeded\n        }\n    }\n\n    // Method to pass the dissertation proposal\n    passDissertationProposal() {\n        this.hasPassedDissertationProposal = true;\n    }\n}\n\n// Define the CoreCourse class\nclass CoreCourse : Course {\n    constructor(string name, int creditHours) : super(name, creditHours, [], false, 0) {\n    }\n}\n\n// Define the Seminar class\nclass Seminar : Course {\n    constructor(string name, int creditHours) : super(name, creditHours, [], false, 0) {\n    }\n}\n\n// Define the OptionalElective class\nclass OptionalElective : Course {\n    constructor(string name, int creditHours) : super(name, creditHours, [], false, 20) {\n    }\n}\n\n// Define the ThesisDefense class\nclass ThesisDefense : Course {\n    constructor(string name, int creditHours) : super(name, creditHours, ['Dissertation Proposal'], true, 0) {\n    }\n}\n\n// Example usage\nCoreCourse coreCourse = new CoreCourse(\"Intro to AI\", 3);\nSeminar seminar = new Seminar(\"Advanced AI\", 4);\nOptionalElective optionalElective = new OptionalElective(\"Robotics Lab\", 4);\nThesisDefense thesisDefense = new ThesisDefense(\"Thesis Defense\", 3);\n\nStudent student = new Student(\"John Doe\", 0);\n\nif (student.enroll(coreCourse)) {\n    println(student.name + \" enrolled in \" + coreCourse.name);\n}\n\nif (student.enroll(seminar)) {\n    println(student.name + \" enrolled in \" + seminar.name);\n}\n\nif (student.enroll(optionalElective)) {\n    println(student.name + \" enrolled in \" + optionalElective.name);\n}\n\nstudent.passDissertationProposal();\n\nif (student.enroll(thesisDefense)) {\n    println(student.name + \" enrolled in \" + thesisDefense.name);\n} else {\n    println(student.name + \" cannot enroll in \" + thesisDefense.name);\n}\n```\n\nThis UVL-Code defines classes for different types of courses, students, and includes methods for enrolling students in courses, passing the dissertation proposal, and checking enrollment limits.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 360,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A PC configurator tool guides users. The choice of CPU (e.g., Intel vs. AMD) dictates the required motherboard socket (e.g., LGA 1700 vs. AM5). The motherboard chipset (e.g., Z790) then determines the supported RAM type (DDR4 or DDR5). A high-end GPU (e.g., RTX 4090) has a minimum power requirement, constraining the choice of Power Supply (PSU) to 850W or higher. The GPU's physical length (e.g., 350mm) must also be compatible with the case's maximum GPU clearance. Finally, the case (e.g., ATX, Micro-ATX) must match the motherboard's form factor, and an optional large air cooler's height must be less than the case's CPU cooler clearance.",
+      "output": "```uvl-code\n// Define the CPU choice\nvar cpu_choice = \"Intel vs. AMD\";\n\n// Determine the motherboard socket based on the CPU choice\nvar motherboard_socket = \"LGA 1700 vs. AM5\";\n\n// Based on the motherboard socket, determine the supported RAM type\nvar ram_type = \"DDR4 or DDR5\";\n\n// Define the GPU choice\nvar gpu_choice = \"RTX 4090\";\n\n// Determine the minimum power requirement for the GPU\nvar min_power_requirement = \"850W or higher\";\n\n// Determine the physical length of the GPU\nvar gpu_length = \"350mm\";\n\n// Define the case choice\nvar case_choice = \"ATX, Micro-ATX\";\n\n// Ensure the case's maximum GPU clearance matches the GPU's physical length\nif (gpu_length <= case_choice.maximum_gpu_clearance) {\n    // Ensure the case's CPU cooler clearance allows for an optional large air cooler\n    if (case_choice.cpu_cooler_clearance >= large_air_cooler_height) {\n        // Display the configuration details\n        print(\"CPU Choice: \" + cpu_choice);\n        print(\"Motherboard Socket: \" + motherboard_socket);\n        print(\"Supported RAM Type: \" + ram_type);\n        print(\"GPU Choice: \" + gpu_choice);\n        print(\"Minimum Power Requirement: \" + min_power_requirement);\n        print(\"GPU Length Compatibility: Yes\");\n        print(\"Case Choice: \" + case_choice);\n        print(\"Large Air Cooler Height Compatibility: Yes\");\n    } else {\n        print(\"Configuration Incompatible: Large Air Cooler Height exceeds Case CPU Cooler Clearance\");\n    }\n} else {\n    print(\"Configuration Incompatible: GPU Length exceeds Case Maximum GPU Clearance\");\n}\n```",
+      "output_raw": "```uvl-code\n// Define the CPU choice\nvar cpu_choice = \"Intel vs. AMD\";\n\n// Determine the motherboard socket based on the CPU choice\nvar motherboard_socket = \"LGA 1700 vs. AM5\";\n\n// Based on the motherboard socket, determine the supported RAM type\nvar ram_type = \"DDR4 or DDR5\";\n\n// Define the GPU choice\nvar gpu_choice = \"RTX 4090\";\n\n// Determine the minimum power requirement for the GPU\nvar min_power_requirement = \"850W or higher\";\n\n// Determine the physical length of the GPU\nvar gpu_length = \"350mm\";\n\n// Define the case choice\nvar case_choice = \"ATX, Micro-ATX\";\n\n// Ensure the case's maximum GPU clearance matches the GPU's physical length\nif (gpu_length <= case_choice.maximum_gpu_clearance) {\n    // Ensure the case's CPU cooler clearance allows for an optional large air cooler\n    if (case_choice.cpu_cooler_clearance >= large_air_cooler_height) {\n        // Display the configuration details\n        print(\"CPU Choice: \" + cpu_choice);\n        print(\"Motherboard Socket: \" + motherboard_socket);\n        print(\"Supported RAM Type: \" + ram_type);\n        print(\"GPU Choice: \" + gpu_choice);\n        print(\"Minimum Power Requirement: \" + min_power_requirement);\n        print(\"GPU Length Compatibility: Yes\");\n        print(\"Case Choice: \" + case_choice);\n        print(\"Large Air Cooler Height Compatibility: Yes\");\n    } else {\n        print(\"Configuration Incompatible: Large Air Cooler Height exceeds Case CPU Cooler Clearance\");\n    }\n} else {\n    print(\"Configuration Incompatible: GPU Length exceeds Case Maximum GPU Clearance\");\n}\n```",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 60,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A CI/CD system defines deployment pipelines. All pipelines must run 'Build' and 'Unit Test' stages. A 'Staging' deployment is mandatory and can only run after 'Unit Test' passes. The 'Production' deployment requires the 'Staging' deployment to succeed, and also requires both 'Integration Test' and 'Security Scan' to pass. For 'Production', the user can select either a 'Blue/Green' or 'Canary' strategy. Choosing 'Canary' automatically adds a 'Monitoring' stage with a 'Rollback' trigger. Choosing 'Blue/Green' requires double the infrastructure resources during the swap. A separate 'Hotfix' pipeline can bypass 'Staging' and 'Integration Test', but requires a 'Manual QA Approval' step and must still pass the 'Security Scan'.",
+      "output": "Certainly! Below is the translation of the given text into UVL-Code:\n\n```uvl\nSystem: CI/CD\nPipeline: DeploymentPipelines\n\nStage: Build\nDescription: Build stage for deployment pipelines.\nRequired: Yes\n\nStage: UnitTest\nDescription: Unit test stage for deployment pipelines.\nRequired: Yes\n\nStage: Staging\nDescription: Mandatory staging deployment.\nPrecedence: UnitTest\n\nStage: Production\nDescription: Production deployment.\nPrecedence: Staging\nDependencies: IntegrationTest, SecurityScan\nStrategies: BlueGreen, Canary\nBlueGreenResources: DoubleInfrastructure\nCanaryMonitoring: RollbackTrigger\nHotfixBypass: Staging, IntegrationTest\nManualQAApproval: Yes\nSecurityScan: Yes\n\n```\n\nThis UVL-Code defines the CI/CD system with its deployment pipelines, stages, dependencies, and strategies. It also includes specific details for each stage and strategy, such as the required stages, dependencies, and additional requirements like monitoring and resource allocation.",
+      "output_raw": "Certainly! Below is the translation of the given text into UVL-Code:\n\n```uvl\nSystem: CI/CD\nPipeline: DeploymentPipelines\n\nStage: Build\nDescription: Build stage for deployment pipelines.\nRequired: Yes\n\nStage: UnitTest\nDescription: Unit test stage for deployment pipelines.\nRequired: Yes\n\nStage: Staging\nDescription: Mandatory staging deployment.\nPrecedence: UnitTest\n\nStage: Production\nDescription: Production deployment.\nPrecedence: Staging\nDependencies: IntegrationTest, SecurityScan\nStrategies: BlueGreen, Canary\nBlueGreenResources: DoubleInfrastructure\nCanaryMonitoring: RollbackTrigger\nHotfixBypass: Staging, IntegrationTest\nManualQAApproval: Yes\nSecurityScan: Yes\n\n```\n\nThis UVL-Code defines the CI/CD system with its deployment pipelines, stages, dependencies, and strategies. It also includes specific details for each stage and strategy, such as the required stages, dependencies, and additional requirements like monitoring and resource allocation.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 16,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    },
+    {
+      "text": "A smart home automation system links devices based on rules. A rule has triggers, optional conditions, and actions. Rules must have priorities to resolve conflicts: the 'Movie Mode' scene (sets lights to 10%) must block the 'Morning' scene (sets lights to 100%) from running. Safety constraints are critical: the 'Smart Oven' action is disabled if 'Home Status' is 'Away'. Also, the 'Air Conditioner' action is dynamically disabled if any 'Window Sensor' reports 'Open' and only re-enables 5 minutes after all windows are closed.",
+      "output": "Certainly! Below is the uvl-Code representation of the given text:\n\n```uvl\n// Define the smart home automation system\nsystem SmartHomeAutomation {\n    // Define the Movie Mode scene\n    scene MovieMode {\n        // Set the lights to 10%\n        setLightLevel(10)\n    }\n\n    // Define the Morning scene\n    scene Morning {\n        // Set the lights to 100%\n        setLightLevel(100)\n    }\n\n    // Define the Smart Oven action\n    action SmartOven {\n        // Disable the action if Home Status is Away\n        if (homeStatus == \"Away\") {\n            disableAction()\n        }\n    }\n\n    // Define the Air Conditioner action\n    action AirConditioner {\n        // Dynamically disable the action if any Window Sensor reports Open\n        if (anyWindowSensorReports(\"Open\")) {\n            disableAction()\n        } else {\n            // Re-enable after 5 minutes\n            enableActionAfter(5 * 60) // 5 minutes in seconds\n        }\n    }\n\n    // Define the Rule system\n    rule MovieModeBlockingMorning {\n        // Trigger when Movie Mode scene starts\n        when sceneStarted(MovieMode) {\n            // Block Morning scene from running\n            blockScene(Morning)\n        }\n    }\n\n    // Define the Safety Constraint for Smart Oven\n    constraint SmartOvenSafety {\n        // Ensure Smart Oven action is disabled if Home Status is Away\n        if (homeStatus == \"Away\") {\n            disableAction(SmartOven)\n        }\n    }\n\n    // Define the Safety Constraint for Air Conditioner\n    constraint AirConditionerSafety {\n        // Ensure Air Conditioner action is dynamically disabled if any Window Sensor reports Open\n        if (anyWindowSensorReports(\"Open\")) {\n            disableAction(AirConditioner)\n        } else {\n            // Re-enable after 5 minutes\n            enableActionAfter(AirConditioner, 5 * 60) // 5 minutes in seconds\n        }\n    }\n}\n```\n\n### Explanation:\n- **Scenes**: `MovieMode` and `Morning` scenes are defined with their respective actions.\n- **Actions**: `SmartOven` and `AirConditioner` actions include safety constraints.\n- **Rules**: `MovieModeBlockingMorning` ensures that `Morning` cannot run while `MovieMode` is active.\n- **Constraints**: `SmartOvenSafety` and `AirConditionerSafety` enforce the safety constraints.\n\nThis uvl-Code structure allows for the management of smart home automation rules and constraints effectively.",
+      "output_raw": "Certainly! Below is the uvl-Code representation of the given text:\n\n```uvl\n// Define the smart home automation system\nsystem SmartHomeAutomation {\n    // Define the Movie Mode scene\n    scene MovieMode {\n        // Set the lights to 10%\n        setLightLevel(10)\n    }\n\n    // Define the Morning scene\n    scene Morning {\n        // Set the lights to 100%\n        setLightLevel(100)\n    }\n\n    // Define the Smart Oven action\n    action SmartOven {\n        // Disable the action if Home Status is Away\n        if (homeStatus == \"Away\") {\n            disableAction()\n        }\n    }\n\n    // Define the Air Conditioner action\n    action AirConditioner {\n        // Dynamically disable the action if any Window Sensor reports Open\n        if (anyWindowSensorReports(\"Open\")) {\n            disableAction()\n        } else {\n            // Re-enable after 5 minutes\n            enableActionAfter(5 * 60) // 5 minutes in seconds\n        }\n    }\n\n    // Define the Rule system\n    rule MovieModeBlockingMorning {\n        // Trigger when Movie Mode scene starts\n        when sceneStarted(MovieMode) {\n            // Block Morning scene from running\n            blockScene(Morning)\n        }\n    }\n\n    // Define the Safety Constraint for Smart Oven\n    constraint SmartOvenSafety {\n        // Ensure Smart Oven action is disabled if Home Status is Away\n        if (homeStatus == \"Away\") {\n            disableAction(SmartOven)\n        }\n    }\n\n    // Define the Safety Constraint for Air Conditioner\n    constraint AirConditionerSafety {\n        // Ensure Air Conditioner action is dynamically disabled if any Window Sensor reports Open\n        if (anyWindowSensorReports(\"Open\")) {\n            disableAction(AirConditioner)\n        } else {\n            // Re-enable after 5 minutes\n            enableActionAfter(AirConditioner, 5 * 60) // 5 minutes in seconds\n        }\n    }\n}\n```\n\n### Explanation:\n- **Scenes**: `MovieMode` and `Morning` scenes are defined with their respective actions.\n- **Actions**: `SmartOven` and `AirConditioner` actions include safety constraints.\n- **Rules**: `MovieModeBlockingMorning` ensures that `Morning` cannot run while `MovieMode` is active.\n- **Constraints**: `SmartOvenSafety` and `AirConditionerSafety` enforce the safety constraints.\n\nThis uvl-Code structure allows for the management of smart home automation rules and constraints effectively.",
+      "parsable": false,
+      "flamapy_analysis": null,
+      "feature_names": [],
+      "semantic_similarity": 0.0,
+      "semantic_eval": {
+        "gt_products": 180,
+        "reason": "parse error: FlamaException: Parsing failed due to syntax errors.",
+        "features": null,
+        "structure": null,
+        "semantics": null,
+        "status": "failed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Sure, here's the equivalent uvl-Code for the given text:
+
+```uvl
+team SecurityTeam {
+    roles {
+        SecurityArchitect
+        SecurityEngineer
+        Manager
+        ScrumMaster
+    }
+    constraints {
+        SecurityArchitect!= SecurityEngineer
+        Manager!= ScrumMaster
+    }
+}
+```

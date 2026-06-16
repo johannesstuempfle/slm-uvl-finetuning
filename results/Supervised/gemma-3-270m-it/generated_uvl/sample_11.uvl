@@ -1,0 +1,37 @@
+features
+    SmartHomeAutomation
+        mandatory
+            "Device Type" => "Device"
+                optional
+                    "Power" => "On"
+                    "Temperature" => "On"
+                    "Security" => "Away"
+            "Rule" => "Rule"
+                optional
+                    "Trigger" => "Trigger"
+                optional
+                    "Condition" => "Condition"
+                    "Action" => "Action"
+            "Priority" => "Priority"
+                optional
+                    "Priority 1" => "HighPriority"
+                    "Priority 2" => "MediumPriority"
+                    "Priority 3" => "LowPriority"
+            "Actions" => "Actions"
+                optional
+                    "Open" => "On"
+                    "Closed" => "Off"
+        optional
+            "Window_Sensor" => "Window_Sensor"
+                optional
+                    "Open_Speed" => "Open"
+                    "Closed_Speed" => "Closed"
+        optional
+            "Air_Conditioning" => "Air_Conditioning"
+                optional
+                    "Open_Speed" => "Open"
+                    "Closed_Speed" => "Closed"
+            "Window_Sensor" => "Window_Sensor"
+                optional
+                    "Open_Speed" => "Open"
+                    "Closed_Speed" => "Closed"

@@ -1,0 +1,25 @@
+```uvl
+class ChocolateFactory {
+    // Production line with stations for normal chocolate
+    class NormalChocolateProductionLine {
+        // Melting station
+        class MeltingStation {}
+        // Mixing station
+        class MixingStation {}
+        // Colling station
+        class CollingStation {}
+    }
+
+    // Production line with stations for nut-chocolate
+    class NutChocolateProductionLine extends NormalChocolateProductionLine {
+        // Baking station
+        class BakingStation {}
+    }
+
+    // Logistic system for the factory
+    class LogisticsSystem {}
+
+    // Packaging station for the factory
+    class PackagingStation {}
+}
+```

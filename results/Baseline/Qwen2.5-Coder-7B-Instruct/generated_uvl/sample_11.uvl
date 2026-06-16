@@ -1,0 +1,50 @@
+```uvl
+// Define the scenes and their corresponding actions
+scene MovieMode {
+    priority: high;
+    action {
+        setLightIntensity(10%);
+    }
+}
+
+scene Morning {
+    priority: low;
+    action {
+        setLightIntensity(100%);
+    }
+}
+
+scene SmartOven {
+    condition {
+        homeStatus == "Away";
+    }
+    action {
+        disable();
+    }
+}
+
+scene AirConditioner {
+    condition {
+        windowSensorReported("Open");
+    }
+    action {
+        disable();
+    }
+    dynamicReEnable {
+        timeDelay(5 minutes);
+        condition {
+            allWindowsClosed();
+        }
+    }
+}
+```
+
+### Explanation:
+1. **Scene Definitions**: The `MovieMode` and `Morning` scenes are defined with their respective actions.
+2. **Priorities**: The `priority` keyword assigns a priority to each scene. Higher numbers indicate higher priority.
+3. **Conditions**:
+   - For `SmartOven`, there's a condition that disables the scene if `homeStatus` is `"Away"`.
+   - For `AirConditioner`, there's a condition that disables the scene if any `windowSensor` reports `"Open"`.
+4. **Dynamic Re-enablement**: The `dynamicReEnable` block ensures that the `AirConditioner` re-enables itself 5 minutes after all windows are closed.
+
+This UVL code effectively captures the logic described in the text, ensuring that the smart home automation system operates as intended.

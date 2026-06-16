@@ -1,0 +1,13 @@
+Here's a possible translation of the text into UVL-Code:
+```
+Team "Security Team" {
+    Role "Security Architect"
+    Role "Security Engineer"
+    Constraint "Security Architect"!= "Security Engineer"
+
+    Role "Manager"
+    Role "Scrum Master"
+}
+```
+
+This code defines a team called "Security Team" with two roles: "Security Architect" and "Security Engineer". It also specifies that these two roles cannot be filled by the same person (using the `!=` operator). Finally, it adds two additional roles to the team: "Manager" and "Scrum Master".

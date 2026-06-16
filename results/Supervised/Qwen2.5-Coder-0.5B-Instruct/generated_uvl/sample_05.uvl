@@ -1,0 +1,22 @@
+features
+    ChocolateLine
+        mandatory
+            "Melt-Station"
+                alternative
+                    "Nomal-Chocolate"
+                    "Nut-Chocolate"
+            "Mixing-Station"
+                alternative
+                    "Normal-Chocolate"
+                    "Baking-Station"
+            "Colling-Station"
+                alternative
+                    "Normal-Chocolate"
+                    "Nut-Chocolate"
+            "Logistic-System"
+                alternative
+                    "Standard-Logistic"
+                    "Custom-Logistic"
+            "Packaging-Station"
+                alternative
+                    "Standard-Packaging"

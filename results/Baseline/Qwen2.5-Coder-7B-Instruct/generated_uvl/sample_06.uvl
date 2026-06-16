@@ -1,0 +1,22 @@
+Sure, here's an example of how the code might look in UVL (Unified Variable Language):
+```
+taxCalculator = {
+    "inputs": ["nettoPrice", "sumOfProducts", "buyerLocation", "sellerLocation"],
+    "outputs": ["taxPerProduct", "bruttoPrice", "taxRate", "calculatedBasePrice", "calculationRule"],
+    "calculateTax": function() {
+        // calculate tax based on inputs
+        var taxPerProduct = this.nettoPrice * this.taxRate;
+        var bruttoPrice = this.nettoPrice + taxPerProduct;
+        return [taxPerProduct, bruttoPrice];
+    },
+    "logData": function() {
+        // log data for audits
+        var calculatedBasePrice = this.nettoPrice / (1 + this.taxRate);
+        var calculationRule = "tax rate: " + this.taxRate + ", netto price: " + this.nettoPrice;
+        return [calculatedBasePrice, calculationRule];
+    }
+};
+```
+
+This code defines an object called `taxCalculator` with properties for the required inputs and outputs. The `calculateTax` method calculates the tax based on the inputs and returns an array of the tax per product and the brutto price. The `logData` method logs the calculated base price and calculation rule for auditing purposes.
+Note that this is just one possible implementation of a tax calculator in UVL, and there may be other ways to structure the code depending on the specific requirements of your application.

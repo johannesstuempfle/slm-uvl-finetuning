@@ -1,0 +1,13 @@
+features
+    SecurityTeam {abstract}
+        mandatory
+            "Security Architect" {abstract}
+            mandatory
+                "Security Engineer" {abstract}
+                    alternative
+                        "Security Architect"
+                        "Security Engineer"
+        mandatory
+            Manager
+        mandatory
+            ScrumMaster

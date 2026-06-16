@@ -1,0 +1,82 @@
+```uvl
+features {
+  mandatory {
+    "PC Configurator" => {
+      mandatory {
+        "CPU Selection" => {
+          alternative {
+            "Intel" => "AMD"
+          }
+        }
+        "Motherboard Socket" => {
+          alternative {
+            "LGA 1700" => "AM5"
+          }
+        }
+        "Motherboard Chipset" => {
+          alternative {
+            "Z790" 
+          }
+        }
+        "RAM Type" => {
+          alternative {
+            "DDR4" => "DDR5"
+          }
+        }
+        "Power Supply (PSU)" => {
+          mandatory {
+            "Power Requirement" => "High"
+            "Wattage" => 850
+          }
+        }
+        "GPU Length" => {
+          alternative {
+            "350mm" 
+          }
+        }
+        "Case Form Factor" => {
+          alternative {
+            "ATX" => "Micro-ATX"
+          }
+        }
+        "CPU Cooler Clearance" => {
+          optional {
+            "Large Air Cooler" => "Cooler Height < Case Clearance"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Explanation and Considerations:**
+
+* **`features {... }`**:  This is the root element of the UVL structure, defining the overall configuration.
+* **`mandatory {... }`**:  Anything within `mandatory` *must* be selected.
+* **`"PC Configurator" => {... }`**:  This encapsulates the entire configurator.
+* **`mandatory {... }`**: Nested `mandatory` blocks ensure core components are selected.
+* **`"CPU Selection" => {... }`**:  Groups CPU options.
+* **`alternative {... }`**: This is crucial for representing choices (e.g., Intel vs. AMD, DDR4 vs. DDR5).  The alternative options are mutually exclusive *within* their respective categories.
+* **`"Motherboard Socket" => {... }`**:  Groups motherboard socket options.
+* **`"Motherboard Chipset" => {... }`**:  Groups motherboard chipset options.
+* **`"RAM Type" => {... }`**:  Groups RAM type options.
+* **`"Power Supply (PSU)" => {... }`**: Groups PSU options.
+    * **`mandatory {... }`**:  Enforces that a high-powered PSU is selected.
+    * **`"Power Requirement" => "High"`**:  Explicitly states the power requirement.
+    * **`"Wattage" => 850`**:  Specifies the minimum wattage.
+* **`"GPU Length" => {... }`**:  Groups GPU length options.
+* **`"Case Form Factor" => {... }`**: Groups case form factor options.
+* **`"CPU Cooler Clearance" => {... }`**: Groups CPU cooler clearance options.
+    * **`optional {... }`**:  The "Large Air Cooler" is optional.
+    * **`"Large Air Cooler" => "Cooler Height < Case Clearance"`**:  This is a constraint; the height of a large air cooler must be less than the case's CPU cooler clearance.
+
+**Key Improvements & Considerations:**
+
+* **Strictness:** The use of `mandatory` ensures that the user *must* make choices for critical components.
+* **Clarity:** The structure is designed to be readable and easily understood.
+* **Constraints:** The "Cooler Height < Case Clearance" constraint is accurately represented using a logical relationship.
+* **Alternative Choices:** Alternatives are correctly used for mutually exclusive options.
+* **Explicit Requirements:**  The "Power Requirement" and "Wattage" for the PSU clearly state the minimum power needed.
+
+This UVL code provides a structured and logical representation of the given text, suitable for use in a configurator tool.  It's crucial to thoroughly test this UVL code with your specific configurator implementation to ensure it behaves as intended.  You might need to adjust the syntax slightly depending on the UVL implementation you're using.

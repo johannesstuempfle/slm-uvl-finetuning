@@ -1,0 +1,105 @@
+'''uvl
+features
+    "Rooms" {abstract}
+        optional
+            "Number of beds" {abstract}
+                optional
+                    "Number of beds > 1" {optional
+                        optional
+                            "Number of beds <= 1" {optional
+                                 optional
+                                       "Only available for two-bed rooms" {optional
+                                           optional
+                                               "No private view available"
+                                           optional
+                                               "Best view available for two-bed rooms"
+                                               optional
+                                               "No personal spa area"
+                                           optional
+                                               "No best-view available"
+
+        "Booking Management" {abstract}
+            optional
+                "Bookings start" {optional
+                    optional
+                        optional
+                            "Start Date" {optional
+                                 optional
+                                               "2023-01-01" {optional
+                                                   optional
+                                               "2023-01-05" {optional
+                                                   optional
+                                               "2023-01-10" {optional
+                                                   optional
+                                               "2023-01-15" {optional
+                                                   optional
+                                               "Optional fees/bookings" {optional
+                                                   optional
+                                               "Optional booking duration" {optional
+                                                   optional
+                                               "Optional booking price" {optional
+                                                   optional
+                                               "Optional booking price of 2 beds" {optional
+                                                   optional
+                                               "Optional booking price of two beds" {optional
+                                                   optional
+                                               "Optional booking price of two beds" {optional
+                                                   optional
+                                               "Optional booking price of two beds" {optional
+                                                   optional
+                                               "Optional booking price of two beds" {optional
+                                                   optional
+                                               "Optional booking price of two beds" {optional
+                                                   optional
+                                               "Optional booking duration" {optional
+                                                   optional
+                                               "Optional booking duration of two beds" {optional
+                                                   optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking duration" {optional
+                                               "Optional booking duration of two beds" {optional
+                                               "Optional booking price of two beds" {optional
+                                               "Optional booking price of two beds" {optional

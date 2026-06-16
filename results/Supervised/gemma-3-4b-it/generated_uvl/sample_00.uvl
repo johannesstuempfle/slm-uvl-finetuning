@@ -1,0 +1,21 @@
+features
+    Car
+        mandatory
+            Engine
+                alternative
+                    Diesel
+                    Gasoline
+                    Electric
+        optional
+            LaneAssist
+            ESP
+        alternative
+            Colour
+                alternative
+                    Black
+                    White
+                    Red
+                    Blue
+                    Green
+                    Silver
+                    Gray

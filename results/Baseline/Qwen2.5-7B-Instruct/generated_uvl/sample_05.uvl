@@ -1,0 +1,35 @@
+Certainly! UVL (Unified Visibility Language) is a structured way to describe processes and systems. Below is the translation of your text into UVL:
+
+```uvl
+Factory {
+    ProductionLine {
+        // Normal Chocolate Production Line
+        NormalChocolateProductionLine {
+            Stations {
+                MeltingStation
+                MixingStation
+                CoolingStation
+                LogisticSystem
+                PackagingStation
+            }
+        }
+
+        // Nut Chocolate Production Line
+        NutChocolateProductionLine {
+            Inherits From: NormalChocolateProductionLine
+            AdditionalStations {
+                BakingStation
+            }
+        }
+    }
+}
+```
+
+### Explanation:
+1. **Factory**: The top-level entity.
+2. **ProductionLine**: A sub-entity under the Factory.
+3. **NormalChocolateProductionLine**: Represents the production line for normal chocolate.
+4. **NutChocolateProductionLine**: Represents the production line for nut chocolate, which inherits from `NormalChocolateProductionLine` and adds an additional station (`BakingStation`).
+5. **Stations**: Lists the stations required for each production line.
+
+This UVL code structure ensures that all the necessary components are included while maintaining the correct hierarchy and relationships between different parts of the production process.

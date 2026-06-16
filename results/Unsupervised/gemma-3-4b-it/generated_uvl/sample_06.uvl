@@ -1,0 +1,86 @@
+```uvl
+features {
+  TaxCalculator {
+    mandatory {
+      "Netto Price" => real
+      "Sum of Products" => real
+      "Buyer Location" => string
+      "Seller Location" => string
+    }
+
+    optional {
+      "Logging Data" => boolean
+    }
+
+    calculation {
+      "Tax per Product" => function(
+        "Netto Price",
+        "Sum of Products",
+        "Buyer Location",
+        "Seller Location"
+      ) {
+        // Placeholder for tax calculation logic
+        // This would be replaced with the actual tax calculation
+        // based on the given inputs and applicable tax rates.
+        // Example: 
+        // return "Tax Amount" 
+      }
+
+      "Brutto Price" => function(
+        "Netto Price",
+        "Tax per Product"
+      ) {
+        // Placeholder for brutto price calculation logic
+        // This would be replaced with the actual brutto price calculation
+        // based on the given inputs.
+        // Example:
+        // return "Gross Price" 
+      }
+
+      "Tax Rate" => function(
+        "Tax per Product",
+        "Sum of Products"
+      ) {
+        // Placeholder for tax rate calculation logic
+        // This would be replaced with the actual tax rate calculation
+        // based on the given inputs.
+        // Example:
+        // return "Tax Rate Percentage"
+      }
+
+      "Calculated Base Price" => "Netto Price" + "Sum of Products" 
+      "Rule of Calculation" => "Sum of Products" 
+    }
+  }
+}
+```
+
+**Explanation and Considerations:**
+
+* **`features {... }`**:  This is the basic structure of UVL, defining a feature set.
+* **`TaxCalculator {... }`**:  This defines a feature named "TaxCalculator".
+* **`mandatory {... }`**:  These fields are *required* for the calculation to proceed.
+    * `"Netto Price" => real`:  The net price is a numerical value (real number).
+    * `"Sum of Products" => real`: The total sum of the products is a numerical value.
+    * `"Buyer Location" => string`: The buyer's location is represented as a string.
+    * `"Seller Location" => string`: The seller's location is represented as a string.
+* **`optional {... }`**: This section defines optional parameters.
+   * `"Logging Data" => boolean`: This allows the user to enable/disable logging.
+* **`calculation {... }`**: This section defines the actual calculations to be performed.
+    * **Functions for Calculations:** Each output (Tax per Product, Brutto Price, Tax Rate) is defined as a function.  This is a good practice in UVL as it allows for complex calculations.  I've included placeholder comments indicating where the actual calculation logic would go.
+    * **`Calculated Base Price`**: This is calculated as the sum of Netto Price and Sum of Products.
+    * **`Rule of Calculation`**: This is the sum of products. 
+
+**Important Notes and Improvements:**
+
+* **Placeholder Logic:** The placeholder comments within the functions are crucial. You *must* replace them with the actual tax calculation logic. This is where you'll integrate with your tax database or calculation engine.
+* **Tax Rate Logic:** The tax rate calculation is more complex and depends on the specific tax rules.  This is a good place to implement that logic.
+* **Error Handling:** This UVL doesn't include error handling (e.g., what happens if the sum of products is negative).  A production implementation should include robust error handling.
+* **Units:**  The UVL doesn't specify units (e.g., currency). Consider adding a way to represent currency and units.
+* **Data Types:**  I've used `real` for numerical values.  Consider using more specific data types (e.g., `integer`, `string`) if appropriate.
+
+This UVL code provides a solid foundation for your tax calculator within the billing software.  Remember to replace the placeholder logic with your actual implementation!  To help me refine the UVL further, could you provide more details about:
+
+* **The specific tax calculation logic?** (e.g., how the tax rate is determined)
+* **The format of the location data?** (e.g., are they postal codes, city/state, or something else?)
+* **Are there any other constraints or requirements?** (e.g., specific tax regulations, currency handling, logging requirements)

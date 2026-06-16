@@ -1,0 +1,25 @@
+features
+    "CI/CD System"
+        mandatory
+            "Deployment Pipelines"
+                optional
+                    "Build"
+                    "Unit Test"
+                mandatory
+                    "Staging"
+                optional
+                    "Production"
+                        mandatory
+                            "Blue/Green"
+                                optional
+                                    "Monitoring"
+                                        optional
+                                            "Rollback"
+                        mandatory
+                            "Canary"
+                                optional
+                                    "Double Infrastructure Resources"
+                                optional
+                                    "Manual QA Approval"
+                        optional
+                            "Hotfix"

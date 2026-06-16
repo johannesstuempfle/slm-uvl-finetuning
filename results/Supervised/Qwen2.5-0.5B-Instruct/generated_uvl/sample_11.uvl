@@ -1,0 +1,71 @@
+features
+    SmartHomeAutomationSystem {abstract}
+        mandatory
+            Rule {abstract}
+                mandatory
+                    Trigger {abstract}
+                        mandatory
+                            OptionalConditions {abstract}
+                                mandatory
+                                    Action {abstract}
+                                        alternative
+                                            MovieMode {abstract}
+                                                mandatory
+                                                    Priority {abstract}
+                                                        alternative
+                                                            BlockMorning {abstract}
+                                                                mandatory
+                                                                    Scenes {abstract} {abstract}
+                                                                        optional
+                                                                            Morning {abstract}
+                                                                                optional
+                                                                                    SetsLightsTo {abstract} {lights_to_10%}
+                                                                                     optional
+                                                                                                                                                       100%
+                                                                                optional
+                                                                                    BlocksRunning {abstract}
+                                                                                            mandatory
+                                                                                                'Morning'
+                                                                                         optional
+                                                                                                                                                           Running
+                                                                                                                                                          mandatory
+                                                                                                                                                              True
+                                                                                                                                                             optional
+                                                                                                                                                                 False
+                                                                                                                                                                     mandatory
+                                                                                                                                                                         'SmartOven'
+                                                                                                                                                                             mandatory
+                                                                                                                                                                                 disableIf {abstract} 'HomeStatus' {abstract}
+                                                                                                                                                                                     optional
+                                                                                                                                                                                         'Away'
+                                                                                                                                                                                             mandatory
+                                                                                                                                                                                                 '
+                                                                                         mandatory
+                                                                                                                                                             WindowSensorReports {abstract} {open {abstract}}
+                                                                                                                                                                   mandatory
+                                                                                                                                                                       WindowSensorReported {abstract} {open {abstract}}
+                                                                                                                                                                                   mandatory
+                                                                                                                                                                                       Open {abstract}
+                                                                                                                                                                                           optional
+                                                                                                                                                                                               Closed {abstract}
+                                                                                                                                                                                                   mandatory
+                                                                                                                                                                                                     WindowsClosed {abstract}
+                                                                                                                                                                                                         mandatory
+                                                                                                                                                                                                             5MinutesAfterAllWindowsClosed
+                                                                                                                                                                                                          optional
+                                                                                                                                                                                                              ReEnables5MinutesAfterAllWindowsClosed {abstract}
+                                                                                                                                                                                                        
+        mandatory
+            SafetyConstraints {abstract}
+                mandatory
+                    Constraint {abstract}
+                        mandatory
+                            DisableIf {abstract} 'SmartOven'
+                                                                                   optional
+                                                                                       Mandatory {abstract} AirConditioner
+                                                                                           optional
+                                                                                               DynamicDisable {abstract} IfAnyWindowSensorReports {abstract} And {abstract} OnlyReenables5MinutesAfterAllWindowsClosed
+                                                                                                                     optional
+                                                                                                                         5MinutesAfterAllWindowsClosed
+                                                                                                                             optional
+                                                                                                                                                                                              ReEnables5MinutesAfterAllWindowsClosed {abstract}

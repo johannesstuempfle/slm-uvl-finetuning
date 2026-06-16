@@ -1,0 +1,62 @@
+```uvl
+// UVL Code for a Tax Calculator
+
+// This UVL code represents a simplified tax calculation process within a billing software.
+
+// Inputs:
+// - netto_price: The base price of the product.
+// - sum_of_products: The total value of all products.
+// - buyer_location: The location of the buyer (e.g., country, state).
+// - seller_location: The location of the seller (e.g., country, state).
+
+// Outputs:
+// - tax_per_product: The tax amount per product.
+// - brutto_price: The total price before tax.
+// - tax_rate: The tax rate (e.g., as a percentage).
+
+// Function to calculate tax
+function calculate_tax(netto_price, sum_of_products, buyer_location, seller_location):
+  // Input validation (basic - could be expanded)
+  if not (netto_price is numeric and sum_of_products is numeric and buyer_location is numeric and seller_location is numeric):
+    return "Invalid input values. Please ensure all inputs are numeric."
+
+  // Calculate tax per product
+  tax_per_product = netto_price * (sum_of_products / 100);
+
+  // Calculate brutto price
+  brutto_price = netto_price + tax_per_product;
+
+  // Calculate tax rate
+  tax_rate = (sum_of_products / 100) * (tax_per_product / 100);
+
+  // Output the results
+  print("Tax per product: " + tax_per_product);
+  print("Brutto price: " + brutto_price);
+  print("Tax rate: " + tax_rate);
+
+  // Log data for audits
+  print("Calculated base price: " + netto_price);
+  print("Rule of calculation: " +  "Tax calculation rule");
+
+
+// Example Usage (Illustrative - would likely be integrated into the billing software)
+// Example:
+// calculate_tax(100, 500, "USA", "Canada")
+```
+
+**Explanation and Key Considerations:**
+
+* **UVL Structure:**  I've structured the code as a function with clear input and output sections, which is a common and good practice in UVL.
+* **Comments:**  I've added comments to explain the purpose of each section and the meaning of the variables.
+* **Input Validation:**  The `if not (netto_price is numeric and sum_of_products is numeric and buyer_location is numeric and seller_location is numeric):` block demonstrates basic input validation.  In a real-world application, you'd want more robust validation (e.g., checking for valid ranges, data types, etc.).
+* **Clear Variable Names:** I used descriptive variable names (e.g., `netto_price`, `sum_of_products`, `tax_rate`) to enhance readability.
+* **Output Formatting:**  I've used `print()` to display the results in a user-friendly format.  This is crucial for a user interface.
+* **`calculate_tax` Function:**  Encapsulating the calculation logic within a function makes the code more organized and reusable.
+* **Example Usage:**  The commented-out example shows how this code could be used within a larger billing software.
+
+**How to use this code:**
+
+1.  **Save the code:** Save this code as a `.uvl` file (e.g., `tax_calculator.uvl`).
+2.  **Integrate into your billing software:**  You would then call the `calculate_tax` function within your billing software's logic to perform the tax calculation based on the provided inputs.
+
+This revised version is more robust, readable, and follows best practices for UVL code.  Remember to adapt the input validation and error handling to the specific requirements of your billing system.

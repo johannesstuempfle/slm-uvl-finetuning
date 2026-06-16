@@ -1,0 +1,51 @@
+Certainly! Below is the translation of the provided text into UVL (Unified Modeling Language) Code:
+
+```uvl
+features
+    RoomBookingService
+        mandatory
+            Room
+                mandatory
+                    BasicFeatures
+                        alternative
+                            NumberOfBeds {abstract}
+                                alternative
+                                    SingleBed
+                                    DoubleBed
+                                    TwoBeds
+                                    FourBeds
+                            View {abstract}
+                                alternative
+                                    CityView
+                                    SeaView
+                                    MountainView
+                            Size {abstract}
+                                alternative
+                                    Small
+                                    Medium
+                                    Large
+                optional
+                    OptionalFeatures
+                        alternative
+                            PersonalSpaArea
+                            BestView
+
+        mandatory
+            ManagingSystem
+                mandatory
+                    Bookings {abstract}
+                        mandatory
+                            Dates
+                                alternative
+                                    StartDate
+                                    EndDate
+                        optional
+                            FeesBookings
+constraints
+    BestView => TwoBeds
+    PersonalSpaArea =>!TwoBeds
+    BestView | PersonalSpaArea => TwoBeds
+    Bookings => Dates & FeesBookings
+```
+
+This UVL code defines the structure and constraints of the room-booking service as described in your text.

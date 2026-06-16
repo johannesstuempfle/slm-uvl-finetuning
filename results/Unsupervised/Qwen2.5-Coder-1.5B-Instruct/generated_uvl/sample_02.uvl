@@ -1,0 +1,202 @@
+Sure, here's the translation of the given text into UVL-Code:
+
+```uvl
+Computer {abstract}
+	{
+		TextEditingProgramm {abstract}
+			{feature}
+				MSSWord
+					mandatory
+						Features
+							CellCalculationTool {abstract}
+								{feature}
+									MSEExcel
+									Numberts
+	}
+
+	Computer_1 {abstract}
+		optional
+			TextEditingProgramm
+			CellCalculationTool
+
+	Computer_2 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_3 {abstract}
+		alternative
+			Computer_2
+			Computer_1
+
+	Computer_4 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+			AdditionalSoftware
+				or
+					OtherTextEditor
+					OtherCalculator
+
+	Computer_5 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_6 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+			AdditionalSoftware
+				mandatory
+					OtherTextEditor
+					OtherCalculator
+
+	Computer_7 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_8 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+			AdditionalSoftware
+				alternative
+					OtherTextEditor
+					OtherCalculator
+
+	Computer_9 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_10 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_11 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_12 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_13 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_14 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_15 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_16 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_17 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_18 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_19 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_20 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_21 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_22 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_23 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_24 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_25 {abstract}
+		mandatory
+			TextEditingProgramm
+			CellCalculationTool
+			OtherTextEditor
+			OtherCalculator
+
+	Computer_26 {abstract}
+		mandatory
+			TextEditingProgramm

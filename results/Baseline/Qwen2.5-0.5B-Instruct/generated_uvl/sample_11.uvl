@@ -1,0 +1,38 @@
+Sure! Here's the translation into UVL-Code:
+
+```uvl-code
+class SmartHomeAutomationSystem:
+    def __init__(self):
+        self.rules = []
+    
+    def add_rule(self, trigger, optional_conditions, actions):
+        self.rules.append({
+            "trigger": trigger,
+            "optional_conditions": optional_conditions,
+            "actions": actions
+        })
+    
+    def set_movie_mode(self, scenes):
+        for scene in scenes:
+            if scene == "Movie Mode":
+                movie_mode_scene = {"lights": 10}
+                break
+    
+    def disable_smart_oven_action_if_home_status_is_abroad(self):
+        if self.smart_oven_action is not None:
+            if self.home_status == "Away":
+                self.smart_oven_action = False
+    
+    def enable_air_conditioner_action_after_all_windows_closed(self):
+        self.air_conditioner_action = True
+
+# Example usage:
+smart_home = SmartHomeAutomationSystem()
+smart_home.add_rule("Lights to 10%", ["Windows sensors are open"], ["Lights to 100%"])
+scene_to_block = "Morning"
+scene_to_run = "Movies"
+
+smart_home.set_movie_mode([scene_to_block, scene_to_run])
+```
+
+This code defines a `SmartHomeAutomationSystem` class with methods to add rules, set movie mode, disable the smart oven action, and enable the air conditioner action. The example usage demonstrates how to use these methods to configure a smart home automation system.

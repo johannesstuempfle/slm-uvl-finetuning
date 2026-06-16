@@ -1,0 +1,15 @@
+features
+    ChocolateFactoryLine
+        mandatory
+            LogisticSystem
+            PackagingStation
+        alternative
+            NormalChocolateProductionLine
+                mandatory
+                    MeltingStation
+                    MixingStation
+                    CollingStation
+            NutChocolateProductionLine
+                mandatory
+                    NormalChocolateProductionLine
+                    BakingStation

@@ -1,0 +1,38 @@
+features
+    PCConfigurator
+        mandatory
+            CPU
+                alternative
+                    Intel
+                    AMD
+            Motherboard
+                alternative
+                    LGA1700
+                    AM5
+            RAM
+                alternative
+                    DDR4
+                    DDR5
+            GPU
+                alternative
+                    RTX4090
+                    OtherGPU
+            PSU
+                alternative
+                    "650W"
+                    "850W"
+                    "1000W"
+            Case
+                alternative
+                    ATX
+                    MicroATX
+        optional
+            LargeAirCooler
+constraints
+    Intel => LGA1700
+    AMD => AM5
+    AM5 => DDR5
+    LGA1700 => (DDR4 | DDR5)
+    RTX4090 => ("850W" | "1000W")
+    ATX => (LGA1700 | AM5)
+    MicroATX => (LGA1700 | AM5)

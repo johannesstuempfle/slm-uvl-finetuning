@@ -1,0 +1,11 @@
+features
+    Computer
+        optional
+            TextEditingProgramm
+                alternative
+                    MSWord
+                    Pages
+            CellCalculationTool
+                alternative
+                    MSExcel
+                    Numbers

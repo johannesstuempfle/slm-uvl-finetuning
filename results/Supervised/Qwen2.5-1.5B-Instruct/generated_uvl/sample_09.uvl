@@ -1,0 +1,39 @@
+features
+    'PC Configurator Tool'
+        alternative
+            'CPU Choice' {cpu}
+                mandatory
+                    'Intel' | 'AMD'
+        mandatory
+            'Motherboard Socket' {socket}
+                alternative
+                    'LGA 1700'
+                    'AM5'
+        mandatory
+            'Chipset' {chipset}
+                alternative
+                    'Z790'
+        optional
+            'High-end GPU' {gpu}
+                mandatory
+                    'RTX 4090'
+        optional
+            'Power Supply Requirement' {psu}
+                alternative
+                    '850W'
+                    '1200W'
+        mandatory
+            'GPU Physical Length' {length}
+                alternative
+                    '350mm'
+        mandatory
+            'Case Form Factor' {case}
+                alternative
+                    'ATX'
+                    'Micro-ATX'
+        optional
+            'Large Air Cooler Height' {coolersize}
+
+constraints
+    CaseFormFactor(Atx) => LargeAirCoolerHeightLessThan(CPU_Cooler_Clearance)
+    CaseFormFactor(MicroATX) => LargeAirCoolerHeightGreaterThan(Case_CPU_Cooler_Clearance)

@@ -1,0 +1,101 @@
+```uvl
+# Define Production Lines
+
+ProductionLine = {
+  name: "Chocolate Production Line",
+  description: "Produces various types of chocolate.",
+
+  # Define Chocolate Types
+  chocolateTypes = [
+    {
+      name: "Normal Chocolate",
+      description: "Standard chocolate production.",
+      stations = [
+        {
+          name: "Melting Station",
+          type: "melting"
+        },
+        {
+          name: "Mixing Station",
+          type: "mixing"
+        },
+        {
+          name: "Cooling Station",
+          type: "cooling"
+        },
+        {
+          name: "Logistic System",
+          type: "logistic"
+        },
+        {
+          name: "Packaging Station",
+          type: "packaging"
+        }
+      ]
+    },
+    {
+      name: "Nut Chocolate",
+      description: "Chocolate with added nuts.",
+      stations = [
+        # Inherit stations from Normal Chocolate
+        {
+          name: "Melting Station",
+          type: "melting"
+        },
+        {
+          name: "Mixing Station",
+          type: "mixing"
+        },
+        {
+          name: "Cooling Station",
+          type: "cooling"
+        },
+        {
+          name: "Logistic System",
+          type: "logistic"
+        },
+        {
+          name: "Packaging Station",
+          type: "packaging"
+        },
+        {
+          name: "Baking Station",
+          type: "baking"
+        }
+      ]
+    }
+  ]
+}
+
+# Output the Production Line definition (for demonstration - can be modified for your specific needs)
+print(ProductionLine)
+```
+
+**Explanation and Considerations:**
+
+* **`ProductionLine` Object:**  This is the main object representing the entire production line.
+* **`name` and `description`:**  Provide basic information about the line.
+* **`chocolateTypes` Array:** This array holds definitions for each type of chocolate produced.
+* **Chocolate Type Objects:** Each object in the `chocolateTypes` array represents a specific chocolate type.
+    * **`name` and `description`:**  Details about the chocolate type.
+    * **`stations` Array:** This is the core of the translation.  It's an array of station objects.
+* **Station Objects:** Each station object has:
+    * **`name`:**  The name of the station.
+    * **`type`:**  The type of station (e.g., "melting", "mixing", "cooling", "logistic", "packaging", "baking").  This is crucial for the UVL system to understand what equipment is needed.
+* **Inheritance (Nut Chocolate):** The `Nut Chocolate` type inherits all the stations from the `Normal Chocolate` type. This is done by including the `Normal Chocolate` station definitions within the `Nut Chocolate` definition. This is a good way to avoid redundancy.
+* **`print(ProductionLine)`:**  This line is included to show the generated UVL code.  You would typically use this output to import the definition into your UVL application.
+
+**How to use this in UVL:**
+
+1. **Copy the Code:** Copy the entire code block above.
+2. **Paste into UVL Editor:**  Paste the code into your UVL editor or application.
+3. **Import/Load:**  Depending on how you're using UVL, you'll need to import or load this definition.  The exact method will depend on your UVL environment.  Often, you'll simply save the code as a `.uvl` file and then load that file.
+
+**Important Notes for UVL:**
+
+* **`type` Field:** The `type` field is *critical*. UVL uses this to determine which equipment to use. Make sure the `type` values match the equipment types available in your UVL system.
+* **Customization:** This is a basic translation.  You might need to adjust the station names or types to match your specific UVL setup.
+* **Error Handling:**  UVL has its own error handling.  If you get errors, carefully review the syntax and make sure the `type` values are correct.
+* **Dependencies:**  UVL might have dependencies on other components (e.g., a specific "Logistic System" component).  You'll need to ensure those dependencies are correctly defined in your UVL environment.
+
+This detailed explanation and the provided UVL code should give you a good starting point for translating your text into UVL.  Remember to adapt the code to your specific UVL environment and requirements.

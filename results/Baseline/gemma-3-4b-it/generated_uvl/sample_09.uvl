@@ -1,0 +1,43 @@
+```uvl
+{
+  "title": "PC Configuration Guide",
+  "description": "A tool to guide users through building a PC, considering component compatibility.",
+  "sections": [
+    {
+      "title": "CPU Selection",
+      "content": "The CPU choice (e.g., Intel vs. AMD) determines the required motherboard socket (e.g., LGA 1700 vs. AM5)."
+    },
+    {
+      "title": "Motherboard & RAM",
+      "content": "The motherboard chipset (e.g., Z790) dictates the supported RAM type (DDR4 or DDR5)."
+    },
+    {
+      "title": "GPU Power & Size",
+      "content": "A high-end GPU (e.g., RTX 4090) requires a minimum power supply (PSU) of 850W or higher. The GPU's physical length (e.g., 350mm) must be compatible with the case's maximum GPU clearance."
+    },
+    {
+      "title": "Case & Cooler Compatibility",
+      "content": "The case (e.g., ATX, Micro-ATX) must match the motherboard's form factor.  If using a large air cooler, its height must be less than the case's CPU cooler clearance."
+    }
+  ]
+}
+```
+
+**Explanation of the UVL code:**
+
+*   **`{}`**:  The outermost curly braces define the root object of the UVL document.
+*   **`"title"`**:  A string representing the title of the guide.
+*   **`"description"`**: A brief description of the guide.
+*   **`"sections"`**: An array of sections, each representing a part of the guide.
+*   **`"title"`**:  A string representing the title of each section.
+*   **`"content"`**:  A string containing the textual explanation of each section.
+*   **`"e.g."`**: I've kept the examples (e.g., Intel vs. AMD) within the text for clarity.  UVL doesn't have a direct equivalent for "e.g." – it's best to include the examples as part of the text.
+
+**Key Considerations for UVL:**
+
+*   **Structure:** UVL is designed to represent structured information, so using sections and headings is crucial.
+*   **Textual Content:**  UVL primarily focuses on the *content* of the guide.  It doesn't handle interactive elements like buttons or dropdowns.  This code provides a basic structure for displaying the information.
+*   **Examples:**  The "e.g." examples are included directly within the text, as UVL doesn't have a way to represent them explicitly.
+*   **No Formatting:** UVL doesn't support rich text formatting (bold, italics, lists, etc.).
+
+This UVL code provides a solid foundation for presenting the PC configuration guide in a structured and readable way. You can then use this UVL data to render it within a UVL-compatible UI framework.

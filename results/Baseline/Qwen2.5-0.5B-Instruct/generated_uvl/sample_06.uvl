@@ -1,0 +1,18 @@
+Sure! Here's the translation:
+
+```uvl-code
+We have a Tax-Calculator within a Billing-Software. The Calculator always requires the following inputs:
+- Netto Price
+- Sum of Products
+- Location of Buyer and Seller
+
+It then calculates the following outputs:
+- Tax per Product
+- Brutto Price
+- Tax Rate
+- Logging Data for Audits: Calculated Base Price and Rule of Calculation.
+
+This Output includes audit logs: Calculated Base Price and Rule of Calculation.
+```
+
+Feel free to ask if you need any further assistance!

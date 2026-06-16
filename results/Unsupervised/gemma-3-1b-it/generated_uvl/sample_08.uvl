@@ -1,0 +1,42 @@
+```uvl
+// Course Registration System
+
+// Core Courses
+// All students must register for a minimum of 12 credits.
+// Undergraduate students must select one 100-level Core course.
+// Graduate students must select a 500-level Seminar.
+
+// Prerequisites
+// 'Advanced AI' requires 'Intro to AI' and 'Linear Algebra'.
+// 'Statistics for Biology' and 'Statistics for Business' are mutually exclusive.
+
+// Optional Module
+// 'Robotics Lab' is an optional elective with a hard enrollment cap of 20 students.
+
+// Thesis Defense
+// Only students with 60 credits and a completed 'Dissertation Proposal' review can take the 'Thesis Defense' module.
+
+
+// Constraints
+// All courses listed must be offered.
+// The number of credits required for each course must be non-negative.
+// 'Intro to AI' and 'Linear Algebra' are mutually exclusive.
+// 'Statistics for Biology' and 'Statistics for Business' are mutually exclusive.
+// 'Robotics Lab' is an optional elective.
+// 'Thesis Defense' is only available to students with 60 credits.
+// 'Advanced AI' is a prerequisite for 'Intro to AI'.
+// 'Linear Algebra' is a prerequisite for 'Statistics for Biology'.
+// 'Linear Algebra' is a prerequisite for 'Statistics for Business'.
+// 'Statistics for Biology' is a prerequisite for 'Statistics for Business'.
+// 'Robotics Lab' is an optional elective.
+
+// Notes
+// The following constraints are enforced:
+// - All students register for a minimum of 12 credits.
+// - Undergraduate students can only select one 100-level Core course.
+// - Graduate students can only select one 500-level Seminar.
+// - 'Advanced AI' and 'Statistics for Biology' are mutually exclusive.
+// - 'Statistics for Biology' and 'Statistics for Business' are mutually exclusive.
+// - 'Robotics Lab' is an optional elective with a hard enrollment cap of 20 students.
+// - 'Thesis Defense' is only available to students who have completed 60 credits and passed their 'Dissertation Proposal' review.
+```

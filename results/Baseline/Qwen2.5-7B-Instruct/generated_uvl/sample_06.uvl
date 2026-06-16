@@ -1,0 +1,49 @@
+Certainly! UVL (Unified Verification Language) is a formal language used for specifying and verifying properties of systems. Below is an example of how you might translate the provided text into UVL code, considering the context of a tax-calculator in a billing-software.
+
+```uvl
+module TaxCalculator {
+    -- Define the inputs
+    input nettoPrice : Real;
+    input sumOfProducts : Real;
+    input buyerLocation : String;
+    input sellerLocation : String;
+
+    -- Define the outputs
+    output taxPerProduct : Real;
+    output bruttoPrice : Real;
+    output taxRate : Real;
+
+    -- Define logging data for audits
+    output calculatedBasePrice : Real;
+    output ruleOfCalculation : String;
+
+    -- Define the main process
+    process calculateTax {
+        -- Calculate the tax rate based on locations
+        if (buyerLocation == "CountryA" and sellerLocation == "CountryB") then
+            taxRate := 0.15; -- Example tax rate
+        else if (buyerLocation == "CountryB" and sellerLocation == "CountryA") then
+            taxRate := 0.20; -- Example tax rate
+        else
+            taxRate := 0.10; -- Default tax rate
+
+        -- Calculate the tax per product
+        taxPerProduct := nettoPrice * taxRate;
+
+        -- Calculate the brutto price
+        bruttoPrice := nettoPrice + (nettoPrice * taxRate);
+
+        -- Log the calculated base price and rule of calculation
+        calculatedBasePrice := nettoPrice + sumOfProducts;
+        ruleOfCalculation := "Calculated based on netto price and sum of products with tax rate applied.";
+    }
+}
+```
+
+### Explanation:
+1. **Inputs**: The `nettoPrice`, `sumOfProducts`, `buyerLocation`, and `sellerLocation` are defined as inputs.
+2. **Outputs**: The `taxPerProduct`, `bruttoPrice`, and `taxRate` are defined as outputs.
+3. **Logging Data**: The `calculatedBasePrice` and `ruleOfCalculation` are defined as outputs for audit purposes.
+4. **Process**: The `calculateTax` process performs the necessary calculations and logs the required data.
+
+This UVL code captures the essence of your requirements and ensures that the correct syntax is used.

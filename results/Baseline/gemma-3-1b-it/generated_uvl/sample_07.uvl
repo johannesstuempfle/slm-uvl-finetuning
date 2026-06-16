@@ -1,0 +1,56 @@
+```uvl
+// Room Booking System - Simplified UVL Representation
+
+// Room represents a room in the hotel.
+// Attributes:
+//   - number_of_beds: The number of beds in the room.
+//   - view: The view offered by the room (e.g., "city", "mountain", "ocean").
+//   - size: The size of the room (e.g., "small", "medium", "large").
+
+Room {
+  number_of_beds: 1;
+  view: "city";
+  size: "medium";
+
+  // Optional features -  These are added as separate fields.
+  optional_spa_area: true;
+  optional_best_view: true;
+}
+
+// Booking represents a room booking.
+// Attributes:
+//   - start_date: The start date of the booking.
+//   - end_date: The end date of the booking.
+//   - fees:  (Optional) The fees associated with the booking.
+//   - bookings: (Optional) A list of bookings for this room.
+
+Booking {
+  start_date: "2023-10-26";
+  end_date: "2023-10-28";
+  fees: 50.00; // Example fee
+  bookings: []; // List of bookings for this room
+}
+```
+
+**Explanation and Considerations:**
+
+* **`Room` Structure:**  I've represented the room data as a `Room` structure.  This is a common way to organize data in UVL.  You can adjust this structure to fit your specific needs.
+* **`optional_spa_area` and `optional_best_view`:** These are represented as boolean (true/false) values, which are standard in UVL.
+* **`Booking` Structure:**  I've created a `Booking` structure to encapsulate the details of a single booking.  This is a logical grouping of booking-related information.
+* **Data Types:** I've used appropriate data types (e.g., `number` for `number_of_beds`, `string` for `view`, `string` for `start_date`, `string` for `end_date`).
+* **Optional Features:**  I've included the `optional_spa_area` and `optional_best_view` as optional features, indicated by `true` or `false`.
+* **`bookings`:** I've added an optional `bookings` field to the `Booking` structure. This is crucial for a booking system, as it allows you to track multiple bookings for the same room.  It's an array (list) of booking objects.
+
+**How to use this in UVL:**
+
+1. **Create a UVL file:**  You'll need a UVL editor (like UVL Editor or a command-line tool).
+2. **Paste the code:** Paste the code above into the UVL file.
+3. **Save the file:** Save the file with a `.uvl` extension (e.g., `rooms.uvl`).
+
+**Further Enhancements (depending on your UVL environment):**
+
+* **Data Validation:**  You might want to add validation rules to ensure the data is consistent (e.g., `number_of_beds` must be a positive integer).
+* **Relationships:**  If you have other related data (e.g., rooms that can have multiple bookings), you'll need to define relationships between the `Room` and `Booking` structures.  UVL supports various relationship types (e.g., `has_bookings`).
+* **More Detail:**  You could add more attributes to the `Room` and `Booking` structures to provide more detailed information (e.g., room temperature, amenities, etc.).
+
+This example provides a basic UVL representation of the room booking system.  You'll need to adapt it based on the specific requirements and features of your application.  Let me know if you'd like me to elaborate on any particular aspect or provide a more complex example!

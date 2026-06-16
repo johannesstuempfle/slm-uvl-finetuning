@@ -1,0 +1,99 @@
+```uvl
+{
+  "course_system": {
+    "name": "University Course Registration System",
+    "description": "Manages student enrollments and enforces course requirements.",
+    "rules": [
+      {
+        "type": "minimum_credits",
+        "requirement": 12,
+        "description": "All students must register for a minimum of 12 credits."
+      },
+      {
+        "type": "student_type_specific_requirements",
+        "student_type": "undergraduate",
+        "requirements": [
+          {
+            "type": "course_selection",
+            "course_level": 100,
+            "course_type": "core",
+            "quantity": 1,
+            "description": "Undergraduate students must select one 100-level Core course."
+          }
+        ]
+      },
+      {
+        "type": "student_type_specific_requirements",
+        "student_type": "graduate",
+        "requirements": [
+          {
+            "type": "course_selection",
+            "course_level": 500,
+            "course_type": "seminar",
+            "quantity": 1,
+            "description": "Graduate students must select a 500-level Seminar."
+          }
+        ]
+      },
+      {
+        "type": "prerequisite",
+        "course": "Advanced AI",
+        "prerequisites": [
+          "Intro to AI",
+          "Linear Algebra"
+        ],
+        "description": "Advanced AI requires both Intro to AI and Linear Algebra."
+      },
+      {
+        "type": "exclusion",
+        "course1": "Statistics for Biology",
+        "course2": "Statistics for Business",
+        "description": "Statistics for Biology and Statistics for Business are mutually exclusive."
+      },
+      {
+        "type": "elective",
+        "course": "Robotics Lab",
+        "is_optional": true,
+        "enrollment_cap": 20,
+        "description": "Robotics Lab is an optional elective with a hard enrollment cap of 20 students."
+      },
+      {
+        "type": "module_access_restriction",
+        "module": "Thesis Defense",
+        "requirements": [
+          {
+            "type": "credits_completed",
+            "minimum_credits": 60
+          },
+          {
+            "type": "assessment_passed",
+            "assessment": "Dissertation Proposal",
+            "description": "Must pass their Dissertation Proposal review."
+          }
+        ],
+        "description": "The Thesis Defense module is only available to students who have completed 60 credits and passed their Dissertation Proposal review."
+      }
+    ]
+  }
+}
+```
+
+**Explanation and Considerations:**
+
+* **`course_system`:**  This is the root element, encapsulating the entire system's rules.
+* **`name` & `description`:** Added for clarity.
+* **`rules`:** This array holds all the individual course requirements and restrictions.
+* **`type`:**  Each rule has a `type` to indicate the kind of restriction (e.g., `minimum_credits`, `course_selection`, `prerequisite`, `exclusion`, `elective`, `module_access_restriction`).
+* **`requirement` / `quantity` / `is_optional`:**  These fields are specific to the `type` of rule.
+* **`course_level` & `course_type`:** Used to categorize courses (e.g., 100-level Core, 500-level Seminar).
+* **`prerequisites`:**  An array of course names that are required before taking another course.
+* **`exclusion`:**  This type handles mutually exclusive courses.
+* **`enrollment_cap`:**  Specifies the maximum number of students allowed in an elective.
+* **`module_access_restriction`:**  This handles restrictions on modules (like the Thesis Defense) based on completion of other modules or assessments.  I've used `credits_completed` and `assessment_passed` for this.
+* **`description`:**  Each rule has a descriptive text to explain its purpose.
+
+**Key improvements and why this is a good UVL representation:**
+
+* **Structured Data:** UVL uses a hierarchical, JSON-like structure to represent the rules in a very organized way.
+* **Explicit Types:** The `type` field is crucial for understanding the nature of each rule.  This allows for automated processing and validation.
+* **Clear Relationships:**  The `

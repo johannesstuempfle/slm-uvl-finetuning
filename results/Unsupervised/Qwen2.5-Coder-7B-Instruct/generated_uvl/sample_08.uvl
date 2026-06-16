@@ -1,0 +1,104 @@
+Here's the translation of the given text into UVL-Code:
+
+uvl
+
+	Features
+	
+		UniversityCourseRegistrationSystem
+		
+			mandatory
+			
+				managesStudentEnrollments
+				
+					alternative
+				
+						AllStudentsMustRegisterForAMinimumOf12Credits
+						
+							Each Student Must RegisterForAtLeast 12 Credits
+								alternative
+									Graduate Students Must SelectAPrerequisiteSeminar
+										Absence
+											SelectsAPrerequisiteSeminar
+									ManyCoursesHavePrerequisites
+										optional
+											MaySelectOneOrMorePrerequisites
+												mandatory
+													Each Course May Have Zero Or More Prerequisites
+														optional
+															SelectsOneOrMorePrerequisites
+																mandatory
+																	Each Course May Have Zero Or More Prerequisites
+																		optional
+																			MaySelectOneOrMorePrerequisites
+																				mandatory
+																					Each Course May Have Zero Or More Prerequisites
+									ManyCoursesAreMutuallyExclusive
+										optional
+											MaySelectOneOrMoreMutuallyExclusiveCourses
+												mandatory
+													Each Course May Be Mutually Exclusive With Zero Or More Courses
+														optional
+															MaySelectOneOrMoreMutuallyExclusiveCourses
+																mandatory
+																	Each Course May Be Mutually Exclusive With Zero Or More Courses
+									TheRoboticsLabIsAnOptionalElectiveWithAHardEnrollmentCapOf20Students
+										optional
+											MaySelectTheRoboticsLab
+												mandatory
+													MaySelectTheRoboticsLab
+														or
+															SelectsTheRoboticsLab
+															DoesNotSelectTheRoboticsLab
+																mandatory
+																	Each Student May Only Be Enrolled In AtMost 20 Courses
+	optional
+		MaySelectTheThesisDefenseModule
+			mandatory
+				MaySelectTheThesisDefenseModule
+					mandatory
+						Each Student May Only Be Enrolled In AtMost 60 Credits
+						Each Student May Only Be Enrolled In AtMost One DissertationProposalReviewPassed
+						Each Student May Only Be Enrolled In AtMost One ThesisDefense
+						MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+							mandatory
+								MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+									mandatory
+										MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+											mandatory
+												MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+													mandatory
+														MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+															mandatory
+																MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																	mandatory
+																		MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																			mandatory
+																				MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																					mandatory
+																						MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																							mandatory
+																								MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																									mandatory
+																										MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																											mandatory
+																												MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																													mandatory
+																														MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																															mandatory
+																																MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																																	mandatory
+																																		MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																																			mandatory
+																																				MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																																					mandatory
+																																						MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																																							mandatory
+																																								MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																																									mandatory
+																																										MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																																											mandatory
+																																												MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																																													mandatory
+																																														MustBeAStudentWhoHasCompleted60CreditsAndPassedTheirDissertationProposalReview
+																																															mandatory
+																																																MustBeAStudent

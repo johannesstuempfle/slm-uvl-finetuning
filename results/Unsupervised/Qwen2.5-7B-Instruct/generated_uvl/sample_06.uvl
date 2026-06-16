@@ -1,0 +1,50 @@
+Certainly! Below is the translation of the provided text into UVL (Unified Verification Language) code. UVL is often used for specifying requirements in software verification and validation. The following UVL code captures the essence of the tax-calculator within a billing-software as described.
+
+```uvl
+features
+    TaxCalculator
+        mandatory
+            Inputs
+                mandatory
+                    NettoPrice {units Price}
+                    SumOfProducts {units Price}
+                    Location
+                        alternative
+                            BuyerLocation
+                            SellerLocation
+            Outputs
+                TaxPerProduct {units Price}
+                BruttoPrice {units Price}
+                TaxRate {units Percentage}
+                LoggingData
+                    mandatory
+                        CalculatedBasePrice {units Price}
+                        RuleOfCalculation
+
+constraints
+    // Ensure the correct relationship between inputs and outputs
+    BruttoPrice == NettoPrice + SumOfProducts
+    TaxPerProduct == SumOfProducts * TaxRate
+    CalculatedBasePrice == NettoPrice + TaxPerProduct
+    RuleOfCalculation == "NettoPrice + SumOfProducts * TaxRate"
+```
+
+### Explanation:
+1. **Features**: The `TaxCalculator` feature is defined with mandatory sub-features such as `Inputs`, `Outputs`, and `LoggingData`.
+2. **Inputs**:
+   - `NettoPrice`: A mandatory input with units of `Price`.
+   - `SumOfProducts`: A mandatory input with units of `Price`.
+   - `Location`: An alternative input that can be either `BuyerLocation` or `SellerLocation`.
+3. **Outputs**:
+   - `TaxPerProduct`: A mandatory output with units of `Price`.
+   - `BruttoPrice`: A mandatory output with units of `Price`.
+   - `TaxRate`: A mandatory output with units of `Percentage`.
+   - `LoggingData`: A mandatory output that includes `CalculatedBasePrice` and `RuleOfCalculation`.
+
+4. **Constraints**:
+   - The `BruttoPrice` is calculated as the sum of `NettoPrice` and `SumOfProducts`.
+   - The `TaxPerProduct` is calculated as the `SumOfProducts` multiplied by the `TaxRate`.
+   - The `CalculatedBasePrice` is the sum of `NettoPrice` and `TaxPerProduct`.
+   - The `RuleOfCalculation` specifies the formula used for the calculation.
+
+This UVL model ensures that the tax-calculator behaves according to the given requirements and constraints.

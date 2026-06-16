@@ -1,0 +1,27 @@
+Certainly! Below is the translation of the given text into UVL-Code:
+
+```uvl
+module PCConfiguratorTool
+
+    features
+        "Guides users"
+            constraints
+                "Choice of CPU dictates the required motherboard socket"
+                    "CPU Socket" => "Motherboard Socket"
+                        constraints
+                            "Motherboard chipset determines the supported RAM type"
+                                "RAM Type" => "Motherboard Chipset"
+                                    constraints
+                                        "High-end GPU has a minimum power requirement"
+                                            "Power Supply" => "GPU"
+                                                constraints
+                                                    "GPU's physical length must also be compatible with the case's maximum GPU clearance"
+                                                        "Case" => "GPU"
+                                                            constraints
+                                                                "Case must match the motherboard's form factor"
+                                                                    "Motherboard Form Factor" => "Case"
+                                                                        constraints
+                                                                            "Optional large air cooler's height must be less than the case's CPU cooler clearance"
+                                                                                "Air Cooler Clearance" => "CPU Cooler Clearance"
+
+```

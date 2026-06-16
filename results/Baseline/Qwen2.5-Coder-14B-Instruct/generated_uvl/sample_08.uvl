@@ -1,0 +1,83 @@
+```uvl
+# Define the entities
+entity Student {
+    id: String
+    type: Enum("Undergraduate", "Graduate")
+    credits: Integer
+    completedCourses: Set<Course>
+}
+
+entity Course {
+    id: String
+    level: Integer
+    prerequisites: Set<Course>
+    mutuallyExclusiveWith: Set<Course>
+    maxEnrollment: Optional<Integer>
+}
+
+entity Module {
+    id: String
+    requiredCredits: Integer
+    prerequisiteModules: Set<Module>
+}
+
+# Define the rules
+rule minCreditRequirement {
+    forall student in Student {
+        student.credits >= 12
+    }
+}
+
+rule coreCourseSelection {
+    forall student in Student where student.type == "Undergraduate" {
+        exists course in Course where course.level == 100 and course.id in student.completedCourses
+    }
+}
+
+rule seminarCourseSelection {
+    forall student in Student where student.type == "Graduate" {
+        exists course in Course where course.level == 500 and course.id in student.completedCourses
+    }
+}
+
+rule prerequisiteRule {
+    forall student in Student, course in Course {
+        if course.prerequisites!= empty {
+            forall prereq in course.prerequisites {
+                prereq.id in student.completedCourses
+            }
+        }
+    }
+}
+
+rule mutualExclusionRule {
+    forall student in Student, course in Course {
+        if course.mutuallyExclusiveWith!= empty {
+            forall exclusiveCourse in course.mutuallyExclusiveWith {
+                exclusiveCourse.id not in student.completedCourses
+            }
+        }
+    }
+}
+
+rule roboticsLabEnrollmentCap {
+    let roboticsLab = Course(id: "Robotics Lab", maxEnrollment: 20)
+    forall student in Student {
+        if roboticsLab.id in student.completedCourses {
+            count(student.completedCourses where course.id == roboticsLab.id) <= roboticsLab.maxEnrollment
+        }
+    }
+}
+
+rule thesisDefenseAvailability {
+    let thesisDefense = Module(id: "Thesis Defense", requiredCredits: 60)
+    forall student in Student {
+        if thesisDefense.id in student.completedCourses {
+            student.credits >= thesisDefense.requiredCredits
+            exists dissertationProposal in Module where dissertationProposal.id == "Dissertation Proposal" and dissertationProposal in student.completedCourses
+        }
+    }
+}
+```
+
+This UVL code defines the entities `Student`, `Course`, and `Module` and specifies the rules based on the given text. Each rule corresponds to a specific requirement or condition described in the text.

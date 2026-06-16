@@ -1,0 +1,11 @@
+features
+    "Computer Installation"
+        mandatory
+            "Text Editing Program"
+                alternative
+                    "Microsoft Word"
+                    "Microsoft Excel"
+            "Cell Calculation Tool"
+                alternative
+                    "Microsoft Excel"
+                    "Numberts"

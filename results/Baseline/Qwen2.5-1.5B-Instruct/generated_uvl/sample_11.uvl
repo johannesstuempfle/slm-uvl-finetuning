@@ -1,0 +1,47 @@
+```uvl
+// Smart Home Automation System
+
+// Rule for "Movie Mode" scene:
+rule MovieModeScene {
+    when 
+        // Trigger: Scene initiated by user
+        HomeScene == "Movie Mode"
+        
+        // Optional condition: No other scenes active
+        Not(ActiveScenes.contains("Morning"))
+    
+    then
+        // Action: Set lights to 10%
+        Light.set(10)
+}
+
+// Safety constraint for "Smart Oven":
+rule SmartOvenSafety {
+    when
+        // Trigger: User initiates oven operation
+        Ovens > 0
+        
+        // Optional condition: Home status is not away
+        HomeStatus!= "Away"
+
+    then
+        // Disable oven action
+        Oven.disable()
+}
+
+// Dynamic disabling of "Air Conditioner" if window sensors report open:
+rule AirConditionerDynamicDisable {
+    when
+        // Trigger: Any window sensor reports open
+        WindowSensors.any()
+
+        // Optional condition: All windows closed within 5 minutes
+        All(Windows.closedIn(5))
+
+    then
+        // Dynamically disable air conditioner
+        AirConditioner.disable()
+}
+```
+
+This code translates the provided requirements into a structured format suitable for an event-driven system like those found in smart home automation systems. Each rule includes triggers, conditions, and actions necessary to achieve the desired functionality while adhering to the specified safety constraints.

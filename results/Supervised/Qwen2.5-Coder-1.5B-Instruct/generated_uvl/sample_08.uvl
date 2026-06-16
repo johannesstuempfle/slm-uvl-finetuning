@@ -1,0 +1,28 @@
+features
+    CourseRegistrationSystem {abstract}
+        mandatory
+            MinimumCreditsConstraint {minimum 12}
+        alternative
+            UndergraduateStudent {optional}
+                mandatory
+                    CoreCourse
+                        or
+                            IntroToAI
+                            LinearAlgebra
+            GraduateStudent {optional}
+                mandatory
+                    Seminar
+                        or
+                            StatisticsForBiology
+                            StatisticsForBusiness
+        optional
+            OptionalElective {maximum 20}
+                mandatory
+                    RoboticsLab
+        optional
+            ThesisDefenseModule {and
+                        CompletedSixtyCredits
+                        PassedDissertationProposalReview
+                    }
+                mandatory
+                    DissertationProposal

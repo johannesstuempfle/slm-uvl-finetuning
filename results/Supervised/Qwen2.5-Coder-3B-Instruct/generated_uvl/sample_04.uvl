@@ -1,0 +1,17 @@
+features
+    Bicycle {abstract}
+        mandatory
+            Groupset {abstract}
+                alternative
+                    SRAM
+                    Shimano
+            Handlebar {abstract}
+                alternative
+                    DropBar
+                    FlatBar
+        optional
+            Tyres {abstract}
+                alternative
+                    GravelTyres {profile "wide", "deep"}
+                    RoadTyres {profile "slim", "no-profile"}
+                    MountainTyres {profile "extra-wide", "deep"}

@@ -1,0 +1,12 @@
+features
+    CoffeeShop
+        mandatory
+            "Coffee"
+            Tea
+            "Croissant"
+            Bagel
+        optional
+            PaymentMethod
+                alternative
+                    Card
+                    Cash

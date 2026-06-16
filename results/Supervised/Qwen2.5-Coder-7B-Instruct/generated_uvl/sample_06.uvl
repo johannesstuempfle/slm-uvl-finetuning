@@ -1,0 +1,63 @@
+features
+    TaxCalculator {abstract}
+        mandatory
+            NettoPrice {abstract}
+                alternative
+                    FixedNettoPrice
+                    CalculatedNettoPrice
+            SumOfProducts {abstract}
+                alternative
+                    FixedSumOfProducts
+                    CalculatedSumOfProducts
+            BuyerLocation {abstract}
+                alternative
+                    DomesticBuyer
+                    ForeignBuyer
+            SellerLocation {abstract}
+                alternative
+                    DomesticSeller
+                    ForeignSeller
+        optional
+            Discount
+
+concepts
+    CalculatedNettoPrice
+        implies
+            CalculatedSumOfProducts
+
+    DomesticBuyer {abstract}
+        implies
+            DomesticSeller
+
+    ForeignBuyer {abstract}
+        implies
+            ForeignSeller
+
+    CalculatedBasePrice {abstract}
+
+rules
+    'TaxRateRule'
+        if
+            DomesticBuyer & ForeignSeller
+        then
+            TaxRate = 19%
+        else
+            TaxRate = 7%
+
+    'CalculatedBasePriceRule'
+        when
+            CalculatedBasePrice
+        then
+            CalculatedBasePrice = NettoPrice + SumOfProducts - Discount
+
+    'BruttoPriceRule'
+        when
+            CalculatedBasePrice
+        then
+            BruttoPrice = CalculatedBasePrice * (1 + TaxRate)
+
+    'LoggingDataRule'
+        when
+            CalculatedBasePrice
+        then
+            LoggingData = "Calculated Base Price: " + CalculatedBasePrice + ", Rule of Calculation: " + TaxRateRule

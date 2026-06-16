@@ -1,0 +1,31 @@
+Here is the translation in Uvl-Code based on the given text:
+
+```uvl
+Package ChocolateProduction {
+    Features
+        ProductionLine {abstract}
+            Mandatory
+                MeltingStation
+                MixingStation
+                CoolingStation
+                LogisticsSystem
+                PackagingStation
+            Optional
+                NutChocolate
+                    Alternative
+                        MeltingStation
+                        MixingStation
+                        CoolingStation
+                        BakingStation
+
+        TypesOfChocolate
+            Normal
+                Feature MeltingStation
+                Feature MixingStation
+                Feature CoolingStation
+            NutChocolate
+                Feature MeltingStation
+                Feature MixingStation
+                Feature CoolingStation
+                Feature BakingStation
+}

@@ -1,0 +1,33 @@
+features
+    Room {abstract}
+        mandatory
+            "Number of Beds"
+                alternative
+                    Bed_1
+                    Bed_2
+                    Bed_3
+            View
+                alternative
+                    Sea_View
+                    Mountain_View
+                    City_View
+                    None_View
+            Size
+                alternative
+                    Small
+                    Medium
+                    Large
+
+    Spa_Area
+        optional
+
+    Best_View_Option
+        optional
+            constraint
+                "Only For Two-Bed Rooms"
+
+    Booking {abstract}
+        mandatory
+            Start_Date
+            End_Date
+            Fees {optional}

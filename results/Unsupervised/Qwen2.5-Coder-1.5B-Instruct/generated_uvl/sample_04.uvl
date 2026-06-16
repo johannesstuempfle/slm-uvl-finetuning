@@ -1,0 +1,60 @@
+```uvl
+module Bicycle {
+    abstract feature Groupset {
+        mandatory Manufacturer { 
+            alternative { 
+                SRAM
+                Shimano
+            }
+        }
+    }
+
+    abstract feature TyreProfile {
+        optional WideTyres
+        optional SlimTyres
+    }
+
+    abstract feature Handlebars {
+        alternative { 
+            DropBar
+            FlatHandlebars
+        }
+    }
+
+    abstract feature ExtraWideTyres
+
+    feature GravelBike {
+        mandatory Groupset
+        mandatory TyreProfile { 
+            mandatory WideTyres
+        }
+        optional SlimTyres
+        mandatory Handlebars { 
+            mandatory FlatHandlebars
+        }
+        optional ExtraWideTyres
+    }
+
+    feature RoadBike {
+        mandatory Groupset
+        mandatory TyreProfile { 
+            mandatory SlimTyres
+        }
+        optional SlimTyres
+        mandatory Handlebars { 
+            mandatory DropBar
+        }
+    }
+
+    feature MountainBike {
+        mandatory Groupset
+        mandatory TyreProfile { 
+            mandatory ExtraWideTyres
+        }
+        optional SlimTyres
+        mandatory Handlebars { 
+            mandatory FlatHandlebars
+        }
+    }
+}
+```

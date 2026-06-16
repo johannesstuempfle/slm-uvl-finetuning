@@ -1,0 +1,32 @@
+Certainly! Below is the translation of the given text into UVL-Code:
+
+```uvl
+System: CI/CD
+Pipeline: DeploymentPipelines
+
+Stage: Build
+Description: Build stage for deployment pipelines.
+Required: Yes
+
+Stage: UnitTest
+Description: Unit test stage for deployment pipelines.
+Required: Yes
+
+Stage: Staging
+Description: Mandatory staging deployment.
+Precedence: UnitTest
+
+Stage: Production
+Description: Production deployment.
+Precedence: Staging
+Dependencies: IntegrationTest, SecurityScan
+Strategies: BlueGreen, Canary
+BlueGreenResources: DoubleInfrastructure
+CanaryMonitoring: RollbackTrigger
+HotfixBypass: Staging, IntegrationTest
+ManualQAApproval: Yes
+SecurityScan: Yes
+
+```
+
+This UVL-Code defines the CI/CD system with its deployment pipelines, stages, dependencies, and strategies. It also includes specific details for each stage and strategy, such as the required stages, dependencies, and additional requirements like monitoring and resource allocation.

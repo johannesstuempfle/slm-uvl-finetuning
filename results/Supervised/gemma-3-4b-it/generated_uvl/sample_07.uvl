@@ -1,0 +1,17 @@
+features
+    RoomBookingService
+        mandatory
+            Room
+                optional
+                    "Personal Spa Area"
+                    "Best View"
+                optional
+                    "Two Bed Room"
+        mandatory
+            Booking
+                mandatory
+                    Start
+                    End
+                optional
+                    "Extra Bed"
+                    "Parking"
