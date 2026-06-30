@@ -1,0 +1,35 @@
+Since you didn't provide the specific UVL (Unified Vocabulary Language) schema or the specific domain profile you are using, I have translated this based on the standard **UVL logic for Role and Constraint definitions**.
+
+In UVL, constraints regarding "different people" are typically handled via `distinct` or `exclusive` constraints.
+
+```uvl
+// Define the Roles
+Role SecurityArchitect;
+Role SecurityEngineer;
+Role SecurityManager;
+Role ScrumMaster;
+
+// Define the Security Team entity
+Entity SecurityTeam {
+    // The team requires one of each role
+    requires SecurityArchitect;
+    requires SecurityEngineer;
+    requires SecurityManager;
+    requires ScrumMaster;
+}
+
+// Constraints
+Constraint SecurityTeam_RoleSeparation {
+    // The Security Architect and Security Engineer cannot be the same person
+    distinct(SecurityArchitect, SecurityEngineer);
+    
+    // The Manager and Scrum Master must be separate roles
+    distinct(SecurityManager, ScrumMaster);
+}
+```
+
+### Key Syntax Explanations:
+1.  **`Role`**: Used to define the professional capacities required.
+2.  **`Entity SecurityTeam`**: Groups the roles into a single organizational unit.
+3.  **`requires`**: Ensures that the team is not complete unless these roles are filled.
+4.  **`distinct(RoleA, RoleB)`**: This is the standard UVL syntax to enforce that two roles cannot be assigned to the same unique identifier (person). I applied this to both the Architect/Engineer pair and the Manager/Scrum Master pair as per your "separate" requirement.<turn|>

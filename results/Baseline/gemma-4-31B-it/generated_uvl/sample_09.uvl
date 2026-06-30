@@ -1,0 +1,90 @@
+Since you didn't provide a specific UVL (Unified Validation Language) schema or a specific toolset (as UVL is often used in specialized industrial or hardware configuration contexts), I have translated your requirements into a **standard logic-based UVL syntax**. 
+
+This code defines the **entities**, their **attributes**, and the **constraints** (rules) that govern the configuration.
+
+```uvl
+/* PC Configurator Validation Logic */
+
+// --- Entity Definitions ---
+Entity CPU {
+    Attribute brand;       // Intel, AMD
+    Attribute socket;      // LGA1700, AM5
+}
+
+Entity Motherboard {
+    Attribute socket;       // LGA1700, AM5
+    Attribute chipset;      // Z790, B650, etc.
+    Attribute ram_type;    // DDR4, DDR5
+    Attribute form_factor;  // ATX, Micro-ATX
+}
+
+Entity RAM {
+    Attribute type;         // DDR4, DDR5
+}
+
+Entity GPU {
+    Attribute model;        // RTX 4090, etc.
+    Attribute min_psu_watt; // Integer (e.g., 850)
+    Attribute length;       // Integer in mm (e.g., 350)
+}
+
+Entity PSU {
+    Attribute wattage;      // Integer (e.g., 1000)
+}
+
+Entity Case {
+    Attribute supported_form_factors; // List [ATX, Micro-ATX]
+    Attribute max_gpu_length;         // Integer in mm
+    Attribute max_cooler_height;      // Integer in mm
+}
+
+Entity Cooler {
+    Attribute is_large;     // Boolean
+    Attribute height;       // Integer in mm
+}
+
+// --- Validation Constraints ---
+
+// 1. CPU Socket must match Motherboard Socket
+Constraint CPU_Socket_Match {
+    Check: CPU.socket == Motherboard.socket;
+    ErrorMessage: "The selected CPU is not compatible with the motherboard socket.";
+}
+
+// 2. Motherboard Chipset dictates RAM Type
+Constraint RAM_Compatibility {
+    Check: Motherboard.ram_type == RAM.type;
+    ErrorMessage: "The selected RAM type is not supported by the motherboard chipset.";
+}
+
+// 3. GPU Power Requirement vs PSU Wattage
+Constraint PSU_Power_Requirement {
+    Check: PSU.wattage >= GPU.min_psu_watt;
+    ErrorMessage: "The Power Supply unit provides insufficient wattage for the selected GPU.";
+}
+
+// 4. GPU Length vs Case Clearance
+Constraint GPU_Physical_Fit {
+    Check: GPU.length <= Case.max_gpu_length;
+    ErrorMessage: "The GPU is too long for the selected case.";
+}
+
+// 5. Motherboard Form Factor vs Case Compatibility
+Constraint Case_Form_Factor {
+    Check: Motherboard.form_factor IN Case.supported_form_factors;
+    ErrorMessage: "The motherboard form factor is not supported by this case.";
+}
+
+// 6. Cooler Height vs Case Clearance
+Constraint Cooler_Physical_Fit {
+    Condition: Cooler.is_large == True;
+    Check: Cooler.height <= Case.max_cooler_height;
+    ErrorMessage: "The air cooler is too tall for the selected case.";
+}
+```
+
+### Key Translation Notes:
+*   **Dependency Chain:** I mapped the "dictates" and "determines" phrasing into `Check` constraints. For example, the CPU $\rightarrow$ Motherboard $\rightarrow$ RAM chain is handled by ensuring the attributes of the selected components match.
+*   **Quantitative Constraints:** The PSU (850W) and GPU length (350mm) are treated as `Integer` comparisons (`>=` and `<=`) to ensure any high-end component triggers the rule, not just a specific model.
+*   **Conditional Logic:** The air cooler is marked as `optional` in your text, so I added a `Condition` block; the height check only triggers if `is_large` is true.
+*   **Set Validation:** For the case form factor, I used the `IN` operator, as a single case can often support multiple motherboard sizes (e.g., an ATX case usually supports Micro-ATX).<turn|>

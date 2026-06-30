@@ -1,0 +1,58 @@
+To translate this text into UVL (Unified Modeling Language / Unified Vocabulary Language), we need to define the entities (classes), their attributes, and the specific constraints (like the conditional availability of the best-view option).
+
+Here is the UVL code based on your description:
+
+```uvl
+Class Room {
+    Attribute numberOfBeds : Integer;
+    Attribute view : String;
+    Attribute size : Float;
+    
+    // Optional features
+    Optional Attribute personalSpaArea : Boolean;
+    Optional Attribute bestViewOption : Boolean;
+
+    // Constraint: best-view option is only available for two-bed rooms
+    Constraint {
+        if (this.bestViewOption == true) {
+            this.numberOfBeds == 2;
+        }
+    }
+}
+
+Class Booking {
+    Attribute startDate : Date;
+    Attribute endDate : Date;
+    
+    // Optional fees/bookings (represented as a list/collection)
+    Optional Attribute additionalFees : List<Fee>;
+}
+
+Class Fee {
+    Attribute amount : Float;
+    Attribute description : String;
+}
+
+// Relationship: A booking is associated with a room
+Relationship Booking_Room {
+    Association Booking [1] -> [1] Room;
+}
+
+// The service that manages the system
+Class RoomBookingService {
+    Association manages [1] -> [*] Room;
+    Association manages [1] -> [*] Booking;
+}
+```
+
+### Explanation of the Syntax used:
+
+1.  **Classes**: I defined `Room`, `Booking`, `Fee`, and `RoomBookingService` as the primary entities.
+2.  **Attributes**: 
+    *   Basic features (beds, view, size) are standard attributes.
+    *   The `Optional` keyword is used for the spa area, best-view option, and additional fees, as requested.
+3.  **Constraint**: I used a `Constraint` block within the `Room` class to enforce the logic that `bestViewOption` can only be true if `numberOfBeds` equals 2.
+4.  **Relationships**: 
+    *   A `Booking` is linked to a `Room`.
+    *   The `RoomBookingService` acts as the controller, managing multiple rooms and bookings (1-to-many relationship).
+5.  **Fees**: Since the text mentions "optional fees/bookings" within a booking, I created a separate `Fee` class to allow for a list of multiple optional charges.<turn|>

@@ -1,0 +1,62 @@
+To translate this text into UVL (Unified Modeling Language for product configuration), we need to define the **Features** (the slots/characteristics) and the **Values** (the options). We also need to establish the **Constraints** to handle the dependencies between the bike type and the components.
+
+Here is the translation into UVL-Code:
+
+```uvl
+Feature BikeType {
+    RoadBike
+    GravelBike
+    MountainBike
+}
+
+Feature GroupsetManufacturer {
+    SRAM
+    Shimano
+}
+
+Feature TyreType {
+    SlimNoProfile
+    WideSomeProfile
+    ExtraWideDeepProfile
+}
+
+Feature HandlebarType {
+    DropBar
+    FlatBar
+}
+
+// --- Constraints ---
+
+// Groupset is always equipped (implicit by feature definition, 
+// but we ensure it's mandatory for all bikes)
+Constraint GroupsetRequired {
+    GroupsetManufacturer == SRAM or GroupsetManufacturer == Shimano
+}
+
+// Handlebar logic
+Constraint HandlebarAssignment {
+    (BikeType == RoadBike or BikeType == GravelBike) => HandlebarType == DropBar
+    BikeType == MountainBike => HandlebarType == FlatBar
+}
+
+// Tyre logic
+Constraint TyreAssignment {
+    // Road bike must have slim tyres
+    BikeType == RoadBike => TyreType == SlimNoProfile
+    
+    // Mountain bike must have extra wide tyres
+    BikeType == MountainBike => TyreType == ExtraWideDeepProfile
+    
+    // Gravel bike can have wide tyres OR slim tyres
+    BikeType == GravelBike => (TyreType == WideSomeProfile or TyreType == SlimNoProfile)
+}
+```
+
+### Explanation of the mapping:
+1.  **Features**: I created four features: `BikeType`, `GroupsetManufacturer`, `TyreType`, and `HandlebarType`.
+2.  **Groupset**: Since the text says the bike "is equipped" with one of the two, it is modeled as a mandatory selection.
+3.  **Handlebars**: I used an implication (`=>`). If the type is Road or Gravel, it forces a `DropBar`. If it is Mountain, it forces a `FlatBar`.
+4.  **Tyres**:
+    *   **Road**: Strictly `SlimNoProfile`.
+    *   **Mountain**: Strictly `ExtraWideDeepProfile`.
+    *   **Gravel**: The text states it "features wide tyres" but also that "it is possible to fit slim tyres." Therefore, I defined a logical **OR** for the Gravel bike.<turn|>

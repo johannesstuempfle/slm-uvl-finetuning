@@ -1,0 +1,51 @@
+Since you didn't provide a specific UVL (Unified Modeling Language/Validation Language) schema or a specific tool's dialect, I will provide this in a **generic, object-oriented UVL structure**. 
+
+UVL is typically used to define constraints, requirements, and system architectures. In this context, the best way to represent this is through **inheritance** (since Nut-Chocolate is a specialization of Normal Chocolate) and **composition** (the shared requirements).
+
+Here is the translation:
+
+```uvl
+// Definition of all possible stations
+Station {
+    MeltingStation;
+    MixingStation;
+    CoolingStation;
+    BakingStation;
+    LogisticSystem;
+    PackagingStation;
+}
+
+// Base requirements for all production lines
+Requirement AllLines {
+    requires LogisticSystem;
+    requires PackagingStation;
+}
+
+// Requirements for Normal Chocolate
+Requirement NormalChocolate extends AllLines {
+    requires MeltingStation;
+    requires MixingStation;
+    requires CoolingStation;
+}
+
+// Requirements for Nut-Chocolate (inherits from Normal Chocolate)
+Requirement NutChocolate extends NormalChocolate {
+    requires BakingStation;
+}
+
+// Logic Mapping
+ProductionLine {
+    if (ProductType == "Normal") {
+        apply NormalChocolate;
+    } else if (ProductType == "Nut") {
+        apply NutChocolate;
+    }
+}
+```
+
+### Syntax Explanations:
+1.  **`Station`**: Defines the available entities in the factory.
+2.  **`Requirement AllLines`**: This acts as the global base. Since the text states "All lines require" these, they are placed in a top-level requirement.
+3.  **`extends`**: This is used to handle the "additional" logic. Instead of listing the melting, mixing, and cooling stations twice, `NutChocolate` simply extends `NormalChocolate`, automatically inheriting those three stations plus the global ones.
+4.  **`requires`**: The keyword used to link a product type to its necessary hardware/station.
+5.  **`ProductionLine`**: A conditional block that assigns the specific requirement set based on the product being produced.<turn|>

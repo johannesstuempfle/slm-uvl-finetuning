@@ -1,0 +1,75 @@
+Since UVL (Unified Validation Language) is typically used for defining business rules and constraints in a structured, declarative format, the translation requires mapping the natural language requirements into logical constraints, attributes, and conditional validations.
+
+Here is the translation of your text into **UVL-Code**:
+
+```uvl
+/* University Course Registration System Constraints */
+
+Entity Student {
+    Attribute totalCredits: Integer;
+    Attribute studentType: Enum(Undergraduate, Graduate);
+    Attribute completedCredits: Integer;
+    Attribute hasPassedDissertationProposal: Boolean;
+}
+
+Entity Course {
+    Attribute courseLevel: Integer;
+    Attribute courseType: Enum(Core, Seminar, Elective, Module);
+    Attribute courseName: String;
+    Attribute enrollmentCap: Integer;
+}
+
+/* 1. Minimum credit requirement for all students */
+Rule MinCreditRequirement {
+    Constraint: Student.totalCredits >= 12;
+    Message: "All students must register for a minimum of 12 credits.";
+}
+
+/* 2. Course requirements based on student type */
+Rule CoreCourseRequirement {
+    Condition: Student.studentType == Undergraduate;
+    Constraint: Student.enrollments.exists(Course.courseLevel == 100 && Course.courseType == Core);
+    Message: "Undergraduate students must select one 100-level Core course.";
+}
+
+Rule SeminarRequirement {
+    Condition: Student.studentType == Graduate;
+    Constraint: Student.enrollments.exists(Course.courseLevel == 500 && Course.courseType == Seminar);
+    Message: "Graduate students must select a 500-level Seminar.";
+}
+
+/* 3. Prerequisite logic */
+Rule PrerequisiteAdvancedAI {
+    Condition: Student.enrollments.contains("Advanced AI");
+    Constraint: Student.completedCourses.containsAll(["Intro to AI", "Linear Algebra"]);
+    Message: "'Advanced AI' requires both 'Intro to AI' and 'Linear Algebra'.";
+}
+
+/* 4. Mutually exclusive courses */
+Rule ExclusiveStatistics {
+    Constraint: !(Student.enrollments.contains("Statistics for Biology") && 
+                 Student.enrollments.contains("Statistics for Business"));
+    Message: "'Statistics for Biology' and 'Statistics for Business' are mutually exclusive.";
+}
+
+/* 5. Enrollment cap for Robotics Lab */
+Rule RoboticsLabCap {
+    Condition: Course.courseName == "Robotics Lab";
+    Constraint: Course.currentEnrollment <= 20;
+    Message: "The 'Robotics Lab' course has a hard enrollment cap of 20 students.";
+}
+
+/* 6. Thesis Defense eligibility */
+Rule ThesisDefenseEligibility {
+    Condition: Student.enrollments.contains("Thesis Defense");
+    Constraint: Student.completedCredits >= 60 && Student.hasPassedDissertationProposal == True;
+    Message: "'Thesis Defense' requires 60 completed credits and a passed 'Dissertation Proposal' review.";
+}
+```
+
+### Key Syntax Implementation Details:
+*   **Entities:** Defined `Student` and `Course` to establish the data model.
+*   **Conditional Logic (`Condition`):** Used to trigger specific rules only when certain criteria are met (e.g., only for Graduate students).
+*   **Constraints (`Constraint`):** The actual boolean logic that must evaluate to `True` for the registration to be valid.
+*   **Collections (`contains` / `exists`):** Used to handle the relationship between students and the list of courses they are enrolled in.
+*   **Logical Operators:** Used `&&` (AND), `||` (OR), and `!` (NOT) to handle the mutually exclusive and prerequisite requirements.<turn|>

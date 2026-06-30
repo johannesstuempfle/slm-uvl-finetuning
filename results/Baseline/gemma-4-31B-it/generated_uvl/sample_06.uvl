@@ -1,0 +1,65 @@
+Since UVL (Unified Modeling Language / Unified Validation Language) is often used in specific software engineering contexts to define interfaces, contracts, or data flows, the translation focuses on defining the **Inputs**, **Outputs**, and **Audit/Logging** requirements.
+
+Depending on the specific UVL dialect you are using (Interface-based or Logic-based), here is the professional translation:
+
+### Option 1: Interface/Contract Syntax
+This version is best if you are defining a service or a module interface.
+
+```uvl
+Module TaxCalculator {
+    
+    Input {
+        Decimal nettoPrice;
+        Integer sumOfProducts;
+        Location buyerLocation;
+        Location sellerLocation;
+    }
+
+    Output {
+        Decimal taxPerProduct;
+        Decimal bruttoPrice;
+        Percentage taxRate;
+    }
+
+    AuditLog {
+        Decimal calculatedBasePrice;
+        String ruleOfCalculation;
+    }
+}
+```
+
+### Option 2: Data-Flow/Functional Syntax
+This version is best if you are defining the logic flow (Inputs $\rightarrow$ Process $\rightarrow$ Outputs).
+
+```uvl
+Component TaxCalculator {
+    // Define required inputs
+    require: 
+        netto_price: Decimal,
+        sum_of_products: Integer,
+        buyer_loc: Location,
+        seller_loc: Location;
+
+    // Define primary functional outputs
+    produce: 
+        tax_per_product: Decimal,
+        brutto_price: Decimal,
+        tax_rate: Percentage;
+
+    // Define secondary audit outputs
+    log: 
+        base_price_calculated: Decimal,
+        calculation_rule_applied: String;
+}
+```
+
+### Key Translation Mapping:
+*   **Netto price** $\rightarrow$ `nettoPrice` / `netto_price` (Decimal)
+*   **Sum of products** $\rightarrow$ `sumOfProducts` (Integer)
+*   **Location of buyer and seller** $\rightarrow$ `buyerLocation`, `sellerLocation` (Location Object)
+*   **Tax per product** $\rightarrow$ `taxPerProduct` (Decimal)
+*   **Brutto price** $\rightarrow$ `bruttoPrice` (Decimal)
+*   **Tax-rate** $\rightarrow$ `taxRate` (Percentage/Decimal)
+*   **Logging data** $\rightarrow$ `AuditLog` / `log` section
+*   **Calculated base price** $\rightarrow$ `calculatedBasePrice` (Decimal)
+*   **Rule of calculation** $\rightarrow$ `ruleOfCalculation` (String)<turn|>
