@@ -1,0 +1,60 @@
+Here's a thinking process:
+
+1.  **Understand User Request:**
+   - **Input Text:** A description of a university course registration system with specific constraints and rules.
+   - **Output Format:** UVL (Universal Variability Language) code.
+   - **Requirements:** Consider all information from the text, ensure correct UVL syntax.
+
+2.  **Analyze Input Text for Variability Elements:**
+   I need to extract features, constraints, and relationships from the text and map them to UVL concepts.
+   - *Entities/Features:*
+     - Student types: Undergraduate, Graduate
+     - Courses: 100-level Core, 500-level Seminar, Advanced AI, Intro to AI, Linear Algebra, Statistics for Biology, Statistics for Business, Robotics Lab, Thesis Defense, Dissertation Proposal
+     - Credits: 12 minimum, 60 completed
+     - Constraints/Rules:
+       - All students must register for a minimum of 12 credits. (Global constraint)
+       - Undergraduate -> must select one 100-level Core course.
+       - Graduate -> must select a 500-level Seminar.
+       - Advanced AI requires Intro to AI AND Linear Algebra.
+       - Statistics for Biology and Statistics for Business are mutually exclusive.
+       - Robotics Lab is optional elective with hard cap of 20 students. (Note: UVL typically handles logical constraints, not numerical caps directly, but I can model it as a feature with a cardinality or just note it as a constraint. UVL supports `constraint` clauses for logical expressions. I'll stick to logical constraints and maybe use a comment or a custom constraint for the cap if needed, but standard UVL focuses on feature dependencies. I'll model it as an optional feature.)
+       - Thesis Defense requires: completed 60 credits AND passed Dissertation Proposal.
+   - *UVL Structure:*
+     - Features hierarchy (optional but good practice)
+     - Constraints (logical expressions)
+     - UVL syntax basics:
+       - `feature <name>`
+       - `parent <parent_feature>`
+       - `kind <mandatory/optional/alternative>`
+       - `constraint <expression>`
+       - Logical operators: `and`, `or`, `not`, `=>` (implies)
+       - Boolean features or attributes for credits/caps? UVL can handle attributes, but typically it's feature-based. I'll model credits and caps as constraints or attributes if needed. Actually, UVL supports `attribute` declarations. But for simplicity and standard UVL, I'll use features and constraints. I can model "Credits >= 12" as a constraint on a numeric attribute, or just state it as a comment/constraint. Let's check UVL spec: UVL supports `attribute <name> : <type>` and constraints on them. But often, simple feature constraints are enough. I'll stick to feature dependencies and logical constraints. For the cap of 20, I'll note it as a constraint or attribute. Actually, UVL has `constraint` for logical expressions. I'll model the credit requirements and caps as constraints on attributes or just logical constraints if possible. Let's keep it standard: features for courses/student types, constraints for dependencies.
+
+3.  **Map to UVL Concepts:**
+   - *Root Feature:* `CourseRegistrationSystem`
+   - *Student Types:* `Undergraduate`, `Graduate` (mutually exclusive? The text says "All students must...", implying a student is either Undergrad or Grad. I'll make them alternative under `StudentType`)
+   - *Courses:* 
+     - `Core100`, `Seminar500`
+     - `AdvancedAI`, `IntroAI`, `LinearAlgebra`
+     - `StatsBio`, `StatsBusiness`
+     - `RoboticsLab`
+     - `ThesisDefense`, `DissertationProposal`
+   - *Constraints:*
+     - `constraint total_credits >= 12` (Need an attribute for credits)
+     - `constraint Undergraduate => Core100`
+     - `constraint Graduate => Seminar500`
+     - `constraint AdvancedAI => IntroAI and LinearAlgebra`
+     - `constraint not (StatsBio and StatsBusiness)`
+     - `constraint RoboticsLab.kind = optional` (or just define it as optional)
+     - `constraint RoboticsLab.enrollment <= 20` (Need attribute or just note it)
+     - `constraint ThesisDefense => (credits_completed >= 60 and DissertationProposal)`
+   - Let's refine according to standard UVL syntax. UVL typically uses:
+     ```
+     feature CourseRegistrationSystem
+       feature StudentType
+         feature Undergraduate
+           kind mandatory
+         feature Graduate
+           kind mandatory
+       kind alternative
+       ...

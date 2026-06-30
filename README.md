@@ -105,6 +105,61 @@ Results for all evaluated models are in the `results/` directory. The table belo
 
 † Semantic F1 is averaged over a small number of parseable outputs (1–3 samples); interpret with caution.
 
+### Why baseline models fail
+
+The outputs found in `results/Baseline/` (especially for Qwen3.6-27B) show that even frontier open-weight models still struggle with UVL syntax, since it is a niche domain-specific language that is barely represented in pre-training corpora. For example, Qwen3.6-27B (no fine-tuning) produces this for the "car with engine, assistance systems, and colour" prompt:
+
+```
+feature Car
+root Car
+feature Engine
+mandatory Engine
+feature Diesel
+feature Gasoline
+feature Electric
+alternative Engine
+  Diesel
+  Gasoline
+  Electric
+end
+feature AssistanceSystems
+optional AssistanceSystems
+feature LaneAssist
+feature ESP
+or AssistanceSystems
+  LaneAssist
+  ESP
+end
+feature Color
+optional Color
+```
+
+This is plausible-looking feature-modelling syntax, but it is not valid UVL at all.The model is reproducing patterns from other feature-modelling languages and DSLs it has seen during pre-training rather than UVL specifically, confirming that fine-tuning on UVL data is necessary even for very capable models.
+
+For comparison, the supervised fine-tuned Qwen2.5-Coder-0.5B-Instruct produces this for the same car prompt:
+
+```
+features
+    Car
+        mandatory
+            Engine
+                alternative
+                    Diesel
+                    Gasoline
+                    Electric
+            OptionalAssistances
+                alternative
+                    LaneAssist
+                    ESP
+            CarColor
+                alternative
+                    Red
+                    Green
+                    Blue
+```
+
+This is syntactically valid UVL with a single, well-formed `features` block and correctly nested group keywords, despite the model being 60x smaller than Qwen3.6-27B. A small amount of supervised fine-tuning is more effective at teaching UVL syntax than raw model scale.
+
 ## Project Structure
 
 ```text

@@ -1,0 +1,97 @@
+Here's a thinking process:
+
+1.  **Understand User Request:**
+   - **Input Text:** Describes a PC configurator tool with dependencies/constraints between components:
+     - CPU choice dictates motherboard socket.
+     - Motherboard chipset determines RAM type.
+     - High-end GPU has minimum PSU wattage requirement (>=850W).
+     - GPU length must be <= case's max GPU clearance.
+     - Case form factor must match motherboard form factor.
+     - Optional large air cooler height must be < case's CPU cooler clearance.
+   - **Output Format:** UVL Code (Universal Variability Language)
+   - **Requirements:** Consider all information from the text, use correct UVL syntax.
+
+2.  **Analyze UVL Syntax:**
+   - UVL is a formal language for specifying variability in software product lines.
+   - Key constructs:
+     - `feature`: Defines a feature with optional attributes (e.g., `feature CPU { ... }`)
+     - `group`: Defines relationships (e.g., `group or { ... }`, `group xor { ... }`, `group and { ... }`)
+     - `constraint`: Defines logical constraints between features (e.g., `requires`, `excludes`, `implication`, `equivalence`)
+     - `property`: Can define attributes/values (though UVL primarily focuses on feature structure and constraints; sometimes properties are used for quantitative constraints, but standard UVL often uses `constraint` with logical expressions or `property` with ranges)
+     - Actually, UVL has specific syntax for constraints: `requires`, `excludes`, `implication` (`=>`), `equivalence` (`<=>`), and can use properties with operators.
+     - Let's recall standard UVL syntax (based on UVL 1.0/2.0 specifications):
+       ```
+       feature <name> {
+         [abstract]
+         [mandatory]
+         [optional]
+         [property <name>: <type> = <value>]
+         [group <type> { <feature1>, <feature2>... }]
+         [constraint <expression>]
+       }
+       ```
+       Actually, UVL typically structures like:
+       ```
+       feature PC_Configurator {
+         feature CPU {
+           feature Intel
+           feature AMD
+           constraint xor(CPU.Intel, CPU.AMD)
+         }
+         feature Motherboard {
+           feature Socket_LGA1700
+           feature Socket_AM5
+           feature Chipset_Z790
+           feature FormFactor_ATX
+           feature FormFactor_MicroATX
+         }
+         ...
+       }
+       ```
+     - Wait, UVL has a specific constraint syntax: `requires`, `excludes`, `implication` (`=>`), `equivalence` (`<=>`), and can use properties for numeric constraints.
+     - Let's check the official UVL syntax (from UVL Project / Universidad de Sevilla):
+       - Features can have properties: `property <name>: <type> = <value>`
+       - Constraints can use logical operators: `and`, `or`, `not`, `=>`, `<=>`
+       - Quantitative constraints: `property1 > property2`, etc.
+       - Actually, UVL uses a specific format for constraints inside features or at the root level.
+       - Example:
+         ```
+         feature CPU {
+           feature Intel
+           feature AMD
+           group xor { Intel, AMD }
+         }
+         feature Motherboard {
+           feature Socket_LGA1700
+           feature Socket_AM5
+           feature Chipset_Z790
+           feature FormFactor_ATX
+           feature FormFactor_mATX
+         }
+         feature RAM {
+           feature DDR4
+           feature DDR5
+           group xor { DDR4, DDR5 }
+         }
+         feature GPU {
+           feature RTX4090
+           property minPSUWattage: Integer = 850
+           property maxLengthMM: Integer = 350
+         }
+         feature PSU {
+           property wattage: Integer
+         }
+         feature Case {
+           feature FormFactor_ATX
+           feature FormFactor_mATX
+           property maxGPULengthMM: Integer
+           property maxCoolerHeightMM: Integer
+         }
+         feature Cooler {
+           property heightMM: Integer
+         }
+         ```
+       - Constraints in UVL are typically written as:
+         `constraint CPU.Intel => Motherboard.Socket_LGA1700`
+         `constraint Motherboard.Chipset_Z790 => RAM.DDR5` (assuming Z790 supports DDR5, but text says "determines", so implication)
+         `constraint GPU.R
