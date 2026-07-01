@@ -107,7 +107,7 @@ Results for all evaluated models are in the `results/` directory. The table belo
 
 ### Why baseline models fail
 
-The outputs found in `results/Baseline/` (especially for Qwen3.6-27B) show that even frontier open-weight models still struggle with UVL syntax, since it is a niche domain-specific language that is barely represented in pre-training corpora. For example, Qwen3.6-27B (no fine-tuning) produces this for the "car with engine, assistance systems, and colour" prompt:
+The outputs found in `results/Baseline/` show that even frontier open-weight models (Qwen3.6-27B, gemma-4-31B-it) still struggle with UVL syntax, since it is a niche domain-specific language that is barely represented in pre-training corpora. Qwen3.6-27B (no fine-tuning) produces this for the "car with engine, assistance systems, and colour" prompt:
 
 ```
 feature Car
