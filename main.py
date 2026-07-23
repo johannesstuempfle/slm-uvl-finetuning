@@ -6,11 +6,18 @@ import src.dataset as dataset
 import src.train as train
 import src.evaluate as evaluate
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 @gin.configurable
-def main(hug_token, model_dir, model_name, supervised, finetuning, adapter_dir=None, cuda_visible_devices=None):
+def main(model_dir, model_name, supervised, finetuning, adapter_dir=None, cuda_visible_devices=None):
     if cuda_visible_devices is not None:
         os.environ["CUDA_VISIBLE_DEVICES"] = str(cuda_visible_devices)
+
+    hug_token = os.environ.get("HF_TOKEN")
+    if not hug_token:
+        raise RuntimeError("HF_TOKEN not set. Copy .env.example to .env and add your Hugging Face token.")
 
     # log into huggingface with key for automatic download of models
     huggingface_hub.login(hug_token)

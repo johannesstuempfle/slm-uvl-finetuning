@@ -2,6 +2,7 @@ savings/
 temp.uvl
 uvl-repos/uvl_data
 uvl-repos/uvl-models
+.env
 
 # Python-generated files
 __pycache__/
