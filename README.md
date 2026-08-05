@@ -1,6 +1,15 @@
 # Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation
 
-![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)
+[![Workshop: GAIV 2026](https://img.shields.io/badge/GAIV-2026-1f6feb)](https://sites.google.com/view/gaiv-2026)
+[![Conference: VARIABILITY 2026](https://img.shields.io/badge/VARIABILITY-2026-0a7d5c)](https://conf.researchr.org/home/variability-2026)
+[![Paper: accepted](https://img.shields.io/badge/paper-accepted-brightgreen)](https://sites.google.com/view/gaiv-2026)
+<!-- Replace once the proceedings are published:
+[![DOI](https://img.shields.io/badge/DOI-10.XXXX%2FXXXXXX-blue)](https://doi.org/10.XXXX/XXXXXX) -->
+![DOI](https://img.shields.io/badge/DOI-pending-lightgrey)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
+[![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)](https://www.python.org/downloads/release/python-3120/)
+
+Replication package for the paper *"Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation"*, accepted at the [1st International Workshop on Generative AI and Variability (GAIV 2026)](https://sites.google.com/view/gaiv-2026), co-located with [VARIABILITY 2026](https://conf.researchr.org/home/variability-2026), September 29 – October 2, 2026, Limassol, Cyprus.
 
 A pipeline for fine-tuning Small Language Models (SLMs) to generate syntactically and semantically correct UVL from natural language descriptions. Training uses **LoRA** via PEFT with optional 8-bit quantization. Dependencies are managed with **[uv](https://github.com/astral-sh/uv)**.
 
@@ -182,3 +191,21 @@ This is syntactically valid UVL with a single, well-formed `features` block and 
 ├── pyproject.toml
 └── uv.lock
 ```
+
+## Citation
+
+The paper is accepted at GAIV 2026 but not yet presented or published, so no DOI is available yet. Until the proceedings appear, please cite:
+
+```bibtex
+@inproceedings{stuempfle2026uvl,
+  author    = {St{\"u}mpfle, Johannes},
+  title     = {Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation},
+  booktitle = {Proceedings of the 1st International Workshop on Generative AI and Variability (GAIV)},
+  year      = {2026},
+  note      = {To appear. Co-located with VARIABILITY 2026, Limassol, Cyprus},
+}
+```
+
+## License
+
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
