@@ -3,8 +3,6 @@
 [![Workshop: GAIV 2026](https://img.shields.io/badge/GAIV-2026-1f6feb)](https://sites.google.com/view/gaiv-2026)
 [![Conference: VARIABILITY 2026](https://img.shields.io/badge/VARIABILITY-2026-0a7d5c)](https://conf.researchr.org/home/variability-2026)
 [![Paper: accepted](https://img.shields.io/badge/paper-accepted-brightgreen)](https://sites.google.com/view/gaiv-2026)
-<!-- Replace once the proceedings are published:
-[![DOI](https://img.shields.io/badge/DOI-10.XXXX%2FXXXXXX-blue)](https://doi.org/10.XXXX/XXXXXX) -->
 ![DOI](https://img.shields.io/badge/DOI-pending-lightgrey)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)](https://www.python.org/downloads/release/python-3120/)
