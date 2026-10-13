@@ -1,7 +1,7 @@
 [project]
 name = "uvl-finetuning"
 version = "0.1.0"
-description = "Add your description here"
+description = "Replication package for 'Fine-Tuning Small Language Models For Valid Universal Variability Language Generation' (GAIV 2026, Springer LNCS, doi:10.1007/978-3-032-40421-3_1)"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

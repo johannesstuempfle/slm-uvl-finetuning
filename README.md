@@ -1,13 +1,13 @@
-# Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation
+# Fine-Tuning Small Language Models For Valid Universal Variability Language Generation
 
 [![Workshop: GAIV 2026](https://img.shields.io/badge/GAIV-2026-1f6feb)](https://sites.google.com/view/gaiv-2026)
 [![Conference: VARIABILITY 2026](https://img.shields.io/badge/VARIABILITY-2026-0a7d5c)](https://conf.researchr.org/home/variability-2026)
-[![Paper: accepted](https://img.shields.io/badge/paper-accepted-brightgreen)](https://sites.google.com/view/gaiv-2026)
-![DOI](https://img.shields.io/badge/DOI-pending-lightgrey)
+[![Paper: Springer LNCS](https://img.shields.io/badge/paper-Springer%20LNCS-brightgreen)](https://link.springer.com/chapter/10.1007/978-3-032-40421-3_1)
+[![DOI](https://img.shields.io/badge/DOI-10.1007%2F978--3--032--40421--3__1-blue)](https://doi.org/10.1007/978-3-032-40421-3_1)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)](https://www.python.org/downloads/release/python-3120/)
 
-Replication package for the paper *"Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation"*, accepted at the [1st International Workshop on Generative AI and Variability (GAIV 2026)](https://sites.google.com/view/gaiv-2026), co-located with [VARIABILITY 2026](https://conf.researchr.org/home/variability-2026), September 29 – October 2, 2026, Limassol, Cyprus.
+Replication package for the paper [*"Fine-Tuning Small Language Models For Valid Universal Variability Language Generation"*](https://doi.org/10.1007/978-3-032-40421-3_1) by Johannes Stümpfle, Florian Schatz, Nasser Jazdi and Michael Weyrich, presented at the [1st International Workshop on Generative AI and Variability (GAIV 2026)](https://sites.google.com/view/gaiv-2026), co-located with [VARIABILITY 2026](https://conf.researchr.org/home/variability-2026).
 
 A pipeline for fine-tuning Small Language Models (SLMs) to generate syntactically and semantically correct UVL from natural language descriptions. Training uses **LoRA** via PEFT with optional 8-bit quantization. Dependencies are managed with **[uv](https://github.com/astral-sh/uv)**.
 
@@ -192,15 +192,20 @@ This is syntactically valid UVL with a single, well-formed `features` block and 
 
 ## Citation
 
-The paper is accepted at GAIV 2026 but not yet presented or published, so no DOI is available yet. Until the proceedings appear, please cite:
+If you use this code or the results, please cite the [paper](https://link.springer.com/chapter/10.1007/978-3-032-40421-3_1):
 
 ```bibtex
 @inproceedings{stuempfle2026uvl,
-  author    = {St{\"u}mpfle, Johannes},
-  title     = {Fine-Tuning Small Language Models For Syntactically Valid Universal Variability Language Generation},
-  booktitle = {Proceedings of the 1st International Workshop on Generative AI and Variability (GAIV)},
+  author    = {St{\"u}mpfle, Johannes and Schatz, Florian and Jazdi, Nasser and Weyrich, Michael},
+  title     = {Fine-Tuning Small Language Models For Valid Universal Variability Language Generation},
+  booktitle = {Software and Systems Reuse, Product Lines, and Configuration -- VARIABILITY 2026 Satellite Events},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer Nature Switzerland},
+  address   = {Cham},
   year      = {2026},
-  note      = {To appear. Co-located with VARIABILITY 2026, Limassol, Cyprus},
+  pages     = {3--12},
+  isbn      = {978-3-032-40421-3},
+  doi       = {10.1007/978-3-032-40421-3_1},
 }
 ```
 
